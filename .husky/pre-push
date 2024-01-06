@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+yarn run lint
+
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Please fix the issues before committing."
+  exit 1
+fi
+
+FORBIDDEN_HTTPS_URL="https://github.com/Central-MakeUs/Daldal-Web.git" # insert your remote url (https)
+FORBIDDEN_SSH_URL="git@github.com:Central-MakeUs/Daldal-Web.git" # insert your remote url (ssh)
+FORBIDDEN_REF="refs/heads/main" # insert branch ref
+
+remote="$1"
+url="$2"
+
+if [ "$url" != "$FORBIDDEN_HTTPS_URL" -a "$url" != "$FORBIDDEN_SSH_URL" ]
+then
+    exit 0 # Forked Project 에서는 제한하지 않음
+fi
+
+if read local_ref local_sha remote_ref remote_sha
+then
+    if [ "$remote_ref" == "$FORBIDDEN_REF" ]
+    then
+        echo "DO NOT PUSH it main"
+        exit 1 # 금지된 ref 로 push 를 실행하면 에러
+    fi
+fi
+
+exit 0
