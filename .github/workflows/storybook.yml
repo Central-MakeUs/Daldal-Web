@@ -18,7 +18,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # 사용할 Node.js 버전 지정
+          node-version: 16.x
+      
+      - name: Install Corepack
+        run: yarn global add corepack
 
       - name: Enable Corepack
         run: yarn corepack enable
