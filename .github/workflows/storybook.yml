@@ -31,8 +31,8 @@ jobs:
         run: yarn build-storybook
         working-directory: ${{ github.workspace }}
 
-      - name: publish to chromatic
-        id: chromatic
+      - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
+          workingDir: ${{ github.workspace }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
