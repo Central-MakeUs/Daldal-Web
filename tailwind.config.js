@@ -7,9 +7,11 @@ export default konstaConfig({
 	darkMode: 'class',
 	konsta: {
 		colors: colors,
+		fontFamily: { SUIT: ['SUIT', 'sans-serif'] },
 	},
 	theme: {
 		colors: colors,
+		fontFamily: { SUIT: ['SUIT', 'sans-serif'] },
 	},
 	plugins: [],
 });
