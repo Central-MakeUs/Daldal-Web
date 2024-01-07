@@ -15,7 +15,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use Yarn version
+      - name: Enable Corepack
+        run: yarn corepack enable
+        
+      - name: Use Yarn stable version
         run: yarn set version 4.0.2
 
       - name: cache dependencies
