@@ -14,25 +14,11 @@ export default konstaConfig({
 	],
 	konsta: {
 		colors: colors,
-		component: plugin(({ addComponents }) => {
-			addComponents(fonts);
-		}),
-		fontSize: {
-			Headline: '3xl',
-		},
 	},
 	theme: {
 		extends: {
 			colors: colors,
 			fontFamily: { SUIT: ['SUIT', 'sans-serif'] },
-			plugins: [
-				plugin(({ addComponents }) => {
-					addComponents(fonts);
-				}),
-			],
-			fontSize: {
-				Headline: '3xl',
-			},
 		},
 	},
 });

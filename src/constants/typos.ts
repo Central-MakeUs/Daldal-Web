@@ -1,67 +1,45 @@
-export const fontSizes = {
-	'.Headline': {
-		fontSize: '32px',
-	},
-	Subhead: '24px',
-	Body1: '18px',
-	Body2: '16px',
-	Body3: '14px',
-	Body4: '12px',
-	Caption1: '10px',
-	Caption2: '8px',
-	Caption3: '6px',
-	Btn_text1: '16px',
-};
-
-export const fontWeights = {
-	SB: '600',
-	M: '500',
-	R: '400',
-};
-
 export const fonts = {
-	'.Headline': {
-		// fontSize: '32px',
-		// fontWeight: '600',
-		'@apply text-[32px] font-[600]': {},
+	'.typography-Headline': {
+		fontSize: '32px',
+		fontWeight: '600',
 	},
-	'.Subhead': {
+	'.typography-Subhead': {
 		fontSize: '24px',
 		fontWeight: '600',
 	},
-	'.Body1': {
+	'.typography-Body1': {
 		fontSize: '18px',
 	},
-	'.Body2': {
+	'.typography-Body2': {
 		fontSize: '16px',
 	},
-	'.Body3': {
+	'.typography-Body3': {
 		fontSize: '14px',
 	},
-	'.Body4': {
+	'.typography-Body4': {
 		fontSize: '12px',
 	},
-	'.Caption1': {
+	'.typography-Caption1': {
 		fontSize: '10px',
 	},
-	'.Caption2': {
+	'.typography-Caption2': {
 		fontSize: '8px',
 	},
-	'.Caption3': {
+	'.typography-Caption3': {
 		fontSize: '8px',
 	},
-	'.Btn_text1': {
+	'.typography-Btn_text1': {
 		fontSize: '16px',
 		fontWeight: '600',
 	},
-	'.SB': {
+	'.typography-SB': {
 		fontWeight: '600',
 	},
-	'.M': {
+	'.typography-M': {
 		fontWeight: '500',
 		letterSpacing: '-0.25px',
 	},
-	'.R': {
+	'.typography-R': {
 		fontWeight: '100',
 	},
 };
