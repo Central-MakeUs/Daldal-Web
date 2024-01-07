@@ -17,8 +17,8 @@ export default defineConfig({
 			{ find: '@type', replacement: '/src/type' },
 			{ find: '@assets', replacement: '/src/assets' },
 			{
-				find: '@contants',
-				replacement: '/src/contants',
+				find: '@constants',
+				replacement: '/src/constants',
 			},
 			{ find: '@stores', replacement: '/src/stores' },
 			{ find: '@', replacement: '/src' },
