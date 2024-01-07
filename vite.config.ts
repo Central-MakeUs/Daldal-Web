@@ -1,30 +1,28 @@
 import react from '@vitejs/plugin-react-swc';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), tsconfigPaths()],
+	plugins: [react()],
 	resolve: {
 		alias: [
-			{ find: '@', replacement: path.resolve(__dirname, 'src') },
 			{
 				find: '@components',
-				replacement: path.resolve(__dirname, 'src/components'),
+				replacement: path.resolve(__dirname, '/src/components'),
 			},
-			{ find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
-			{ find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
-			{ find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
-			{ find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
-			{ find: '@types', replacement: path.resolve(__dirname, 'src/types') },
-			{ find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
-			{ find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
+			{ find: '@hooks', replacement: '/src/hooks' },
+			{ find: '@pages', replacement: '/src/pages' },
+			{ find: '@styles', replacement: '/src/styles' },
+			{ find: '@utils', replacement: '/src/utils' },
+			{ find: '@type', replacement: '/src/type' },
+			{ find: '@assets', replacement: '/src/assets' },
 			{
 				find: '@contants',
-				replacement: path.resolve(__dirname, 'src/contants'),
+				replacement: '/src/contants',
 			},
-			{ find: '@stores', replacement: path.resolve(__dirname, 'src/stores') },
+			{ find: '@stores', replacement: '/src/stores' },
+			{ find: '@', replacement: '/src' },
 		],
 	},
 });

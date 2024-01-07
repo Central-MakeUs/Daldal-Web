@@ -15,21 +15,6 @@
 	"insertPragma": false,
 	"requirePragma": false,
 	"vueIndentScriptAndStyle": false,
-	"importOrder": [
-		"^@utils/(.)$",
-		"^@styles/(.)$",
-		"^@assets/(.)$",
-		"^@hooks/(.)$",
-		"^@types/(.)$",
-		"^@stores/(.)$",
-		"^@constants/(.)$",
-		"^@components/(.)$",
-		"^@pages/(.)$",
-		"^@/(.)$",
-		"^[./]"
-	],
-	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true,
 	"overrides": [
 		{
 			"files": ".prettierrc",
