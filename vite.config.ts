@@ -1,5 +1,4 @@
 import react from '@vitejs/plugin-react-swc';
-import path from 'path';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
@@ -9,7 +8,7 @@ export default defineConfig({
 		alias: [
 			{
 				find: '@components',
-				replacement: path.resolve(__dirname, '/src/components'),
+				replacement: '/src/components',
 			},
 			{ find: '@hooks', replacement: '/src/hooks' },
 			{ find: '@pages', replacement: '/src/pages' },
