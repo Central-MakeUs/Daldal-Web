@@ -1,11 +1,11 @@
-import { ComponentWithPropsArray } from "../types/providerTree";
+import { ComponentWithPropsArray } from '../types/providerTree';
 
 type Children = {
 	children: React.ReactNode;
 };
 
 export const buildProvidersTree = (
-	componentsWithProps: ComponentWithPropsArray
+	componentsWithProps: ComponentWithPropsArray,
 ) => {
 	const initialComponent = ({ children }: Children) => <>{children}</>;
 	return componentsWithProps.reduce(
@@ -13,13 +13,11 @@ export const buildProvidersTree = (
 			return ({ children }: Children) => {
 				return (
 					<AccumulatedComponents>
-						<Provider {...props}>
-							{children}
-						</Provider>
+						<Provider {...props}>{children}</Provider>
 					</AccumulatedComponents>
 				);
 			};
 		},
-		initialComponent
+		initialComponent,
 	);
 };
