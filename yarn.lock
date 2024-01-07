@@ -5889,6 +5889,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.5"
     eslint-plugin-storybook: "npm:^0.6.15"
     husky: "npm:^8.0.3"
+    konsta: "npm:^3.1.2"
     lint-staged: "npm:^15.2.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -8353,6 +8354,13 @@ __metadata:
   version: 3.0.3
   resolution: "kleur@npm:3.0.3"
   checksum: cd3a0b8878e7d6d3799e54340efe3591ca787d9f95f109f28129bdd2915e37807bf8918bb295ab86afb8c82196beec5a1adcaf29042ce3f2bd932b038fe3aa4b
+  languageName: node
+  linkType: hard
+
+"konsta@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "konsta@npm:3.1.2"
+  checksum: edabb976befd80702202b45150ee0313edfdf0bad44baa16ff01e3a9da6de44e260697b2f49366f9c2dc7ecdcaa3aa366168e5eb503cbe579016d7ff84ba3304
   languageName: node
   linkType: hard
 
