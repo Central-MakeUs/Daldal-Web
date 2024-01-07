@@ -28,5 +28,5 @@ chromatic.log
 chromatic-build-*.xml
 chromatic-diagnostics.json
 
-.yarn
+.yarn/*
 .pnp.*
