@@ -1,18 +1,50 @@
-# Workflow name
-name: "Chromatic Deployment"
+# # Workflow name
+# name: "Chromatic Deployment"
 
-# Event for the workflow
+# # Event for the workflow
+# on:
+#   pull_request:
+#     branches:
+#       - develop
+
+# # List of jobs
+# jobs:
+#   test:
+#     # Operating System
+#     runs-on: ubuntu-latest
+#     # Job steps
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#       - run: corepack enable
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: yarn
+#       - run: yarn
+#         #👇 Adds Chromatic as a step in the workflow
+#       - uses: chromaui/action@v1
+#         # Options required for Chromatic's GitHub Action
+#         with:
+#           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
+#           projectToken: chpt_5816db41f10f03e
+#           token: ${{ secrets.GITHUB_TOKEN }}
+
+name: Storybook Deployment
+run-name: ${{ github.actor }}의 스토리북 배포
 on:
   pull_request:
     branches:
       - develop
-
-# List of jobs
 jobs:
-  test:
-    # Operating System
+  storybook:
     runs-on: ubuntu-latest
-    # Job steps
+    outputs:
+      status: ${{ job.status }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,48 +58,7 @@ jobs:
           node-version: 20
           cache: yarn
       - run: yarn
-        #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
         with:
-          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
           projectToken: chpt_5816db41f10f03e
           token: ${{ secrets.GITHUB_TOKEN }}
-
-# name: Storybook Deployment
-# run-name: ${{ github.actor }}의 스토리북 배포
-# on:
-#   pull_request:
-#     branches:
-#       - develop
-# jobs:
-#   storybook:
-#     runs-on: ubuntu-20.04
-#     outputs:
-#       status: ${{ job.status }}
-#     steps:
-#       - name: checkout repository
-#         uses: actions/checkout@v3
-        
-#       - uses: actions/setup-node@v4
-#         with:
-#           node-version: 20
-#       - run: corepack enable
-#       - uses: actions/setup-node@v4
-#         with:
-#           node-version: 20
-#           cache: yarn
-#       - run: yarn install --immutable
-
-#       - name: install dependencies
-#         run: yarn install --immutable
-#         working-directory: ${{ github.workspace }}
-
-#       - name: build storybook
-#         run: yarn build-storybook
-#         working-directory: ${{ github.workspace }}
-
-#       - name: Publish to Chromatic
-#         uses: chromaui/action@v1
-#         with:
-#           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
