@@ -26,4 +26,3 @@ jobs:
         with:
           projectToken: chpt_5816db41f10f03e
           token: ${{ secrets.GITHUB_TOKEN }}
-          
