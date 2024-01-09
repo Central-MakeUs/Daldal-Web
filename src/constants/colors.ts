@@ -12,6 +12,6 @@ const colors = {
 	Gray50: '#979FB3',
 	Gray20: '#BBC2D2',
 	Gray10: '#D8DEED',
-};
+} as const;
 
 export default colors;
