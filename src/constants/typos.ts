@@ -1,3 +1,6 @@
+export const fontUrl =
+	'https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css';
+
 export const fonts = {
 	'.typography-Headline': {
 		fontSize: '32px',
