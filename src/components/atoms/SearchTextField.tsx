@@ -8,7 +8,7 @@ function SearchTextField() {
 			<input
 				type="text"
 				placeholder="Search"
-				className="bg-Gray80 text-white placeholder:text-Gray20 flex-1 focus-visible:outline-none"
+				className="bg-Gray80 text-white placeholder:text-Gray20 flex-1 focus-visible:outline-none typography-Body2 typography-R"
 			/>
 		</div>
 	);
