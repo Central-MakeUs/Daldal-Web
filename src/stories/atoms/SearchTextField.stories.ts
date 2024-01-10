@@ -6,9 +6,9 @@ const meta = {
 	title: 'Atoms/SearchTextField',
 	component: SearchTextField,
 	parameters: {
-		// More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
 } satisfies Meta<typeof SearchTextField>;
 
 export default meta;
