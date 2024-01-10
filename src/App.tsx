@@ -11,7 +11,7 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-import Routing from '@components/Routing';
+import Routing from '@components/common/Routing';
 
 setupIonicReact();
 
