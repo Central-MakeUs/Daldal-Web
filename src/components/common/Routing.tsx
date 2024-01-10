@@ -8,13 +8,13 @@ import { buildAnimation } from '@utils/buildAnimation';
 
 function Routing() {
 	return (
-		// <IonReactRouter>
-		// <IonRouterOutlet animation={buildAnimation}>
-		<BrowserRouter>
-			<Route path="/home" component={Home} exact={true} />
-		</BrowserRouter>
-		// </IonRouterOutlet>
-		// </IonReactRouter>
+		<IonReactRouter>
+			<IonRouterOutlet animation={buildAnimation}>
+				<BrowserRouter>
+					<Route path="/home" component={Home} exact={true} />
+				</BrowserRouter>
+			</IonRouterOutlet>
+		</IonReactRouter>
 	);
 }
 
