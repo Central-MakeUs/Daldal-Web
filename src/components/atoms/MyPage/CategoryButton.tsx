@@ -14,12 +14,16 @@ function CategoryButton({ iconId, title, onClick }: CategoryButtonProps) {
 	return (
 		<Button
 			onClick={onClick}
-			className={`px-4 py-[15px] bg-Gray80 k-color-Gray80 text-White rounded-xl !typography-Body1 !typography-R flex !justify-${
-				iconId ? 'start' : 'center'
-			} gap-2 box-content`}
+			className={`px-4 py-[15px] k-color-Gray80 text-White rounded-xl !typography-Body1 !typography-R box-content`}
 		>
-			{iconId && <SvgIcon id={iconId} color={colors.White} size={24} />}
-			{title}
+			<div
+				className={`flex justify-${
+					iconId ? 'start' : 'center'
+				} gap-2 w-full items-center`}
+			>
+				{iconId && <SvgIcon id={iconId} color={colors.White} size={24} />}
+				{title}
+			</div>
 		</Button>
 	);
 }
