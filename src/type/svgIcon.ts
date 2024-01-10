@@ -1,4 +1,4 @@
-type IconId =
+export type IconId =
 	| 'app-logo'
 	| 'direction-left'
 	| 'direction-right'
