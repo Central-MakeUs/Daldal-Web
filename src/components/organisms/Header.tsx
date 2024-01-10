@@ -1,7 +1,6 @@
 import { header } from '@type/header';
-import React from 'react';
 
-const Header: React.FC<header> = ({ leftHeader, rightHeader }) => {
+const Header = ({ leftHeader, rightHeader }: header) => {
 	return (
 		<div className="flex flex-row w-full justify-between items-center">
 			{leftHeader}
