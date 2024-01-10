@@ -20,10 +20,10 @@ type IconId =
 	| 'category-living'
 	| 'category-shoes';
 
-type svgIcon = {
+type SvgIcon = {
 	id: IconId;
 	color?: string;
 	size?: number;
 };
 
-export default svgIcon;
+export default SvgIcon;
