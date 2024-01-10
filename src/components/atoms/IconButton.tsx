@@ -19,6 +19,7 @@ const IconButton = ({
 				small={smallBool}
 				onClick={onClick}
 				clear
+				rounded
 			>
 				{children}
 			</Button>
