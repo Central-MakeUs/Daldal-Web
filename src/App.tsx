@@ -1,15 +1,25 @@
-import { Button } from 'konsta/react';
+import { IonApp, setupIonicReact } from '@ionic/react';
+
+import '@ionic/react/css/core.css';
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
+
+import Routing from '@components/Routing';
+
+setupIonicReact();
 
 function App() {
 	return (
-		<div className="">
-			<span className="Headline">안녕하세요</span>
-			<span className="R">안녕하세요</span>
-			<Button className="font-[600]">카카오톡으로 계속하기</Button>
-			<Button className="k-color-Kakao font-[100]">
-				카카오톡으로 계속하기
-			</Button>
-		</div>
+		<IonApp>
+			<Routing />
+		</IonApp>
 	);
 }
 
