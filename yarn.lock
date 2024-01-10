@@ -3794,7 +3794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:7.6.7":
+"@storybook/theming@npm:7.6.7, @storybook/theming@npm:^7.6.7":
   version: 7.6.7
   resolution: "@storybook/theming@npm:7.6.7"
   dependencies:
@@ -6094,6 +6094,7 @@ __metadata:
     "@storybook/react": "npm:7.6.7"
     "@storybook/react-vite": "npm:7.6.7"
     "@storybook/test": "npm:7.6.7"
+    "@storybook/theming": "npm:^7.6.7"
     "@tanstack/react-query": "npm:^5.17.1"
     "@tanstack/react-query-devtools": "npm:^5.17.1"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
