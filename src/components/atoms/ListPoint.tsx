@@ -2,7 +2,7 @@ import { Block } from 'konsta/react';
 
 import SvgIcon from '@assets/icons/SvgIcon';
 import colors from '@constants/colors';
-import { getPointText } from '@utils/getPointText';
+import { getPointText } from '@utils/formatData';
 
 interface ListPointProps {
 	date: string;
