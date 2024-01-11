@@ -3,12 +3,11 @@ import { Block } from 'konsta/react';
 import SvgIcon from '@assets/icons/SvgIcon';
 import colors from '@constants/colors';
 import { getPointText } from '@utils/formatData';
+import { Point } from '@models/point/entity/point';
 
-interface ListPointProps {
-	date: string;
-	point: number;
+type ListPointProps = Pick<Point, 'point' | 'date'> & {
 	onClick: () => void;
-}
+};
 
 function ListPoint({ date, point, onClick }: ListPointProps) {
 	return (
