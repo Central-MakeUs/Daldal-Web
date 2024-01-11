@@ -6,7 +6,6 @@ const meta = {
 	title: 'components/atoms/GroupOrderTextPoint',
 	component: GroupOrderTextPoint,
 	parameters: {
-		// More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
 		layout: 'centered',
 	},
 	tags: ['autoDocs'],
