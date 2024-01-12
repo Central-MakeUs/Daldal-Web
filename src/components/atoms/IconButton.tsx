@@ -1,29 +1,23 @@
-import { iconButton } from '@type/iconButton';
+import SvgIcon from '@components/common/SvgIcon';
+import svgIcon from '@type/svgIcon';
 import { Button } from 'konsta/react';
 
-const IconButton = ({
-	children,
-	width,
-	size,
-	bgColor,
-	onClick,
-}: iconButton) => {
-	const largeBool = size === 'large' ? true : false;
-	const smallBool = size === 'small' ? true : false;
+type IconButton = {
+	className: string;
+	icon: svgIcon;
+	onClick: () => void;
+};
 
+const IconButton = ({ className, icon, onClick }: IconButton) => {
 	return (
-		<div className={`w-${width}`}>
-			<Button
-				className={`k-color-${bgColor}`}
-				large={largeBool}
-				small={smallBool}
-				onClick={onClick}
-				clear
-				rounded
-			>
-				{children}
-			</Button>
-		</div>
+		<Button className={className} onClick={onClick} clear>
+			<SvgIcon
+				id={icon.id}
+				color={icon.color}
+				width={icon.width || icon.size}
+				height={icon.height || icon.size}
+			/>
+		</Button>
 	);
 };
 
