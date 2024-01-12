@@ -1,7 +1,9 @@
+import { ReactNode } from 'react';
+
 import { ComponentWithPropsArray } from '@type/providerTree';
 
 type Children = {
-	children: React.ReactNode;
+	children: ReactNode;
 };
 
 export const buildProvidersTree = (

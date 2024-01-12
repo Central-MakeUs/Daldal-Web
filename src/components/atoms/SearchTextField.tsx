@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, KeyboardEvent } from 'react';
 
 import SvgIcon from '@assets/icons/SvgIcon';
 import colors from '@constants/colors';
@@ -14,7 +14,7 @@ function SearchTextField({ isFocused = false }: SearchTextFieldProps) {
 		setSearchValue('');
 	};
 
-	const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
 			handleClearSearchValue();
 		}
