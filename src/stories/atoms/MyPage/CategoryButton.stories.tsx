@@ -9,6 +9,11 @@ const meta = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	decorators: [
+		storyFn => (
+			<div className="flex flex-col items-center w-160">{storyFn()}</div>
+		),
+	],
 } satisfies Meta<typeof CategoryButton>;
 
 export default meta;
