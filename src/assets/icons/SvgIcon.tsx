@@ -1,7 +1,7 @@
 import iconsSvg from '@assets/icons/icons.svg';
-import svgIcon from '@type/svgIcon';
+import SvgIcon from '@type/svgIcon';
 
-const SvgIcon = ({ id, color, size }: svgIcon) => (
+const SvgIcon = ({ id, color, size }: SvgIcon) => (
 	<svg fill={color} width={size} height={size}>
 		<use href={`${iconsSvg}#${id}`} />
 	</svg>
