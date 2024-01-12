@@ -1,5 +1,7 @@
+import { ElementType } from 'react';
+
 export type ComponentWithProps = [
-	Provider: React.ElementType,
+	Provider: ElementType,
 	props?: Record<string, unknown>,
 ];
 
