@@ -30,7 +30,8 @@
 			"@utils/*": ["utils/*"],
 			"@stores/*": ["stores/*"],
 			"@type/*": ["type/*"],
-			"@pages/*": ["pages/*"]
+			"@pages/*": ["pages/*"],
+			"@models/*": ["models/*"]
 		},
 		"types": ["node"]
 	},
