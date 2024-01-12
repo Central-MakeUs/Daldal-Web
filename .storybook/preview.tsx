@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { setupIonicReact } from '@ionic/react';
+import { KonstaProvider } from 'konsta/react';
 
 import { GlobalStorybookStyles } from '../src/components/common/GlobalStorybookStyles';
 import { loadFontsForStorybook } from '../src/utils/loadFontsForStorybook';
@@ -25,8 +26,10 @@ loadFontsForStorybook();
 
 const withGlobalStyle = storyFn => (
 	<>
-		<GlobalStorybookStyles />
-		{storyFn()}
+		<KonstaProvider>
+			<GlobalStorybookStyles />
+			{storyFn()}
+		</KonstaProvider>
 	</>
 );
 
