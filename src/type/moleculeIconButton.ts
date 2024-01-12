@@ -1,8 +1,7 @@
-export type moleculeIconButton = {
+export interface moleculeIconButton {
 	onClick: () => void;
-};
+}
 
-export type moleculeIconButtonWithColor = {
-	onClick: () => void;
+export interface moleculeIconButtonWithColor extends moleculeIconButton {
 	color: string;
-};
+}
