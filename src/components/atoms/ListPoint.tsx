@@ -5,9 +5,9 @@ import colors from '@constants/colors';
 import { getPointText } from '@utils/formatData';
 import { Point } from '@models/point/entity/point';
 
-type ListPointProps = Pick<Point, 'point' | 'date'> & {
+interface ListPointProps extends Point {
 	onClick: () => void;
-};
+}
 
 function ListPoint({ date, point, onClick }: ListPointProps) {
 	return (
