@@ -1,10 +1,7 @@
 import IconButton from '@components/atoms/IconButton';
+import colors from '@constants/colors';
 
-type RightHeaderProps = {
-	likeWithNum: boolean;
-};
-
-const RightHeader = ({ likeWithNum }: RightHeaderProps) => {
+const RightHeader = () => {
 	const handleClickLike = () => {
 		console.log('찜 페이지 이동');
 	};
@@ -22,7 +19,7 @@ const RightHeader = ({ likeWithNum }: RightHeaderProps) => {
 			<IconButton
 				className={menuStyle}
 				icon={{
-					id: likeWithNum ? 'like-with-num' : 'like-full',
+					id: 'like-full',
 					size: 32,
 				}}
 				onClick={handleClickLike}
@@ -32,6 +29,7 @@ const RightHeader = ({ likeWithNum }: RightHeaderProps) => {
 				icon={{
 					id: 'point-paid',
 					size: 24,
+					color: colors.White,
 				}}
 				onClick={handleClickPoint}
 			/>
@@ -39,7 +37,7 @@ const RightHeader = ({ likeWithNum }: RightHeaderProps) => {
 				className={menuStyle}
 				icon={{
 					id: 'mypage-person',
-					size: 32,
+					size: 28,
 				}}
 				onClick={handleClickMyPage}
 			/>

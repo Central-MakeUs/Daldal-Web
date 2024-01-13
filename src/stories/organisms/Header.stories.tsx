@@ -1,21 +1,9 @@
 import Header from '@components/organisms/Header';
 import { Meta, StoryObj } from '@storybook/react';
 
-type WrapperProps = {
-	leftType: 'logo' | 'back';
-	rightType: 'default' | 'likeWithNum';
-};
-
-const Wrapper = ({ leftType, rightType }: WrapperProps) => (
-	<Header>
-		<Header.Left leftType={leftType} />
-		<Header.Right rightType={rightType} />
-	</Header>
-);
-
 const meta = {
 	title: 'organisms/Header',
-	component: Wrapper,
+	component: Header,
 	decorators: [
 		Story => (
 			<div style={{ width: '375px' }}>
@@ -30,14 +18,25 @@ const meta = {
 		},
 	},
 	tags: ['autoDocs'],
-} satisfies Meta<typeof Wrapper>;
+} satisfies Meta<typeof Header>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const LogoDefault: Story = {
 	args: {
 		leftType: 'logo',
-		rightType: 'default',
+	},
+};
+
+export const BackDefault: Story = {
+	args: {
+		leftType: 'back',
+	},
+};
+
+export const HomeDefault: Story = {
+	args: {
+		leftType: 'home',
 	},
 };
