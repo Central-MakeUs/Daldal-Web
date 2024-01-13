@@ -22,6 +22,7 @@ export default defineConfig({
 			},
 			{ find: '@stores', replacement: '/src/stores' },
 			{ find: '@models', replacement: '/src/models' },
+			{ find: '@contexts', replacement: '/src/contexts' },
 			{ find: '@', replacement: '/src' },
 		],
 	},
