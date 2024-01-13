@@ -11,7 +11,7 @@ type DefaultButtonProps = {
 		bgColor: 'Kakao' | 'White' | 'Gray70' | 'Black';
 		textColor: 'Black' | 'Gray20' | 'White';
 	};
-	onClick?: () => void;
+	onClick: () => void;
 };
 
 const DefaultButton = ({
