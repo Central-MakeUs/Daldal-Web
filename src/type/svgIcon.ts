@@ -3,6 +3,7 @@ export type IconId =
 	| 'direction-left'
 	| 'direction-right'
 	| 'home'
+	| 'kakaoTalk'
 	| 'like-full'
 	| 'like-with-num'
 	| 'like-empty'
