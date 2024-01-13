@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { useForm, SubmitHandler, FieldValues, set } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { FormContext, useFormContext } from '@contexts/FormContext';
-import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
+import { FormName, FormType, schema } from '@type/form';
 
 interface FormProps {
 	children: React.ReactNode;
-	onSubmit: SubmitHandler<FieldValues>;
-	schema: z.ZodObject<any>;
+	onSubmit: SubmitHandler<FormType>;
 }
 
-const Form = ({ children, onSubmit, schema }: FormProps) => {
+const Form = ({ children, onSubmit }: FormProps) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const loadingHandler = (boolean: boolean) => setIsLoading(boolean);
 
@@ -19,12 +18,12 @@ const Form = ({ children, onSubmit, schema }: FormProps) => {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<FieldValues>({
+	} = useForm<FormType>({
 		resolver: zodResolver(schema),
 		mode: 'onChange',
 	});
 
-	const submit: SubmitHandler<FieldValues> = async data => {
+	const submit: SubmitHandler<FormType> = async data => {
 		setIsLoading(true);
 		try {
 			await onSubmit(data);
@@ -51,7 +50,7 @@ const Form = ({ children, onSubmit, schema }: FormProps) => {
 };
 
 interface FormInputProps {
-	name: string;
+	name: FormName;
 	type?: 'text' | 'number';
 }
 
@@ -115,7 +114,7 @@ const FormLabel = ({ label }: FormLabelProps) => {
 };
 
 interface FormHelperTextProps {
-	name: string;
+	name: FormName;
 }
 
 const FormHelperText = ({ name }: FormHelperTextProps) => {
