@@ -3,7 +3,7 @@ import svgIcon from '@type/svgIcon';
 import { Button } from 'konsta/react';
 
 type IconButton = {
-	className: string;
+	className?: string;
 	icon: svgIcon;
 	onClick: () => void;
 };
