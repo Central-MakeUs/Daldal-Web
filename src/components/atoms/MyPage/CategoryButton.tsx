@@ -1,6 +1,6 @@
 import { Button } from 'konsta/react';
 
-import SvgIcon from '@assets/icons/SvgIcon';
+import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
 import { IconId } from '@type/svgIcon';
 

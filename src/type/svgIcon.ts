@@ -2,6 +2,7 @@ export type IconId =
 	| 'app-logo'
 	| 'direction-left'
 	| 'direction-right'
+	| 'home'
 	| 'like-full'
 	| 'like-with-num'
 	| 'like-empty'
@@ -24,6 +25,8 @@ type SvgIcon = {
 	id: IconId;
 	color?: string;
 	size?: number;
+	width?: number;
+	height?: number;
 };
 
 export default SvgIcon;
