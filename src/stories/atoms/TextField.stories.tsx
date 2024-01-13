@@ -12,9 +12,6 @@ const FormWrapper = () => {
 		<Form onSubmit={onSubmit}>
 			<Form.Label label="유저" />
 			<Form.Input name="USER" type="text" />
-			<Form.HelperText name="USER" />
-			<Form.Label label="은행" />
-			<Form.Input name="BANK" />
 			<Form.HelperText name="BANK" />
 			<Form.Label label="은행" />
 			<Form.BankButton />
