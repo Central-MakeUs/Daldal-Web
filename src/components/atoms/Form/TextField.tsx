@@ -4,6 +4,7 @@ import { FormContext, useFormContext } from '@contexts/FormContext';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
 import { FormName, FormType, schema } from '@type/form';
+import { Button } from 'konsta/react';
 
 interface FormProps {
 	children: React.ReactNode;
@@ -103,6 +104,23 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 	);
 };
 
+const FormBankButton = () => {
+	const [bankName, setBankName] = useState('');
+	const handleBankButtonClick = () => {
+		console.log('drawer를 붙일 거야');
+		setBankName('');
+	};
+
+	return (
+		<Button
+			className="w-full my-2 py-1 bg-transparent text-White typography-Subhead min-h-[38px] mb-8"
+			onClick={handleBankButtonClick}
+		>
+			{bankName}
+		</Button>
+	);
+};
+
 interface FormLabelProps {
 	label: string;
 }
@@ -153,5 +171,6 @@ Form.Input = FormInput;
 Form.Label = FormLabel;
 Form.HelperText = FormHelperText;
 Form.Button = FormButton;
+Form.BankButton = FormBankButton;
 
 export default Form;

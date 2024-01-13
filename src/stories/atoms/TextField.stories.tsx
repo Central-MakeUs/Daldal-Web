@@ -16,6 +16,8 @@ const FormWrapper = () => {
 			<Form.Label label="은행" />
 			<Form.Input name="BANK" />
 			<Form.HelperText name="BANK" />
+			<Form.Label label="은행" />
+			<Form.BankButton />
 			<Form.Label label="계좌번호" />
 			<Form.Input name="ACCOUNT" />
 			<Form.HelperText name="ACCOUNT" />
