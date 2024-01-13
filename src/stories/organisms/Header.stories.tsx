@@ -17,7 +17,7 @@ const meta = {
 			default: 'dark',
 		},
 	},
-	tags: ['autoDocs'],
+	tags: ['autodocs'],
 } satisfies Meta<typeof Header>;
 
 export default meta;
