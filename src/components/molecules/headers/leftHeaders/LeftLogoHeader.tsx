@@ -7,7 +7,7 @@ const LeftLogoHeader = () => {
 
 	return (
 		<IconButton
-			className="!w-28 !px-0 !py-4 active:bg-opacity-0 "
+			className="!w-28 !px-0 !py-4"
 			icon={{
 				id: 'app-logo',
 				width: 120,

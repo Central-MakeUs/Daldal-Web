@@ -15,7 +15,7 @@ const RightHeader = ({ likeWithNum }: RightHeaderProps) => {
 		console.log('마이페이지 이동');
 	};
 
-	const menuStyle = '!w-8 !px-0 !py-4 active:bg-opacity-0';
+	const menuStyle = '!w-8 !px-0 !py-4';
 
 	return (
 		<div className="flex flex-row gap-3">

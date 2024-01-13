@@ -10,7 +10,11 @@ type IconButton = {
 
 const IconButton = ({ className, icon, onClick }: IconButton) => {
 	return (
-		<Button className={className} onClick={onClick} clear>
+		<Button
+			className={`${className} active:bg-transparent`}
+			onClick={onClick}
+			clear
+		>
 			<SvgIcon
 				id={icon.id}
 				color={icon.color}
