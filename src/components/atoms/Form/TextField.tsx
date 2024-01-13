@@ -106,8 +106,8 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 
 const FormBankButton = () => {
 	const [bankName, setBankName] = useState('');
-	const handleBankButtonClick = () => {
-		console.log('drawer를 붙일 거야');
+	const handleBankButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
 		setBankName('신한은행');
 	};
 
