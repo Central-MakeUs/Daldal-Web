@@ -108,15 +108,15 @@ const FormBankButton = () => {
 	const [bankName, setBankName] = useState('');
 	const handleBankButtonClick = () => {
 		console.log('drawer를 붙일 거야');
-		setBankName('');
+		setBankName('신한은행');
 	};
 
 	return (
 		<Button
-			className="w-full my-2 py-1 bg-transparent text-White typography-Subhead min-h-[38px] mb-8"
+			className="w-full my-2 py-1 bg-transparent text-White min-h-[38px] mb-8 pl-0"
 			onClick={handleBankButtonClick}
 		>
-			{bankName}
+			<span className="text-left w-full typography-Subhead">{bankName}</span>
 		</Button>
 	);
 };
