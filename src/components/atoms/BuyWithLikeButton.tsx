@@ -7,7 +7,7 @@ type LikeButtonProps = {
 
 const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 	const handleLikeClick = () => {
-		console.log('현재 상품 찜 등록하기');
+		console.log('현재 상품 찜 등록 및 삭제하기');
 	};
 
 	const handleBuyClick = () => {
@@ -24,7 +24,7 @@ const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 				onClick={handleLikeClick}
 			/>
 			<Button
-				className="w-full h-[38px] !bg-Primary !text-White !text-base text-center"
+				className="w-full h-[38px] k-color-Primary !text-White !text-base text-center"
 				onClick={handleBuyClick}
 			>
 				구매하기
