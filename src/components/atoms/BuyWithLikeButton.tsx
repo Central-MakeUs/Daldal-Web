@@ -24,7 +24,7 @@ const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 				onClick={handleLikeClick}
 			/>
 			<Button
-				className="w-full h-[38px] k-color-Primary !text-White !text-base text-center rounded-sm"
+				className="w-full h-[38px] font-semibold k-color-Primary !text-White !text-base text-center rounded-sm"
 				onClick={handleBuyClick}
 			>
 				구매하기
