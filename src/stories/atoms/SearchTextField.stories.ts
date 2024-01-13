@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import SearchTextField from '@components/atoms/SearchTextField';
 
 const meta = {
-	title: 'components/Atoms/SearchTextField',
+	title: 'atoms/SearchTextField',
 	component: SearchTextField,
 	parameters: {
 		layout: 'centered',
