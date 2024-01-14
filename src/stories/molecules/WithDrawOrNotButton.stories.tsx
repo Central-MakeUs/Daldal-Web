@@ -2,7 +2,7 @@ import WithdrawOrNotButton from '@components/molecules/WithdrawOrNotButton';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'organisms/WithdrawOrNotButton',
+	title: 'molecules/WithdrawOrNotButton',
 	component: WithdrawOrNotButton,
 	decorators: [
 		Story => (
