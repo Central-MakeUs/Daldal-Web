@@ -137,15 +137,15 @@ interface FormHelperTextProps {
 
 const FormHelperText = ({ name }: FormHelperTextProps) => {
 	const { errors } = useFormContext();
-	const isError = () => !!errors[name]?.message;
+	const isError = !!errors[name]?.message;
 
 	return (
 		<span
 			className={`${
-				isError() ? 'text-Error' : 'text-transparent'
+				isError ? 'text-Error' : 'text-transparent'
 			} typography-Body2 typography-SB`}
 		>
-			{isError() ? String(errors[name]?.message) : 'no error'}
+			{isError ? String(errors[name]?.message) : 'no error'}
 		</span>
 	);
 };
