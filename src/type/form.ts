@@ -3,15 +3,21 @@ import * as z from 'zod';
 export const schema = z.object({
 	USER: z
 		.string({ required_error: '필수 입력 사항입니다.' })
+		.min(1, '필수 입력 사항입니다.')
 		.max(10, '10 글자 이하로 입력해주세요.'),
-	BANK: z.string({ required_error: '필수 입력 사항입니다.' }),
+	BANK: z
+		.string({ required_error: '필수 입력 사항입니다.' })
+		.min(1, '필수 입력 사항입니다.'),
 	ACCOUNT: z
 		.string({
 			required_error: '필수 입력 사항입니다.',
 		})
+		.min(1, '필수 입력 사항입니다.')
 		.regex(/^[0-9]+$/, '숫자만 입력해주세요.')
 		.max(16, '16 글자 이하로 입력해주세요.'),
-	POINT: z.string({ required_error: '필수 입력 사항입니다.' }),
+	POINT: z
+		.string({ required_error: '필수 입력 사항입니다.' })
+		.min(1, '필수 입력 사항입니다.'),
 });
 
 export type FormType = z.infer<typeof schema>;
