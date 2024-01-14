@@ -1,4 +1,4 @@
-import WithdrawOrNotButton from '@components/atoms/WithdrawOrNotButton';
+import WithdrawOrNotButton from '@components/molecules/WithdrawOrNotButton';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

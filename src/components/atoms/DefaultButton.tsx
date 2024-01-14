@@ -12,6 +12,7 @@ type DefaultButtonProps = {
 		bgColor: ColorKey;
 		textColor: ColorKey;
 	};
+	size: 'small' | 'large';
 	onClick: () => void;
 };
 
@@ -19,11 +20,13 @@ const DefaultButton = ({
 	iconId,
 	title,
 	color,
+	size,
 	onClick,
 }: DefaultButtonProps) => {
+	const height = size === 'large' ? '!h-12' : '!h-[45px]';
 	return (
 		<Button
-			className={`w-full !h-12 text-base font-semibold flex rounded !py-[14px] ${
+			className={`w-full ${height} text-base font-semibold flex rounded ${
 				iconId ? 'gap-6 justify-center items-center' : 'text-center'
 			} ${
 				color.bgColor === 'Black' &&

@@ -30,6 +30,7 @@ export const KakaoTalk: Story = {
 			bgColor: 'Kakao',
 			textColor: 'Black',
 		},
+		size: 'large',
 		title: '카카오톡으로 계속하기',
 	},
 };
@@ -40,6 +41,7 @@ export const ShoppingContained: Story = {
 			bgColor: 'White',
 			textColor: 'Black',
 		},
+		size: 'large',
 		title: '쇼핑하러 가기',
 	},
 };
@@ -50,6 +52,7 @@ export const ShoppingDisabled: Story = {
 			bgColor: 'Gray70',
 			textColor: 'Gray20',
 		},
+		size: 'large',
 		title: '쇼핑하러 가기',
 	},
 };
@@ -60,6 +63,7 @@ export const ShoppingOutlined: Story = {
 			bgColor: 'Black',
 			textColor: 'Gray20',
 		},
+		size: 'large',
 		title: '쇼핑하러 가기',
 	},
 };
