@@ -11,10 +11,8 @@ interface ListPointProps extends Point {
 
 function ListPoint({ date, point, onClick }: ListPointProps) {
 	return (
-		<Block
-			strong
-			inset
-			className="k-color-Gray90 bg-Gray90 flex items-center rounded-[13px] !p-4 cursor-pointer"
+		<div
+			className="flex items-center rounded-[13px] !p-4 cursor-pointer bg-Gray90"
 			onClick={onClick}
 		>
 			<Block className="flex items-center flex-1 gap-[10px] !m-0 !p-0">
@@ -29,7 +27,7 @@ function ListPoint({ date, point, onClick }: ListPointProps) {
 				</Block>
 			</Block>
 			<SvgIcon id="direction-right" color={colors.Gray20} size={24} />
-		</Block>
+		</div>
 	);
 }
 

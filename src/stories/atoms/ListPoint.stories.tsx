@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ListPoint from '@components/atoms/ListPoint';
 
 const meta = {
-	title: 'components/atoms/ListPoint',
+	title: 'atoms/ListPoint',
 	component: ListPoint,
 	parameters: {
 		layout: 'centerd',
