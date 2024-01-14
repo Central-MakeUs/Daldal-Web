@@ -16,11 +16,7 @@ import Routing from '@components/common/Routing';
 setupIonicReact();
 
 function App() {
-	return (
-		<IonApp>
-			<Routing />
-		</IonApp>
-	);
+	return <Routing />;
 }
 
 export default App;
