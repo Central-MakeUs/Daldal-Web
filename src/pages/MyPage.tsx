@@ -1,12 +1,24 @@
+import { useEffect, useState } from 'react';
+
 import CategoryButton from '@components/atoms/MyPage/CategoryButton';
 import PageLayout from '@components/templates/PageLayout';
 
 function MyPage() {
+	const [userName, setUserName] = useState('홍길동');
+	useEffect(() => {
+		const userName = localStorage.getItem('userName');
+		if (userName) {
+			setUserName(userName);
+		}
+	}, []);
+
 	return (
 		<PageLayout leftType="logo">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
 				<div className="flex gap-2 items-baseline">
-					<span className="text-Secondary-B typography-Headline">홍길동</span>
+					<span className="text-Secondary-B typography-Headline">
+						{userName}
+					</span>
 					회원님
 				</div>
 				카카오톡으로 로그인되셨습니다.
