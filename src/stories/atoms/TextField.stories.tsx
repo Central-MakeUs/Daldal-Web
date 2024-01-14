@@ -12,14 +12,14 @@ const FormWrapper = () => {
 		<Form onSubmit={onSubmit}>
 			<Form.Label label="유저" />
 			<Form.Input name="USER" type="text" />
-			<Form.HelperText name="BANK" />
+			<Form.HelperText name="USER" />
 			<Form.Label label="은행" />
 			<Form.BankButton />
 			<Form.Label label="계좌번호" />
 			<Form.Input name="ACCOUNT" type="number" />
 			<Form.HelperText name="ACCOUNT" />
 			<Form.Label label="포인트" />
-			<Form.Input name="POINT" />
+			<Form.PointInput name="POINT" />
 			<Form.HelperText name="POINT" />
 			<Form.Button>Submit</Form.Button>
 		</Form>
