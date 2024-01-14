@@ -3,7 +3,7 @@ import LeftHomeHeader from '@components/molecules/headers/leftHeaders/LeftHomeHe
 import LeftLogoHeader from '@components/molecules/headers/leftHeaders/LeftLogoHeader';
 import RightHeader from '@components/molecules/headers/rightHeaders/RightHeader';
 
-type LeftHeaderProps = {
+export type LeftHeaderProps = {
 	leftType: 'logo' | 'back' | 'home';
 };
 
