@@ -88,6 +88,7 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 						caret-transparent border-b-[3px]
 						${errors[name] ? 'border-b-Error' : 'border-b-White'}
 						${isFocused ? '' : 'border-b-transparent'}
+						[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
 					`}
 			disabled={isLoading}
 			onFocus={handleInputFocus}
