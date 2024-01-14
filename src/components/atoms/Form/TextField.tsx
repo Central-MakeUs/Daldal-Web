@@ -30,7 +30,6 @@ const Form = ({ children, onSubmit }: FormProps) => {
 			await onSubmit(data);
 		} catch (error) {
 			console.log(error);
-			setIsLoading(false);
 		} finally {
 			setIsLoading(false);
 		}
