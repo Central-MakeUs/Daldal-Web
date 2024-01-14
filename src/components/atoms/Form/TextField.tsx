@@ -156,11 +156,16 @@ interface FormButtonProps {
 
 const FormButton = ({ children }: FormButtonProps) => {
 	const { isLoading } = useFormContext();
+	const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		console.log('submit');
+	};
 	return (
 		<button
 			type="submit"
 			className="w-full py-2 text-white bg-blue-500 rounded-md"
 			disabled={isLoading}
+			onClick={handleOnClick}
 		>
 			{children}
 		</button>
