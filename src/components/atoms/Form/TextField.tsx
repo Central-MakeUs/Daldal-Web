@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { FormContext, useFormContext } from '@contexts/FormContext';
+import {
+	useForm,
+	SubmitHandler,
+	FormProvider,
+	useFormContext,
+} from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
 import { FormName, FormType, schema } from '@type/form';
@@ -12,40 +16,26 @@ interface FormProps {
 }
 
 const Form = ({ children, onSubmit }: FormProps) => {
-	const [isLoading, setIsLoading] = useState(false);
-	const loadingHandler = (boolean: boolean) => setIsLoading(boolean);
-
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<FormType>({
+	const methods = useForm<FormType>({
 		resolver: zodResolver(schema),
 		mode: 'onChange',
 	});
 
+	const { handleSubmit } = methods;
+
 	const submit: SubmitHandler<FormType> = async data => {
-		setIsLoading(true);
-		try {
-			await onSubmit(data);
-		} catch (error) {
-			console.log(error);
-		} finally {
-			setIsLoading(false);
-		}
+		await onSubmit(data);
 	};
 
 	return (
-		<FormContext.Provider
-			value={{ isLoading, errors, register, loadingHandler }}
-		>
+		<FormProvider {...methods}>
 			<form
 				onSubmit={handleSubmit(submit)}
 				className="flex flex-col w-96 p-6 gap-1"
 			>
 				{children}
 			</form>
-		</FormContext.Provider>
+		</FormProvider>
 	);
 };
 
@@ -55,11 +45,11 @@ interface FormInputProps {
 }
 
 const FormInput = ({ name, type = 'text' }: FormInputProps) => {
-	const { isLoading, register, errors } = useFormContext();
+	const { register, formState } = useFormContext();
+	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
 	const [value, setValue] = useState('');
 
-	const isPointInput = name === 'POINT';
 	const isNumber = type === 'number';
 
 	const handleInputFocus = () => {
@@ -71,11 +61,55 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 	};
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(isPointInput ? getOriginalPoint(e.target.value) : e.target.value);
+		setValue(e.target.value);
+	};
+
+	return (
+		<input
+			className={`w-full focus-visible:outline-none	
+				my-2 py-1 bg-transparent
+				text-White typography-Subhead
+				caret-transparent border-b-[3px]
+				${errors[name] ? 'border-b-Error' : 'border-b-White'}
+				${isFocused ? '' : 'border-b-transparent'}
+				[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+			`}
+			onFocus={handleInputFocus}
+			inputMode={isNumber ? 'numeric' : 'text'}
+			type={type}
+			value={value}
+			{...register(name, {
+				onBlur: handleInputBlur,
+				onChange: handleInputChange,
+			})}
+		/>
+	);
+};
+
+interface FormPointInputProps {
+	name: FormName;
+}
+
+const FormPointInput = ({ name }: FormPointInputProps) => {
+	const { register, formState } = useFormContext();
+	const { errors } = formState;
+	const [isFocused, setIsFocused] = useState(false);
+	const [value, setValue] = useState('');
+
+	const handleInputFocus = () => {
+		setIsFocused(true);
+	};
+
+	const handleInputBlur = () => {
+		setIsFocused(false);
+	};
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setValue(getOriginalPoint(e.target.value));
 	};
 
 	const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-		if (isPointInput && e.key === 'Backspace') {
+		if (e.key === 'Backspace') {
 			setValue(value.slice(0, -1));
 		}
 	};
@@ -83,22 +117,25 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 	return (
 		<input
 			className={`w-full focus-visible:outline-none	
-						my-2 py-1 bg-transparent
-						text-White typography-Subhead
-						caret-transparent border-b-[3px]
-						${errors[name] ? 'border-b-Error' : 'border-b-White'}
-						${isFocused ? '' : 'border-b-transparent'}
-						[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
-					`}
-			disabled={isLoading}
+				my-2 py-1 bg-transparent
+				text-White typography-Subhead
+				caret-transparent border-b-[3px]
+				${errors[name] ? 'border-b-Error' : 'border-b-White'}
+				${isFocused ? '' : 'border-b-transparent'}
+				[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none
+			`}
 			onFocus={handleInputFocus}
-			inputMode={isNumber ? 'numeric' : 'text'}
-			type={type}
+			inputMode="numeric"
+			type="string"
 			onKeyDown={handleInputKeyDown}
-			value={isPointInput ? getPointText(+value) : value}
+			value={getPointText(+value)}
 			{...register(name, {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
+				maxLength: {
+					value: 5,
+					message: '최대 5자리까지 입력 가능합니다.',
+				},
 			})}
 		/>
 	);
@@ -136,7 +173,8 @@ interface FormHelperTextProps {
 }
 
 const FormHelperText = ({ name }: FormHelperTextProps) => {
-	const { errors } = useFormContext();
+	const { formState } = useFormContext();
+	const { errors } = formState;
 	const isError = !!errors[name]?.message;
 
 	return (
@@ -155,17 +193,10 @@ interface FormButtonProps {
 }
 
 const FormButton = ({ children }: FormButtonProps) => {
-	const { isLoading } = useFormContext();
-	const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		console.log('submit');
-	};
 	return (
 		<button
 			type="submit"
 			className="w-full py-2 text-white bg-blue-500 rounded-md"
-			disabled={isLoading}
-			onClick={handleOnClick}
 		>
 			{children}
 		</button>
@@ -177,5 +208,6 @@ Form.Label = FormLabel;
 Form.HelperText = FormHelperText;
 Form.Button = FormButton;
 Form.BankButton = FormBankButton;
+Form.PointInput = FormPointInput;
 
 export default Form;
