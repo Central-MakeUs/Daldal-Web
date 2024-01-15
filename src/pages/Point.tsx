@@ -15,7 +15,7 @@ function Point() {
 				<PointList {...THIS_MONTH_POINT_LIST} />
 				<PointList {...NEXT_MONTH_POINT_LIST} />
 			</div>
-			<div className="sticky bottom-5 left-2/4 ">
+			<div className="sticky bottom-5 left-2/4 z-10">
 				<CaptionButton
 					mainText="포인트 출금하기"
 					caption="1,000원 이상부터  출금 가능"
