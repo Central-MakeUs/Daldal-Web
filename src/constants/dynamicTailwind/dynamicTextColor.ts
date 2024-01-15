@@ -12,6 +12,7 @@ const dynamicTextColor = {
 	Gray50: '!text-Gray50',
 	Gray20: '!text-Gray20',
 	Gray10: '!text-Gray10',
+	Error: '!text-Error',
 };
 
 export default dynamicTextColor;
