@@ -7,8 +7,8 @@ function Routing() {
 	return (
 		<BrowserRouter>
 			<Route path="/home" component={Home} exact={true} />
-			<Route path="/" component={Home} exact={true} />
-			<Route path="/my-page" component={MyPage} exact={true} />
+			<Route path="/" component={Home} exact />
+			<Route path="/my-page" component={MyPage} exact />
 		</BrowserRouter>
 	);
 }
