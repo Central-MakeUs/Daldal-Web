@@ -54,6 +54,7 @@ export const ShoppingDisabled: Story = {
 		},
 		size: 'large',
 		title: '쇼핑하러 가기',
+		disabled: true,
 	},
 };
 

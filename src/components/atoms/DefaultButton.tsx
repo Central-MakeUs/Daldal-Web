@@ -14,6 +14,7 @@ type DefaultButtonProps = {
 	};
 	size: 'small' | 'large';
 	onClick: () => void;
+	disabled?: boolean;
 };
 
 const DefaultButton = ({
@@ -22,6 +23,7 @@ const DefaultButton = ({
 	color,
 	size,
 	onClick,
+	disabled = false,
 }: DefaultButtonProps) => {
 	const height = size === 'large' ? '!h-12' : '!h-[45px]';
 	return (
@@ -33,6 +35,10 @@ const DefaultButton = ({
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
 			} ${dynamicKColor[color.bgColor]} ${dynamicTextColor[color.textColor]}`}
 			onClick={onClick}
+			disabled={disabled}
+			colors={{
+				disabledBg: 'bg-Gray70',
+			}}
 		>
 			{iconId && <SvgIcon id={iconId} width={22} height={20} />}
 			{title}
