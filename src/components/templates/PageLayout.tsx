@@ -8,7 +8,7 @@ interface PageLayoutProps extends LeftHeaderProps {
 
 function PageLayout({ children, className, leftType }: PageLayoutProps) {
 	return (
-		<div>
+		<div className="w-[600px] h-full">
 			<Header leftType={leftType} />
 			<div className={`px-[25px] py-3 ${className}`}>{children}</div>;
 		</div>
