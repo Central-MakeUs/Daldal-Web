@@ -1,9 +1,10 @@
+import { Button } from 'konsta/react';
+
 import SvgIcon from '@components/common/SvgIcon';
 import dynamicKColor from '@constants/dynamicTailwind/dynamicKColor';
 import dynamicTextColor from '@constants/dynamicTailwind/dynamicTextColor';
 import ColorKey from '@type/colorKey';
 import { IconId } from '@type/svgIcon';
-import { Button } from 'konsta/react';
 
 type DefaultButtonProps = {
 	iconId?: IconId;

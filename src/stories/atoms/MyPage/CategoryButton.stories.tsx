@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import CategoryButton from '@components/atoms/MyPage/CategoryButton';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'atoms/MyPage/CategoryButton',

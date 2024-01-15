@@ -1,6 +1,6 @@
 import PointList from '@components/molecules/GroupOrder/PointList';
-import { Meta, StoryObj } from '@storybook/react';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
+import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'molecules/GroupOrder/PointList',

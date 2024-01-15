@@ -1,4 +1,5 @@
 import { Button } from 'konsta/react';
+
 import IconButton from './IconButton';
 
 type LikeButtonProps = {
