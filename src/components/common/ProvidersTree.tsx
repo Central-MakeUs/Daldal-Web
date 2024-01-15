@@ -1,8 +1,8 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { KonstaProvider } from 'konsta/react';
 
-import { buildProvidersTree } from '@utils/buildProvidersTree';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ComponentWithProps } from '@type/providerTree';
+import { buildProvidersTree } from '@utils/buildProvidersTree';
 
 const queryClient = new QueryClient();
 const providerWithProps: ComponentWithProps[] = [

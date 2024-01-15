@@ -1,8 +1,7 @@
-import { BrowserRouter, Route } from 'react-router-dom';
-
 import Home from '@pages/Home';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function Routing() {
 	return (

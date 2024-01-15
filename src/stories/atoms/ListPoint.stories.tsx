@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import ListPoint from '@components/atoms/ListPoint';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'atoms/ListPoint',

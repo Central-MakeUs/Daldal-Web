@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
 	title: 'atoms/GroupOrderTextPoint',

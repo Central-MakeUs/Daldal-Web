@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Form from '@components/atoms/Form/TextField';
 import * as z from 'zod';
+
+import Form from '@components/atoms/Form/TextField';
 import { schema } from '@type/form';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const FormWrapper = () => {
 	const onSubmit = (data: z.infer<typeof schema>) => {

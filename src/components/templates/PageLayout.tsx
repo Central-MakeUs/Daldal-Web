@@ -1,5 +1,6 @@
-import Header, { LeftHeaderProps } from '@components/organisms/Header';
 import { ReactNode } from 'react';
+
+import Header, { LeftHeaderProps } from '@components/organisms/Header';
 
 interface PageLayoutProps extends LeftHeaderProps {
 	children: ReactNode;
