@@ -1,8 +1,8 @@
-import CaptionButton from '@components/atoms/CaptionButton';
+import CaptionButton from '@components/atoms/button/CaptionButton';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'atoms/CaptionButton',
+	title: 'atoms/button/CaptionButton',
 	component: CaptionButton,
 	decorators: [
 		Story => (

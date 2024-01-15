@@ -1,4 +1,4 @@
-import IconButton from '@components/atoms/IconButton';
+import IconButton from '@components/atoms/button/IconButton';
 
 const LeftLogoHeader = () => {
 	const handleClick = () => {

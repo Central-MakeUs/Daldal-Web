@@ -1,4 +1,4 @@
-import CaptionButton from '@components/atoms/CaptionButton';
+import CaptionButton from '@components/atoms/button/CaptionButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import PointList from '@components/molecules/groupOrder/PointList';
 import PageLayout from '@components/templates/PageLayout';

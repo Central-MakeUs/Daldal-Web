@@ -1,4 +1,4 @@
-import DefaultButton from '@components/atoms/DefaultButton';
+import DefaultButton from '@components/atoms/button/DefaultButton';
 
 const WithdrawOrNotButton = () => {
 	const handleNoClick = () => {
