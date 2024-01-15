@@ -16,7 +16,7 @@ const MyPage = () => {
 		<PageLayout leftType="logo">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
 				<div className="flex gap-2 items-baseline">
-					<span className="text-Secondary-B typography-Headline">
+					<span className="text-Secondary_B typography-Headline">
 						{userName}
 					</span>
 					회원님
