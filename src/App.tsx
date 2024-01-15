@@ -1,4 +1,4 @@
-import { IonApp, setupIonicReact } from '@ionic/react';
+import { setupIonicReact } from '@ionic/react';
 
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
