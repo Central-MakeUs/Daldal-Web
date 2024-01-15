@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 
 const meta = {
-	title: 'components/atoms/GroupOrderTextPoint',
+	title: 'atoms/GroupOrderTextPoint',
 	component: GroupOrderTextPoint,
 	parameters: {
 		layout: 'centered',

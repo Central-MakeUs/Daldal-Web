@@ -1,4 +1,4 @@
-import { IonApp, setupIonicReact } from '@ionic/react';
+import { setupIonicReact } from '@ionic/react';
 
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
@@ -16,11 +16,7 @@ import Routing from '@components/common/Routing';
 setupIonicReact();
 
 function App() {
-	return (
-		<IonApp>
-			<Routing />
-		</IonApp>
-	);
+	return <Routing />;
 }
 
 export default App;

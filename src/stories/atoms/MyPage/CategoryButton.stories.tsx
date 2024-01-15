@@ -3,12 +3,17 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CategoryButton from '@components/atoms/MyPage/CategoryButton';
 
 const meta = {
-	title: 'Components/atoms/MyPage/CategoryButton',
+	title: 'atoms/MyPage/CategoryButton',
 	component: CategoryButton,
 	parameters: {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	decorators: [
+		storyFn => (
+			<div className="flex flex-col items-center w-160">{storyFn()}</div>
+		),
+	],
 } satisfies Meta<typeof CategoryButton>;
 
 export default meta;

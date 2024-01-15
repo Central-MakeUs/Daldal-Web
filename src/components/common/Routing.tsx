@@ -1,20 +1,17 @@
-import { IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import Home from '@pages/Home';
-
-import { buildAnimation } from '@utils/buildAnimation';
+import MyPage from '@pages/MyPage';
+import Point from '@pages/Point';
 
 function Routing() {
 	return (
-		<IonReactRouter>
-			<IonRouterOutlet animation={buildAnimation}>
-				<BrowserRouter>
-					<Route path="/home" component={Home} exact={true} />
-				</BrowserRouter>
-			</IonRouterOutlet>
-		</IonReactRouter>
+		<BrowserRouter>
+			<Route path="/" component={Home} exact />
+			<Route path="/home" component={Home} exact />
+			<Route path="/my-page" component={MyPage} exact />
+			<Route path="/point" component={Point} exact />
+		</BrowserRouter>
 	);
 }
 

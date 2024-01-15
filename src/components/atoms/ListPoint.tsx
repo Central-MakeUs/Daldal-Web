@@ -1,4 +1,4 @@
-import { Block } from 'konsta/react';
+import { Block, Button } from 'konsta/react';
 
 import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
@@ -11,15 +11,13 @@ interface ListPointProps extends Point {
 
 function ListPoint({ date, point, onClick }: ListPointProps) {
 	return (
-		<Block
-			strong
-			inset
-			className="k-color-Gray90 bg-Gray90 flex items-center rounded-[13px] !p-4 cursor-pointer"
+		<Button
+			className="flex items-center rounded-[13px] !p-4 !k-color-Gray90 h-[66px]"
 			onClick={onClick}
 		>
 			<Block className="flex items-center flex-1 gap-[10px] !m-0 !p-0">
 				<SvgIcon id="point-paid" color={colors.Gray20} size={24} />
-				<Block className="flex flex-col !m-0 !p-0">
+				<Block className="flex flex-col !m-0 !p-0 text-left">
 					<span className="typography-Caption1 typography-SB text-Gray50">
 						{date}
 					</span>
@@ -29,7 +27,7 @@ function ListPoint({ date, point, onClick }: ListPointProps) {
 				</Block>
 			</Block>
 			<SvgIcon id="direction-right" color={colors.Gray20} size={24} />
-		</Block>
+		</Button>
 	);
 }
 

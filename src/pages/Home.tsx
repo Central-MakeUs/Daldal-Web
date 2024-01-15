@@ -1,15 +1,5 @@
-import { IonPage } from '@ionic/react';
-
 function Home() {
-	return (
-		<IonPage
-			style={{
-				backgroundColor: 'blue',
-			}}
-		>
-			Home
-		</IonPage>
-	);
+	return <div className="bg-blue-700 text-White h-full">Home</div>;
 }
 
 export default Home;

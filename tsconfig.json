@@ -31,7 +31,9 @@
 			"@stores/*": ["stores/*"],
 			"@type/*": ["type/*"],
 			"@pages/*": ["pages/*"],
-			"@models/*": ["models/*"]
+			"@models/*": ["models/*"],
+			"@contexts/*": ["contexts/*"],
+			"@mocks/*": ["mocks/*"]
 		},
 		"types": ["node"]
 	},

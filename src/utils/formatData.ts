@@ -5,3 +5,7 @@ export function changeNumberIntoStringWithComma(point: number) {
 export function getPointText(point: number) {
 	return `${changeNumberIntoStringWithComma(point)} P`;
 }
+
+export function getOriginalPoint(pointText: string) {
+	return String(Number(pointText.replace(/[^0-9]/g, '')));
+}
