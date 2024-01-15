@@ -15,7 +15,7 @@ function CaptionButton({
 }: CaptionButtonProps) {
 	return (
 		<Button
-			className="k-color-Primary flex flex-col h-15"
+			className="k-color-Primary flex flex-col !h-15"
 			colors={{
 				disabledBg: 'bg-Gray20',
 			}}
