@@ -3,7 +3,7 @@ import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-function Routing() {
+const Routing = () => {
 	return (
 		<BrowserRouter>
 			<Route path="/" component={Home} exact />
@@ -12,6 +12,6 @@ function Routing() {
 			<Route path="/point" component={Point} exact />
 		</BrowserRouter>
 	);
-}
+};
 
 export default Routing;

@@ -14,8 +14,8 @@ import '@ionic/react/css/display.css';
 
 setupIonicReact();
 
-function App() {
+const App = () => {
 	return <Routing />;
-}
+};
 
 export default App;

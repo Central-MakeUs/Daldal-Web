@@ -9,7 +9,7 @@ interface ListPointProps extends Point {
 	onClick: () => void;
 }
 
-function ListPoint({ date, point, onClick }: ListPointProps) {
+const ListPoint = ({ date, point, onClick }: ListPointProps) => {
 	return (
 		<Button
 			className="flex items-center rounded-[13px] !p-4 !k-color-Gray90 h-[66px]"
@@ -29,6 +29,6 @@ function ListPoint({ date, point, onClick }: ListPointProps) {
 			<SvgIcon id="direction-right" color={colors.Gray20} size={24} />
 		</Button>
 	);
-}
+};
 
 export default ListPoint;

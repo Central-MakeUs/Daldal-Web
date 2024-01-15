@@ -10,7 +10,7 @@ interface CategoryButtonProps {
 	onClick?: () => void;
 }
 
-function CategoryButton({ iconId, title, onClick }: CategoryButtonProps) {
+const CategoryButton = ({ iconId, title, onClick }: CategoryButtonProps) => {
 	return (
 		<Button
 			onClick={onClick}
@@ -22,6 +22,6 @@ function CategoryButton({ iconId, title, onClick }: CategoryButtonProps) {
 			{title}
 		</Button>
 	);
-}
+};
 
 export default CategoryButton;

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import CategoryButton from '@components/atoms/MyPage/CategoryButton';
 import PageLayout from '@components/templates/PageLayout';
 
-function MyPage() {
+const MyPage = () => {
 	const [userName, setUserName] = useState('홍길동');
 	useEffect(() => {
 		const userName = localStorage.getItem('userName');
@@ -34,6 +34,6 @@ function MyPage() {
 			</div>
 		</PageLayout>
 	);
-}
+};
 
 export default MyPage;

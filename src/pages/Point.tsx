@@ -4,7 +4,7 @@ import PointList from '@components/molecules/GroupOrder/PointList';
 import PageLayout from '@components/templates/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 
-function Point() {
+const Point = () => {
 	return (
 		<PageLayout leftType="logo" className="relative">
 			<div className="typography-Body1 typography-R text-White mb-7">
@@ -24,6 +24,6 @@ function Point() {
 			</div>
 		</PageLayout>
 	);
-}
+};
 
 export default Point;

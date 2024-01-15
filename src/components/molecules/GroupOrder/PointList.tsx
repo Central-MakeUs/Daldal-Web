@@ -13,7 +13,7 @@ interface PointListProps {
 	month: PointListTitleByMonthType;
 }
 
-function PointList({ totalPoint, pointList, month }: PointListProps) {
+const PointList = ({ totalPoint, pointList, month }: PointListProps) => {
 	const descriptions = GROUP_ORDER_LIST_POINT_DESCRIPTION;
 	const isThisMonth = month === 'THIS';
 
@@ -45,6 +45,6 @@ function PointList({ totalPoint, pointList, month }: PointListProps) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default PointList;

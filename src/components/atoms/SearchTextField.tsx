@@ -7,7 +7,7 @@ interface SearchTextFieldProps {
 	isFocused?: boolean;
 }
 
-function SearchTextField({ isFocused = false }: SearchTextFieldProps) {
+const SearchTextField = ({ isFocused = false }: SearchTextFieldProps) => {
 	const [searchValue, setSearchValue] = useState('');
 
 	const handleClearSearchValue = () => {
@@ -34,6 +34,6 @@ function SearchTextField({ isFocused = false }: SearchTextFieldProps) {
 			/>
 		</div>
 	);
-}
+};
 
 export default SearchTextField;

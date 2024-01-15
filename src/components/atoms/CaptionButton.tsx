@@ -7,12 +7,12 @@ interface CaptionButtonProps {
 	onClick?: () => void;
 }
 
-function CaptionButton({
+const CaptionButton = ({
 	mainText,
 	caption,
 	disabled = false,
 	onClick,
-}: CaptionButtonProps) {
+}: CaptionButtonProps) => {
 	return (
 		<Button
 			className="k-color-Primary flex flex-col !h-15"
@@ -30,6 +30,6 @@ function CaptionButton({
 			</span>
 		</Button>
 	);
-}
+};
 
 export default CaptionButton;
