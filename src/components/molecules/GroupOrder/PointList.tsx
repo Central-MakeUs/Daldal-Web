@@ -26,7 +26,7 @@ function PointList({ totalPoint, pointList, month }: PointListProps) {
 				<div className="flex flex-col typography-Body4 typography-R text-Gray20">
 					{isThisMonth &&
 						descriptions.map((description, index) => (
-							<span key={index}>{description}</span>
+							<span key={`PointListDescription#${index}`}>{description}</span>
 						))}
 				</div>
 			</div>
@@ -36,7 +36,7 @@ function PointList({ totalPoint, pointList, month }: PointListProps) {
 			<div className="flex flex-col gap-2">
 				{pointList.map(({ point, date }, index) => (
 					<ListPoint
-						key={index}
+						key={`ListPoint#${index}`}
 						point={point}
 						date={date}
 						onClick={() => console.log('포인트 정보 상세보기로 이동')}
