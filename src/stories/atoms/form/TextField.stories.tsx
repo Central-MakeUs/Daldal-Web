@@ -29,7 +29,7 @@ const FormWrapper = () => {
 };
 
 const meta = {
-	title: 'atoms/TextField',
+	title: 'atoms/form/TextField',
 	component: FormWrapper,
 	parameters: {
 		layout: 'centerd',
