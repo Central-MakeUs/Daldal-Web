@@ -1,11 +1,11 @@
 import { Button } from 'konsta/react';
 
-interface CaptionButtonProps {
+type CaptionButtonProps = {
 	mainText: string;
 	caption: string;
 	disabled?: boolean;
 	onClick?: () => void;
-}
+};
 
 const CaptionButton = ({
 	mainText,

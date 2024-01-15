@@ -2,10 +2,10 @@ import { ReactNode } from 'react';
 
 import Header, { LeftHeaderProps } from '@components/organisms/Header';
 
-interface PageLayoutProps extends LeftHeaderProps {
+type PageLayoutProps = {
 	children: ReactNode;
 	className?: string;
-}
+} & LeftHeaderProps;
 
 const PageLayout = ({ children, className, leftType }: PageLayoutProps) => {
 	return (

@@ -4,11 +4,11 @@ import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
 import { IconId } from '@type/svgIcon';
 
-interface CategoryButtonProps {
+type CategoryButtonProps = {
 	iconId?: IconId;
 	title: string;
 	onClick?: () => void;
-}
+};
 
 const CategoryButton = ({ iconId, title, onClick }: CategoryButtonProps) => {
 	return (

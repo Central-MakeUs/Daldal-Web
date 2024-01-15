@@ -7,11 +7,11 @@ import {
 import { Point } from '@models/point/entity/point';
 import { getPointText } from '@utils/formatData';
 
-interface PointListProps {
+type PointListProps = {
 	totalPoint: number;
 	pointList: Point[];
 	month: PointListTitleByMonthType;
-}
+};
 
 const PointList = ({ totalPoint, pointList, month }: PointListProps) => {
 	const descriptions = GROUP_ORDER_LIST_POINT_DESCRIPTION;

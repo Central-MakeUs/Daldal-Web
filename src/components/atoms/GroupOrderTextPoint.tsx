@@ -1,9 +1,9 @@
 import { Point } from '@models/point/entity/point';
 import { getPointText } from '@utils/formatData';
 
-interface GroupOrderTextPointProps {
+type GroupOrderTextPointProps = {
 	point: Point['point'];
-}
+};
 
 const GroupOrderTextPoint = ({ point }: GroupOrderTextPointProps) => {
 	return (

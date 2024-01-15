@@ -11,10 +11,10 @@ import {
 	useFormContext,
 } from 'react-hook-form';
 
-interface FormProps {
+type FormProps = {
 	children: React.ReactNode;
 	onSubmit: SubmitHandler<FormType>;
-}
+};
 
 const Form = ({ children, onSubmit }: FormProps) => {
 	const methods = useForm<FormType>({
@@ -40,10 +40,10 @@ const Form = ({ children, onSubmit }: FormProps) => {
 	);
 };
 
-interface FormInputProps {
+type FormInputProps = {
 	name: FormName;
 	type?: 'text' | 'number';
-}
+};
 
 const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 	const { register, formState } = useFormContext();
@@ -87,9 +87,9 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 	);
 };
 
-interface FormPointInputProps {
+type FormPointInputProps = {
 	name: FormName;
-}
+};
 
 const FormPointInput = ({ name }: FormPointInputProps) => {
 	const { register, formState } = useFormContext();
@@ -159,9 +159,9 @@ const FormBankButton = () => {
 	);
 };
 
-interface FormLabelProps {
+type FormLabelProps = {
 	label: string;
-}
+};
 
 const FormLabel = ({ label }: FormLabelProps) => {
 	return (
@@ -169,9 +169,9 @@ const FormLabel = ({ label }: FormLabelProps) => {
 	);
 };
 
-interface FormHelperTextProps {
+type FormHelperTextProps = {
 	name: FormName;
-}
+};
 
 const FormHelperText = ({ name }: FormHelperTextProps) => {
 	const { formState } = useFormContext();
@@ -189,9 +189,9 @@ const FormHelperText = ({ name }: FormHelperTextProps) => {
 	);
 };
 
-interface FormButtonProps {
+type FormButtonProps = {
 	children: React.ReactNode;
-}
+};
 
 const FormButton = ({ children }: FormButtonProps) => {
 	return (
