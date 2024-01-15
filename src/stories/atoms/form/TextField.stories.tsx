@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-import Form from '@components/atoms/Form/TextField';
+import Form from '@components/atoms/form/TextField';
 import { schema } from '@type/form';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -29,7 +29,7 @@ const FormWrapper = () => {
 };
 
 const meta = {
-	title: 'atoms/TextField',
+	title: 'atoms/form/TextField',
 	component: FormWrapper,
 	parameters: {
 		layout: 'centerd',

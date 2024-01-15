@@ -3,11 +3,11 @@ import { useState, KeyboardEvent } from 'react';
 import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
 
-interface SearchTextFieldProps {
+type SearchTextFieldProps = {
 	isFocused?: boolean;
-}
+};
 
-function SearchTextField({ isFocused = false }: SearchTextFieldProps) {
+const SearchTextField = ({ isFocused = false }: SearchTextFieldProps) => {
 	const [searchValue, setSearchValue] = useState('');
 
 	const handleClearSearchValue = () => {
@@ -34,6 +34,6 @@ function SearchTextField({ isFocused = false }: SearchTextFieldProps) {
 			/>
 		</div>
 	);
-}
+};
 
 export default SearchTextField;

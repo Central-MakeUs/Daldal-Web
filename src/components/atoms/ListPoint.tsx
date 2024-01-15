@@ -5,11 +5,11 @@ import colors from '@constants/colors';
 import { Point } from '@models/point/entity/point';
 import { getPointText } from '@utils/formatData';
 
-interface ListPointProps extends Point {
+type ListPointProps = {
 	onClick: () => void;
-}
+} & Point;
 
-function ListPoint({ date, point, onClick }: ListPointProps) {
+const ListPoint = ({ date, point, onClick }: ListPointProps) => {
 	return (
 		<Button
 			className="flex items-center rounded-[13px] !p-4 !k-color-Gray90 h-[66px]"
@@ -29,6 +29,6 @@ function ListPoint({ date, point, onClick }: ListPointProps) {
 			<SvgIcon id="direction-right" color={colors.Gray20} size={24} />
 		</Button>
 	);
-}
+};
 
 export default ListPoint;

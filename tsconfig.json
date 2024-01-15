@@ -33,7 +33,9 @@
 			"@pages/*": ["pages/*"],
 			"@models/*": ["models/*"],
 			"@contexts/*": ["contexts/*"],
-			"@mocks/*": ["mocks/*"]
+			"@mocks/*": ["mocks/*"],
+			"@tests/*": ["tests/*"],
+			"@apis/*": ["apis/*"]
 		},
 		"types": ["node"]
 	},

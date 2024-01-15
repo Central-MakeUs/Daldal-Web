@@ -3,13 +3,13 @@ import { Button } from 'konsta/react';
 import SvgIcon from '@components/common/SvgIcon';
 import svgIcon from '@type/svgIcon';
 
-type IconButton = {
+type IconButtonProps = {
 	className?: string;
 	icon: svgIcon;
 	onClick: () => void;
 };
 
-const IconButton = ({ className, icon, onClick }: IconButton) => {
+const IconButton = ({ className, icon, onClick }: IconButtonProps) => {
 	return (
 		<Button
 			className={`${className} active:bg-transparent`}

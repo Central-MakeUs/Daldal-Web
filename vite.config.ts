@@ -24,6 +24,8 @@ export default defineConfig({
 			{ find: '@models', replacement: '/src/models' },
 			{ find: '@contexts', replacement: '/src/contexts' },
 			{ find: '@mocks', replacement: '/src/mocks' },
+			{ find: '@tests', replacement: '/src/tests' },
+			{ find: '@apis', replacement: '/src/apis' },
 			{ find: '@', replacement: '/src' },
 		],
 	},

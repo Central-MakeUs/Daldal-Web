@@ -1,6 +1,6 @@
 import './button.css';
 
-interface ButtonProps {
+type ButtonProps = {
 	/**
 	 * Is this the principal call to action on the page?
 	 */
@@ -21,7 +21,7 @@ interface ButtonProps {
 	 * Optional click handler
 	 */
 	onClick?: () => void;
-}
+};
 
 /**
  * Primary UI component for user interaction

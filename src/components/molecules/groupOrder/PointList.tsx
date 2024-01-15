@@ -7,13 +7,13 @@ import {
 import { Point } from '@models/point/entity/point';
 import { getPointText } from '@utils/formatData';
 
-interface PointListProps {
+type PointListProps = {
 	totalPoint: number;
 	pointList: Point[];
 	month: PointListTitleByMonthType;
-}
+};
 
-function PointList({ totalPoint, pointList, month }: PointListProps) {
+const PointList = ({ totalPoint, pointList, month }: PointListProps) => {
 	const descriptions = GROUP_ORDER_LIST_POINT_DESCRIPTION;
 	const isThisMonth = month === 'THIS';
 
@@ -45,6 +45,6 @@ function PointList({ totalPoint, pointList, month }: PointListProps) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default PointList;

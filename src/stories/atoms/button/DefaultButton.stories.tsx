@@ -1,8 +1,8 @@
-import DefaultButton from '@components/atoms/DefaultButton';
+import DefaultButton from '@components/atoms/button/DefaultButton';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'atoms/DefaultButton',
+	title: 'atoms/button/DefaultButton',
 	component: DefaultButton,
 	decorators: [
 		Story => (

@@ -29,7 +29,7 @@ const DefaultButton = ({
 	const height = size === 'large' ? '!h-12' : '!h-[45px]';
 	return (
 		<Button
-			className={`w-full ${height} text-base font-semibold flex rounded ${
+			className={`w-full ${height} !typography-Btn_text1 flex rounded ${
 				iconId ? 'gap-6 justify-center items-center' : 'text-center'
 			} ${
 				color.bgColor === 'Black' &&
