@@ -1,6 +1,6 @@
 import CaptionButton from '@components/atoms/CaptionButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
-import PointList from '@components/molecules/GroupOrder/PointList';
+import PointList from '@components/molecules/groupOrder/PointList';
 import PageLayout from '@components/templates/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 

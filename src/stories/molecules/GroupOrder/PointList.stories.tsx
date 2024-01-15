@@ -1,4 +1,4 @@
-import PointList from '@components/molecules/GroupOrder/PointList';
+import PointList from '@components/molecules/groupOrder/PointList';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 import { Meta, StoryObj } from '@storybook/react';
 

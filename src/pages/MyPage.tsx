@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CategoryButton from '@components/atoms/MyPage/CategoryButton';
+import CategoryButton from '@components/atoms/myPage/CategoryButton';
 import PageLayout from '@components/templates/PageLayout';
 
 const MyPage = () => {
