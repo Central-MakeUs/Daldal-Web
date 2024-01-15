@@ -31,6 +31,9 @@ const meta = {
 	component: FormWrapper,
 	parameters: {
 		layout: 'centerd',
+		backgrounds: {
+			default: 'dark',
+		},
 	},
 	tags: ['autodocs'],
 	decorators: [],

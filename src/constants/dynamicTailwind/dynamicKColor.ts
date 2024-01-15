@@ -12,6 +12,7 @@ const dynamicKColor = {
 	Gray50: '!k-color-Gray50',
 	Gray20: '!k-color-Gray20',
 	Gray10: '!k-color-Gray10',
+	Error: '!k-color-Error',
 };
 
 export default dynamicKColor;
