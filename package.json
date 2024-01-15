@@ -13,7 +13,8 @@
 		"build-storybook": "storybook build",
 		"prepare": "husky install",
 		"lint-staged": "lint-staged",
-		"prettier": "prettier --write ."
+		"prettier": "prettier --write .",
+		"chromatic": "chromatic --project-token=chpt_5816db41f10f03e"
 	},
 	"lint-staged": {
 		"src/**/*.{js,jsx,ts,tsx}": [
