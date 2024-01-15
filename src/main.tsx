@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 
 import { ProvidersTree } from '@components/common/ProvidersTree';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -9,10 +9,10 @@ import App from './App';
 import '@/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
+	<StrictMode>
 		<ProvidersTree>
 			<App />
 			<ReactQueryDevtools initialIsOpen={false} />
 		</ProvidersTree>
-	</React.StrictMode>,
+	</StrictMode>,
 );

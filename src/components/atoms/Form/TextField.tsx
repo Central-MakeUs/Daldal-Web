@@ -1,5 +1,11 @@
 import { Button } from 'konsta/react';
-import React, { useState } from 'react';
+import {
+	useState,
+	ReactNode,
+	ChangeEvent,
+	KeyboardEvent,
+	MouseEvent,
+} from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormName, FormType, schema } from '@type/form';
@@ -12,7 +18,7 @@ import {
 } from 'react-hook-form';
 
 type FormProps = {
-	children: React.ReactNode;
+	children: ReactNode;
 	onSubmit: SubmitHandler<FormType>;
 };
 
@@ -61,7 +67,7 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 		setIsFocused(false);
 	};
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setValue(e.target.value);
 	};
 
@@ -105,11 +111,11 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 		setIsFocused(false);
 	};
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setValue(getOriginalPoint(e.target.value));
 	};
 
-	const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+	const handleInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Backspace') {
 			setValue(value.slice(0, -1));
 		}
@@ -144,7 +150,7 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 
 const FormBankButton = () => {
 	const [bankName, setBankName] = useState('');
-	const handleBankButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const handleBankButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 		setBankName('신한은행');
 	};
@@ -190,7 +196,7 @@ const FormHelperText = ({ name }: FormHelperTextProps) => {
 };
 
 type FormButtonProps = {
-	children: React.ReactNode;
+	children: ReactNode;
 };
 
 const FormButton = ({ children }: FormButtonProps) => {
