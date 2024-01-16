@@ -5,12 +5,14 @@ type ProductCardListProps = {
 	gridCols?: number;
 	size?: 'small' | 'medium' | 'large';
 	type?: 'heart' | 'checkbox' | 'default';
+	productList?: typeof mockProductList;
 };
 
 const ProductCardList = ({
 	gridCols,
 	size = 'medium',
 	type = 'default',
+	productList = mockProductList,
 }: ProductCardListProps) => {
 	const classNameOfGridCols = gridCols
 		? `grid-cols-${gridCols}`
@@ -18,7 +20,7 @@ const ProductCardList = ({
 
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols}`}>
-			{mockProductList.map(product => {
+			{productList.map(product => {
 				return (
 					<ProductCard
 						thumbnail={product.image}
