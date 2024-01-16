@@ -78,7 +78,9 @@ const ProductCard = ({
 	};
 
 	return (
-		<div className={`flex flex-col ${stylesBySize[size].containerGap}`}>
+		<div
+			className={`flex flex-col ${stylesBySize[size].containerGap} text-White`}
+		>
 			{Image[type]}
 			<div>
 				{renderCategory()}
