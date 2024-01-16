@@ -4,7 +4,6 @@ import colors from '@constants/colors';
 type ImageWithCheckProps = {
 	src: string;
 	alt: string;
-	size: number;
 	isFullHeart: boolean;
 	handleClickHeart: () => void;
 };
@@ -13,12 +12,11 @@ const ImageWithHeart = ({
 	src,
 	alt,
 	handleClickHeart,
-	size,
 	isFullHeart,
 }: ImageWithCheckProps) => {
 	return (
-		<div className="relative rounded-[5px] overflow-hidden">
-			<img src={src} alt={alt} width={size} height={size} />
+		<div className="relative rounded-[5px] overflow-hidden w-full aspect-square">
+			<img src={src} alt={alt} className="w-full h-full" />
 			<IconButton
 				icon={{
 					id: isFullHeart ? 'like-full' : 'like-empty',

@@ -8,10 +8,9 @@ type ImageWithCheckProps = {
 	src: string;
 	alt: string;
 	onClick?: () => void;
-	size: number;
 };
 
-const ImageWithCheck = ({ src, alt, onClick, size }: ImageWithCheckProps) => {
+const ImageWithCheck = ({ src, alt, onClick }: ImageWithCheckProps) => {
 	const [isChecked, setIsChecked] = useState(false);
 
 	const handleChangeCheck = () => {
@@ -19,8 +18,11 @@ const ImageWithCheck = ({ src, alt, onClick, size }: ImageWithCheckProps) => {
 	};
 
 	return (
-		<div className="relative rounded-[5px] overflow-hidden" onClick={onClick}>
-			<img src={src} alt={alt} width={size} height={size} />
+		<div
+			className="relative rounded-[5px] overflow-hidden w-full aspect-square"
+			onClick={onClick}
+		>
+			<img src={src} alt={alt} className="w-full h-full" />
 			<IconButton
 				icon={{
 					id: 'circle-check',
