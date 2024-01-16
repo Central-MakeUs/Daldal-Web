@@ -46,3 +46,39 @@ export const Heart: Story = {
 		type: 'heart',
 	},
 };
+
+export const Small: Story = {
+	args: {
+		thumbnail: 'https://via.placeholder.com/150',
+		title: 'title',
+		price: 10000,
+		paybackPrice: 200000,
+		size: 'small',
+		type: 'default',
+	},
+};
+
+export const Medium: Story = {
+	args: {
+		thumbnail: 'https://via.placeholder.com/150',
+		title:
+			'바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩',
+		price: 10000,
+		paybackPrice: 200000,
+		size: 'medium',
+		type: 'default',
+	},
+};
+
+export const Large: Story = {
+	args: {
+		thumbnail: 'https://via.placeholder.com/150',
+		title:
+			'바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩',
+		price: 10000,
+		paybackPrice: 200000,
+		size: 'large',
+		type: 'default',
+		category: '의류',
+	},
+};
