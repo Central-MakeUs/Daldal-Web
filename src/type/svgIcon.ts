@@ -20,7 +20,9 @@ export type IconId =
 	| 'category-jewlery'
 	| 'category-makeup'
 	| 'category-living'
-	| 'category-shoes';
+	| 'category-shoes'
+	| 'close'
+	| 'baseline-apple';
 
 type SvgIcon = {
 	id: IconId;
