@@ -9,10 +9,10 @@ const LoginBottomSheet = () => {
 
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
-			<DrawerContent className="">
-				<div className="mx-auto w-full max-w-[600px]">
-					<div className="flex w-full !typography-Body1 !typography-M mb-6">
-						<div className="w-full">
+			<DrawerContent className="mx-auto w-full max-w-[600px]">
+				<div className="px-[23px]">
+					<div className="flex w-full">
+						<div className="w-full !typography-Body1 !typography-M mb-6">
 							로그인하고
 							<br />더 많은 서비스를 이용해보아요!
 						</div>

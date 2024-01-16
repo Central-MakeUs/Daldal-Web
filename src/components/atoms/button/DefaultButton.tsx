@@ -35,9 +35,11 @@ const DefaultButton = ({
 			} ${
 				color.bgColor === 'Black' &&
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
-			} ${
-				color.borderColor && `!border-[1px] !border-solid ${color.borderColor}`
-			} 
+			}
+			${
+				color.borderColor &&
+				`!border-[1px] !border-solid !border-${color.borderColor}`
+			}
 			${dynamicKColor[color.bgColor]} ${dynamicTextColor[color.textColor]}`}
 			onClick={onClick}
 			disabled={disabled}
