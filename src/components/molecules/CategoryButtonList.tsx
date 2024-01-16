@@ -15,10 +15,10 @@ const CategoryButtonList = () => {
 
 	return (
 		<div className="flex justify-between py-3 px-7 my-2">
-			{categoyList.map(category => {
+			{categoyList.map((category, index) => {
 				return (
 					<ProductCategoryButton
-						key={category.id}
+						key={`CategoryButton#${index}`}
 						category={category.name}
 						handleCategoryButtonClick={() => {
 							console.log(category.name + '카테고리로 이동');

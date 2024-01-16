@@ -20,13 +20,13 @@ const ProductCardList = ({
 
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols}`}>
-			{productList.map(product => {
+			{productList.map((product, id) => {
 				return (
 					<ProductCard
 						thumbnail={product.image}
 						size={size}
 						type={type}
-						key={product.id}
+						key={`ProductCard#${id}`}
 						{...product}
 					/>
 				);
