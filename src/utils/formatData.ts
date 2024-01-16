@@ -9,3 +9,7 @@ export const getPointText = (point: number) => {
 export const getOriginalPoint = (pointText: string) => {
 	return String(Number(pointText.replace(/[^0-9]/g, '')));
 };
+
+export const getPriceText = (price: number) => {
+	return `${changeNumberIntoStringWithComma(price)}원`;
+};
