@@ -1,5 +1,11 @@
+import PageLayout from '@components/templates/PageLayout';
+
 const Home = () => {
-	return <div className="bg-blue-700 text-White h-full">Home</div>;
+	return (
+		<PageLayout leftType="logo" className="relative">
+			홈 화면
+		</PageLayout>
+	);
 };
 
 export default Home;
