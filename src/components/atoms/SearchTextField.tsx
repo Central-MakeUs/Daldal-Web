@@ -21,7 +21,7 @@ const SearchTextField = ({ isFocused = false }: SearchTextFieldProps) => {
 	};
 
 	return (
-		<div className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center">
+		<div className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6">
 			<SvgIcon id="search" size={24} color={colors.Gray20} />
 			<input
 				autoFocus={isFocused}
