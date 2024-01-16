@@ -24,7 +24,7 @@ const ImageWithHeart = ({
 					color: colors.Primary,
 				}}
 				onClick={handleClickHeart}
-				className="w-fit absolute top-1 right-1 z-10"
+				className="!w-fit absolute top-1 right-1 z-10"
 			/>
 		</div>
 	);

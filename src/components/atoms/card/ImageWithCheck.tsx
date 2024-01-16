@@ -28,7 +28,7 @@ const ImageWithCheck = ({ src, alt }: ImageWithCheckProps) => {
 					width: 24,
 					color: isChecked ? colors.Primary : colors.Gray20,
 				}}
-				className="w-fit absolute top-1 right-1 z-10"
+				className="!w-fit absolute top-1 right-1 z-10"
 				onClick={handleChangeCheck}
 			/>
 			<BackdropFilter isOverlayNeeded={isChecked} />
