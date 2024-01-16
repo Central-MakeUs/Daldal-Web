@@ -12,6 +12,7 @@ type DefaultButtonProps = {
 	color: {
 		bgColor: ColorKey;
 		textColor: ColorKey;
+		borderColor?: ColorKey;
 	};
 	size: 'small' | 'large';
 	onClick: () => void;
@@ -34,7 +35,10 @@ const DefaultButton = ({
 			} ${
 				color.bgColor === 'Black' &&
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
-			} ${dynamicKColor[color.bgColor]} ${dynamicTextColor[color.textColor]}`}
+			} ${
+				color.borderColor && `!border-[1px] !border-solid ${color.borderColor}`
+			} 
+			${dynamicKColor[color.bgColor]} ${dynamicTextColor[color.textColor]}`}
 			onClick={onClick}
 			disabled={disabled}
 			colors={{
