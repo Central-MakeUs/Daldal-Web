@@ -10,7 +10,7 @@ type ImageWithCheckProps = {
 	handleShowDetailProduct: () => void;
 };
 
-const ImageWithCheck = ({
+const ImageWithHeart = ({
 	src,
 	alt,
 	handleClickHeart,
@@ -41,4 +41,4 @@ const ImageWithCheck = ({
 	);
 };
 
-export default ImageWithCheck;
+export default ImageWithHeart;
