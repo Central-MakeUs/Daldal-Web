@@ -22,7 +22,8 @@ export type IconId =
 	| 'category-living'
 	| 'category-shoes'
 	| 'close'
-	| 'baseline-apple';
+	| 'baseline-apple'
+	| 'custom-like';
 
 type SvgIcon = {
 	id: IconId;
