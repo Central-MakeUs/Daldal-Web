@@ -1,9 +1,9 @@
-import PaybackPrice from '@components/atoms/PaybackPrice';
+import PaybackPrice from '@components/atoms/card/PaybackPrice';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-	title: 'atoms/PaybackPrice',
+	title: 'atoms/card/PaybackPrice',
 	component: PaybackPrice,
 	parameters: {
 		layout: 'centerd',

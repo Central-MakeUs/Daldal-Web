@@ -1,15 +1,38 @@
-import ImageWithCheck from '@components/atoms/ImageWithCheck';
+import { useState } from 'react';
+
+import ImageWithHeart from '@components/atoms/card/ImageWithHeart';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
+const Template = (args: { src: string; alt: string; size: number }) => {
+	const [isHeart, setIsHeart] = useState(false);
+
+	const handleClickHeart = () => {
+		setIsHeart(!isHeart);
+	};
+
+	const handleShowDetailProduct = () => {
+		console.log('handleShowDetailProduct');
+	};
+
+	return (
+		<ImageWithHeart
+			{...args}
+			isHeart={isHeart}
+			handleClickHeart={handleClickHeart}
+			handleShowDetailProduct={handleShowDetailProduct}
+		/>
+	);
+};
+
 const meta = {
-	title: 'atoms/ImageWithCheck',
-	component: ImageWithCheck,
+	title: 'atoms/card/ImageWithHeart',
+	component: Template,
 	parameters: {
 		layout: 'centered',
 	},
 	tags: ['autoDocs'],
-} satisfies Meta<typeof ImageWithCheck>;
+} satisfies Meta<typeof ImageWithHeart>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
