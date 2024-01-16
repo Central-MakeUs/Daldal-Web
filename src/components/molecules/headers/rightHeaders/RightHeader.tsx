@@ -1,15 +1,17 @@
 import IconButton from '@components/atoms/button/IconButton';
 import colors from '@constants/colors';
+import { useBottomSheetStore } from '@stores/layerStore';
 
 const RightHeader = () => {
+	const { openBottomSheet } = useBottomSheetStore();
 	const handleClickLike = () => {
-		console.log('찜 페이지 이동');
+		openBottomSheet('login');
 	};
 	const handleClickPoint = () => {
-		console.log('포인트 페이지 이동');
+		openBottomSheet('login');
 	};
 	const handleClickMyPage = () => {
-		console.log('마이페이지 이동');
+		openBottomSheet('login');
 	};
 
 	const menuStyle = '!w-8 !px-0 !py-4';

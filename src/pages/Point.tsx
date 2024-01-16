@@ -3,8 +3,14 @@ import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import PointList from '@components/molecules/groupOrder/PointList';
 import PageLayout from '@components/templates/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
+import { useBottomSheetStore } from '@stores/layerStore';
 
 const Point = () => {
+	const { openBottomSheet } = useBottomSheetStore();
+	const handleCaptionButtonClick = () => {
+		openBottomSheet('login');
+	};
+
 	return (
 		<PageLayout leftType="logo" className="relative">
 			<div className="typography-Body1 typography-R text-White mb-7">
@@ -19,7 +25,7 @@ const Point = () => {
 				<CaptionButton
 					mainText="포인트 출금하기"
 					caption="1,000원 이상부터  출금 가능"
-					onClick={() => console.log('포인트 출금하기로 이동하기')}
+					onClick={handleCaptionButtonClick}
 				/>
 			</div>
 		</PageLayout>
