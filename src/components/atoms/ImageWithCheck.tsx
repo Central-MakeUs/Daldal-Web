@@ -1,4 +1,3 @@
-import CheckButton from '@components/atoms/CheckButton';
 import { useState } from 'react';
 
 import BackdropFilter from '@components/atoms/BackdropFilter';
@@ -22,17 +21,15 @@ const ImageWithCheck = ({ src, alt, onClick, size }: ImageWithCheckProps) => {
 	return (
 		<div className="relative rounded-[5px] overflow-hidden" onClick={onClick}>
 			<img src={src} alt={alt} width={size} height={size} />
-			<div>
-				<IconButton
-					icon={{
-						id: 'circle-check',
-						width: 24,
-						color: isChecked ? colors.Primary : colors.Gray20,
-					}}
-					onClick={handleChangeCheck}
-					className="absolute top-1 right-1 z-10"
-				/>
-			</div>
+			<IconButton
+				icon={{
+					id: 'circle-check',
+					width: 24,
+					color: isChecked ? colors.Primary : colors.Gray20,
+				}}
+				onClick={handleChangeCheck}
+				className="w-fit absolute top-1 right-1 z-10"
+			/>
 			<BackdropFilter isOverlayNeeded={isChecked} />
 		</div>
 	);
