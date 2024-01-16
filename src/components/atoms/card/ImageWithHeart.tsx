@@ -7,7 +7,6 @@ type ImageWithCheckProps = {
 	size: number;
 	isFullHeart: boolean;
 	handleClickHeart: () => void;
-	handleShowDetailProduct: () => void;
 };
 
 const ImageWithHeart = ({
@@ -16,17 +15,9 @@ const ImageWithHeart = ({
 	handleClickHeart,
 	size,
 	isFullHeart,
-	handleShowDetailProduct,
 }: ImageWithCheckProps) => {
-	const handleClickHeartWithStopPropagation = () => {
-		handleClickHeart();
-	};
-
 	return (
-		<div
-			className="relative rounded-[5px] overflow-hidden"
-			onClick={handleShowDetailProduct}
-		>
+		<div className="relative rounded-[5px] overflow-hidden">
 			<img src={src} alt={alt} width={size} height={size} />
 			<IconButton
 				icon={{
@@ -34,7 +25,7 @@ const ImageWithHeart = ({
 					width: 24,
 					color: colors.Primary,
 				}}
-				onClick={handleClickHeartWithStopPropagation}
+				onClick={handleClickHeart}
 				className="w-fit absolute top-1 right-1 z-10"
 			/>
 		</div>
