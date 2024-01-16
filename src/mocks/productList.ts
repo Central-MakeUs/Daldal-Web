@@ -1,6 +1,6 @@
 import { mockImages } from '@mocks/images';
 
-export const mockRecommendationProductList = mockImages.map((image, index) => ({
+export const mockProductList = mockImages.map((image, index) => ({
 	id: index,
 	image,
 	title:
