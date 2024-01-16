@@ -15,7 +15,7 @@ const Routing = () => {
 			<Route path="/my-page" component={MyPage} exact />
 			<Route path="/point" component={Point} exact />
 			<div
-				className="w-full max-w-[600px] h-[250px] fixed bottom-0"
+				className="w-full max-w-[600px] fixed bottom-0"
 				id="bottomsheet 자리"
 			>
 				{isBottomSheetOpen && <LoginBottomSheet />}
