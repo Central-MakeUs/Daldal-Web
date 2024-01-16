@@ -1,5 +1,5 @@
 export const changeNumberIntoStringWithComma = (point: number) => {
-	return point.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	return new Intl.NumberFormat().format(point);
 };
 
 export const getPointText = (point: number) => {
@@ -8,4 +8,8 @@ export const getPointText = (point: number) => {
 
 export const getOriginalPoint = (pointText: string) => {
 	return String(Number(pointText.replace(/[^0-9]/g, '')));
+};
+
+export const getPriceText = (price: number) => {
+	return `${changeNumberIntoStringWithComma(price)}원`;
 };

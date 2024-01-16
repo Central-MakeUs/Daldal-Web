@@ -13,7 +13,10 @@ const IconButton = ({ className, icon, onClick }: IconButtonProps) => {
 	return (
 		<Button
 			className={`${className} active:bg-transparent`}
-			onClick={onClick}
+			onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+				e.stopPropagation();
+				onClick();
+			}}
 			clear
 		>
 			<SvgIcon
