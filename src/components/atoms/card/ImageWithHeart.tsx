@@ -5,7 +5,7 @@ type ImageWithCheckProps = {
 	src: string;
 	alt: string;
 	size: number;
-	isHeart: boolean;
+	isFullHeart: boolean;
 	handleClickHeart: () => void;
 	handleShowDetailProduct: () => void;
 };
@@ -15,7 +15,7 @@ const ImageWithHeart = ({
 	alt,
 	handleClickHeart,
 	size,
-	isHeart,
+	isFullHeart,
 	handleShowDetailProduct,
 }: ImageWithCheckProps) => {
 	const handleClickHeartWithStopPropagation = () => {
@@ -30,7 +30,7 @@ const ImageWithHeart = ({
 			<img src={src} alt={alt} width={size} height={size} />
 			<IconButton
 				icon={{
-					id: isHeart ? 'like-full' : 'like-empty',
+					id: isFullHeart ? 'like-full' : 'like-empty',
 					width: 24,
 					color: colors.Primary,
 				}}
