@@ -11,6 +11,7 @@ const LeftLogoHeader = () => {
 			icon={{
 				id: 'app-logo',
 				width: 120,
+				color: 'white',
 			}}
 			onClick={handleClick}
 		/>
