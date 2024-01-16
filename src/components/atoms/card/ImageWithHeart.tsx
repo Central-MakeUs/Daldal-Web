@@ -4,7 +4,7 @@ import colors from '@constants/colors';
 type ImageWithCheckProps = {
 	src: string;
 	alt: string;
-	isFullHeart: boolean;
+	isFullHeart?: boolean;
 	handleClickHeart: () => void;
 };
 
@@ -12,7 +12,7 @@ const ImageWithHeart = ({
 	src,
 	alt,
 	handleClickHeart,
-	isFullHeart,
+	isFullHeart = false,
 }: ImageWithCheckProps) => {
 	return (
 		<div className="relative rounded-[5px] overflow-hidden w-full aspect-square">
