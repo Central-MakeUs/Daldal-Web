@@ -14,6 +14,20 @@ type ListPointProps = {
 } & Point;
 
 const ListPoint = ({ date, point, onClick }: ListPointProps) => {
+	const colorsByPoint: { [key: string]: string } = {
+		미승인: 'text-Error',
+		진행중: 'text-Secondary_B',
+		point: 'text-Gray10',
+	};
+
+	const getColorByPoint = () => {
+		if (!isPointState(point)) {
+			return colorsByPoint.point;
+		}
+
+		return colorsByPoint[point];
+	};
+
 	return (
 		<Button
 			className="flex items-center rounded-[13px] !p-4 !k-color-Gray90 h-[66px]"
@@ -26,9 +40,7 @@ const ListPoint = ({ date, point, onClick }: ListPointProps) => {
 						{getDataInYYYYMMDDSplitedByDot(date)}
 					</span>
 					<span
-						className={`typography-Body2 typography-R ${
-							isPointState(point) ? 'text-Error' : 'text-Gray10'
-						}`}
+						className={`typography-Body2 typography-R ${getColorByPoint()}`}
 					>
 						{getPointText(point)}
 					</span>
