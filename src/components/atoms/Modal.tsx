@@ -19,6 +19,11 @@ export type ModalProps = {
 
 const Modal = ({ title, description, buttons }: ModalProps) => {
 	const { isModalOpen, handleModalOpen } = useModalStore();
+
+	if (!isModalOpen) {
+		return null;
+	}
+
 	return (
 		<Dialog open={isModalOpen} onOpenChange={handleModalOpen}>
 			<DialogContent>
