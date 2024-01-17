@@ -24,7 +24,8 @@ export type IconId =
 	| 'close'
 	| 'baseline-apple'
 	| 'custom-like'
-	| 'photo';
+	| 'photo'
+	| 'plus';
 
 type SvgIcon = {
 	id: IconId;
