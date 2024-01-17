@@ -135,7 +135,7 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 			inputMode="numeric"
 			type="string"
 			onKeyDown={handleInputKeyDown}
-			value={getPointText(+value)}
+			value={getPointText(value)}
 			{...register(name, {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,

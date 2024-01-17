@@ -24,6 +24,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		date: '2023.12.23',
-		point: 200,
+		point: '200',
 	},
 };

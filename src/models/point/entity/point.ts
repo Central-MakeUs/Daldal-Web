@@ -1,4 +1,4 @@
 export type Point = {
-	point: number;
+	point: string;
 	date: string;
 };

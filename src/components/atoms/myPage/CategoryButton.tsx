@@ -18,7 +18,7 @@ const CategoryButton = ({ iconId, title, onClick }: CategoryButtonProps) => {
 				iconId ? '!justify-start' : '!justify-center'
 			} items-center w-full gap-2`}
 		>
-			{iconId && <SvgIcon id={iconId} color={colors.White} size={24} />}
+			{iconId && <SvgIcon id={iconId} color={colors.White} size={32} />}
 			{title}
 		</Button>
 	);
