@@ -17,7 +17,7 @@ const Point = () => {
 			<div className="flex justify-between items-end mb-7">
 				<div className="typography-Body1 typography-R text-White">
 					회원님의 누적 포인트는 <br />
-					<GroupOrderTextPoint point={10000} /> 입니다.
+					<GroupOrderTextPoint point={'10000'} /> 입니다.
 				</div>
 				<RequestVerificationButton />
 			</div>

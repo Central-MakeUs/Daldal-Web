@@ -8,7 +8,7 @@ import { Point } from '@models/point/entity/point';
 import { getPointText } from '@utils/formatData';
 
 type PointListProps = {
-	totalPoint: number;
+	totalPoint: Point['point'];
 	pointList: Point[];
 	month: PointListTitleByMonthType;
 };

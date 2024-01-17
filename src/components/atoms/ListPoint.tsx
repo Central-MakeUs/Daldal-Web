@@ -3,7 +3,7 @@ import { Block, Button } from 'konsta/react';
 import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
 import { Point } from '@models/point/entity/point';
-import { getPointText } from '@utils/formatData';
+import { getPointText, isPointState } from '@utils/formatData';
 
 type ListPointProps = {
 	onClick: () => void;
@@ -21,7 +21,11 @@ const ListPoint = ({ date, point, onClick }: ListPointProps) => {
 					<span className="typography-Caption1 typography-SB text-Gray50">
 						{date}
 					</span>
-					<span className="typography-Body2 typography-R text-Gray10">
+					<span
+						className={`typography-Body2 typography-R ${
+							isPointState(point) ? 'text-Error' : 'text-Gray10'
+						}`}
+					>
 						{getPointText(point)}
 					</span>
 				</Block>
