@@ -6,11 +6,12 @@ import ProgressTag from '../atoms/tag/ProgressTag';
 type ImageContainerProps = {
 	imageUrl: string;
 	status: 'APPROVED' | 'PROGRESS' | 'NOT_APPROVED';
+	onClick: () => void;
 };
 
-const ImageContainer = ({ imageUrl, status }: ImageContainerProps) => {
+const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 	return (
-		<div className="relative">
+		<div className="relative cursor-pointer" onClick={onClick}>
 			<img
 				src={imageUrl}
 				className="relative rounded-[5px] object-cover aspect-square"
