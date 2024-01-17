@@ -7,22 +7,25 @@ import {
 	DialogClose,
 	DialogDescription,
 	DialogTitle,
-	DialogTrigger,
 	DialogFooter,
 } from '@components/ui/dialog';
+import { useModalStore } from '@stores/layerStore';
 
-type ModalProps = {
+export type ModalProps = {
 	title: string;
 	description?: string;
 	buttons?: ReactNode[];
 };
 
 const Modal = ({ title, description, buttons }: ModalProps) => {
+	const { isModalOpen, handleModalOpen } = useModalStore();
+
+	if (!isModalOpen) {
+		return null;
+	}
+
 	return (
-		<Dialog>
-			<DialogTrigger asChild>
-				<button>모달 열기</button>
-			</DialogTrigger>
+		<Dialog open={isModalOpen} onOpenChange={handleModalOpen}>
 			<DialogContent>
 				<DialogHeader>
 					<DialogTitle className="whitespace-pre-line typography-Body1 typography-M leading-normal">

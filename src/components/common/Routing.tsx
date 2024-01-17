@@ -3,11 +3,11 @@ import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
-import { useBottomSheetStore } from '@stores/layerStore';
+import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 const Routing = () => {
-	const { isBottomSheetOpen } = useBottomSheetStore();
+	const { Modal } = useModalStore();
 
 	return (
 		<BrowserRouter>
@@ -17,8 +17,9 @@ const Routing = () => {
 			<Route path="/point" component={Point} exact />
 			<Route path="/image-upload" component={ImageUpload} exact />
 			<div className="w-full max-w-[600px] fixed bottom-0">
-				{isBottomSheetOpen && <LoginBottomSheet />}
+				<LoginBottomSheet />
 			</div>
+			{Modal}
 		</BrowserRouter>
 	);
 };

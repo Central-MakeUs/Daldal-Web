@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import konstaConfig from 'konsta/config';
+import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 import tailwindAnimate from 'tailwindcss-animate';
@@ -20,6 +21,11 @@ export default konstaConfig({
 		colors: colors,
 	},
 	theme: {
+		screens: {
+			xxs: '320px',
+			xs: '375px',
+			...defaultTheme.screens,
+		},
 		extends: {
 			colors: colors,
 			fontFamily: { SUIT: ['SUIT', 'sans-serif'] },

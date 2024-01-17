@@ -7,6 +7,10 @@ const LoginBottomSheet = () => {
 	const { isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
 		useBottomSheetStore();
 
+	if (!isBottomSheetOpen) {
+		return null;
+	}
+
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
 			<DrawerContent className="mx-auto w-full max-w-[600px]">

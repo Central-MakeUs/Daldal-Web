@@ -20,11 +20,11 @@ const ImageWithHeart = ({
 			<IconButton
 				icon={{
 					id: isFullHeart ? 'like-full' : 'like-empty',
-					width: 24,
+					size: 24,
 					color: colors.Primary,
 				}}
 				onClick={handleClickHeart}
-				className="!w-fit absolute top-1 right-1 z-10"
+				className="!w-fit !h-fit absolute top-1 right-1 z-10 !p-0"
 			/>
 		</div>
 	);

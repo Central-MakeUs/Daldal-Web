@@ -32,7 +32,7 @@ export const THIS_MONTH_POINT_LIST = {
 			date: '2021-09-23T15:00:00.000Z',
 		},
 		{
-			point: '1000',
+			point: '진행중',
 			date: '2021-09-23T15:00:00.000Z',
 		},
 	],

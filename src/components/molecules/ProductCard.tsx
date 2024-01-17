@@ -59,7 +59,7 @@ const ProductCard = ({
 			containerGap: 'gap-1',
 		},
 		large: {
-			title: 'typography-Body1 typography-R line-clamp-2',
+			title: 'typography-Body1 typography-R',
 			price: 'typography-Subhead',
 			pricesContainer: 'flex gap-6',
 			containerGap: 'gap-5',
