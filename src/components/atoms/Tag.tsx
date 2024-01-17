@@ -1,16 +1,33 @@
+import dynamicBgColor from '@constants/dynamicTailwind/dynamicBgColor';
+import dynamicTextColor from '@constants/dynamicTailwind/dynamicTextColor';
+import ColorKey from '@type/colorKey';
+
 type TagProps = {
-  title: string;
-  colors: {
-    bgColor: string;
-    textColor: string;
-  }
-  size: 'small' | 'large';
-}
+	title: string;
+	colors: {
+		bgColor: ColorKey;
+		textColor: ColorKey;
+	};
+	size: 'small' | 'large';
+};
 
-const Tag = ({title, colors, size}: TagProps) => {
-  return (
-    <div></div>
-  )
-}
+const TagTypography = {
+	small: 'typography-Caption2',
+	large: 'typography-Body4 typography-R',
+};
 
-export default Tag
+const Tag = ({ title, colors, size }: TagProps) => {
+	return (
+		<div
+			className={`inline-flex justify-center items-center border-[38px] ${
+				TagTypography[size]
+			} ${dynamicTextColor[colors.textColor]} ${
+				dynamicBgColor[colors.bgColor]
+			}`}
+		>
+			{title}
+		</div>
+	);
+};
+
+export default Tag;
