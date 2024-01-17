@@ -60,7 +60,7 @@ export const Large: Story = {
 	args: {
 		title: '반폴라 캐시미어',
 		colors: {
-			bgColor: 'Gray20',
+			bgColor: 'Gray70',
 			textColor: 'White',
 		},
 		size: 'large',
