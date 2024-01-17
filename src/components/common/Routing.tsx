@@ -5,12 +5,13 @@ import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
 import Home from '@pages/Home';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
-import { useBottomSheetStore } from '@stores/layerStore';
+import { useBottomSheetStore, useModalStore } from '@stores/layerStore';
 import toast from 'react-hot-toast';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 const Routing = () => {
 	const { isBottomSheetOpen } = useBottomSheetStore();
+	const { isModalOpen, modal } = useModalStore();
 
 	const handleClick = () => {
 		toast(() => <ToastMessageLikeOrDelete like={true} />);
@@ -26,6 +27,7 @@ const Routing = () => {
 				{isBottomSheetOpen && <LoginBottomSheet />}
 				<Button onClick={handleClick}>toast 생성</Button>
 			</div>
+			{isModalOpen && modal}
 		</BrowserRouter>
 	);
 };
