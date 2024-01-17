@@ -14,7 +14,7 @@ const PaybackPrice = ({ size, paybackPrice }: PaybackPriceProps) => {
 	return (
 		<div className={`flex items-center ${classNameBySize[size]} text-Primary`}>
 			<span className="typography-Caption1 text-White bg-Primary px-1 py-[2px] rounded-sm">
-				예상 환금액
+				예상 환급액
 			</span>
 			<span className={`text-Primary`}>{getPriceText(paybackPrice)}</span>
 		</div>
