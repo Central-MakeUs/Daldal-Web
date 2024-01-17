@@ -54,7 +54,7 @@ type ModalType = keyof typeof modalMappingNameWithComponent;
 
 type ModalStoreType = {
 	isModalOpen: boolean;
-	modal: JSX.Element;
+	Modal: JSX.Element;
 	openModal: (type: ModalType) => void;
 	closeModal: () => void;
 	handleModalOpen: (open: boolean) => void;
@@ -62,11 +62,11 @@ type ModalStoreType = {
 
 export const useModalStore = create<ModalStoreType>(set => ({
 	isModalOpen: false,
-	modal: <></>,
+	Modal: <></>,
 	openModal: (type: ModalType) =>
 		set({
 			isModalOpen: true,
-			modal: <Modal {...modalMappingNameWithComponent[type]} />,
+			Modal: <Modal {...modalMappingNameWithComponent[type]} />,
 		}),
 	closeModal: () => set({ isModalOpen: false }),
 	handleModalOpen: (open: boolean) => set({ isModalOpen: open }),

@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 const Routing = () => {
-	const { modal } = useModalStore();
+	const { Modal } = useModalStore();
 
 	const handleClick = () => {
 		toast(() => <ToastMessageLikeOrDelete like={true} />);
@@ -26,7 +26,7 @@ const Routing = () => {
 				<LoginBottomSheet />
 				<Button onClick={handleClick}>toast 생성</Button>
 			</div>
-			{modal}
+			{Modal}
 		</BrowserRouter>
 	);
 };
