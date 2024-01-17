@@ -1,6 +1,6 @@
 import IconButton from '@components/atoms/button/IconButton';
 
-const UploadButton = () => {
+const ImageUploadButton = () => {
 	const handleClick = () => {
 		console.log('갤러리/폴더 열기');
 	};
@@ -17,4 +17,4 @@ const UploadButton = () => {
 	);
 };
 
-export default UploadButton;
+export default ImageUploadButton;

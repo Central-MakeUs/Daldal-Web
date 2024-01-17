@@ -1,4 +1,4 @@
-import UploadButton from '@components/atoms/imageUpload/UploadButton';
+import ImageUploadButton from '@components/atoms/ImageUploadButton';
 import PageLayout from '@components/templates/PageLayout';
 
 const ImageUpload = () => {
@@ -6,9 +6,9 @@ const ImageUpload = () => {
 		<div>
 			<PageLayout leftType="back">
 				<div className="grid grid-cols-3 gap-[11px]">
-					<UploadButton />
-					<UploadButton />
-					<UploadButton />
+					<ImageUploadButton />
+					<ImageUploadButton />
+					<ImageUploadButton />
 				</div>
 			</PageLayout>
 		</div>
