@@ -21,6 +21,9 @@ export default konstaConfig({
 	},
 	theme: {
 		extends: {
+			screens: {
+				xs: '320px',
+			},
 			colors: colors,
 			fontFamily: { SUIT: ['SUIT', 'sans-serif'] },
 
