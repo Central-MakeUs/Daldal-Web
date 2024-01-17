@@ -4,13 +4,6 @@ import { Meta, StoryObj } from '@storybook/react';
 const meta = {
 	title: 'atoms/Tag',
 	component: Tag,
-	decorators: [
-		Story => (
-			<div style={{ width: '375px' }}>
-				<Story />
-			</div>
-		),
-	],
 	parameters: {
 		layout: 'centered',
 		backgrounds: {
