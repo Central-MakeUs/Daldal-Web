@@ -3,7 +3,11 @@ import { Block, Button } from 'konsta/react';
 import SvgIcon from '@components/common/SvgIcon';
 import colors from '@constants/colors';
 import { Point } from '@models/point/entity/point';
-import { getPointText, isPointState } from '@utils/formatData';
+import {
+	getDataInYYYYMMDDSplitedByDot,
+	getPointText,
+	isPointState,
+} from '@utils/formatData';
 
 type ListPointProps = {
 	onClick: () => void;
@@ -19,7 +23,7 @@ const ListPoint = ({ date, point, onClick }: ListPointProps) => {
 				<SvgIcon id="point-paid" color={colors.Gray20} size={24} />
 				<Block className="flex flex-col !m-0 !p-0 text-left">
 					<span className="typography-Caption1 typography-SB text-Gray50">
-						{date}
+						{getDataInYYYYMMDDSplitedByDot(date)}
 					</span>
 					<span
 						className={`typography-Body2 typography-R ${
