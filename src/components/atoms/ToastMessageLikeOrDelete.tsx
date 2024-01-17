@@ -27,8 +27,7 @@ const ToastMessageLikeOrDelete = ({ like }: ToastMessageLikeOrDeleteProps) => {
 						</h5>
 					</div>
 					<Button
-						className="!inline-flex !items-center gap-1 !p-0 bg-transparent active:bg-transparent"
-						style={{ maxWidth: 'fit-content' }}
+						className="!w-fit !inline-flex !items-center gap-1 !p-0 bg-transparent active:bg-transparent"
 						onClick={handleClick}
 					>
 						<h6 className="!typography-Body4 !typography-R !text-Primary">
