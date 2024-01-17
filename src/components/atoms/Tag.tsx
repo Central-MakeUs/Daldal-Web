@@ -19,7 +19,7 @@ const TagTypography = {
 const Tag = ({ title, colors, size }: TagProps) => {
 	return (
 		<div
-			className={`inline-flex justify-center items-center border-[38px] ${
+			className={`inline-flex justify-center items-center px-3 py-1 rounded-[38px] ${
 				TagTypography[size]
 			} ${dynamicTextColor[colors.textColor]} ${
 				dynamicBgColor[colors.bgColor]
