@@ -1,12 +1,32 @@
+import { Button } from 'konsta/react';
+
+import CustomToaster from '@components/atoms/CustomToaster';
 import ToastMessageLikeOrDelete from '@components/atoms/ToastMessageLikeOrDelete';
 import { Meta, StoryObj } from '@storybook/react';
+import toast from 'react-hot-toast';
+
+type ContainerType = {
+	like: boolean;
+};
+
+const Container = ({ like }: ContainerType) => {
+	const handleClick = () => {
+		toast(() => <ToastMessageLikeOrDelete like={like} />);
+	};
+	return (
+		<>
+			<CustomToaster className="px-3" />
+			<Button onClick={handleClick}>토스트 메시지 생성</Button>
+		</>
+	);
+};
 
 const meta = {
 	title: 'atoms/ToastMessageLikeOrDelete',
-	component: ToastMessageLikeOrDelete,
+	component: Container,
 	decorators: [
 		Story => (
-			<div style={{ width: '375px' }}>
+			<div style={{ width: '375px', height: '500px' }}>
 				<Story />
 			</div>
 		),
@@ -18,7 +38,7 @@ const meta = {
 		},
 	},
 	tags: ['autodocs'],
-} satisfies Meta<typeof ToastMessageLikeOrDelete>;
+} satisfies Meta<typeof Container>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
