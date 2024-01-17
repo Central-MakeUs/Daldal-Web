@@ -7,13 +7,13 @@ type PaybackPriceProps = {
 
 const PaybackPrice = ({ size, paybackPrice }: PaybackPriceProps) => {
 	const classNameBySize = {
-		small: 'typography-Body4 typography-M gap-1',
+		small: 'typography-Caption1 xs:typography-Body4 typography-M gap-1',
 		medium: 'typography-Body2 typography-M gap-2',
 		large: 'typography-Body1 typography-SB gap-2',
 	};
 	return (
 		<div className={`flex items-center ${classNameBySize[size]} text-Primary`}>
-			<span className="typography-Caption1 text-White bg-Primary px-1 py-[2px] rounded-sm">
+			<span className="typography-Caption2 xs:typography-Caption1 text-White bg-Primary px-1 py-[2px] rounded-sm">
 				예상 환급액
 			</span>
 			<span className={`text-Primary`}>{getPriceText(paybackPrice)}</span>
