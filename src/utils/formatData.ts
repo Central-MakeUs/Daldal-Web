@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 import { Point } from '@models/point/entity/point';
 
 export const changeNumberIntoStringWithComma = (point: number) => {
@@ -22,4 +24,8 @@ export const getOriginalPoint = (pointText: string) => {
 
 export const getPriceText = (price: number) => {
 	return `${changeNumberIntoStringWithComma(price)}원`;
+};
+
+export const getDataInYYYYMMDDSplitedByDot = (date: string) => {
+	return dayjs(date).format('YYYY.MM.DD');
 };
