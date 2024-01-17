@@ -12,12 +12,17 @@ const Point = () => {
 		openBottomSheet('login');
 	};
 
+	// TODO: totalPoint API 연동
+	const totalPoint = '10000';
+
+	const isPointLargerThan1000 = +totalPoint >= 1000;
+
 	return (
 		<PageLayout leftType="logo" className="relative">
 			<div className="flex justify-between items-end mb-7">
 				<div className="typography-Body1 typography-R text-White">
 					회원님의 누적 포인트는 <br />
-					<GroupOrderTextPoint point={'10000'} /> 입니다.
+					<GroupOrderTextPoint point={totalPoint} /> 입니다.
 				</div>
 				<RequestVerificationButton />
 			</div>
@@ -30,6 +35,7 @@ const Point = () => {
 					mainText="포인트 출금하기"
 					caption="1,000원 이상부터  출금 가능"
 					onClick={handleCaptionButtonClick}
+					disabled={!isPointLargerThan1000}
 				/>
 			</div>
 		</PageLayout>
