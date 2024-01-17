@@ -12,12 +12,10 @@ const ToastMessageLikeOrDelete = ({ like }: ToastMessageLikeOrDeleteProps) => {
 		console.log('찜 목록 가기');
 	};
 
+	const toastPadding = like ? 'px-3 py-1.5' : 'px-1.5 py-4 text-center';
+
 	return (
-		<div
-			className={`w-full rounded-xl bg-White ${
-				like ? 'px-3 py-1.5' : 'px-1.5 py-4 text-center'
-			}`}
-		>
+		<div className={`w-full rounded-xl bg-White ${toastPadding}`}>
 			{like && (
 				<div className="flex justify-between items-center">
 					<div className="flex items-center gap-2.5">
