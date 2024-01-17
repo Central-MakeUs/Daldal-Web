@@ -1,6 +1,5 @@
 import { Button } from 'konsta/react';
 
-import CustomToaster from '@components/atoms/CustomToaster';
 import ToastMessageLikeOrDelete from '@components/atoms/ToastMessageLikeOrDelete';
 import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
 import Home from '@pages/Home';
@@ -25,7 +24,6 @@ const Routing = () => {
 			<Route path="/point" component={Point} exact />
 			<div className="w-full max-w-[600px] fixed bottom-0">
 				{isBottomSheetOpen && <LoginBottomSheet />}
-				<CustomToaster className="px-3" />
 				<Button onClick={handleClick}>toast 생성</Button>
 			</div>
 		</BrowserRouter>
