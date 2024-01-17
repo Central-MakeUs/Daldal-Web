@@ -9,7 +9,7 @@ type ToastMessageLikeOrDeleteProps = {
 
 const ToastMessageLikeOrDelete = ({ like }: ToastMessageLikeOrDeleteProps) => {
 	const handleClick = () => {
-		console.log('찜 목록 가기');
+		console.log('찜 목록 가기 test');
 	};
 
 	const toastPadding = like ? 'px-3 py-1.5' : 'px-1.5 py-4 text-center';
