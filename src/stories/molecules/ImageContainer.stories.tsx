@@ -37,7 +37,7 @@ export const Progress: Story = {
 	},
 };
 
-export const NOT_APPROVED: Story = {
+export const Not_Approved: Story = {
 	args: {
 		imageUrl: 'https://via.placeholder.com/2560x1440',
 		status: 'NOT_APPROVED',
