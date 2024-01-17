@@ -1,4 +1,5 @@
 import CaptionButton from '@components/atoms/button/CaptionButton';
+import RequestVerificationButton from '@components/atoms/button/RequestVerificationButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import PointList from '@components/molecules/groupOrder/PointList';
 import PageLayout from '@components/templates/PageLayout';
@@ -13,9 +14,12 @@ const Point = () => {
 
 	return (
 		<PageLayout leftType="logo" className="relative">
-			<div className="typography-Body1 typography-R text-White mb-7">
-				회원님의 누적 포인트는 <br />
-				<GroupOrderTextPoint point={10000} /> 입니다.
+			<div className="flex justify-between items-end mb-7">
+				<div className="typography-Body1 typography-R text-White">
+					회원님의 누적 포인트는 <br />
+					<GroupOrderTextPoint point={10000} /> 입니다.
+				</div>
+				<RequestVerificationButton />
 			</div>
 			<div className="flex flex-col gap-[14px] mb-5">
 				<PointList {...THIS_MONTH_POINT_LIST} />
