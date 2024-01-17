@@ -1,3 +1,4 @@
+import CustomToaster from '@components/atoms/CustomToaster';
 import Routing from '@components/common/Routing';
 import { setupIonicReact } from '@ionic/react';
 
@@ -15,7 +16,12 @@ import '@ionic/react/css/display.css';
 setupIonicReact();
 
 const App = () => {
-	return <Routing />;
+	return (
+		<>
+			<Routing />
+			<CustomToaster className="px-3" />
+		</>
+	);
 };
 
 export default App;
