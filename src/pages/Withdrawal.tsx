@@ -1,7 +1,7 @@
+import PreWithdrawalScreen from '@components/templates/Withdrawal/PreWithdrawalScreen';
 import PageLayout from '@layouts/PageLayout';
 
 // import PostWithdrawalScreen from '@components/templates/Withdrawal/PostWithdrawalScreen';
-import PreWithdrawalScreen from '@components/templates/Withdrawal/PreWithdrawalScreen';
 // import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressWithdrawalScreen';
 
 const Withdraw = () => {
