@@ -6,7 +6,7 @@ import PageLayout from '@components/templates/PageLayout';
 
 const Home = () => {
 	return (
-		<PageLayout leftType="logo" className="relative">
+		<PageLayout leftType="logo" className="p-3 relative">
 			<SearchTextField />
 			<RecommendationProductCardList />
 			<CategoryButtonList />
