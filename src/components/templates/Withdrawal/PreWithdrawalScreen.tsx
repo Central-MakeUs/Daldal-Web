@@ -39,7 +39,7 @@ const PreWithdrawalScreen = ({
 				</div>
 			</div>
 			출금하시겠습니까?
-			<div className="w-full flex gap-5 fixed bottom-5 max-w-[600px]">
+			<div className="w-full flex gap-5 sticky bottom-5">
 				<DefaultButton
 					title="아니요"
 					color={{
