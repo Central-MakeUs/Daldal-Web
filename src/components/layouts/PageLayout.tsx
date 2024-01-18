@@ -9,9 +9,9 @@ type PageLayoutProps = {
 
 const PageLayout = ({ children, className, leftType }: PageLayoutProps) => {
 	return (
-		<div className="w-[600px] h-full">
+		<div className="w-[600px] h-fit">
 			<Header leftType={leftType} />
-			<div className={className}>{children}</div>;
+			<div className={`w-full ${className}`}>{children}</div>
 		</div>
 	);
 };
