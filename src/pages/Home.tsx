@@ -1,8 +1,9 @@
+import PageLayout from '@layouts/PageLayout';
+
 import SearchTextField from '@components/atoms/SearchTextField';
 import CategoryButtonList from '@components/molecules/CategoryButtonList';
 import ProductCardList from '@components/organisms/ProductCardList';
 import RecommendationProductCardList from '@components/organisms/RecommendationProductCardList';
-import PageLayout from '@components/templates/PageLayout';
 
 const Home = () => {
 	return (

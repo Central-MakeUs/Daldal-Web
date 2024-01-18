@@ -1,7 +1,7 @@
+import PageLayout from '@layouts/PageLayout';
 import { useEffect, useState } from 'react';
 
 import CategoryButton from '@components/atoms/myPage/CategoryButton';
-import PageLayout from '@components/templates/PageLayout';
 import { IconId } from '@type/svgIcon';
 
 const MyPage = () => {

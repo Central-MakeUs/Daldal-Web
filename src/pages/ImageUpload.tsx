@@ -1,6 +1,7 @@
+import PageLayout from '@layouts/PageLayout';
+
 import ImageUploadButton from '@components/atoms/ImageUploadButton';
 import ImageContainer from '@components/molecules/ImageContainer';
-import PageLayout from '@components/templates/PageLayout';
 
 const ImageUpload = () => {
 	return (
