@@ -1,3 +1,4 @@
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { Button } from 'konsta/react';
 import {
 	useState,
@@ -207,14 +208,16 @@ const FormButton = ({ title }: FormButtonProps) => {
 	const isErrorsEmpty = Object.keys(errors).length === 0;
 
 	return (
-		<DefaultButton
-			title={title}
-			color={{ bgColor: 'White', textColor: 'Black' }}
-			size="large"
-			onClick={() => console.log('출금하기 버튼 클릭')}
-			disabled={!isErrorsEmpty}
-			className="sticky bottom-5"
-		/>
+		<FixedBottomLayout childrenPadding="px-6" height="h-15">
+			<DefaultButton
+				title={title}
+				color={{ bgColor: 'White', textColor: 'Black' }}
+				size="large"
+				onClick={() => console.log('출금하기 버튼 클릭')}
+				disabled={!isErrorsEmpty}
+				className="sticky bottom-5"
+			/>
+		</FixedBottomLayout>
 	);
 };
 

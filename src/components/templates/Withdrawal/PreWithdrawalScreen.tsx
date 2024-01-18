@@ -1,3 +1,5 @@
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
+
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 
@@ -39,26 +41,28 @@ const PreWithdrawalScreen = ({
 				</div>
 			</div>
 			출금하시겠습니까?
-			<div className="w-full flex gap-5 sticky bottom-5">
-				<DefaultButton
-					title="아니요"
-					color={{
-						textColor: 'White',
-						bgColor: 'Black',
-					}}
-					size="small"
-					onClick={handleNoClick}
-				/>
-				<DefaultButton
-					title="출금하기"
-					color={{
-						textColor: 'Black',
-						bgColor: 'White',
-					}}
-					size="small"
-					onClick={handleWithdrawClick}
-				/>
-			</div>
+			<FixedBottomLayout childrenPadding="px-6" height="h-15">
+				<div className="flex gap-3">
+					<DefaultButton
+						title="아니요"
+						color={{
+							textColor: 'White',
+							bgColor: 'Black',
+						}}
+						size="small"
+						onClick={handleNoClick}
+					/>
+					<DefaultButton
+						title="출금하기"
+						color={{
+							textColor: 'Black',
+							bgColor: 'White',
+						}}
+						size="small"
+						onClick={handleWithdrawClick}
+					/>
+				</div>
+			</FixedBottomLayout>
 		</div>
 	);
 };

@@ -1,3 +1,5 @@
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
+
 import DefaultButton from '@components/atoms/button/DefaultButton';
 
 const PostWithdrawalScreen = () => {
@@ -15,16 +17,17 @@ const PostWithdrawalScreen = () => {
 				<br />
 				요청하신 계좌로 환급이 진행됩니다.
 			</span>
-			<DefaultButton
-				title="쇼핑하러 가기"
-				color={{
-					textColor: 'Black',
-					bgColor: 'White',
-				}}
-				size="small"
-				onClick={handleConfirmClick}
-				className="sticky bottom-5"
-			/>
+			<FixedBottomLayout childrenPadding="px-6" height="h-15">
+				<DefaultButton
+					title="쇼핑하러 가기"
+					color={{
+						textColor: 'Black',
+						bgColor: 'White',
+					}}
+					size="small"
+					onClick={handleConfirmClick}
+				/>
+			</FixedBottomLayout>
 		</div>
 	);
 };

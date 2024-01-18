@@ -1,8 +1,10 @@
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import PageLayout from '@layouts/PageLayout';
+
 import CaptionButton from '@components/atoms/button/CaptionButton';
 import RequestVerificationButton from '@components/atoms/button/RequestVerificationButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import PointList from '@components/molecules/groupOrder/PointList';
-import PageLayout from '@components/templates/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 import { useBottomSheetStore } from '@stores/layerStore';
 
@@ -18,7 +20,7 @@ const Point = () => {
 	const isPointLargerThan1000 = +totalPoint >= 1000;
 
 	return (
-		<PageLayout leftType="logo" className="relative">
+		<PageLayout leftType="logo" className="p-6">
 			<div className="flex justify-between items-end mb-7">
 				<div className="typography-Body1 typography-R text-White">
 					회원님의 누적 포인트는 <br />
@@ -30,14 +32,14 @@ const Point = () => {
 				<PointList {...THIS_MONTH_POINT_LIST} />
 				<PointList {...NEXT_MONTH_POINT_LIST} />
 			</div>
-			<div className="sticky bottom-5 left-2/4 z-10">
+			<FixedBottomLayout childrenPadding="px-6" height="h-15">
 				<CaptionButton
 					mainText="포인트 출금하기"
 					caption="1,000원 이상부터  출금 가능"
 					onClick={handleCaptionButtonClick}
 					disabled={!isPointLargerThan1000}
 				/>
-			</div>
+			</FixedBottomLayout>
 		</PageLayout>
 	);
 };
