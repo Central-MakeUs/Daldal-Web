@@ -36,10 +36,7 @@ const Form = ({ children, onSubmit }: FormProps) => {
 
 	return (
 		<FormProvider {...methods}>
-			<form
-				onSubmit={handleSubmit(submit)}
-				className="flex flex-col w-96 p-6 gap-1"
-			>
+			<form onSubmit={handleSubmit(submit)} className="flex flex-col gap-1">
 				{children}
 			</form>
 		</FormProvider>
@@ -49,9 +46,10 @@ const Form = ({ children, onSubmit }: FormProps) => {
 type FormInputProps = {
 	name: FormName;
 	type?: 'text' | 'number';
+	autoFocus?: boolean;
 };
 
-const FormInput = ({ name, type = 'text' }: FormInputProps) => {
+const FormInput = ({ name, type = 'text', autoFocus }: FormInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
@@ -89,15 +87,17 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
 			})}
+			autoFocus={autoFocus}
 		/>
 	);
 };
 
 type FormPointInputProps = {
 	name: FormName;
+	autoFocus?: boolean;
 };
 
-const FormPointInput = ({ name }: FormPointInputProps) => {
+const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
@@ -144,6 +144,7 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 					message: '최대 5자리까지 입력 가능합니다.',
 				},
 			})}
+			autoFocus={autoFocus}
 		/>
 	);
 };
