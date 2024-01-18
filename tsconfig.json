@@ -35,7 +35,8 @@
 			"@contexts/*": ["contexts/*"],
 			"@mocks/*": ["mocks/*"],
 			"@tests/*": ["tests/*"],
-			"@apis/*": ["apis/*"]
+			"@apis/*": ["apis/*"],
+			"@layouts/*": ["layouts/*"]
 		},
 		"types": ["node"]
 	},
