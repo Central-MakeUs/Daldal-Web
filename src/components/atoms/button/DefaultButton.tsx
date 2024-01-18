@@ -15,7 +15,7 @@ type DefaultButtonProps = {
 		borderColor?: ColorKey;
 	};
 	size: 'small' | 'large';
-	onClick: () => void;
+	onClick?: () => void;
 	disabled?: boolean;
 	className?: string;
 };

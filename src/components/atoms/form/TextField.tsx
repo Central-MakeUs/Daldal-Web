@@ -36,9 +36,13 @@ const Form = ({ children, onSubmit }: FormProps) => {
 		await onSubmit(data);
 	};
 
+	const handleFormSubmit = () => {
+		handleSubmit(submit);
+	};
+
 	return (
 		<FormProvider {...methods}>
-			<form onSubmit={handleSubmit(submit)} className="flex flex-col gap-1">
+			<form onSubmit={handleFormSubmit} className="flex flex-col gap-1">
 				{children}
 			</form>
 		</FormProvider>
@@ -143,15 +147,11 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 			type="string"
 			onKeyDown={handleInputKeyDown}
 			value={getPointText(value)}
+			autoFocus={autoFocus}
 			{...register(name, {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
-				maxLength: {
-					value: 5,
-					message: '최대 5자리까지 입력 가능합니다.',
-				},
 			})}
-			autoFocus={autoFocus}
 		/>
 	);
 };
@@ -218,9 +218,7 @@ const FormButton = ({ title }: FormButtonProps) => {
 				title={title}
 				color={{ bgColor: 'White', textColor: 'Black' }}
 				size="large"
-				onClick={() => console.log('출금하기 버튼 클릭')}
 				disabled={!isErrorsEmpty}
-				className="sticky bottom-5"
 			/>
 		</FixedBottomLayout>
 	);
