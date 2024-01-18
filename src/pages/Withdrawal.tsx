@@ -1,16 +1,19 @@
-import PageLayout from '@components/templates/PageLayout';
+import PageLayout from '@layouts/PageLayout';
+
+// import PostWithdrawalScreen from '@components/templates/Withdrawal/PostWithdrawalScreen';
 import PreWithdrawalScreen from '@components/templates/Withdrawal/PreWithdrawalScreen';
-import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressWithdrawalScreen';
+// import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressWithdrawalScreen';
 
 const Withdraw = () => {
 	return (
 		<PageLayout leftType="back" className="p-6">
-			{/* <PreWithdrawalScreen
+			<PreWithdrawalScreen
 				accountBank="국민은행"
 				accountNumber="123456789"
 				point={'1000'}
-			/> */}
-			<ProgressWithdrawalScreen />
+			/>
+			{/* <ProgressWithdrawalScreen /> */}
+			{/* <PostWithdrawalScreen /> */}
 		</PageLayout>
 	);
 };
