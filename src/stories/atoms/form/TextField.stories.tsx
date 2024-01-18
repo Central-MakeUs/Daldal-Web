@@ -23,7 +23,7 @@ const FormWrapper = () => {
 			<Form.Label label="포인트" />
 			<Form.PointInput name="POINT" />
 			<Form.HelperText name="POINT" />
-			<Form.Button>Submit</Form.Button>
+			<Form.Button title="출금하기" />
 		</Form>
 	);
 };

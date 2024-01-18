@@ -1,3 +1,4 @@
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { Button } from 'konsta/react';
 import {
 	useState,
@@ -7,6 +8,7 @@ import {
 	MouseEvent,
 } from 'react';
 
+import DefaultButton from '@components/atoms/button/DefaultButton';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormName, FormType, schema } from '@type/form';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
@@ -34,12 +36,13 @@ const Form = ({ children, onSubmit }: FormProps) => {
 		await onSubmit(data);
 	};
 
+	const handleFormSubmit = () => {
+		handleSubmit(submit);
+	};
+
 	return (
 		<FormProvider {...methods}>
-			<form
-				onSubmit={handleSubmit(submit)}
-				className="flex flex-col w-96 p-6 gap-1"
-			>
+			<form onSubmit={handleFormSubmit} className="flex flex-col gap-1">
 				{children}
 			</form>
 		</FormProvider>
@@ -49,9 +52,10 @@ const Form = ({ children, onSubmit }: FormProps) => {
 type FormInputProps = {
 	name: FormName;
 	type?: 'text' | 'number';
+	autoFocus?: boolean;
 };
 
-const FormInput = ({ name, type = 'text' }: FormInputProps) => {
+const FormInput = ({ name, type = 'text', autoFocus }: FormInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
@@ -89,19 +93,21 @@ const FormInput = ({ name, type = 'text' }: FormInputProps) => {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
 			})}
+			autoFocus={autoFocus}
 		/>
 	);
 };
 
 type FormPointInputProps = {
 	name: FormName;
+	autoFocus?: boolean;
 };
 
-const FormPointInput = ({ name }: FormPointInputProps) => {
+const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
-	const [value, setValue] = useState('');
+	const [value, setValue] = useState('P');
 
 	const handleInputFocus = () => {
 		setIsFocused(true);
@@ -117,6 +123,11 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 
 	const handleInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Backspace') {
+			if (value.length === 1) {
+				setValue('P');
+				return;
+			}
+
 			setValue(value.slice(0, -1));
 		}
 	};
@@ -136,13 +147,10 @@ const FormPointInput = ({ name }: FormPointInputProps) => {
 			type="string"
 			onKeyDown={handleInputKeyDown}
 			value={getPointText(value)}
+			autoFocus={autoFocus}
 			{...register(name, {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
-				maxLength: {
-					value: 5,
-					message: '최대 5자리까지 입력 가능합니다.',
-				},
 			})}
 		/>
 	);
@@ -196,17 +204,23 @@ const FormHelperText = ({ name }: FormHelperTextProps) => {
 };
 
 type FormButtonProps = {
-	children: ReactNode;
+	title: string;
 };
 
-const FormButton = ({ children }: FormButtonProps) => {
+const FormButton = ({ title }: FormButtonProps) => {
+	const { formState } = useFormContext();
+	const { errors } = formState;
+	const isErrorsEmpty = Object.keys(errors).length === 0;
+
 	return (
-		<button
-			type="submit"
-			className="w-full py-2 text-white bg-blue-500 rounded-md"
-		>
-			{children}
-		</button>
+		<FixedBottomLayout childrenPadding="px-6" height="h-15">
+			<DefaultButton
+				title={title}
+				color={{ bgColor: 'White', textColor: 'Black' }}
+				size="large"
+				disabled={!isErrorsEmpty}
+			/>
+		</FixedBottomLayout>
 	);
 };
 
