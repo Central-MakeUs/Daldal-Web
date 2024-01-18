@@ -1,4 +1,4 @@
-import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
+import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
 import { useBottomSheetStore } from '@stores/layerStore';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -6,17 +6,16 @@ const Wrapper = () => {
 	const { openBottomSheet } = useBottomSheetStore();
 
 	return (
-		<div className="w- h-full">
-			<button onClick={() => openBottomSheet('login')}>open</button>
-			<LoginBottomSheet />
+		<div className="h-full">
+			<button onClick={() => openBottomSheet('account')}>open</button>
+			<AccountBottomSheet />
 		</div>
 	);
 };
 
 const meta = {
-	title: 'molecules/bottomSheet/LoginBottomSheet',
+	title: 'molecules/bottomSheet/AccountBottomSheet',
 	component: Wrapper,
-	decorators: [Story => <Story />],
 	parameters: {
 		layout: 'centered',
 		backgrounds: {
@@ -24,7 +23,7 @@ const meta = {
 		},
 	},
 	tags: ['autodocs'],
-} satisfies Meta<typeof LoginBottomSheet>;
+} satisfies Meta<typeof Wrapper>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
