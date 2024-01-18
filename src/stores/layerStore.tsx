@@ -2,7 +2,7 @@ import DefaultButton from '@components/atoms/button/DefaultButton';
 import Modal from '@components/atoms/Modal';
 import { create } from 'zustand';
 
-type BottomSheetType = 'login';
+type BottomSheetType = 'login' | 'account';
 
 type BottomSheetStoreType = {
 	isBottomSheetOpen: boolean;
