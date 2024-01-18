@@ -13,7 +13,7 @@ const ImageWithCheck = ({ src, alt }: ImageWithCheckProps) => {
 	const [isChecked, setIsChecked] = useState(false);
 
 	const handleChangeCheck = () => {
-		setIsChecked(!isChecked);
+		setIsChecked(prev => !prev);
 	};
 
 	return (
