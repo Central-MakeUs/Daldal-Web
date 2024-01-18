@@ -7,6 +7,7 @@ import {
 	MouseEvent,
 } from 'react';
 
+import DefaultButton from '@components/atoms/button/DefaultButton';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormName, FormType, schema } from '@type/form';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
@@ -197,17 +198,23 @@ const FormHelperText = ({ name }: FormHelperTextProps) => {
 };
 
 type FormButtonProps = {
-	children: ReactNode;
+	title: string;
 };
 
-const FormButton = ({ children }: FormButtonProps) => {
+const FormButton = ({ title }: FormButtonProps) => {
+	const { formState } = useFormContext();
+	const { errors } = formState;
+	const isErrorsEmpty = Object.keys(errors).length === 0;
+
 	return (
-		<button
-			type="submit"
-			className="w-full py-2 text-white bg-blue-500 rounded-md"
-		>
-			{children}
-		</button>
+		<DefaultButton
+			title={title}
+			color={{ bgColor: 'White', textColor: 'Black' }}
+			size="large"
+			onClick={() => console.log('출금하기 버튼 클릭')}
+			disabled={!isErrorsEmpty}
+			className="sticky bottom-5"
+		/>
 	);
 };
 
