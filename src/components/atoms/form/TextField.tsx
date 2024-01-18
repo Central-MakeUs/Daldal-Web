@@ -128,7 +128,7 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 				return;
 			}
 
-			setValue(value.slice(0, -1));
+			setValue(prev => prev.slice(0, prev.length - 1));
 		}
 	};
 

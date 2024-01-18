@@ -18,9 +18,7 @@ const Routing = () => {
 			<Route path="/point" component={Point} exact />
 			<Route path="/image-upload" component={ImageUpload} exact />
 			<Route path="/withdrawal" component={Withdrawal} exact />
-			<div className="w-full max-w-[600px] fixed bottom-0">
-				<LoginBottomSheet />
-			</div>
+			<LoginBottomSheet />
 			{Modal}
 		</BrowserRouter>
 	);

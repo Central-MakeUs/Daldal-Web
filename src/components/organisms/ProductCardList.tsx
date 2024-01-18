@@ -23,17 +23,15 @@ const ProductCardList = ({
 }: ProductCardListProps) => {
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols[gridCols]}`}>
-			{productList.map((product, id) => {
-				return (
-					<ProductCard
-						thumbnail={product.image}
-						size={size}
-						type={type}
-						key={`ProductCard#${id}`}
-						{...product}
-					/>
-				);
-			})}
+			{productList.map((product, id) => (
+				<ProductCard
+					thumbnail={product.image}
+					size={size}
+					type={type}
+					key={`ProductCard#${id}`}
+					{...product}
+				/>
+			))}
 		</div>
 	);
 };

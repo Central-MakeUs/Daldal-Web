@@ -8,7 +8,7 @@ const Template = (args: { src: string; alt: string }) => {
 	const [isFullHeart, setIsFullHeart] = useState(false);
 
 	const handleClickHeart = () => {
-		setIsFullHeart(!isFullHeart);
+		setIsFullHeart(prev => !prev);
 	};
 
 	return (

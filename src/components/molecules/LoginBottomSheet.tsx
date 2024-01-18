@@ -27,7 +27,7 @@ const LoginBottomSheet = () => {
 								color: colors.Gray60,
 								size: 24,
 							}}
-							className="!w-fit"
+							className="!w-fit !p-0 absolute top-4 right-4"
 						/>
 					</div>
 					<div className="flex gap-3 flex-col w-full">
