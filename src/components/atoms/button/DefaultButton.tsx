@@ -17,6 +17,7 @@ type DefaultButtonProps = {
 	size: 'small' | 'large';
 	onClick: () => void;
 	disabled?: boolean;
+	className?: string;
 };
 
 const DefaultButton = ({
@@ -26,6 +27,7 @@ const DefaultButton = ({
 	size,
 	onClick,
 	disabled = false,
+	className,
 }: DefaultButtonProps) => {
 	const height = size === 'large' ? '!h-12' : '!h-[45px]';
 	return (
@@ -40,7 +42,9 @@ const DefaultButton = ({
 				color.borderColor &&
 				`!border-[1px] !border-solid !border-${color.borderColor}`
 			}
-			${dynamicKColor[color.bgColor]} ${dynamicTextColor[color.textColor]}`}
+			${dynamicKColor[color.bgColor]} ${
+				dynamicTextColor[color.textColor]
+			} ${className}`}
 			onClick={onClick}
 			disabled={disabled}
 			colors={{
