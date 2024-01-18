@@ -1,4 +1,6 @@
-import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
+import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
+import BankBottomSheet from '@components/molecules/bottomSheet/BankBottomSheet';
+import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
 import MyPage from '@pages/MyPage';
@@ -19,6 +21,8 @@ const Routing = () => {
 			<Route path="/image-upload" component={ImageUpload} exact />
 			<Route path="/withdrawal" component={Withdrawal} exact />
 			<LoginBottomSheet />
+			<AccountBottomSheet />
+			<BankBottomSheet />
 			{Modal}
 		</BrowserRouter>
 	);

@@ -4,10 +4,10 @@ import { Drawer, DrawerContent } from '@components/ui/drawer';
 import colors from '@constants/colors';
 import { useBottomSheetStore } from '@stores/layerStore';
 const LoginBottomSheet = () => {
-	const { isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
+	const { type, isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
 		useBottomSheetStore();
 
-	if (!isBottomSheetOpen) {
+	if (!isBottomSheetOpen || type !== 'login') {
 		return null;
 	}
 

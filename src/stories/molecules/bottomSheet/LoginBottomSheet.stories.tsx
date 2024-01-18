@@ -1,4 +1,4 @@
-import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
+import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
 import { useBottomSheetStore } from '@stores/layerStore';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -14,7 +14,7 @@ const Wrapper = () => {
 };
 
 const meta = {
-	title: 'molecules/LoginBottomSheet',
+	title: 'molecules/bottomSheet/LoginBottomSheet',
 	component: Wrapper,
 	decorators: [Story => <Story />],
 	parameters: {
