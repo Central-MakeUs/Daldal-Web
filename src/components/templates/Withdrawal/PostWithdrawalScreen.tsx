@@ -1,6 +1,5 @@
-import FixedBottomLayout from '@layouts/FixedBottomLayout';
-
 import DefaultButton from '@components/atoms/button/DefaultButton';
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 
 const PostWithdrawalScreen = () => {
 	const handleConfirmClick = () => {

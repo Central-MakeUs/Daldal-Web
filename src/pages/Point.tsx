@@ -1,10 +1,9 @@
-import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import PageLayout from '@layouts/PageLayout';
-
 import CaptionButton from '@components/atoms/button/CaptionButton';
 import RequestVerificationButton from '@components/atoms/button/RequestVerificationButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import PointList from '@components/molecules/groupOrder/PointList';
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import PageLayout from '@layouts/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 import { useBottomSheetStore } from '@stores/layerStore';
 

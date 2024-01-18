@@ -1,4 +1,3 @@
-import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { Button } from 'konsta/react';
 import {
 	useState,
@@ -10,6 +9,7 @@ import {
 
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import { zodResolver } from '@hookform/resolvers/zod';
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { FormName, FormType, schema } from '@type/form';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
 import {

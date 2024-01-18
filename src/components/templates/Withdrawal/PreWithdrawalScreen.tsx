@@ -1,7 +1,6 @@
-import FixedBottomLayout from '@layouts/FixedBottomLayout';
-
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 
 type PreWithdrawalScreenProps = {
 	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
