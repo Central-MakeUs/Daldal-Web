@@ -1,3 +1,4 @@
+import AccountBottomSheet from '@components/molecules/AccountBottomSheet';
 import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
@@ -20,6 +21,7 @@ const Routing = () => {
 			<Route path="/withdrawal" component={Withdrawal} exact />
 			<div className="w-full max-w-[600px] fixed bottom-0">
 				<LoginBottomSheet />
+				<AccountBottomSheet />
 			</div>
 			{Modal}
 		</BrowserRouter>
