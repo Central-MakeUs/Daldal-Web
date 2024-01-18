@@ -14,7 +14,7 @@ const AccountBottomSheet = () => {
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
 			<DrawerContent className="mx-auto w-full max-w-[600px] px-6 !h-[206px]">
-				<div className="w-full flex justify-between items-start mb-7">
+				<div className="w-full flex justify-between items-start">
 					<div>
 						<h4 className="text-Gray60 typography-Body4 typography-M leading-normal mb-2">
 							계좌가 등록되어 있지 않아, <br /> 달달한 포인트를 받기 어려워요 😥
@@ -40,6 +40,7 @@ const AccountBottomSheet = () => {
 						textColor: 'White',
 					}}
 					size="large"
+					className="m-auto"
 				/>
 			</DrawerContent>
 		</Drawer>
