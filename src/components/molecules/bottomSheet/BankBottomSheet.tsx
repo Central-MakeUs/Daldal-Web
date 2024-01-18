@@ -9,7 +9,7 @@ const BankBottomSheet = () => {
 	const { type, isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
 		useBottomSheetStore();
 
-	if (!isBottomSheetOpen || type == 'bank') {
+	if (!isBottomSheetOpen || type !== 'bank') {
 		return null;
 	}
 	return (
