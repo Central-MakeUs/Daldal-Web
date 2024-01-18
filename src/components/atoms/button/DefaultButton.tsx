@@ -1,6 +1,7 @@
 import { Button } from 'konsta/react';
 
 import SvgIcon from '@components/common/SvgIcon';
+import dynamicBorderColor from '@constants/dynamicTailwind/dynamicBorderColor';
 import dynamicKColor from '@constants/dynamicTailwind/dynamicKColor';
 import dynamicTextColor from '@constants/dynamicTailwind/dynamicTextColor';
 import ColorKey from '@type/colorKey';
@@ -30,6 +31,7 @@ const DefaultButton = ({
 	className,
 }: DefaultButtonProps) => {
 	const height = size === 'large' ? '!h-12' : '!h-[45px]';
+
 	return (
 		<Button
 			className={`w-full ${height} !typography-Btn_text1 flex rounded ${
@@ -37,12 +39,10 @@ const DefaultButton = ({
 			} ${
 				color.bgColor === 'Black' &&
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
-			}
-			${
+			} ${
 				color.borderColor &&
-				`!border-[1px] !border-solid !border-${color.borderColor}`
-			}
-			${dynamicKColor[color.bgColor]} ${
+				`!border-[1px] !border-solid ${dynamicBorderColor[color.borderColor]}`
+			} ${dynamicKColor[color.bgColor]} ${
 				dynamicTextColor[color.textColor]
 			} ${className}`}
 			onClick={onClick}
