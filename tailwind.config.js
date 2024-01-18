@@ -26,10 +26,13 @@ export default konstaConfig({
 			xs: '375px',
 			...defaultTheme.screens,
 		},
+		fontFamily: {
+			ios: 'SUIT',
+			material: 'SUIT',
+		},
 		extends: {
 			colors: colors,
 			fontFamily: { SUIT: ['SUIT', 'sans-serif'] },
-
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
