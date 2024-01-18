@@ -1,5 +1,5 @@
-import AccountBottomSheet from '@components/molecules/AccountBottomSheet';
-import LoginBottomSheet from '@components/molecules/LoginBottomSheet';
+import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
+import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
 import MyPage from '@pages/MyPage';
