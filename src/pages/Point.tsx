@@ -5,12 +5,12 @@ import PointList from '@components/molecules/groupOrder/PointList';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
-import { useBottomSheetStore } from '@stores/layerStore';
+import { useNavigate } from 'react-router-dom';
 
 const Point = () => {
-	const { openBottomSheet } = useBottomSheetStore();
+	const navigate = useNavigate();
 	const handleCaptionButtonClick = () => {
-		openBottomSheet('login');
+		navigate('/withdrawal/pre');
 	};
 
 	// TODO: totalPoint API 연동

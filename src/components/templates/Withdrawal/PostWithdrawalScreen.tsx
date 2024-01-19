@@ -1,9 +1,12 @@
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import { useNavigate } from 'react-router-dom';
 
 const PostWithdrawalScreen = () => {
+	const navigate = useNavigate();
+
 	const handleConfirmClick = () => {
-		console.log('쇼핑하러 가기 버튼 클릭');
+		navigate('/');
 	};
 
 	return (

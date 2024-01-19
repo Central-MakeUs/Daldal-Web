@@ -1,26 +1,22 @@
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import { useNavigate } from 'react-router-dom';
 
-type PreWithdrawalScreenProps = {
-	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
-	accountBank: string;
-	accountNumber: string;
-	point: string;
-};
-
-const PreWithdrawalScreen = ({
-	accountBank,
-	accountNumber,
-	point,
-}: PreWithdrawalScreenProps) => {
+const PreWithdrawalScreen = () => {
+	const navigate = useNavigate();
 	const handleNoClick = () => {
-		console.log('아니요');
+		navigate('/point');
 	};
 
 	const handleWithdrawClick = () => {
-		console.log('출금하기');
+		navigate('/withdrawal/progress');
 	};
+
+	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
+	const accountBank = '국민은행';
+	const accountNumber = '123456789';
+	const point = '1000';
 
 	return (
 		<div className="typography-Body1 typography-R text-White flex flex-col gap-12 h-full">

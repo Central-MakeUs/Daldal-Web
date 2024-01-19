@@ -1,7 +1,7 @@
 import * as z from 'zod';
 
 import Form from '@components/atoms/form/TextField';
-import { schema } from '@type/form';
+import { accountSchema, pointSchema } from '@type/form';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -10,8 +10,10 @@ const FormWrapper = () => {
 		console.log(data);
 	};
 
+	const schema = z.union([pointSchema, accountSchema]);
+
 	return (
-		<Form onSubmit={onSubmit}>
+		<Form onSubmit={onSubmit} schema={schema}>
 			<Form.Label label="유저" />
 			<Form.Input name="USER" type="text" />
 			<Form.HelperText name="USER" />

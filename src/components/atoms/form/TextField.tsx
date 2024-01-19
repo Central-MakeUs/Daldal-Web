@@ -10,7 +10,7 @@ import {
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { FormName, FormType, schema } from '@type/form';
+import { FormName, FormType, SchemaType } from '@type/form';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
 import {
 	useForm,
@@ -22,9 +22,10 @@ import {
 type FormProps = {
 	children: ReactNode;
 	onSubmit: SubmitHandler<FormType>;
+	schema: SchemaType;
 };
 
-const Form = ({ children, onSubmit }: FormProps) => {
+const Form = ({ children, onSubmit, schema }: FormProps) => {
 	const methods = useForm<FormType>({
 		resolver: zodResolver(schema),
 		mode: 'onChange',
@@ -32,17 +33,9 @@ const Form = ({ children, onSubmit }: FormProps) => {
 
 	const { handleSubmit } = methods;
 
-	const submit: SubmitHandler<FormType> = async data => {
-		await onSubmit(data);
-	};
-
-	const handleFormSubmit = () => {
-		handleSubmit(submit);
-	};
-
 	return (
 		<FormProvider {...methods}>
-			<form onSubmit={handleFormSubmit} className="flex flex-col gap-1">
+			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-1">
 				{children}
 			</form>
 		</FormProvider>
@@ -209,8 +202,10 @@ type FormButtonProps = {
 
 const FormButton = ({ title }: FormButtonProps) => {
 	const { formState } = useFormContext();
-	const { errors } = formState;
+	const { errors, dirtyFields } = formState;
 	const isErrorsEmpty = Object.keys(errors).length === 0;
+	const isDirty = Object.keys(dirtyFields).length !== 0;
+	const isFormButtonDisabled = !isErrorsEmpty || !isDirty;
 
 	return (
 		<FixedBottomLayout childrenPadding="px-6" height="h-15">
@@ -218,7 +213,7 @@ const FormButton = ({ title }: FormButtonProps) => {
 				title={title}
 				color={{ bgColor: 'White', textColor: 'Black' }}
 				size="large"
-				disabled={!isErrorsEmpty}
+				disabled={isFormButtonDisabled}
 			/>
 		</FixedBottomLayout>
 	);
