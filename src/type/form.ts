@@ -22,10 +22,15 @@ export const accountSchema = z.object({
 		.max(16, '16 글자 이하로 입력해주세요.'),
 });
 
+export const formSchema = z.union([pointSchema, accountSchema]);
+
 export type FormName =
 	| keyof z.infer<typeof pointSchema>
 	| keyof z.infer<typeof accountSchema>;
 export type FormType =
 	| z.infer<typeof pointSchema>
 	| z.infer<typeof accountSchema>;
-export type SchemaType = typeof pointSchema | typeof accountSchema;
+export type SchemaType =
+	| typeof pointSchema
+	| typeof accountSchema
+	| typeof formSchema;
