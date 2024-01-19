@@ -5,9 +5,13 @@ import colors from '@constants/colors';
 
 type SearchTextFieldProps = {
 	isFocused?: boolean;
+	className?: string;
 };
 
-const SearchTextField = ({ isFocused = false }: SearchTextFieldProps) => {
+const SearchTextField = ({
+	isFocused = false,
+	className,
+}: SearchTextFieldProps) => {
 	const [searchValue, setSearchValue] = useState('');
 
 	const handleClearSearchValue = () => {
@@ -21,7 +25,9 @@ const SearchTextField = ({ isFocused = false }: SearchTextFieldProps) => {
 	};
 
 	return (
-		<div className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6">
+		<div
+			className={`bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6 ${className}`}
+		>
 			<SvgIcon id="search" size={24} color={colors.Gray20} />
 			<input
 				autoFocus={isFocused}
