@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const Point = () => {
 	const navigate = useNavigate();
 	const handleCaptionButtonClick = () => {
-		navigate('/pre-withdrawal');
+		navigate('/withdrawal/pre');
 	};
 
 	// TODO: totalPoint API 연동

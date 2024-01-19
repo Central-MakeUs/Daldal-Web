@@ -1,21 +1,12 @@
-import PreWithdrawalScreen from '@components/templates/Withdrawal/PreWithdrawalScreen';
 import PageLayout from '@layouts/PageLayout';
+import { Outlet } from 'react-router-dom';
 
-// import PostWithdrawalScreen from '@components/templates/Withdrawal/PostWithdrawalScreen';
-// import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressWithdrawalScreen';
-
-const Withdraw = () => {
+const Withdrawal = () => {
 	return (
 		<PageLayout leftType="back" className="p-6">
-			<PreWithdrawalScreen
-				accountBank="국민은행"
-				accountNumber="123456789"
-				point={'1000'}
-			/>
-			{/* <ProgressWithdrawalScreen /> */}
-			{/* <PostWithdrawalScreen /> */}
+			<Outlet />
 		</PageLayout>
 	);
 };
 
-export default Withdraw;
+export default Withdrawal;
