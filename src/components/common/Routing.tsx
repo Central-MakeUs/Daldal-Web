@@ -1,6 +1,7 @@
 import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
 import BankBottomSheet from '@components/molecules/bottomSheet/BankBottomSheet';
 import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
+import Category from '@pages/Category';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
 import MyPage from '@pages/MyPage';
@@ -20,6 +21,7 @@ const Routing = () => {
 			<Route path="/point" component={Point} exact />
 			<Route path="/image-upload" component={ImageUpload} exact />
 			<Route path="/withdrawal" component={Withdrawal} exact />
+			<Route path="/category/:id" component={Category} exact />
 			<LoginBottomSheet />
 			<AccountBottomSheet />
 			<BankBottomSheet />
