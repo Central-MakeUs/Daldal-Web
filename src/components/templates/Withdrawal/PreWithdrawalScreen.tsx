@@ -4,19 +4,7 @@ import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { useNavigate } from 'react-router-dom';
 
-type PreWithdrawalScreenProps = {
-	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
-	// props로 받는 형태가 아니라 바로 현 페이지에서 받도록 설정
-	accountBank?: string;
-	accountNumber?: string;
-	point?: string;
-};
-
-const PreWithdrawalScreen = ({
-	accountBank = '신한은행',
-	accountNumber = '123456789',
-	point = '1000',
-}: PreWithdrawalScreenProps) => {
+const PreWithdrawalScreen = () => {
 	const navigate = useNavigate();
 	const handleNoClick = () => {
 		navigate('/point');
@@ -25,6 +13,11 @@ const PreWithdrawalScreen = ({
 	const handleWithdrawClick = () => {
 		navigate('/progress-withdrawal');
 	};
+
+	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
+	const accountBank = '국민은행';
+	const accountNumber = '123456789';
+	const point = '1000';
 
 	return (
 		<PageLayout leftType="back" className="p-6">
