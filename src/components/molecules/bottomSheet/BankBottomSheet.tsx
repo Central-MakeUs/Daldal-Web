@@ -27,7 +27,7 @@ const BankBottomSheet = () => {
 				<h2 className="text-Black typography-Body1 typography-M">
 					은행을 선택해주세요.
 				</h2>
-				<div className="grid grid-cols-3 gap-[14px] overflow-auto my-3">
+				<div className="grid grid-cols-3 gap-[14px] overflow-auto mb-3">
 					{bankList.map(bank => (
 						<BankButton
 							title={bank.title}
