@@ -29,7 +29,8 @@ const Routing = () => {
 					<Route path="progress" element={<ProgressWithdrawalScreen />} />
 					<Route path="post" element={<PostWithdrawalScreen />} />
 				</Route>
-        <Route path="/category/:id" element={<Category />} />
+				<Route path="/category" element={<Category />} />
+				<Route path="/category/:categoryName" element={<Category />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
