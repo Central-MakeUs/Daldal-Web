@@ -1,12 +1,14 @@
 import IconButton from '@components/atoms/button/IconButton';
 import colors from '@constants/colors';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LeftBackHeader = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
+
 	const handleClick = () => {
-		history.go(-1);
+		navigate(-1);
 	};
+
 	return (
 		<IconButton
 			className="!w-8 !px-0 !py-4"
