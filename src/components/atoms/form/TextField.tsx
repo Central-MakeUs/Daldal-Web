@@ -209,8 +209,10 @@ type FormButtonProps = {
 
 const FormButton = ({ title }: FormButtonProps) => {
 	const { formState } = useFormContext();
-	const { errors } = formState;
+	const { errors, dirtyFields } = formState;
 	const isErrorsEmpty = Object.keys(errors).length === 0;
+	const isDirty = Object.keys(dirtyFields).length !== 0;
+	const isFormButtonDisabled = !isErrorsEmpty || !isDirty;
 
 	return (
 		<FixedBottomLayout childrenPadding="px-6" height="h-15">
@@ -218,7 +220,7 @@ const FormButton = ({ title }: FormButtonProps) => {
 				title={title}
 				color={{ bgColor: 'White', textColor: 'Black' }}
 				size="large"
-				disabled={!isErrorsEmpty}
+				disabled={isFormButtonDisabled}
 			/>
 		</FixedBottomLayout>
 	);
