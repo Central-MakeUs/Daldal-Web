@@ -24,10 +24,10 @@ const BankBottomSheet = () => {
 					}}
 					className="!w-fit absolute top-1 right-0"
 				/>
-				<h2 className="text-Black typography-Body1 typography-M mb-3">
+				<h2 className="text-Black typography-Body1 typography-M">
 					은행을 선택해주세요.
 				</h2>
-				<div className="grid grid-cols-3 gap-[14px] overflow-auto">
+				<div className="grid grid-cols-3 gap-[14px] overflow-auto mb-3">
 					{bankList.map(bank => (
 						<BankButton
 							title={bank.title}
