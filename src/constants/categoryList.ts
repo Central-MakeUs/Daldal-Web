@@ -1,4 +1,15 @@
-const categoryList = {
+import { IconId } from '@type/svgIcon';
+
+export type CategoryName = 'clothes' | 'hat' | 'bags' | 'shoes' | 'jewlery';
+
+type CategoryList = {
+	[K in CategoryName]: {
+		id: IconId;
+		name: string;
+	};
+};
+
+const categoryList: CategoryList = {
 	clothes: { id: 'category-clothes', name: '의류' },
 	hat: { id: 'category-hat', name: '모자' },
 	bags: { id: 'category-bags', name: '가방' },
