@@ -6,18 +6,22 @@ import NotApprovedTag from '@components/atoms/tag/NotApprovedTag';
 import ProgressTag from '@components/atoms/tag/ProgressTag';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
+import { Status } from '@type/status';
 import { getDataInYYYYMMDDSplitedByDot } from '@utils/formatData';
 
-//Todo: 서버에서 받는 값을 key로 교체
-const statusValue = {
-	Approved: <ApprovedTag size="large" />,
-	Not_Approved: <NotApprovedTag size="large" />,
-	Progress: <ProgressTag size="large" />,
+type StatusValueType = {
+	[K in Status]: ReactNode;
+};
+
+const statusValue: StatusValueType = {
+	APPROVED: <ApprovedTag size="large" />,
+	NOT_APPROVED: <NotApprovedTag size="large" />,
+	PROGRESS: <ProgressTag size="large" />,
 };
 
 const ImageUploadDetail = () => {
 	const date = '2023-12-12T12:12:12:32';
-	const status = 'Progress';
+	const status = 'PROGRESS';
 
 	const dateValue = () => (
 		<h2 className="typography-Subhead text-White">
