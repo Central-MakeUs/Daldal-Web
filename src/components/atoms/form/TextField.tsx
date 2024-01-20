@@ -10,6 +10,9 @@ import {
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import { AccountFormName } from '@models/form/entity/account';
+import { useAccountInfoStore } from '@stores/formInfoStore';
+import { useBottomSheetStore } from '@stores/layerStore';
 import { FormName, FormType, SchemaType } from '@type/form';
 import { getOriginalPoint, getPointText } from '@utils/formatData';
 import {
@@ -43,16 +46,25 @@ const Form = ({ children, onSubmit, schema }: FormProps) => {
 };
 
 type FormInputProps = {
-	name: FormName;
+	name: AccountFormName;
 	type?: 'text' | 'number';
 	autoFocus?: boolean;
+	disabled?: boolean;
 };
 
-const FormInput = ({ name, type = 'text', autoFocus }: FormInputProps) => {
+const FormInput = ({
+	name,
+	type = 'text',
+	autoFocus,
+	disabled,
+}: FormInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
-	const [value, setValue] = useState('');
+
+	const { accountInfo } = useAccountInfoStore();
+	const defaultValue = accountInfo[name] || '';
+	const [value, setValue] = useState(defaultValue);
 
 	const isNumber = type === 'number';
 
@@ -87,6 +99,7 @@ const FormInput = ({ name, type = 'text', autoFocus }: FormInputProps) => {
 				onChange: handleInputChange,
 			})}
 			autoFocus={autoFocus}
+			disabled={disabled}
 		/>
 	);
 };
@@ -149,19 +162,28 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 	);
 };
 
-const FormBankButton = () => {
-	const [bankName, setBankName] = useState('');
+type FormBankButtonProps = {
+	disabled?: boolean;
+};
+
+const FormBankButton = ({ disabled }: FormBankButtonProps) => {
+	const { accountInfo } = useAccountInfoStore();
+	const defaultValue = accountInfo['BANK'] || '';
+
+	const { openBottomSheet } = useBottomSheetStore();
 	const handleBankButtonClick = (e: MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		setBankName('신한은행');
+		!disabled && openBottomSheet('bank');
 	};
 
 	return (
 		<Button
-			className="w-full my-2 py-1 bg-transparent text-White min-h-[38px] mb-8 pl-0"
+			className="w-full my-2 py-1 bg-transparent text-White min-h-[38px] mb-8 pl-0 active:bg-transparent"
 			onClick={handleBankButtonClick}
 		>
-			<span className="text-left w-full typography-Subhead">{bankName}</span>
+			<span className="text-left w-full typography-Subhead">
+				{accountInfo['BANK'] || defaultValue}
+			</span>
 		</Button>
 	);
 };
@@ -198,14 +220,24 @@ const FormHelperText = ({ name }: FormHelperTextProps) => {
 
 type FormButtonProps = {
 	title: string;
+	fieldCount?: number;
+	isEditing?: boolean;
 };
 
-const FormButton = ({ title }: FormButtonProps) => {
+const FormButton = ({ title, fieldCount = 1, isEditing }: FormButtonProps) => {
 	const { formState } = useFormContext();
 	const { errors, dirtyFields } = formState;
+	const { isSelectedBankNeeded, accountInfo } = useAccountInfoStore();
+	const fieldCountForValidation = isSelectedBankNeeded
+		? fieldCount - 1
+		: fieldCount;
 	const isErrorsEmpty = Object.keys(errors).length === 0;
-	const isDirty = Object.keys(dirtyFields).length !== 0;
-	const isFormButtonDisabled = !isErrorsEmpty || !isDirty;
+	const isDirty =
+		isEditing || Object.keys(dirtyFields).length === fieldCountForValidation;
+	const isBankSelectedOrNotNeeded =
+		(isSelectedBankNeeded && !!accountInfo['BANK']) || !isSelectedBankNeeded;
+	const isFormButtonDisabled =
+		!isErrorsEmpty || !isDirty || !isBankSelectedOrNotNeeded;
 
 	return (
 		<FixedBottomLayout childrenPadding="px-6" height="h-15">
