@@ -31,7 +31,7 @@ const ProductDetail = () => {
 							<img
 								src={image}
 								alt="detail small image"
-								className="w-full h-[350px]"
+								className="w-full h-[calc(100vw*1.2)] max-h-[654px] object-cover"
 							/>
 						</div>
 					</div>
