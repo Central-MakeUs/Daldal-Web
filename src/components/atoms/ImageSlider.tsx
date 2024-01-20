@@ -21,9 +21,9 @@ type ImageSliderProps = {
 };
 
 const initOptions = {
-	dots: true,
-	autoplay: true,
-	infinite: true,
+	dots: false,
+	autoplay: false,
+	infinite: false,
 };
 
 const IndexIndicator = ({
