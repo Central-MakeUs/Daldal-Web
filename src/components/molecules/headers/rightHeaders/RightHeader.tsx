@@ -12,11 +12,9 @@ const RightHeader = () => {
 		openBottomSheet('login');
 	};
 	const handleClickPoint = () => {
-		openBottomSheet('login');
 		navigate('/point');
 	};
 	const handleClickMyPage = () => {
-		openBottomSheet('login');
 		navigate('/my-page');
 	};
 
