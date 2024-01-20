@@ -7,6 +7,7 @@ import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressW
 import Category from '@pages/Category';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
+import ImageUploadDetail from '@pages/ImageUploadDetail';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
 import ProductDetail from '@pages/ProductDetail';
@@ -25,6 +26,7 @@ const Routing = () => {
 				<Route path="/my-page" element={<MyPage />} />
 				<Route path="/point" element={<Point />} />
 				<Route path="/image-upload" element={<ImageUpload />} />
+				<Route path="/image-upload/:imageId" element={<ImageUploadDetail />} />
 				<Route path="/withdrawal/*" element={<Withdrawal />}>
 					<Route path="pre" element={<PreWithdrawalScreen />} />
 					<Route path="progress" element={<ProgressWithdrawalScreen />} />
