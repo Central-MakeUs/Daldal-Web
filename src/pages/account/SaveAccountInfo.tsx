@@ -13,7 +13,7 @@ const SaveAccountInfo = () => {
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
 		// TODO: api를 통해 submit 날리기
-		navigate('/read-account');
+		navigate('/my-page');
 	};
 
 	const messageByAction = {
