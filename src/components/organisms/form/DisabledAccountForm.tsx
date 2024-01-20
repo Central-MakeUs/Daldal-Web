@@ -7,13 +7,15 @@ type DisabledAccountFormProps = {
 };
 
 const DisabledAccountForm = ({ defaultValues }: DisabledAccountFormProps) => {
+	const accountFormName: AccountFormName[] = ['USER', 'BANK', 'ACCOUNT'];
+
 	return (
 		<div className="flex flex-col gap-7">
-			{Object.entries(defaultValues).map(([name, value], index) => (
+			{accountFormName.map((name, index) => (
 				<DisabledFormElement
 					key={`disabledAccountForm#${index}`}
-					label={accountFormLabelMapping[name as AccountFormName]}
-					value={value}
+					label={accountFormLabelMapping[name]}
+					value={defaultValues[name]}
 				/>
 			))}
 		</div>
