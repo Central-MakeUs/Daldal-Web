@@ -1,10 +1,15 @@
 import DefaultButton from '@components/atoms/button/DefaultButton';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { mockImages } from '@mocks/images';
+import { useNavigate } from 'react-router-dom';
 
 const PreRegisterAccountTemplate = () => {
 	// todo: 디자이너님 이미지 생기면 mock 이미지 진짜 이미지로 변경
 	const image = mockImages[0];
+	const navigate = useNavigate();
+	const handleRegisterAccountButtonClick = () => {
+		navigate('/account/register/progress');
+	};
 
 	return (
 		<div className="flex flex-col justify-center items-center h-[calc(100vh-105px)]">
@@ -23,6 +28,7 @@ const PreRegisterAccountTemplate = () => {
 					title="계좌 등록하기"
 					color={{ bgColor: 'White', textColor: 'Black' }}
 					size="large"
+					onClick={handleRegisterAccountButtonClick}
 				/>
 			</FixedBottomLayout>
 		</div>
