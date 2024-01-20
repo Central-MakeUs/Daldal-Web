@@ -28,10 +28,10 @@ const Modal = ({ title, description, buttons }: ModalProps) => {
 		<Dialog open={isModalOpen} onOpenChange={handleModalOpen}>
 			<DialogContent className="w-[calc(100%-24px)] w-max-[576px] rounded-xl box-border">
 				<DialogHeader>
-					<DialogTitle className="whitespace-pre-line typography-Body1 typography-M leading-normal">
+					<DialogTitle className="whitespace-pre-line typography-Body1 typography-M leading-normal text-left">
 						{title}
 					</DialogTitle>
-					<DialogDescription className="whitespace-pre-line typography-Body4 typography-M leading-normal">
+					<DialogDescription className="whitespace-pre-line typography-Body4 typography-M leading-normal text-left">
 						{description}
 					</DialogDescription>
 				</DialogHeader>
