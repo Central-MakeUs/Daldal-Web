@@ -54,7 +54,7 @@ const ImageSlider = ({
 	const CustomDotsAndIndexIndicator = (dots: ReactNode) => (
 		<div className="relative">
 			{!options.dots && (
-				<div className="absolute bottom-6 right-3">
+				<div className="absolute bottom-10 right-3">
 					<IndexIndicator
 						currentIndex={currentIndex}
 						totalImageNumber={totalImageNumber}
@@ -85,7 +85,7 @@ const ImageSlider = ({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		appendDots: (dots: ReactNode) => CustomDotsAndIndexIndicator(dots),
-		dotsClass: 'dots_custom',
+		dotsClass: options.dots ? 'dots_custom' : 'slick-dots',
 		beforeChange: (_: number, newIndex: number) => {
 			setCurrentIndex(newIndex + 1);
 		},
