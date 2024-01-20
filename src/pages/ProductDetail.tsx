@@ -9,7 +9,7 @@ const ProductDetail = () => {
 			<ImageSlider totalImageNumber={mockImages.length} className="w-[287px]">
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
-						<div style={{ position: 'relative', display: 'inline-block' }}>
+						<div style={{ position: 'relative' }}>
 							<img src={image} alt="login image" className="aspect-square" />
 						</div>
 					</div>
@@ -24,7 +24,7 @@ const ProductDetail = () => {
 			>
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
-						<div style={{ position: 'relative', display: 'inline-block' }}>
+						<div style={{ position: 'relative' }}>
 							<img
 								src={image}
 								alt="detail small image"
@@ -43,7 +43,7 @@ const ProductDetail = () => {
 			>
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
-						<div style={{ position: 'relative', display: 'inline-block' }}>
+						<div style={{ position: 'relative' }}>
 							<img
 								src={image}
 								alt="detail large image"
