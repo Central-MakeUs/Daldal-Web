@@ -24,6 +24,8 @@ const bankTextList = [
 	'토스뱅크',
 ];
 
+export type BankNameType = (typeof bankTextList)[number];
+
 type BankListType = {
 	key: number;
 	iconId: IconId;
