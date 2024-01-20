@@ -100,6 +100,7 @@ const FormInput = ({
 			})}
 			autoFocus={autoFocus}
 			disabled={disabled}
+			autoComplete="off"
 		/>
 	);
 };
@@ -158,6 +159,7 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 				onBlur: handleInputBlur,
 				onChange: handleInputChange,
 			})}
+			autoComplete="off"
 		/>
 	);
 };
