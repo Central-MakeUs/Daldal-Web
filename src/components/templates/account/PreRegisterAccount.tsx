@@ -11,16 +11,15 @@ const PreRegisterAccountTemplate = () => {
 		navigate('/enter-account/register');
 	};
 
+	const message =
+		'등록된 계좌 정보가 없습니다.\n계좌를 등록하여\n환급액을 수령해보세요!';
+
 	return (
 		<div className="flex flex-col justify-center items-center h-[calc(100vh-105px)]">
 			<div className="flex flex-col gap-4 items-center text-center">
 				<img src={image} alt="step1" className="w-[163px] h-[163px]" />
-				<div className="typography-Body2 typography-R text-White">
-					등록된 계좌 정보가 없습니다.
-					<br />
-					계좌를 등록하여
-					<br />
-					환급액을 수령해보세요!
+				<div className="typography-Body2 typography-R text-White whitespace-pre-line">
+					{message}
 				</div>
 			</div>
 			<FixedBottomLayout childrenPadding="px-6" height="h-15">
