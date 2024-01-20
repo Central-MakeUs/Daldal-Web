@@ -4,11 +4,12 @@ import { FormType } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 
 const ProgressRegisterAccountTemplate = () => {
-	const { setAccountInfo, accountInfo } = useAccountInfoStore();
+	const { setAccountInfo, accountInfo, setEnterType } = useAccountInfoStore();
 
 	const navigate = useNavigate();
 	const onSubmit = (data: FormType) => {
 		setAccountInfo({ ...accountInfo, ...data });
+		setEnterType('REGISTER');
 		navigate('/save-account', { replace: true });
 	};
 

@@ -8,7 +8,7 @@ import { useAccountInfoStore } from '@stores/formInfoStore';
 import { useNavigate } from 'react-router-dom';
 
 const SaveAccountInfo = () => {
-	const { accountInfo, clearAccountInfo } = useAccountInfoStore();
+	const { accountInfo, clearAccountInfo, enterType } = useAccountInfoStore();
 
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
@@ -17,8 +17,8 @@ const SaveAccountInfo = () => {
 	};
 
 	const messageByAction = {
-		register: '정보를 한 번 더 확인해주세요!\n저장하시겠습니까?',
-		edit: '정보를 한 번 더 확인해주세요!\n수정하시겠습니까?',
+		REGISTER: '정보를 한 번 더 확인해주세요!\n저장하시겠습니까?',
+		EDIT: '정보를 한 번 더 확인해주세요!\n수정하시겠습니까?',
 	};
 
 	useEffect(() => {
@@ -30,7 +30,7 @@ const SaveAccountInfo = () => {
 			<div className="flex flex-col">
 				<DisabledAccountForm defaultValues={accountInfo} />
 				<div className="text-White typography-Body1 typography-M mt-[38px] whitespace-pre-line">
-					{messageByAction['edit']}
+					{messageByAction[enterType]}
 				</div>
 				<FixedBottomLayout childrenPadding="px-6" height="h-15">
 					<DefaultButton
