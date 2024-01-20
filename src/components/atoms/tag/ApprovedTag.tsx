@@ -1,13 +1,17 @@
 import Tag from './Tag';
 
-const ApprovedTag = () => (
+export type StatusTagProps = {
+	size: 'small' | 'large';
+};
+
+const ApprovedTag = ({ size }: StatusTagProps) => (
 	<Tag
 		title="승인"
 		colors={{
 			bgColor: 'Secondary_G',
 			textColor: 'Black',
 		}}
-		size="small"
+		size={size}
 	/>
 );
 
