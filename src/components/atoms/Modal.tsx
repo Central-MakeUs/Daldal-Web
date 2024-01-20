@@ -26,16 +26,16 @@ const Modal = ({ title, description, buttons }: ModalProps) => {
 
 	return (
 		<Dialog open={isModalOpen} onOpenChange={handleModalOpen}>
-			<DialogContent>
+			<DialogContent className="w-[calc(100%-24px)] w-max-[576px] rounded-xl box-border">
 				<DialogHeader>
-					<DialogTitle className="whitespace-pre-line typography-Body1 typography-M leading-normal">
+					<DialogTitle className="whitespace-pre-line typography-Body1 typography-M leading-normal text-left">
 						{title}
 					</DialogTitle>
-					<DialogDescription className="whitespace-pre-line typography-Body4 typography-M leading-normal">
+					<DialogDescription className="whitespace-pre-line typography-Body4 typography-M leading-normal text-left">
 						{description}
 					</DialogDescription>
 				</DialogHeader>
-				<DialogFooter>
+				<DialogFooter className="flex flex-row gap-2">
 					{buttons?.map(button => <DialogClose asChild>{button}</DialogClose>)}
 				</DialogFooter>
 			</DialogContent>

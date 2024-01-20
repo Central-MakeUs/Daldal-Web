@@ -22,6 +22,7 @@ export const useBottomSheetStore = create<BottomSheetStoreType>(set => ({
 		set({ isBottomSheetOpen }),
 }));
 
+//TODO: 모달 각 버튼 동작 구현
 const modalMappingNameWithComponent = {
 	leave: {
 		title: '작성 중인 내용이 있습니다.\n나가시겠습니까?',
@@ -45,6 +46,31 @@ const modalMappingNameWithComponent = {
 					borderColor: 'Primary',
 				}}
 				onClick={() => console.log('이동하기 클릭')}
+			/>,
+		],
+	},
+	cancellation: {
+		title: '정말 회원탈퇴 하시겠습니까?',
+		description: `계정의 복구는 불가하며,\n남아있는 포인트는 자동으로 소멸됩니다.`,
+		buttons: [
+			<DefaultButton
+				color={{
+					textColor: 'White',
+					bgColor: 'Primary',
+				}}
+				title="네"
+				size="small"
+				onClick={() => console.log('회원 탈퇴 클릭')}
+			/>,
+			<DefaultButton
+				title="아니오"
+				size="small"
+				color={{
+					textColor: 'Primary',
+					bgColor: 'White',
+					borderColor: 'Primary',
+				}}
+				onClick={() => console.log('회원 탈퇴 취소 클릭')}
 			/>,
 		],
 	},
