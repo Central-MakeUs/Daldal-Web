@@ -12,8 +12,10 @@ import SaveAccountInfo from '@pages/account/SaveAccountInfo';
 import Category from '@pages/Category';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
+import ImageUploadDetail from '@pages/ImageUploadDetail';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
+import ProductDetail from '@pages/ProductDetail';
 import Withdrawal from '@pages/Withdrawal';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -29,6 +31,7 @@ const Routing = () => {
 				<Route path="/my-page" element={<MyPage />} />
 				<Route path="/point" element={<Point />} />
 				<Route path="/image-upload" element={<ImageUpload />} />
+				<Route path="/image-upload/:imageId" element={<ImageUploadDetail />} />
 				<Route path="/withdrawal/*" element={<Withdrawal />}>
 					<Route path="pre" element={<PreWithdrawalScreen />} />
 					<Route path="progress" element={<ProgressWithdrawalScreen />} />
@@ -45,6 +48,7 @@ const Routing = () => {
 					<Route path="edit" element={<ProgressEditAccountTemplate />} />
 				</Route>
 				<Route path="/save-account" element={<SaveAccountInfo />} />
+				<Route path="/detail/:productId" element={<ProductDetail />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
