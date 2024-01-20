@@ -15,6 +15,7 @@ type ImageSliderProps = {
 	options?: {
 		dots: boolean;
 		autoplay: boolean;
+		infinite: boolean;
 	};
 	totalImageNumber: number;
 };
@@ -22,6 +23,7 @@ type ImageSliderProps = {
 const initOptions = {
 	dots: true,
 	autoplay: true,
+	infinite: true,
 };
 
 const IndexIndicator = ({
@@ -78,7 +80,7 @@ const ImageSlider = ({
 		autoplay: options.autoplay,
 		arrows: false,
 		autoplaySpeed: 5000,
-		infinite: true,
+		infinite: options.infinite,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,

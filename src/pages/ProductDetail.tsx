@@ -6,11 +6,7 @@ const ProductDetail = () => {
 	return (
 		<PageLayout leftType="back">
 			{/**회원가입 화면 */}
-			<ImageSlider
-				totalImageNumber={mockImages.length}
-				options={{ dots: true, autoplay: true }}
-				className="w-[287px]"
-			>
+			<ImageSlider totalImageNumber={mockImages.length} className="w-[287px]">
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
 						<div style={{ position: 'relative', display: 'inline-block' }}>
@@ -23,7 +19,7 @@ const ProductDetail = () => {
 			{/**상세 페이지 작은 사진 화면 */}
 			<ImageSlider
 				totalImageNumber={mockImages.length}
-				options={{ dots: false, autoplay: false }}
+				options={{ dots: false, autoplay: false, infinite: false }}
 				className="w-full"
 			>
 				{mockImages.map((image, idx) => (
@@ -42,7 +38,7 @@ const ProductDetail = () => {
 			{/**상세 페이지 큰 사진 화면 */}
 			<ImageSlider
 				totalImageNumber={mockImages.length}
-				options={{ dots: false, autoplay: false }}
+				options={{ dots: false, autoplay: false, infinite: false }}
 				className="w-full"
 			>
 				{mockImages.map((image, idx) => (
