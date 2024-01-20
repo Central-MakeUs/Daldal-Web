@@ -40,6 +40,7 @@ const MyPage = () => {
 		{
 			iconId: 'photo',
 			title: '구매 인증',
+			route: '/image-upload',
 		},
 	];
 
