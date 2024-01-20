@@ -14,11 +14,7 @@ const ProductDetail = () => {
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
 						<div style={{ position: 'relative', display: 'inline-block' }}>
-							<img
-								src={image}
-								alt="Placeholder Image"
-								className="aspect-square"
-							/>
+							<img src={image} alt="login image" className="aspect-square" />
 						</div>
 					</div>
 				))}
@@ -35,7 +31,7 @@ const ProductDetail = () => {
 						<div style={{ position: 'relative', display: 'inline-block' }}>
 							<img
 								src={image}
-								alt="Placeholder Image"
+								alt="detail small image"
 								className="w-full h-[350px]"
 							/>
 						</div>
@@ -54,7 +50,7 @@ const ProductDetail = () => {
 						<div style={{ position: 'relative', display: 'inline-block' }}>
 							<img
 								src={image}
-								alt="Placeholder Image"
+								alt="detail large image"
 								className="w-full h-screen"
 							/>
 						</div>
