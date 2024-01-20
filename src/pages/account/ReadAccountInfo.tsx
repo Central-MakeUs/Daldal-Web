@@ -1,5 +1,5 @@
-import PreEditAccountTemplate from '@components/templates/account/PreEditAccountTemplate';
-import PreRegisterAccountTemplate from '@components/templates/account/PreRegisterAccountTemplate';
+import PreEditAccountTemplate from '@components/templates/account/PreEditAccount';
+import PreRegisterAccountTemplate from '@components/templates/account/PreRegisterAccount';
 import PageLayout from '@layouts/PageLayout';
 
 const ReadAccountInfo = () => {
