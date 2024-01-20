@@ -14,7 +14,6 @@ export const accountSchema = z.object({
 		.string()
 		.min(1, '필수 입력 사항입니다.')
 		.max(5, '5 글자 이하로 입력해주세요.'),
-	BANK: z.string().min(1, '필수 입력 사항입니다.'),
 	ACCOUNT: z
 		.string()
 		.min(1, '필수 입력 사항입니다.')

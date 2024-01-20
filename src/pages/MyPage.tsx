@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CategoryButton from '@components/atoms/myPage/CategoryButton';
 import PageLayout from '@layouts/PageLayout';
 import { IconId } from '@type/svgIcon';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
 	const [userName, setUserName] = useState('홍길동');
@@ -13,9 +14,13 @@ const MyPage = () => {
 		}
 	}, []);
 
+	const navigate = useNavigate();
+
 	const category: {
 		iconId?: IconId;
 		title: string;
+		// TODO: 모든 페이지 라우팅 완료되면 route 필수로 변경하기
+		route?: string;
 	}[] = [
 		{
 			iconId: 'like-full',
@@ -24,10 +29,12 @@ const MyPage = () => {
 		{
 			iconId: 'point-paid',
 			title: '포인트',
+			route: '/point',
 		},
 		{
 			iconId: 'mypage-person',
 			title: '포인트 환급 계좌정보',
+			route: '/read-account',
 		},
 		{
 			iconId: 'photo',
@@ -52,6 +59,11 @@ const MyPage = () => {
 						key={`CategoryButton#${index}`}
 						iconId={item.iconId}
 						title={item.title}
+						onClick={() => {
+							if (item.route) {
+								navigate(item.route);
+							}
+						}}
 					/>
 				))}
 				<div className="flex gap-[15px]">

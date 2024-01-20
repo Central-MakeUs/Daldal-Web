@@ -6107,6 +6107,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"compare-versions@npm:^6.0.0":
+  version: 6.1.0
+  resolution: "compare-versions@npm:6.1.0"
+  checksum: 5378edc8a53ac98ed907da463e1d6c26f1ed2664006d6a0d54bbdf7f046a36c43e244740854fc0edfc1e09253b9a0b7c98d1282dfee9f6f1a87199599f611218
+  languageName: node
+  linkType: hard
+
 "compressible@npm:~2.0.16":
   version: 2.0.18
   resolution: "compressible@npm:2.0.18"
@@ -6303,6 +6310,7 @@ __metadata:
     react-slick: "npm:^0.29.0"
     slick-carousel: "npm:^1.8.1"
     storybook: "npm:7.6.7"
+    storybook-addon-react-router-v6: "npm:^2.0.10"
     tailwind-merge: "npm:^2.2.0"
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
@@ -10781,6 +10789,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-inspector@npm:6.0.2":
+  version: 6.0.2
+  resolution: "react-inspector@npm:6.0.2"
+  peerDependencies:
+    react: ^16.8.4 || ^17.0.0 || ^18.0.0
+  checksum: 8f9b23c21b4d95722e28c9455c2bf00fd9437347714382594461f98e5b9954d60864d0f4e74e881639b065e752a97ba52a65e39930c234072e5bff291bb02b5e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:18.1.0":
   version: 18.1.0
   resolution: "react-is@npm:18.1.0"
@@ -11710,6 +11727,32 @@ __metadata:
   version: 2.14.2
   resolution: "store2@npm:2.14.2"
   checksum: 2f27c3eaa7207b81410e170e7c41379816d22c1566308a9d97fbf853c4facff531fcb2a85f085c7503c578736570972f747c26018ebeaba7d1341fb82a7b6d52
+  languageName: node
+  linkType: hard
+
+"storybook-addon-react-router-v6@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "storybook-addon-react-router-v6@npm:2.0.10"
+  dependencies:
+    compare-versions: "npm:^6.0.0"
+    react-inspector: "npm:6.0.2"
+  peerDependencies:
+    "@storybook/blocks": ^7.0.0
+    "@storybook/channels": ^7.0.0
+    "@storybook/components": ^7.0.0
+    "@storybook/core-events": ^7.0.0
+    "@storybook/manager-api": ^7.0.0
+    "@storybook/preview-api": ^7.0.0
+    "@storybook/theming": ^7.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-router-dom: ^6.4.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: c7a9684956122563aad0443bf09a264de026c953b492c572d571d7eb9cd2ba692a638d7aa899fb944c158710fe9295668480dcabe6cd11ff5679f9c698b928e1
   languageName: node
   linkType: hard
 
