@@ -4,7 +4,7 @@ import { mockImages } from '@mocks/images';
 
 const ProductDetail = () => {
 	return (
-		<PageLayout leftType="logo" className="p-6">
+		<PageLayout leftType="back">
 			{/**회원가입 화면 */}
 			<ImageSlider
 				totalImageNumber={mockImages.length}
