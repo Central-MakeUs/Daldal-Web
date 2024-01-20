@@ -1,9 +1,14 @@
 import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
 import BankBottomSheet from '@components/molecules/bottomSheet/BankBottomSheet';
 import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
+import ProgressEditAccountTemplate from '@components/templates/account/ProgressEditAccountTemplate';
+import ProgressRegisterAccountTemplate from '@components/templates/account/ProgressRegisterAccountTemplate';
 import PostWithdrawalScreen from '@components/templates/Withdrawal/PostWithdrawalScreen';
 import PreWithdrawalScreen from '@components/templates/Withdrawal/PreWithdrawalScreen';
 import ProgressWithdrawalScreen from '@components/templates/Withdrawal/ProgressWithdrawalScreen';
+import EnterAccountInfo from '@pages/account/EnterAccountInfo';
+import ReadAccountInfo from '@pages/account/ReadAccountInfo';
+import SaveAccountInfo from '@pages/account/SaveAccountInfo';
 import Category from '@pages/Category';
 import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
@@ -31,6 +36,15 @@ const Routing = () => {
 				</Route>
 				<Route path="/category" element={<Category />} />
 				<Route path="/category/:categoryName" element={<Category />} />
+				<Route path="/read-account" element={<ReadAccountInfo />} />
+				<Route path="/enter-account/*" element={<EnterAccountInfo />}>
+					<Route
+						path="register"
+						element={<ProgressRegisterAccountTemplate />}
+					/>
+					<Route path="edit" element={<ProgressEditAccountTemplate />} />
+				</Route>
+				<Route path="/save-account" element={<SaveAccountInfo />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
