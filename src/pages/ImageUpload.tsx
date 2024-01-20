@@ -2,8 +2,11 @@ import ImageUploadButton from '@components/atoms/ImageUploadButton';
 import ImageContainer from '@components/molecules/ImageContainer';
 import PageLayout from '@layouts/PageLayout';
 import { uploadImages } from '@mocks/uploadImages';
+import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = () => {
+	const navigate = useNavigate();
+
 	return (
 		<PageLayout leftType="back" className="px-6 py-3">
 			<div className="mb-3 flex flex-col gap-1 typography-Body1 typography-M">
@@ -23,7 +26,7 @@ const ImageUpload = () => {
 						key={`imageContainer${idx}`}
 						imageUrl={image.image}
 						status={image.tag}
-						onClick={() => console.log('test')}
+						onClick={() => navigate('/image-upload/10')}
 					/>
 				))}
 			</div>
