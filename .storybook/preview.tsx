@@ -4,6 +4,7 @@ import { KonstaProvider } from 'konsta/react';
 
 import { GlobalStorybookStyles } from '../src/components/common/GlobalStorybookStyles';
 import { loadFontsForStorybook } from '../src/utils/loadFontsForStorybook';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import 'tailwindcss/tailwind.css';
 loadFontsForStorybook();
@@ -28,6 +29,7 @@ const preview: Preview = {
 		},
 	},
 	decorators: [
+		withRouter,
 		withGlobalStyle,
 		Story => (
 			<div className="p-4">
