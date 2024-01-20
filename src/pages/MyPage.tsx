@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import CategoryButton from '@components/atoms/myPage/CategoryButton';
 import PageLayout from '@layouts/PageLayout';
+import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
 import { useNavigate } from 'react-router-dom';
 
@@ -42,6 +43,11 @@ const MyPage = () => {
 		},
 	];
 
+	const { openModal } = useModalStore();
+	const handleCancelEnrollmentModal = () => {
+		openModal('cancellation');
+	};
+
 	return (
 		<PageLayout leftType="logo" className="p-6">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
@@ -68,7 +74,10 @@ const MyPage = () => {
 				))}
 				<div className="flex gap-[15px]">
 					<CategoryButton title="로그아웃" />
-					<CategoryButton title="회원 탈퇴" />
+					<CategoryButton
+						title="회원 탈퇴"
+						onClick={handleCancelEnrollmentModal}
+					/>
 				</div>
 			</div>
 		</PageLayout>
