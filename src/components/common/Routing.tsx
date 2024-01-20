@@ -9,6 +9,7 @@ import Home from '@pages/Home';
 import ImageUpload from '@pages/ImageUpload';
 import MyPage from '@pages/MyPage';
 import Point from '@pages/Point';
+import ProductDetail from '@pages/ProductDetail';
 import Withdrawal from '@pages/Withdrawal';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -31,6 +32,7 @@ const Routing = () => {
 				</Route>
 				<Route path="/category" element={<Category />} />
 				<Route path="/category/:categoryName" element={<Category />} />
+				<Route path="/detail/:productId" element={<ProductDetail />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
