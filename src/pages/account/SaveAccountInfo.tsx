@@ -22,9 +22,8 @@ const SaveAccountInfo = () => {
 	};
 
 	useEffect(() => {
-		console.log(accountInfo);
 		return () => clearAccountInfo();
-	}, []);
+	}, [clearAccountInfo]);
 
 	return (
 		<PageLayout className="p-6" leftType="back">
