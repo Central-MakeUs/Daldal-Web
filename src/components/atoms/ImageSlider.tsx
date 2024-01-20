@@ -90,6 +90,7 @@ const ImageSlider = ({
 			setCurrentIndex(newIndex + 1);
 		},
 	};
+
 	return (
 		<Slider {...settings} className={`relative ${className}`}>
 			{children}
