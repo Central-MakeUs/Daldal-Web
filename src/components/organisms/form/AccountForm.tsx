@@ -19,7 +19,7 @@ const AccountForm = ({ disabled, buttonInfo, isEditing }: AccountFormProps) => {
 
 	useEffect(() => {
 		setIsSelectedBankNeeded(true);
-	}, []);
+	}, [setIsSelectedBankNeeded]);
 
 	return (
 		<Form onSubmit={onSubmit} schema={accountSchema}>
