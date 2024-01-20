@@ -17,9 +17,9 @@ const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 				className="relative rounded-[5px] object-cover aspect-square"
 			/>
 			<div className="absolute top-1 right-1">
-				{status === 'APPROVED' && <ApprovedTag />}
-				{status === 'PROGRESS' && <ProgressTag />}
-				{status === 'NOT_APPROVED' && <NotApprovedTag />}
+				{status === 'APPROVED' && <ApprovedTag size="small" />}
+				{status === 'PROGRESS' && <ProgressTag size="small" />}
+				{status === 'NOT_APPROVED' && <NotApprovedTag size="small" />}
 			</div>
 		</div>
 	);
