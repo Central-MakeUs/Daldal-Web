@@ -29,7 +29,7 @@ const SaveAccountInfo = () => {
 		<PageLayout className="p-6" leftType="back">
 			<div className="flex flex-col">
 				<DisabledAccountForm defaultValues={accountInfo} />
-				<div className="text-White typography-Body1 typography-M mt-[38px]">
+				<div className="text-White typography-Body1 typography-M mt-[38px] whitespace-pre-line">
 					{messageByAction['edit']}
 				</div>
 				<FixedBottomLayout childrenPadding="px-6" height="h-15">
