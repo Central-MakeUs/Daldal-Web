@@ -14,14 +14,12 @@ const ProgressRegisterAccountTemplate = () => {
 	};
 
 	return (
-		<div>
-			<AccountForm
-				buttonInfo={{
-					title: '저장하기',
-					onSubmit: onSubmit,
-				}}
-			/>
-		</div>
+		<AccountForm
+			buttonInfo={{
+				title: '저장하기',
+				onSubmit: onSubmit,
+			}}
+		/>
 	);
 };
 
