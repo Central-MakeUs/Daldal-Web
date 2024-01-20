@@ -20,7 +20,7 @@ const ProductDetail = () => {
 			<ImageSlider
 				totalImageNumber={mockImages.length}
 				options={{ dots: false, autoplay: false, infinite: false }}
-				className="w-full"
+				className="w-screen max-w-[600px]"
 			>
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
@@ -39,7 +39,7 @@ const ProductDetail = () => {
 			<ImageSlider
 				totalImageNumber={mockImages.length}
 				options={{ dots: false, autoplay: false, infinite: false }}
-				className="w-full"
+				className="w-screen max-w-[600px]"
 			>
 				{mockImages.map((image, idx) => (
 					<div key={`Image#${idx}`}>
