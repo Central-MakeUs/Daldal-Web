@@ -29,3 +29,9 @@ export const getPriceText = (price: number) => {
 export const getDataInYYYYMMDDSplitedByDot = (date: string) => {
 	return dayjs(date).format('YYYY.MM.DD');
 };
+
+export const getYoutubeIdFromUrl = (url: string) => {
+	const youtubeId = url.split(/\/|\s/);
+
+	return youtubeId.pop();
+};
