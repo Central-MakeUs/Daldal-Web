@@ -68,7 +68,7 @@ const ProductDetail = () => {
 				</div>
 			</div>
 			<iframe src={url} className="w-full aspect-square" />
-			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'bg-Gray90'}>
+			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'py-3 pl-4 pr-3'}>
 				<BuyWithLikeButton like={like} />
 			</FixedBottomLayout>
 		</PageLayout>
