@@ -10,7 +10,7 @@ const LargeProductDetailImageSlider = ({
 	return (
 		<ImageSlider
 			totalImageNumber={images.length}
-			className="w-screen max-w-[600px]"
+			className="w-full max-w-[600px] !h-screen z-10"
 		>
 			{images.map((image, idx) => (
 				<div key={`Image#${idx}`}>
@@ -18,7 +18,7 @@ const LargeProductDetailImageSlider = ({
 						<img
 							src={image}
 							alt="detail large image"
-							className="w-full h-screen"
+							className="w-full h-screen object-cover"
 						/>
 					</div>
 				</div>
