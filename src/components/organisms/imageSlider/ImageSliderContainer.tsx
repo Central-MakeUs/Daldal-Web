@@ -12,13 +12,13 @@ const ImageSliderContainer = ({
 	handleClose,
 }: ImageSliderContainerProps) => {
 	return (
-		<div className="w-screen h-screen top-0 left-0 flex items-start justify-center overflow-hidden">
+		<div className="w-screen h-screen top-0 left-0 flex items-start justify-center overflow-hidden bg-Gray60">
 			<LargeProductDetailImageSlider images={images} />
 			<div className="absolute top-6 left-4 z-20">
 				<IconButton
 					icon={{
 						id: 'close',
-						color: colors.White,
+						color: colors.Black,
 						size: 24,
 					}}
 					onClick={handleClose}
