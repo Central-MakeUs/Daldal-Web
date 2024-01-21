@@ -18,7 +18,7 @@ const ProductDetail = () => {
 		video,
 		url,
 	} = mockProductData;
-	// console.log(getYoutubeIdFromUrl(url));
+
 	return (
 		<PageLayout leftType="back">
 			<SmallProductDetailImageSlider images={images} />
