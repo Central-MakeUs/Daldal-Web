@@ -17,4 +17,5 @@ export const mockProductData: Product = {
 	],
 	video: 'https://www.youtube.com/embed/8rSH8-pbHZ0',
 	url: 'https://zigzag.kr/catalog/products/127482963',
+	like: true,
 };

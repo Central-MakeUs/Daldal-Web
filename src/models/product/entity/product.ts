@@ -8,4 +8,5 @@ export type Product = {
 	images: string[];
 	video: string;
 	url: string;
+	like: boolean;
 };

@@ -20,6 +20,7 @@ const ProductDetail = () => {
 		refund: paybackPrice,
 		video,
 		url,
+		like,
 	} = mockProductData;
 
 	const [isDetailImageSliderOpen, setIsDetailImageSliderOpen] = useState(false);
@@ -68,7 +69,7 @@ const ProductDetail = () => {
 			</div>
 			<iframe src={url} className="w-full aspect-square" />
 			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'bg-Gray90'}>
-				<BuyWithLikeButton like={false} />
+				<BuyWithLikeButton like={like} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);
