@@ -3,24 +3,36 @@ import CardInfo from '@components/atoms/card/CardInfo';
 import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
-import { mockImages } from '@mocks/images';
+import { mockProductData } from '@mocks/product';
+import { getYoutubeIdFromUrl } from '@utils/formatData';
 import YouTube from 'react-youtube';
 
 const ProductDetail = () => {
+	// const { productId } = useParams();
+	// TODO: productId를 이용해 상품 정보를 가져온다.
+	const {
+		images,
+		title,
+		price,
+		refund: paybackPrice,
+		video,
+		url,
+	} = mockProductData;
+	// console.log(getYoutubeIdFromUrl(url));
 	return (
 		<PageLayout leftType="back">
-			<SmallProductDetailImageSlider images={mockImages} />
+			<SmallProductDetailImageSlider images={images} />
 			<div className="p-5 flex flex-col gap-5">
 				<CardInfo
-					title="바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩"
-					price={19000}
-					paybackPrice={3000}
+					title={title}
+					price={price}
+					paybackPrice={paybackPrice}
 					size="large"
 					category="의류"
 				/>
 				<div className="w-full aspect-video relative">
 					<YouTube
-						videoId="2g811Eo7K8U"
+						videoId={getYoutubeIdFromUrl(video)}
 						opts={{
 							height: '100%',
 							width: '100%',
@@ -29,10 +41,7 @@ const ProductDetail = () => {
 					/>
 				</div>
 			</div>
-			<iframe
-				src="https://zigzag.kr/catalog/products/127482963"
-				className="w-full aspect-square"
-			/>
+			<iframe src={url} className="w-full aspect-square" />
 			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'bg-Gray90'}>
 				<BuyWithLikeButton like={false} />
 			</FixedBottomLayout>
