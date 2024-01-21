@@ -1,8 +1,10 @@
 import IconButton from '@components/atoms/button/IconButton';
+import { useNavigate } from 'react-router-dom';
 
 const LeftLogoHeader = () => {
+	const navigate = useNavigate();
 	const handleClick = () => {
-		console.log('향후 적용 예정');
+		navigate('/');
 	};
 
 	return (
