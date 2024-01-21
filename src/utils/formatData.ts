@@ -31,7 +31,9 @@ export const getDataInYYYYMMDDSplitedByDot = (date: string) => {
 };
 
 export const getYoutubeIdFromUrl = (url: string) => {
-	const youtubeId = url.split(/\/|\s/);
-
-	return youtubeId.pop();
+	const idRegex =
+		/(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/(?:watch\?.*v=|shorts\/|embed\/)|youtu.be\/)([\w-]{11})/;
+	const idMatch = url.match(idRegex);
+	const videoId = idMatch ? idMatch[1] : '';
+	return videoId;
 };
