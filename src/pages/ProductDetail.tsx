@@ -1,6 +1,9 @@
+import { useState } from 'react';
+
 import BuyWithLikeButton from '@components/atoms/BuyWithLikeButton';
 import CardInfo from '@components/atoms/card/CardInfo';
 import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
+import ImageSliderContainer from '@components/organisms/imageSlider/ImageSliderContainer';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { mockProductData } from '@mocks/product';
@@ -17,11 +20,34 @@ const ProductDetail = () => {
 		refund: paybackPrice,
 		video,
 		url,
+		like,
 	} = mockProductData;
-	// console.log(getYoutubeIdFromUrl(url));
+
+	const [isDetailImageSliderOpen, setIsDetailImageSliderOpen] = useState(false);
+
+	const openDetailImageSlider = () => {
+		setIsDetailImageSliderOpen(true);
+	};
+
+	const closeDetailImageSlider = () => {
+		setIsDetailImageSliderOpen(false);
+	};
+
+	if (isDetailImageSliderOpen) {
+		return (
+			<ImageSliderContainer
+				handleClose={closeDetailImageSlider}
+				images={images}
+			/>
+		);
+	}
+
 	return (
 		<PageLayout leftType="back">
-			<SmallProductDetailImageSlider images={images} />
+			<SmallProductDetailImageSlider
+				images={images}
+				handleOpenDetailImageSlider={openDetailImageSlider}
+			/>
 			<div className="p-5 flex flex-col gap-5">
 				<CardInfo
 					title={title}
@@ -43,7 +69,7 @@ const ProductDetail = () => {
 			</div>
 			<iframe src={url} className="w-full aspect-square" />
 			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'bg-Gray90'}>
-				<BuyWithLikeButton like={false} />
+				<BuyWithLikeButton like={like} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);

@@ -6,6 +6,9 @@ import { GlobalStorybookStyles } from '../src/components/common/GlobalStorybookS
 import { loadFontsForStorybook } from '../src/utils/loadFontsForStorybook';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import 'tailwindcss/tailwind.css';
 loadFontsForStorybook();
 

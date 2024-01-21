@@ -2,10 +2,12 @@ import ImageSlider from '@components/atoms/ImageSlider';
 
 type SmallProductDetailImageSliderProps = {
 	images: string[];
+	handleOpenDetailImageSlider: () => void;
 };
 
 const SmallProductDetailImageSlider = ({
 	images,
+	handleOpenDetailImageSlider,
 }: SmallProductDetailImageSliderProps) => {
 	return (
 		<ImageSlider
@@ -14,7 +16,10 @@ const SmallProductDetailImageSlider = ({
 		>
 			{images.map((image, idx) => (
 				<div key={`Image#${idx}`}>
-					<div style={{ position: 'relative' }}>
+					<div
+						style={{ position: 'relative' }}
+						onClick={handleOpenDetailImageSlider}
+					>
 						<img
 							src={image}
 							alt="detail small image"

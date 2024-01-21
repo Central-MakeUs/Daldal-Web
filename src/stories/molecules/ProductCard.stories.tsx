@@ -79,6 +79,5 @@ export const Large: Story = {
 		paybackPrice: 200000,
 		size: 'large',
 		type: 'default',
-		category: '의류',
 	},
 };
