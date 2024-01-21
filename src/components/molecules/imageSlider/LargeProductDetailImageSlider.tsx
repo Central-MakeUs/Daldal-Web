@@ -1,10 +1,12 @@
 import ImageSlider from '@components/atoms/ImageSlider';
 
-type SmallDetailImageSliderProps = {
+type LargeProductDetailImageSliderProps = {
 	images: string[];
 };
 
-const SmallDetailImageSlider = ({ images }: SmallDetailImageSliderProps) => {
+const LargeProductDetailImageSlider = ({
+	images,
+}: LargeProductDetailImageSliderProps) => {
 	return (
 		<ImageSlider
 			totalImageNumber={images.length}
@@ -15,8 +17,8 @@ const SmallDetailImageSlider = ({ images }: SmallDetailImageSliderProps) => {
 					<div style={{ position: 'relative' }}>
 						<img
 							src={image}
-							alt="detail small image"
-							className="w-full h-[calc(100vw*1.2)] max-h-[654px] object-cover"
+							alt="detail large image"
+							className="w-full h-screen"
 						/>
 					</div>
 				</div>
@@ -25,4 +27,4 @@ const SmallDetailImageSlider = ({ images }: SmallDetailImageSliderProps) => {
 	);
 };
 
-export default SmallDetailImageSlider;
+export default LargeProductDetailImageSlider;
