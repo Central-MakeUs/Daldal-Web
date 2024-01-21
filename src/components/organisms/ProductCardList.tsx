@@ -1,5 +1,6 @@
 import ProductCard from '@components/molecules/ProductCard';
 import { mockProductList } from '@mocks/productList';
+import { useNavigate } from 'react-router-dom';
 
 const classNameOfGridCols = {
 	2: 'grid-cols-2',
@@ -21,14 +22,20 @@ const ProductCardList = ({
 	type = 'default',
 	productList = mockProductList,
 }: ProductCardListProps) => {
+	const navigate = useNavigate();
+	const handleCardClick = (id: number) => {
+		navigate(`/detail/${id}`);
+	};
+
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols[gridCols]}`}>
-			{productList.map((product, id) => (
+			{productList.map(({ image, id, ...product }, index) => (
 				<ProductCard
-					thumbnail={product.image}
+					thumbnail={image}
 					size={size}
 					type={type}
-					key={`ProductCard#${id}`}
+					key={`ProductCard#${index}`}
+					handleClick={() => handleCardClick(id)}
 					{...product}
 				/>
 			))}

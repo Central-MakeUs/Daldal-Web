@@ -36,7 +36,7 @@ const CardInfo = ({
 
 	const renderCategory = () => {
 		if (!category) {
-			null;
+			return null;
 		}
 
 		return (

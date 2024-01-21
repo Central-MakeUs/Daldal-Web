@@ -2,6 +2,7 @@ import ProductCardList from '@components/organisms/ProductCardList';
 import { mockProductList } from '@mocks/productList';
 
 const RecommendationProductCardList = () => {
+	// TODO: 추천상품 API 연동
 	const productList = mockProductList.slice(0, 3);
 
 	return (

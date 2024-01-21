@@ -15,7 +15,7 @@ const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 		console.log('구매하기 이동');
 	};
 	return (
-		<div className="w-full flex py-3 pl-4 pr-3 gap-6">
+		<div className="w-full flex gap-6">
 			<IconButton
 				className="!w-8 !px-0 !py-4"
 				icon={{
