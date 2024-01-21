@@ -4,13 +4,13 @@ import colors from '@constants/colors';
 
 type ImageSliderContainerProps = {
 	images: string[];
+	handleClose: () => void;
 };
 
-const ImageSliderContainer = ({ images }: ImageSliderContainerProps) => {
-	const handleCloseIconButtonClick = () => {
-		console.log('close');
-	};
-
+const ImageSliderContainer = ({
+	images,
+	handleClose,
+}: ImageSliderContainerProps) => {
 	return (
 		<div className="w-screen h-screen top-0 left-0 flex items-start justify-center overflow-hidden">
 			<LargeProductDetailImageSlider images={images} />
@@ -21,7 +21,7 @@ const ImageSliderContainer = ({ images }: ImageSliderContainerProps) => {
 						color: colors.White,
 						size: 24,
 					}}
-					onClick={handleCloseIconButtonClick}
+					onClick={handleClose}
 				/>
 			</div>
 		</div>
