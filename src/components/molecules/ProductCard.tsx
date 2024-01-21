@@ -10,6 +10,7 @@ type ProductCardProps = {
 	size: 'small' | 'medium' | 'large';
 	type: 'default' | 'checkbox' | 'heart';
 	isFullHeart?: boolean;
+	handleClick?: () => void;
 };
 
 const ProductCard = ({
@@ -20,6 +21,7 @@ const ProductCard = ({
 	paybackPrice,
 	isFullHeart,
 	size,
+	handleClick,
 }: ProductCardProps) => {
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnail} alt={title} />,
@@ -55,7 +57,10 @@ const ProductCard = ({
 	};
 
 	return (
-		<div className={`flex flex-col ${stylesBySize[size].containerGap}`}>
+		<div
+			className={`flex flex-col ${stylesBySize[size].containerGap}`}
+			onClick={handleClick}
+		>
 			{Image[type]}
 			<CardInfo
 				title={title}
