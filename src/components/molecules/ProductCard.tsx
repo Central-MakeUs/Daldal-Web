@@ -58,7 +58,7 @@ const ProductCard = ({
 
 	return (
 		<div
-			className={`flex flex-col ${stylesBySize[size].containerGap}`}
+			className={`flex flex-col ${stylesBySize[size].containerGap} cursor-pointer`}
 			onClick={handleClick}
 		>
 			{Image[type]}
