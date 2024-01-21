@@ -67,14 +67,15 @@ const ProductCard = ({
 	};
 
 	const renderCategory = () => {
-		if (category) {
-			return (
-				<span className="typography-Body4 typography-R text-Secondary_B">
-					{category}
-				</span>
-			);
+		if (!category) {
+			null;
 		}
-		return null;
+
+		return (
+			<span className="typography-Body4 typography-R text-Secondary_B">
+				{category}
+			</span>
+		);
 	};
 
 	return (
