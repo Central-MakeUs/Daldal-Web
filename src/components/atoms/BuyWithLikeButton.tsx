@@ -28,7 +28,7 @@ const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 				className="w-full h-[38px] k-color-Primary !text-White !typography-Btn_text1 text-center rounded-sm"
 				onClick={handleBuyClick}
 			>
-				구매하기
+				3% 저렴하게 구입하기
 			</Button>
 		</div>
 	);
