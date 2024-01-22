@@ -11,6 +11,12 @@ const AccountBottomSheet = () => {
 	if (!isBottomSheetOpen || type !== 'account') {
 		return null;
 	}
+
+	const messages = {
+		description:
+			'계좌가 등록되어 있지 않아,\n 달달한 포인트를 받기 어려워요 😥',
+		keynote: '출금 계좌를 등록해주세요!',
+	};
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
 			<DrawerContent className="mx-auto w-full max-w-[600px] px-6 !h-[206px]">
@@ -24,11 +30,11 @@ const AccountBottomSheet = () => {
 					className="!w-fit absolute top-1 right-0"
 				/>
 				<div>
-					<h4 className="text-Gray60 typography-Body4 typography-M leading-normal mb-2">
-						계좌가 등록되어 있지 않아, <br /> 달달한 포인트를 받기 어려워요 😥
+					<h4 className="text-Gray60 typography-Body4 typography-M mb-2 whitespace-pre-line">
+						{messages.description}
 					</h4>
 					<h2 className="text-Black typography-Body1 typography-M">
-						출금 계좌를 등록해주세요!
+						{messages.keynote}
 					</h2>
 				</div>
 				<DefaultButton
