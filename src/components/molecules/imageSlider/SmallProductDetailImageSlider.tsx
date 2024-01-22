@@ -2,7 +2,7 @@ import ImageSlider from '@components/atoms/ImageSlider';
 
 type SmallProductDetailImageSliderProps = {
 	images: string[];
-	handleOpenDetailImageSlider: () => void;
+	handleOpenDetailImageSlider?: () => void;
 };
 
 const SmallProductDetailImageSlider = ({

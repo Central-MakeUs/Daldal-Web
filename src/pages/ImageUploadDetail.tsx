@@ -1,13 +1,15 @@
 import { ReactNode } from 'react';
 
-import ImageSlider from '@components/atoms/ImageSlider';
+import DefaultButton from '@components/atoms/button/DefaultButton';
 import ApprovedTag from '@components/atoms/tag/ApprovedTag';
 import NotApprovedTag from '@components/atoms/tag/NotApprovedTag';
 import ProgressTag from '@components/atoms/tag/ProgressTag';
+import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
+import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
 import { Status } from '@type/status';
-import { getDataInYYYYMMDDSplitedByDot } from '@utils/formatData';
+import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 
 type StatusValueType = {
 	[K in Status]: ReactNode;
@@ -20,43 +22,67 @@ const statusValue: StatusValueType = {
 };
 
 const ImageUploadDetail = () => {
+	//Todo: api 응답 정보로 교체
 	const date = '2023-12-12T12:12:12:32';
-	const status = 'PROGRESS';
+	const status: Status = 'APPROVED';
+	const point = '2000';
+	const approvedMessage = '어떠어떠어떠한 이유로 승인되지 않았습니다.';
 
-	const dateValue = () => (
-		<h2 className="typography-Subhead text-White">
-			{getDataInYYYYMMDDSplitedByDot(date)}
-		</h2>
+	const handleClickReApprove = () => {
+		//Todo: 승인 api 요청
+		console.log('재 승인 요청하기');
+	};
+
+	const renderTextValue = (text: string) => (
+		<h2 className="typography-Subhead text-White">{text}</h2>
 	);
 
-	const renderContents = (title: string, value: ReactNode) => (
-		<div className="w-full flex justify-between items-center">
-			<h3 className="typography-Body2 typography-R text-Gray20">{title}</h3>
-			{value}
-		</div>
-	);
+	const renderContents = (title: string, value: ReactNode) => {
+		return (
+			<div className="w-full flex justify-between items-center">
+				<h3 className="typography-Body2 typography-R text-Gray20">{title}</h3>
+				{value}
+			</div>
+		);
+	};
+
+	const renderExtraContents = () => {
+		if (status === 'APPROVED') {
+			return renderContents('승인 금액', renderTextValue(getPointText(point)));
+		} else if (status === 'NOT_APPROVED') {
+			return (
+				<div className="flex flex-col gap-[13px]">
+					<h3 className="typography-Body2 typography-R text-Gray20">
+						미승인 사유
+					</h3>
+					<h3 className="typography-Body2 typography-R text-White">
+						{approvedMessage}
+					</h3>
+					<FixedBottomLayout childrenPadding="px-6" height="h-15">
+						<DefaultButton
+							title="재승인 요청하기"
+							color={{ bgColor: 'White', textColor: 'Black' }}
+							size="large"
+							onClick={handleClickReApprove}
+						/>
+					</FixedBottomLayout>
+				</div>
+			);
+		} else {
+			return null;
+		}
+	};
 
 	return (
 		<PageLayout leftType="back">
-			<ImageSlider
-				totalImageNumber={mockImages.length}
-				className="w-screen max-w-[600px]"
-			>
-				{mockImages.map((image, idx) => (
-					<div key={`Image#${idx}`}>
-						<div style={{ position: 'relative' }}>
-							<img
-								src={image}
-								alt="detail small image"
-								className="w-full h-[350px]"
-							/>
-						</div>
-					</div>
-				))}
-			</ImageSlider>
+			<SmallProductDetailImageSlider images={mockImages} />
 			<div className="p-6 flex flex-col gap-6">
-				{renderContents('업로드 일시', dateValue())}
+				{renderContents(
+					'업로드 일시',
+					renderTextValue(getDataInYYYYMMDDSplitedByDot(date)),
+				)}
 				{renderContents('승인 여부', statusValue[status])}
+				{renderExtraContents()}
 			</div>
 		</PageLayout>
 	);

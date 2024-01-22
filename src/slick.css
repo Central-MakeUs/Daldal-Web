@@ -27,10 +27,12 @@
 	background-color: #fff;
 }
 
+.slick-slide > div > div {
+	display: block !important;
+	max-width: 600px;
+}
+
 .slick-slide > div > div > div {
 	width: 100%;
 }
 
-.slick-slide > div > div {
-	max-width: 600px;
-}
