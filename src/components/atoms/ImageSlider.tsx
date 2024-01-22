@@ -92,7 +92,7 @@ const ImageSlider = ({
 	};
 
 	return (
-		<Slider {...settings} className={`relative ${className}`}>
+		<Slider {...settings} className={`${className}`}>
 			{children}
 		</Slider>
 	);
