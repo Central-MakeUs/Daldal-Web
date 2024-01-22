@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 
-import ImageSlider from '@components/atoms/ImageSlider';
 import ApprovedTag from '@components/atoms/tag/ApprovedTag';
 import NotApprovedTag from '@components/atoms/tag/NotApprovedTag';
 import ProgressTag from '@components/atoms/tag/ProgressTag';
+import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
 import { Status } from '@type/status';
@@ -38,22 +38,7 @@ const ImageUploadDetail = () => {
 
 	return (
 		<PageLayout leftType="back">
-			<ImageSlider
-				totalImageNumber={mockImages.length}
-				className="w-screen max-w-[600px]"
-			>
-				{mockImages.map((image, idx) => (
-					<div key={`Image#${idx}`}>
-						<div style={{ position: 'relative' }}>
-							<img
-								src={image}
-								alt="detail small image"
-								className="w-full h-[350px]"
-							/>
-						</div>
-					</div>
-				))}
-			</ImageSlider>
+			<SmallProductDetailImageSlider images={mockImages} />
 			<div className="p-6 flex flex-col gap-6">
 				{renderContents('업로드 일시', dateValue())}
 				{renderContents('승인 여부', statusValue[status])}
