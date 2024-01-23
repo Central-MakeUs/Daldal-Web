@@ -1,7 +1,6 @@
 import { Button } from 'konsta/react';
 
-import CustomToaster from '@components/atoms/CustomToaster';
-import ToastMessageLikeOrDelete from '@components/atoms/ToastMessageLikeOrDelete';
+import { CustomToaster, ToastMessageLikeOrDelete } from '@components/atoms';
 import { Meta, StoryObj } from '@storybook/react';
 import toast from 'react-hot-toast';
 

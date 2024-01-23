@@ -1,8 +1,5 @@
-import ApprovedTag from '@components/atoms/tag/ApprovedTag';
+import { ApprovedTag, NotApprovedTag, ProgressTag } from '@components/atoms';
 import { Status } from '@type/status';
-
-import NotApprovedTag from '../atoms/tag/NotApprovedTag';
-import ProgressTag from '../atoms/tag/ProgressTag';
 
 type ImageContainerProps = {
 	imageUrl: string;

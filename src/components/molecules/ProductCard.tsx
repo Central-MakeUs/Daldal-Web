@@ -1,6 +1,4 @@
-import CardInfo from '@components/atoms/card/CardInfo';
-import ImageWithCheck from '@components/atoms/card/ImageWithCheck';
-import ImageWithHeart from '@components/atoms/card/ImageWithHeart';
+import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
 
 type ProductCardProps = {
 	thumbnail: string;

@@ -1,4 +1,4 @@
-import ProductCategoryButton from '@components/atoms/button/ProductCategoryButton';
+import { ProductCategoryButton } from '@components/atoms';
 import { IconId } from '@type/svgIcon';
 import { useNavigate } from 'react-router-dom';
 

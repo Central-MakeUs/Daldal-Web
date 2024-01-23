@@ -1,4 +1,4 @@
-import Tag from './Tag';
+import { Tag } from '@components/atoms';
 
 export type StatusTagProps = {
 	size: 'small' | 'large';

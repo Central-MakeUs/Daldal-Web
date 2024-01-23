@@ -1,4 +1,4 @@
-import BuyWithLikeButton from '@components/atoms/BuyWithLikeButton';
+import { BuyWithLikeButton } from '@components/atoms';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

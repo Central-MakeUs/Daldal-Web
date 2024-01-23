@@ -21,7 +21,7 @@ export { default as ImageWithCheck } from './card/ImageWithCheck';
 export { default as ImageWithHeart } from './card/ImageWithHeart';
 export { default as PaybackPrice } from './card/PaybackPrice';
 
-export { default as TextField } from './form/TextField';
+export { default as Form } from './form/TextField';
 
 export { default as BankButton } from './myPage/BankButton';
 export { default as CategoryButton } from './myPage/CategoryButton';

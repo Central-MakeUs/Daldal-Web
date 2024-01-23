@@ -1,4 +1,4 @@
-import ListPoint from '@components/atoms/ListPoint';
+import { ListPoint } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

@@ -1,5 +1,4 @@
-import IconButton from '@components/atoms/button/IconButton';
-import BankButton from '@components/atoms/myPage/BankButton';
+import { IconButton, BankButton } from '@components/atoms';
 import { Drawer, DrawerContent } from '@components/ui/drawer';
 import { BankNameType, bankList } from '@constants/bankList';
 import colors from '@constants/colors';

@@ -1,4 +1,4 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
+import { DefaultButton } from '@components/atoms';
 import DisabledAccountForm from '@components/organisms/form/DisabledAccountForm';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { mockAccountForm } from '@mocks/form';

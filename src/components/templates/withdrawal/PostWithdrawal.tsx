@@ -1,4 +1,4 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
+import { DefaultButton } from '@components/atoms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { useNavigate } from 'react-router-dom';
 

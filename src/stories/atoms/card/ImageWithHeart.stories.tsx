@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ImageWithHeart from '@components/atoms/card/ImageWithHeart';
+import { ImageWithHeart } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

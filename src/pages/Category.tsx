@@ -1,4 +1,4 @@
-import SearchTextField from '@components/atoms/SearchTextField';
+import { SearchTextField } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import ProductCardList from '@components/organisms/ProductCardList';
 import categoryList, { CategoryName } from '@constants/categoryList';

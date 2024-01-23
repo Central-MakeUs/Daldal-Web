@@ -1,4 +1,4 @@
-import Form from '@components/atoms/form/TextField';
+import { Form } from '@components/atoms';
 import { FormType, pointSchema } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 

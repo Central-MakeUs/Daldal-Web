@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import Form from '@components/atoms/form/TextField';
+import { Form } from '@components/atoms';
 import { useAccountInfoStore } from '@stores/formInfoStore';
 import { FormType, accountSchema } from '@type/form';
 

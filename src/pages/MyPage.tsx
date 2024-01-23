@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CategoryButton from '@components/atoms/myPage/CategoryButton';
+import { CategoryButton } from '@components/atoms';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';

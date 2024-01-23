@@ -1,5 +1,4 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
-import Modal from '@components/atoms/Modal';
+import { DefaultButton, Modal } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
