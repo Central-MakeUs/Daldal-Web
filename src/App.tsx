@@ -1,5 +1,5 @@
 import CustomToaster from '@components/atoms/CustomToaster';
-import Routing from '@components/common/Routing';
+import { Routing } from '@components/common';
 
 const App = () => {
 	return (

@@ -1,4 +1,4 @@
-import SvgIcon from '@components/common/SvgIcon';
+import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
 import { IconId } from '@type/svgIcon';
 

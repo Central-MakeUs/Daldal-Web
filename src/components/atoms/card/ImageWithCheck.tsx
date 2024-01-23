@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import BackdropFilter from '@components/atoms/BackdropFilter';
-import IconButton from '@components/atoms/button/IconButton';
+import { BackdropFilter, IconButton } from '@components/atoms';
 import colors from '@constants/colors';
 
 type ImageWithCheckProps = {

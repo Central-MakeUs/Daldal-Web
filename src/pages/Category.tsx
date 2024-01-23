@@ -1,5 +1,5 @@
 import SearchTextField from '@components/atoms/SearchTextField';
-import SvgIcon from '@components/common/SvgIcon';
+import { SvgIcon } from '@components/common';
 import ProductCardList from '@components/organisms/ProductCardList';
 import categoryList, { CategoryName } from '@constants/categoryList';
 import colors from '@constants/colors';

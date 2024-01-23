@@ -2,7 +2,7 @@ import React from 'react';
 import type { Preview } from '@storybook/react';
 import { KonstaProvider } from 'konsta/react';
 
-import { GlobalStorybookStyles } from '../src/components/common/GlobalStorybookStyles';
+import GlobalStorybookStyles from '../src/components/common/GlobalStorybookStyles';
 import { loadFontsForStorybook } from '../src/utils/loadFontsForStorybook';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
