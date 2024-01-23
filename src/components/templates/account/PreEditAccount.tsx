@@ -17,7 +17,7 @@ const PreEditAccount = () => {
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
 		saveAccountInfo();
-		navigate('/enter-account/edit');
+		navigate('/progress-account/edit');
 	};
 
 	return (

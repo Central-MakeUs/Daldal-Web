@@ -35,7 +35,7 @@ const MyPage = () => {
 		{
 			iconId: 'mypage-person',
 			title: '포인트 환급 계좌정보',
-			route: '/read-account',
+			route: '/pre-account',
 		},
 		{
 			iconId: 'photo',

@@ -8,7 +8,7 @@ const PreRegisterAccount = () => {
 	const image = mockImages[0];
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
-		navigate('/enter-account/register');
+		navigate('/progress-account/register');
 	};
 
 	const message =

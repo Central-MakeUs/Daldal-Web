@@ -10,7 +10,7 @@ const ProgressEditAccount = () => {
 	const onSubmit = (data: FormType) => {
 		setAccountInfo({ ...accountInfo, ...data });
 		setEnterType('EDIT');
-		navigate('/save-account', { replace: true });
+		navigate('/post-account', { replace: true });
 	};
 
 	return (

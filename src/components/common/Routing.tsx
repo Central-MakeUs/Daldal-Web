@@ -45,12 +45,12 @@ const Routing = () => {
 				</Route>
 				<Route path="/category" element={<Category />} />
 				<Route path="/category/:categoryName" element={<Category />} />
-				<Route path="/read-account" element={<ReadAccountInfo />} />
-				<Route path="/enter-account/*" element={<EnterAccountInfo />}>
+				<Route path="/pre-account" element={<ReadAccountInfo />} />
+				<Route path="/progress-account/*" element={<EnterAccountInfo />}>
 					<Route path="register" element={<ProgressRegisterAccount />} />
 					<Route path="edit" element={<ProgressEditAccount />} />
 				</Route>
-				<Route path="/save-account" element={<SaveAccountInfo />} />
+				<Route path="/post-account" element={<SaveAccountInfo />} />
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 			</Routes>
 			<LoginBottomSheet />
