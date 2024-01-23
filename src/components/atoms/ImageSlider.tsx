@@ -4,6 +4,8 @@ import Slider from 'react-slick';
 
 import IndexIndicator from './IndexIndicator';
 
+import '@styles/slick.css';
+
 type ImageSliderProps = {
 	children: ReactNode;
 	className?: string;
