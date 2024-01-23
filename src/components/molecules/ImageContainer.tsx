@@ -15,7 +15,7 @@ const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 		<div className="relative cursor-pointer" onClick={onClick}>
 			<img
 				src={imageUrl}
-				className="relative rounded-[5px] object-cover aspect-square"
+				className="w-full relative rounded-[5px] object-cover aspect-square"
 			/>
 			<div className="absolute top-1 right-1">
 				{status === 'APPROVED' && <ApprovedTag size="small" />}
