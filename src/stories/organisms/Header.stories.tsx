@@ -1,4 +1,4 @@
-import Header from '@components/organisms/Header';
+import { Header } from '@components/organisms';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

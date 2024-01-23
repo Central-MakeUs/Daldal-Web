@@ -1,4 +1,4 @@
-import CaptionButton from '@components/atoms/button/CaptionButton';
+import { CaptionButton } from '@components/atoms';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

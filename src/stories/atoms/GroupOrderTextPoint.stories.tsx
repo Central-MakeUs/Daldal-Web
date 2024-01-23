@@ -1,4 +1,4 @@
-import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
+import { GroupOrderTextPoint } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

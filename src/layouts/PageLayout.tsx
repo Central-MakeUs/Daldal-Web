@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import Header, { LeftHeaderProps } from '@components/organisms/Header';
+import { Header } from '@components/organisms';
+import { LeftHeaderProps } from '@components/organisms/Header';
 
 type PageLayoutProps = {
 	children: ReactNode;

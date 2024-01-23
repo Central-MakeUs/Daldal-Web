@@ -1,14 +1,14 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
+import { DefaultButton } from '@components/atoms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { mockImages } from '@mocks/images';
 import { useNavigate } from 'react-router-dom';
 
-const PreRegisterAccountTemplate = () => {
+const PreRegisterAccount = () => {
 	// todo: 디자이너님 이미지 생기면 mock 이미지 진짜 이미지로 변경
 	const image = mockImages[0];
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
-		navigate('/enter-account/register');
+		navigate('/progress-account/register');
 	};
 
 	const message =
@@ -34,4 +34,4 @@ const PreRegisterAccountTemplate = () => {
 	);
 };
 
-export default PreRegisterAccountTemplate;
+export default PreRegisterAccount;

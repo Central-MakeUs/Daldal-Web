@@ -1,5 +1,6 @@
+import { Tag } from '@components/atoms';
+
 import { StatusTagProps } from './ApprovedTag';
-import Tag from './Tag';
 
 const NotApprovedTag = ({ size }: StatusTagProps) => (
 	<Tag

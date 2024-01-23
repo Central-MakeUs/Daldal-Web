@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
 
-import DefaultButton from '@components/atoms/button/DefaultButton';
-import ApprovedTag from '@components/atoms/tag/ApprovedTag';
-import NotApprovedTag from '@components/atoms/tag/NotApprovedTag';
-import ProgressTag from '@components/atoms/tag/ProgressTag';
-import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
+import {
+	ApprovedTag,
+	NotApprovedTag,
+	ProgressTag,
+	DefaultButton,
+} from '@components/atoms';
+import { SmallProductDetailImageSlider } from '@components/molecules';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';

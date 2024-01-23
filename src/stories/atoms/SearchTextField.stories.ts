@@ -1,4 +1,4 @@
-import SearchTextField from '@components/atoms/SearchTextField';
+import { SearchTextField } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

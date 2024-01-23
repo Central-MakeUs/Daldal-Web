@@ -1,4 +1,4 @@
-import ImageSliderContainer from '@components/organisms/imageSlider/ImageSliderContainer';
+import { ImageSliderContainer } from '@components/organisms';
 import { mockImages } from '@mocks/images';
 
 import type { Meta, StoryObj } from '@storybook/react';

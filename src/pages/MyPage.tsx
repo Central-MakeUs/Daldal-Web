@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CategoryButton from '@components/atoms/myPage/CategoryButton';
+import { CategoryButton } from '@components/atoms';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
@@ -35,7 +35,7 @@ const MyPage = () => {
 		{
 			iconId: 'mypage-person',
 			title: '포인트 환급 계좌정보',
-			route: '/read-account',
+			route: '/pre-account',
 		},
 		{
 			iconId: 'photo',

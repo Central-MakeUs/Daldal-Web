@@ -1,4 +1,4 @@
-import PaybackPrice from '@components/atoms/card/PaybackPrice';
+import { PaybackPrice } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

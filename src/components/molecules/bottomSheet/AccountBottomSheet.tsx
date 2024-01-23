@@ -1,5 +1,4 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
-import IconButton from '@components/atoms/button/IconButton';
+import { IconButton, DefaultButton } from '@components/atoms';
 import { Drawer, DrawerContent } from '@components/ui/drawer';
 import colors from '@constants/colors';
 import { useBottomSheetStore } from '@stores/layerStore';

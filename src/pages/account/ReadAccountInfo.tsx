@@ -1,5 +1,4 @@
-import PreEditAccountTemplate from '@components/templates/account/PreEditAccount';
-import PreRegisterAccountTemplate from '@components/templates/account/PreRegisterAccount';
+import { PreEditAccount, PreRegisterAccount } from '@components/templates';
 import PageLayout from '@layouts/PageLayout';
 
 const ReadAccountInfo = () => {
@@ -10,10 +9,10 @@ const ReadAccountInfo = () => {
 
 	const renderAccountInfo = () => {
 		if (accountInfo) {
-			return <PreEditAccountTemplate />;
+			return <PreEditAccount />;
 		}
 
-		return <PreRegisterAccountTemplate />;
+		return <PreRegisterAccount />;
 	};
 
 	return (

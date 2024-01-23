@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import BuyWithLikeButton from '@components/atoms/BuyWithLikeButton';
-import CardInfo from '@components/atoms/card/CardInfo';
-import SmallProductDetailImageSlider from '@components/molecules/imageSlider/SmallProductDetailImageSlider';
-import ImageSliderContainer from '@components/organisms/imageSlider/ImageSliderContainer';
+import { BuyWithLikeButton, CardInfo } from '@components/atoms';
+import { SmallProductDetailImageSlider } from '@components/molecules';
+import { ImageSliderContainer } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { mockProductData } from '@mocks/product';

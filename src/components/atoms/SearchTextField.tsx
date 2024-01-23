@@ -1,6 +1,6 @@
 import { useState, KeyboardEvent } from 'react';
 
-import SvgIcon from '@components/common/SvgIcon';
+import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
 
 type SearchTextFieldProps = {

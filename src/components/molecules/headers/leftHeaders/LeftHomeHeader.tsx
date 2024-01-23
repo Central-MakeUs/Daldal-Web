@@ -1,4 +1,4 @@
-import IconButton from '@components/atoms/button/IconButton';
+import { IconButton } from '@components/atoms';
 import colors from '@constants/colors';
 
 const LeftHomeHeader = () => {

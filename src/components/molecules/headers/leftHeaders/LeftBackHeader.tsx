@@ -1,4 +1,4 @@
-import IconButton from '@components/atoms/button/IconButton';
+import { IconButton } from '@components/atoms';
 import colors from '@constants/colors';
 import { useNavigate } from 'react-router-dom';
 

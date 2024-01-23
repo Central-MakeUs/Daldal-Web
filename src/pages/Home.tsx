@@ -1,7 +1,9 @@
-import SearchTextField from '@components/atoms/SearchTextField';
-import CategoryButtonList from '@components/molecules/CategoryButtonList';
-import ProductCardList from '@components/organisms/ProductCardList';
-import RecommendationProductCardList from '@components/organisms/RecommendationProductCardList';
+import { SearchTextField } from '@components/atoms';
+import { CategoryButtonList } from '@components/molecules';
+import {
+	RecommendationProductCardList,
+	ProductCardList,
+} from '@components/organisms';
 import PageLayout from '@layouts/PageLayout';
 
 const Home = () => {
