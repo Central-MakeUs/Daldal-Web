@@ -1,9 +1,9 @@
-import AccountForm from '@components/organisms/form/AccountForm';
+import { AccountForm } from '@components/organisms';
 import { useAccountInfoStore } from '@stores/formInfoStore';
 import { FormType } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 
-const ProgressEditAccountTemplate = () => {
+const ProgressEditAccount = () => {
 	const { setAccountInfo, accountInfo, setEnterType } = useAccountInfoStore();
 
 	const navigate = useNavigate();
@@ -24,4 +24,4 @@ const ProgressEditAccountTemplate = () => {
 	);
 };
 
-export default ProgressEditAccountTemplate;
+export default ProgressEditAccount;

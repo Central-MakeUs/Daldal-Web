@@ -1,4 +1,4 @@
-import BankBottomSheet from '@components/molecules/bottomSheet/BankBottomSheet';
+import { BankBottomSheet } from '@components/molecules';
 import { useBottomSheetStore } from '@stores/layerStore';
 import { Meta, StoryObj } from '@storybook/react';
 

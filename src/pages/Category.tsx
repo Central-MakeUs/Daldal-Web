@@ -1,6 +1,6 @@
 import { SearchTextField } from '@components/atoms';
 import { SvgIcon } from '@components/common';
-import ProductCardList from '@components/organisms/ProductCardList';
+import { ProductCardList } from '@components/organisms';
 import categoryList, { CategoryName } from '@constants/categoryList';
 import colors from '@constants/colors';
 import PageLayout from '@layouts/PageLayout';

@@ -1,4 +1,4 @@
-import ProductCard from '@components/molecules/ProductCard';
+import { ProductCard } from '@components/molecules';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

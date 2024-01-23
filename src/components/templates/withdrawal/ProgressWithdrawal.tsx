@@ -2,7 +2,7 @@ import { Form } from '@components/atoms';
 import { FormType, pointSchema } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 
-const ProgressWithdrawalScreen = () => {
+const ProgressWithdrawal = () => {
 	const navigate = useNavigate();
 	const onSubmit = (data: FormType) => {
 		// data api 처리 후 navigate하도록 코드 변경
@@ -23,4 +23,4 @@ const ProgressWithdrawalScreen = () => {
 	);
 };
 
-export default ProgressWithdrawalScreen;
+export default ProgressWithdrawal;

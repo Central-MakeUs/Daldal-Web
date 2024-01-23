@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { DefaultButton } from '@components/atoms';
-import DisabledAccountForm from '@components/organisms/form/DisabledAccountForm';
+import { DisabledAccountForm } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { useAccountInfoStore } from '@stores/formInfoStore';

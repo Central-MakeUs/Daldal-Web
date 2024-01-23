@@ -1,4 +1,4 @@
-import DisabledFormElement from '@components/molecules/form/DisabledFormElement';
+import { DisabledFormElement } from '@components/molecules';
 import { accountFormLabelMapping } from '@mocks/form';
 import { Account, AccountFormName } from '@models/form/entity/account';
 

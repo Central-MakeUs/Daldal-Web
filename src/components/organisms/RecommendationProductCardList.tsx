@@ -1,4 +1,4 @@
-import ProductCardList from '@components/organisms/ProductCardList';
+import { ProductCardList } from '@components/organisms';
 import { mockProductList } from '@mocks/productList';
 
 const RecommendationProductCardList = () => {
