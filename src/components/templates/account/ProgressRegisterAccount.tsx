@@ -10,7 +10,7 @@ const ProgressRegisterAccount = () => {
 	const onSubmit = (data: FormType) => {
 		setAccountInfo({ ...accountInfo, ...data });
 		setEnterType('REGISTER');
-		navigate('/save-account', { replace: true });
+		navigate('/post-account', { replace: true });
 	};
 
 	return (
