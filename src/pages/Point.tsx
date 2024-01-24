@@ -3,7 +3,7 @@ import {
 	RequestVerificationButton,
 	CaptionButton,
 } from '@components/atoms';
-import PointList from '@components/molecules/groupOrder/PointList';
+import PointList from '@components/molecules/point/PointList';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
@@ -24,7 +24,7 @@ const Point = () => {
 		<PageLayout leftType="logo" className="p-6">
 			<div className="flex justify-between items-end mb-7">
 				<div className="typography-Body1 typography-R text-White">
-					회원님의 누적 포인트는 <br />
+					회원님의 현재 포인트는 <br />
 					<GroupOrderTextPoint point={totalPoint} /> 입니다.
 				</div>
 				<RequestVerificationButton />
