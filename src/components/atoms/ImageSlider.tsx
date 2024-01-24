@@ -3,6 +3,8 @@ import { ReactNode, useState } from 'react';
 import { IndexIndicator } from '@components/atoms';
 import Slider from 'react-slick';
 
+import '@styles/slick.css';
+
 type ImageSliderProps = {
 	children: ReactNode;
 	className?: string;
