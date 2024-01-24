@@ -32,7 +32,27 @@ export type IconId =
 	| 'category-base'
 	| 'category-eye'
 	| 'category-lip'
-	| 'category-innerBeauty';
+	| 'category-innerBeauty'
+	| 'bank-nh'
+	| 'bank-kb'
+	| 'bank-sinhan'
+	| 'bank-woori'
+	| 'bank-ibk'
+	| 'bank-keb'
+	| 'bank-kakao'
+	| 'bank-dgb'
+	| 'bank-bnk'
+	| 'bank-mg'
+	| 'bank-postOffice'
+	| 'bank-kwangju'
+	| 'bank-creditUnion'
+	| 'bank-sh'
+	| 'bank-first'
+	| 'bank-kbank'
+	| 'bank-industry'
+	| 'bank-jeju'
+	| 'bank-jeonbuk'
+	| 'bank-toss';
 
 type SvgIcon = {
 	id: IconId;
