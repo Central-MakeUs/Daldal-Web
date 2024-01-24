@@ -17,3 +17,9 @@ export { default as RightHeader } from './headers/rightHeaders/RightHeader';
 export { default as LargeProductDetailImageSlider } from './imageSlider/LargeProductDetailImageSlider';
 export { default as SmallProductDetailImageSlider } from './imageSlider/SmallProductDetailImageSlider';
 export { default as LoginImageSlider } from './imageSlider/LoginImageSlider';
+
+export { default as PointHeader } from './point/PointHeader';
+export { default as PointList } from './point/PointList';
+export { default as HistoryTotalPoint } from './point/HistoryTotalPoint';
+export { default as PointHistory } from './point/PointHistory';
+export { default as PointHistoryTitle } from './point/PointHistoryTitle';
