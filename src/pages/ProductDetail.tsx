@@ -65,8 +65,11 @@ const ProductDetail = () => {
 						className="h-full w-full rounded-s overflow-hidden"
 					/>
 				</div>
+				<iframe
+					src={url}
+					className="w-full aspect-[1/2] border-Gray60 rounded-3xl border-[7px]"
+				/>
 			</div>
-			<iframe src={url} className="w-full aspect-square" />
 			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'py-3 pl-4 pr-3'}>
 				<BuyWithLikeButton like={like} />
 			</FixedBottomLayout>
