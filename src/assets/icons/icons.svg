@@ -165,4 +165,8 @@
             </filter>
         </defs>
     </symbol>
+    <symbol id='circle-cancel' viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="#17181A"/>
+        <path d="M17 8.00714L15.9929 7L12 10.9929L8.00714 7L7 8.00714L10.9929 12L7 15.9929L8.00714 17L12 13.0071L15.9929 17L17 15.9929L13.0071 12L17 8.00714Z" fill="white"/>
+    </symbol>
 </svg>

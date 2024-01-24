@@ -26,7 +26,8 @@ export type IconId =
 	| 'custom-like'
 	| 'photo'
 	| 'plus'
-	| 'max';
+	| 'max'
+	| 'circle-cancel';
 
 type SvgIcon = {
 	id: IconId;
