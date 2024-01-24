@@ -27,7 +27,12 @@ export type IconId =
 	| 'photo'
 	| 'plus'
 	| 'max'
-	| 'circle-cancel';
+	| 'circle-cancel'
+	| 'category-lotion'
+	| 'category-base'
+	| 'category-eye'
+	| 'category-lip'
+	| 'category-innerBeauty';
 
 type SvgIcon = {
 	id: IconId;
