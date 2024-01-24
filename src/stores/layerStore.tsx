@@ -1,4 +1,5 @@
-import { DefaultButton, Modal } from '@components/atoms';
+import { Modal } from '@components/atoms';
+import DefaultButton from '@components/atoms/button/DefaultButton';
 import { create } from 'zustand';
 
 type BottomSheetType = 'login' | 'account' | 'bank';
