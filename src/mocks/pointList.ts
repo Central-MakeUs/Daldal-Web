@@ -1,39 +1,51 @@
-import { PointListTitleByMonthType } from '@constants/text';
+import { Point, PointHistoryList } from '@models/point/entity/point';
 
-export const NEXT_MONTH_POINT_LIST = {
-	month: 'NEXT' as PointListTitleByMonthType,
+type MockPointHistory = {
+	totalPoint: Point;
+	pointList: PointHistoryList;
+};
+
+export const mockCurrentPointHistory: MockPointHistory = {
 	totalPoint: '1000',
 	pointList: [
 		{
-			point: '1000',
-			date: '2021-09-23T15:00:00.000Z',
+			refund: '1000',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 1,
+			refundStatus: '승인',
 		},
 		{
-			point: '1000',
-			date: '2021-09-23T15:00:00.000Z',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 2,
+			refundStatus: '미승인',
 		},
 		{
-			point: '1000',
-			date: '2021-09-23T15:00:00.000Z',
+			refund: '1000',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 3,
+			refundStatus: '출금',
 		},
 	],
 };
 
-export const THIS_MONTH_POINT_LIST = {
-	month: 'THIS' as PointListTitleByMonthType,
+export const mockPastPointHistory: MockPointHistory = {
 	totalPoint: '1000',
 	pointList: [
 		{
-			point: '1000',
-			date: '2021-09-23T15:00:00.000Z',
+			refund: '1000',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 4,
+			refundStatus: '승인',
 		},
 		{
-			point: '미승인',
-			date: '2021-09-23T15:00:00.000Z',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 5,
+			refundStatus: '미승인',
 		},
 		{
-			point: '진행중',
-			date: '2021-09-23T15:00:00.000Z',
+			uploadTime: '2021-09-23T15:00:00.000Z',
+			buyId: 6,
+			refundStatus: '진행중',
 		},
 	],
 };
