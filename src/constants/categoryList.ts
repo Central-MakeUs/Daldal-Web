@@ -1,6 +1,6 @@
 import { IconId } from '@type/svgIcon';
 
-export type CategoryName = 'clothes' | 'hat' | 'bags' | 'shoes' | 'jewlery';
+export type CategoryName = 'lotion' | 'base' | 'eye' | 'lip' | 'innerBeauty';
 
 type CategoryList = {
 	[K in CategoryName]: {
@@ -10,11 +10,11 @@ type CategoryList = {
 };
 
 const categoryList: CategoryList = {
-	clothes: { id: 'category-clothes', name: '의류' },
-	hat: { id: 'category-hat', name: '모자' },
-	bags: { id: 'category-bags', name: '가방' },
-	shoes: { id: 'category-shoes', name: '신발' },
-	jewlery: { id: 'category-jewlery', name: '쥬얼리' },
+	lotion: { id: 'category-lotion', name: '로션' },
+	base: { id: 'category-base', name: '베이스' },
+	eye: { id: 'category-eye', name: '아이' },
+	lip: { id: 'category-lip', name: '립' },
+	innerBeauty: { id: 'category-innerBeauty', name: '이너뷰티' },
 };
 
 export default categoryList;
