@@ -24,6 +24,30 @@ const bankTextList = [
 	'토스뱅크',
 ];
 
+const bankIconList: IconId[] = [
+	'bank-nh',
+	'bank-kb',
+	'bank-sinhan',
+	'bank-woori',
+	'bank-ibk',
+	'bank-keb',
+	'bank-kakao',
+	'bank-dgb',
+	'bank-bnk',
+	'bank-mg',
+	'bank-postOffice',
+	'bank-kwangju',
+	'bank-bnk',
+	'bank-creditUnion',
+	'bank-sh',
+	'bank-first',
+	'bank-kbank',
+	'bank-industry',
+	'bank-jeju',
+	'bank-jeonbuk',
+	'bank-toss',
+];
+
 export type BankNameType = (typeof bankTextList)[number];
 
 type BankListType = {
@@ -34,6 +58,6 @@ type BankListType = {
 
 export const bankList: BankListType[] = bankTextList.map((text, idx) => ({
 	key: idx,
-	iconId: 'category-bags',
+	iconId: bankIconList[idx],
 	title: text,
 }));

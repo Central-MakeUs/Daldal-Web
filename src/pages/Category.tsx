@@ -11,7 +11,7 @@ type CategoryParams = {
 };
 
 const Category = () => {
-	const { categoryName = 'clothes' } = useParams<CategoryParams>();
+	const { categoryName = 'lotion' } = useParams<CategoryParams>();
 	const { id: iconId, name } = categoryList[categoryName];
 
 	return (
