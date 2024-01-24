@@ -1,4 +1,4 @@
-import BackdropFilter from '@components/atoms/BackdropFilter';
+import { BackdropFilter } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

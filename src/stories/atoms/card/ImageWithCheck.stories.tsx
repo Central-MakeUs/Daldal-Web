@@ -1,4 +1,4 @@
-import ImageWithCheck from '@components/atoms/card/ImageWithCheck';
+import { ImageWithCheck } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

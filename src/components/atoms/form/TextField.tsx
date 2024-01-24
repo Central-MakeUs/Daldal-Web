@@ -7,7 +7,7 @@ import {
 	MouseEvent,
 } from 'react';
 
-import DefaultButton from '@components/atoms/button/DefaultButton';
+import { DefaultButton } from '@components/atoms';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { AccountFormName } from '@models/form/entity/account';

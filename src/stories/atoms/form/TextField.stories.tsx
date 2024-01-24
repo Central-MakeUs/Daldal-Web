@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-import Form from '@components/atoms/form/TextField';
+import { Form } from '@components/atoms';
 import { accountSchema, pointSchema } from '@type/form';
 
 import type { Meta, StoryObj } from '@storybook/react';

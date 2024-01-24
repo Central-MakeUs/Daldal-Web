@@ -1,6 +1,8 @@
-import CaptionButton from '@components/atoms/button/CaptionButton';
-import RequestVerificationButton from '@components/atoms/button/RequestVerificationButton';
-import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
+import {
+	GroupOrderTextPoint,
+	RequestVerificationButton,
+	CaptionButton,
+} from '@components/atoms';
 import PointList from '@components/molecules/groupOrder/PointList';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';

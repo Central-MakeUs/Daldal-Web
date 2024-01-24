@@ -1,4 +1,4 @@
-import IconButton from '@components/atoms/button/IconButton';
+import { IconButton } from '@components/atoms';
 import { useNavigate } from 'react-router-dom';
 
 const LeftLogoHeader = () => {

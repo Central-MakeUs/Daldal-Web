@@ -1,8 +1,8 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
+import { DefaultButton } from '@components/atoms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { useNavigate } from 'react-router-dom';
 
-const PostWithdrawalScreen = () => {
+const PostWithdrawal = () => {
 	const navigate = useNavigate();
 
 	const handleConfirmClick = () => {
@@ -34,4 +34,4 @@ const PostWithdrawalScreen = () => {
 	);
 };
 
-export default PostWithdrawalScreen;
+export default PostWithdrawal;

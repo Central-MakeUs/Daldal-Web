@@ -6,4 +6,5 @@ const GlobalStyles = css`
 	}
 `;
 
-export const GlobalStorybookStyles = () => <Global styles={GlobalStyles} />;
+const GlobalStorybookStyles = () => <Global styles={GlobalStyles} />;
+export default GlobalStorybookStyles;

@@ -1,6 +1,6 @@
 import { Block, Button } from 'konsta/react';
 
-import SvgIcon from '@components/common/SvgIcon';
+import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
 import { Point } from '@models/point/entity/point';
 import {

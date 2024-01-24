@@ -1,16 +1,16 @@
-import AccountForm from '@components/organisms/form/AccountForm';
+import { AccountForm } from '@components/organisms';
 import { useAccountInfoStore } from '@stores/formInfoStore';
 import { FormType } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 
-const ProgressEditAccountTemplate = () => {
+const ProgressEditAccount = () => {
 	const { setAccountInfo, accountInfo, setEnterType } = useAccountInfoStore();
 
 	const navigate = useNavigate();
 	const onSubmit = (data: FormType) => {
 		setAccountInfo({ ...accountInfo, ...data });
 		setEnterType('EDIT');
-		navigate('/save-account', { replace: true });
+		navigate('/post-account', { replace: true });
 	};
 
 	return (
@@ -24,4 +24,4 @@ const ProgressEditAccountTemplate = () => {
 	);
 };
 
-export default ProgressEditAccountTemplate;
+export default ProgressEditAccount;

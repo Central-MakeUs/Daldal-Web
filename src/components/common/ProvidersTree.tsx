@@ -10,4 +10,5 @@ const providerWithProps: ComponentWithProps[] = [
 	[KonstaProvider],
 ];
 
-export const ProvidersTree = buildProvidersTree(providerWithProps);
+const ProvidersTree = buildProvidersTree(providerWithProps);
+export default ProvidersTree;

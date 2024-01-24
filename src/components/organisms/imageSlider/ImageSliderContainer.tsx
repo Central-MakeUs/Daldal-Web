@@ -1,5 +1,5 @@
-import IconButton from '@components/atoms/button/IconButton';
-import LargeProductDetailImageSlider from '@components/molecules/imageSlider/LargeProductDetailImageSlider';
+import { IconButton } from '@components/atoms';
+import { LargeProductDetailImageSlider } from '@components/molecules';
 import colors from '@constants/colors';
 
 type ImageSliderContainerProps = {

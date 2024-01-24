@@ -1,6 +1,6 @@
 import { Button } from 'konsta/react';
 
-import IconButton from './button/IconButton';
+import { IconButton } from '@components/atoms';
 
 type LikeButtonProps = {
 	like: boolean;

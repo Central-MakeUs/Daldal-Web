@@ -1,4 +1,4 @@
-import ListPoint from '@components/atoms/ListPoint';
+import { ListPoint } from '@components/atoms';
 import {
 	GROUP_ORDER_LIST_POINT_DESCRIPTION,
 	POINT_LIST_TITLE_BY_MONTH,

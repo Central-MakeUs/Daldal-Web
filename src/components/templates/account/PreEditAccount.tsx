@@ -1,11 +1,11 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
-import DisabledAccountForm from '@components/organisms/form/DisabledAccountForm';
+import { DefaultButton } from '@components/atoms';
+import { DisabledAccountForm } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { mockAccountForm } from '@mocks/form';
 import { useAccountInfoStore } from '@stores/formInfoStore';
 import { useNavigate } from 'react-router-dom';
 
-const PreEditAccountTemplate = () => {
+const PreEditAccount = () => {
 	// TODO: api를 통해 사용자 account 정보 가져오기
 	const defaultValues = mockAccountForm;
 
@@ -17,7 +17,7 @@ const PreEditAccountTemplate = () => {
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
 		saveAccountInfo();
-		navigate('/enter-account/edit');
+		navigate('/progress-account/edit');
 	};
 
 	return (
@@ -35,4 +35,4 @@ const PreEditAccountTemplate = () => {
 	);
 };
 
-export default PreEditAccountTemplate;
+export default PreEditAccount;

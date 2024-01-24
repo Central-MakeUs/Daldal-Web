@@ -1,4 +1,4 @@
-import Tag from '@components/atoms/tag/Tag';
+import { Tag } from '@components/atoms';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

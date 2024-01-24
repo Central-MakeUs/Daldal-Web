@@ -1,4 +1,4 @@
-import ImageContainer from '@components/molecules/ImageContainer';
+import { ImageContainer } from '@components/molecules';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

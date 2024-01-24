@@ -1,9 +1,8 @@
-import DefaultButton from '@components/atoms/button/DefaultButton';
-import GroupOrderTextPoint from '@components/atoms/GroupOrderTextPoint';
+import { GroupOrderTextPoint, DefaultButton } from '@components/atoms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { useNavigate } from 'react-router-dom';
 
-const PreWithdrawalScreen = () => {
+const PreWithdrawal = () => {
 	const navigate = useNavigate();
 	const handleNoClick = () => {
 		navigate('/point');
@@ -62,4 +61,4 @@ const PreWithdrawalScreen = () => {
 	);
 };
 
-export default PreWithdrawalScreen;
+export default PreWithdrawal;

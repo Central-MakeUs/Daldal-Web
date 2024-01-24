@@ -1,7 +1,9 @@
-import LeftBackHeader from '@components/molecules/headers/leftHeaders/LeftBackHeader';
-import LeftHomeHeader from '@components/molecules/headers/leftHeaders/LeftHomeHeader';
-import LeftLogoHeader from '@components/molecules/headers/leftHeaders/LeftLogoHeader';
-import RightHeader from '@components/molecules/headers/rightHeaders/RightHeader';
+import {
+	LeftLogoHeader,
+	LeftBackHeader,
+	LeftHomeHeader,
+	RightHeader,
+} from '@components/molecules';
 
 export type LeftHeaderProps = {
 	leftType: 'logo' | 'back' | 'home';

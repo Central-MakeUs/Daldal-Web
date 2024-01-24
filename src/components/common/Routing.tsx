@@ -1,22 +1,28 @@
-import AccountBottomSheet from '@components/molecules/bottomSheet/AccountBottomSheet';
-import BankBottomSheet from '@components/molecules/bottomSheet/BankBottomSheet';
-import LoginBottomSheet from '@components/molecules/bottomSheet/LoginBottomSheet';
-import ProgressEditAccountTemplate from '@components/templates/account/ProgressEditAccount';
-import ProgressRegisterAccountTemplate from '@components/templates/account/ProgressRegisterAccount';
-import PostWithdrawalScreen from '@components/templates/withdrawal/PostWithdrawal';
-import PreWithdrawalScreen from '@components/templates/withdrawal/PreWithdrawal';
-import ProgressWithdrawalScreen from '@components/templates/withdrawal/ProgressWithdrawal';
-import EnterAccountInfo from '@pages/account/EnterAccountInfo';
-import ReadAccountInfo from '@pages/account/ReadAccountInfo';
-import SaveAccountInfo from '@pages/account/SaveAccountInfo';
-import Category from '@pages/Category';
-import Home from '@pages/Home';
-import ImageUpload from '@pages/ImageUpload';
-import ImageUploadDetail from '@pages/ImageUploadDetail';
-import MyPage from '@pages/MyPage';
-import Point from '@pages/Point';
-import ProductDetail from '@pages/ProductDetail';
-import Withdrawal from '@pages/Withdrawal';
+import {
+	LoginBottomSheet,
+	AccountBottomSheet,
+	BankBottomSheet,
+} from '@components/molecules';
+import {
+	PreWithdrawal,
+	ProgressWithdrawal,
+	ProgressRegisterAccount,
+	ProgressEditAccount,
+	PostWithdrawal,
+} from '@components/templates';
+import {
+	Category,
+	EnterAccountInfo,
+	Home,
+	ImageUpload,
+	ImageUploadDetail,
+	MyPage,
+	Point,
+	ProductDetail,
+	ReadAccountInfo,
+	SaveAccountInfo,
+	Withdrawal,
+} from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -33,21 +39,18 @@ const Routing = () => {
 				<Route path="/image-upload" element={<ImageUpload />} />
 				<Route path="/image-upload/:imageId" element={<ImageUploadDetail />} />
 				<Route path="/withdrawal/*" element={<Withdrawal />}>
-					<Route path="pre" element={<PreWithdrawalScreen />} />
-					<Route path="progress" element={<ProgressWithdrawalScreen />} />
-					<Route path="post" element={<PostWithdrawalScreen />} />
+					<Route path="pre" element={<PreWithdrawal />} />
+					<Route path="progress" element={<ProgressWithdrawal />} />
+					<Route path="post" element={<PostWithdrawal />} />
 				</Route>
 				<Route path="/category" element={<Category />} />
 				<Route path="/category/:categoryName" element={<Category />} />
-				<Route path="/read-account" element={<ReadAccountInfo />} />
-				<Route path="/enter-account/*" element={<EnterAccountInfo />}>
-					<Route
-						path="register"
-						element={<ProgressRegisterAccountTemplate />}
-					/>
-					<Route path="edit" element={<ProgressEditAccountTemplate />} />
+				<Route path="/pre-account" element={<ReadAccountInfo />} />
+				<Route path="/progress-account/*" element={<EnterAccountInfo />}>
+					<Route path="register" element={<ProgressRegisterAccount />} />
+					<Route path="edit" element={<ProgressEditAccount />} />
 				</Route>
-				<Route path="/save-account" element={<SaveAccountInfo />} />
+				<Route path="/post-account" element={<SaveAccountInfo />} />
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 			</Routes>
 			<LoginBottomSheet />

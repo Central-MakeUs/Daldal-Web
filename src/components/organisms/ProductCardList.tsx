@@ -1,4 +1,4 @@
-import ProductCard from '@components/molecules/ProductCard';
+import { ProductCard } from '@components/molecules';
 import { mockProductList } from '@mocks/productList';
 import { useNavigate } from 'react-router-dom';
 

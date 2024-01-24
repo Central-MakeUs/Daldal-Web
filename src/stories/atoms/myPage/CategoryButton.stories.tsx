@@ -1,4 +1,4 @@
-import CategoryButton from '@components/atoms/myPage/CategoryButton';
+import { CategoryButton } from '@components/atoms';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
