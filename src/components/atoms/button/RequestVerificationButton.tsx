@@ -1,9 +1,11 @@
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
+import { useNavigate } from 'react-router-dom';
 
 const RequestVerificationButton = () => {
+	const navigate = useNavigate();
 	const handleClickRequestVerificationCaptionButton = () => {
-		console.log('인증 요청 버튼 클릭');
+		navigate('/image-upload');
 	};
 
 	return (
