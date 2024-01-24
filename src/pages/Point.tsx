@@ -1,12 +1,8 @@
-import {
-	GroupOrderTextPoint,
-	RequestVerificationButton,
-	CaptionButton,
-} from '@components/atoms';
-import PointList from '@components/molecules/groupOrder/PointList';
+import { CaptionButton } from '@components/atoms';
+import { PointHeader } from '@components/molecules';
+import { CurrentPointHistory, PastPointHistory } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
-import { NEXT_MONTH_POINT_LIST, THIS_MONTH_POINT_LIST } from '@mocks/pointList';
 import { useNavigate } from 'react-router-dom';
 
 const Point = () => {
@@ -15,23 +11,15 @@ const Point = () => {
 		navigate('/withdrawal/pre');
 	};
 
-	// TODO: totalPoint API 연동
 	const totalPoint = '10000';
-
 	const isPointLargerThan1000 = +totalPoint >= 1000;
 
 	return (
 		<PageLayout leftType="logo" className="p-6">
-			<div className="flex justify-between items-end mb-7">
-				<div className="typography-Body1 typography-R text-White">
-					회원님의 누적 포인트는 <br />
-					<GroupOrderTextPoint point={totalPoint} /> 입니다.
-				</div>
-				<RequestVerificationButton />
-			</div>
+			<PointHeader />
 			<div className="flex flex-col gap-[14px] mb-5">
-				<PointList {...THIS_MONTH_POINT_LIST} />
-				<PointList {...NEXT_MONTH_POINT_LIST} />
+				<CurrentPointHistory />
+				<PastPointHistory />
 			</div>
 			<FixedBottomLayout childrenPadding="px-6" height="h-15">
 				<CaptionButton

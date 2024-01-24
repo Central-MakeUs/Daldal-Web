@@ -1,21 +1,31 @@
 import dayjs from 'dayjs';
 
-import { Point } from '@models/point/entity/point';
+import { Point, RefundStatus } from '@models/point/entity/point';
 
 export const changeNumberIntoStringWithComma = (point: number) => {
 	return new Intl.NumberFormat().format(point);
 };
 
-export const isPointState = (point: Point['point']) => {
+export const isPointState = (point: Point) => {
 	return !/^[0-9]+$/.test(String(point));
 };
 
-export const getPointText = (point: Point['point']) => {
-	if (isPointState(point)) {
-		return point;
+export const getPointText = (point?: Point, status?: RefundStatus) => {
+	switch (status) {
+		case '진행중':
+			return status;
+		case '미승인':
+			return status;
+		case '출금':
+			return (
+				(point && `${changeNumberIntoStringWithComma(+point)} P 출금`) ||
+				'0 P 출금'
+			);
+		case '승인':
+			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
+		default:
+			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
 	}
-
-	return `${changeNumberIntoStringWithComma(+point)} P`;
 };
 
 export const getOriginalPoint = (pointText: string) => {

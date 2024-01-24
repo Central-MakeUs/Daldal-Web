@@ -3,7 +3,7 @@ import ImageSlider from '@components/atoms/ImageSlider';
 
 type SmallProductDetailImageSliderProps = {
 	images: string[];
-	handleOpenDetailImageSlider: () => void;
+	handleOpenDetailImageSlider?: () => void;
 };
 
 const SmallProductDetailImageSlider = ({
@@ -33,7 +33,7 @@ const SmallProductDetailImageSlider = ({
 					id: 'max',
 					size: 24,
 				}}
-				onClick={handleOpenDetailImageSlider}
+				onClick={handleOpenDetailImageSlider || (() => {})}
 				className="absolute bottom-3 right-3 !w-fit !p-0"
 			/>
 		</div>

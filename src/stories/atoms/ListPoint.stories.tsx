@@ -9,13 +9,6 @@ const meta = {
 		layout: 'centerd',
 	},
 	tags: ['autodocs'],
-	argTypes: {
-		date: {
-			control: {
-				type: 'text',
-			},
-		},
-	},
 } satisfies Meta<typeof ListPoint>;
 
 export default meta;
@@ -23,7 +16,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		date: '2023.12.23',
-		point: '200',
+		uploadTime: '2023.12.23',
+		refund: '200',
+		buyId: 4,
+		refundStatus: '승인',
 	},
 };
