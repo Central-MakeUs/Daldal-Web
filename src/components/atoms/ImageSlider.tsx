@@ -33,7 +33,7 @@ const ImageSlider = ({
 	const CustomDotsAndIndexIndicator = (dots: ReactNode) => (
 		<div className="relative">
 			{!options.dots && (
-				<div className="absolute bottom-10 right-3">
+				<div className="absolute bottom-10 left-3">
 					<IndexIndicator
 						currentIndex={currentIndex}
 						totalImageNumber={totalImageNumber}
