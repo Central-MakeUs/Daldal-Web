@@ -2,7 +2,7 @@ import { Button } from 'konsta/react';
 
 import { useSearchHistoryStore } from '@stores/searchHistoryStore';
 
-const SearchHeader = () => {
+const PreSearchHeader = () => {
 	const handleDeleteSearchHistory = useSearchHistoryStore(
 		state => state.deleteSearchHistory,
 	);
@@ -21,4 +21,4 @@ const SearchHeader = () => {
 	);
 };
 
-export default SearchHeader;
+export default PreSearchHeader;
