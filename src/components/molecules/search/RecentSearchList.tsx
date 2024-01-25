@@ -6,7 +6,9 @@ const RecentSearchList = () => {
 	return (
 		<div className="w-full flex flex-wrap gap-2">
 			{searchHistory.map((searchQuery, index) => (
-				<SearchTag key={index} searchQuery={searchQuery} />
+				<div className="py-3" key={`SearchQuery#${index}`}>
+					<SearchTag searchQuery={searchQuery} />
+				</div>
 			))}
 		</div>
 	);
