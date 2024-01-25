@@ -9,7 +9,7 @@ import PageLayout from '@layouts/PageLayout';
 const Home = () => {
 	return (
 		<PageLayout leftType="logo">
-			<div className="px-3 pt-3 relative">
+			<div className="px-3 relative">
 				<SearchTextField readOnly />
 				<RecommendationProductCardList />
 			</div>

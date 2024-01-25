@@ -62,7 +62,7 @@ const SearchTextField = ({
 
 	return (
 		<div
-			className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6"
+			className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center my-3"
 			onClick={handleClickSearchTextField}
 		>
 			<SvgIcon id="search" size={24} color={colors.Gray20} />
