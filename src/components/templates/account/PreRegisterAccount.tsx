@@ -1,11 +1,9 @@
 import { DefaultButton } from '@components/atoms';
+import { SvgIcon } from '@components/common';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { mockImages } from '@mocks/images';
 import { useNavigate } from 'react-router-dom';
 
 const PreRegisterAccount = () => {
-	// todo: 디자이너님 이미지 생기면 mock 이미지 진짜 이미지로 변경
-	const image = mockImages[0];
 	const navigate = useNavigate();
 	const handleRegisterAccountButtonClick = () => {
 		navigate('/progress-account/register');
@@ -17,7 +15,7 @@ const PreRegisterAccount = () => {
 	return (
 		<div className="flex flex-col justify-center items-center h-[calc(100vh-105px)]">
 			<div className="flex flex-col gap-4 items-center text-center">
-				<img src={image} alt="step1" className="w-[163px] h-[163px]" />
+				<SvgIcon id="account-empty" size={163} />
 				<div className="typography-Body2 typography-R text-White whitespace-pre-line">
 					{message}
 				</div>
