@@ -10,3 +10,4 @@ export { default as MyPage } from './MyPage';
 export { default as Point } from './Point';
 export { default as ProductDetail } from './ProductDetail';
 export { default as Withdrawal } from './Withdrawal';
+export { default as Search } from './Search';
