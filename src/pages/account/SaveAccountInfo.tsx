@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { DefaultButton } from '@components/atoms';
+import { DefaultButton, RequestLeaveModalButton } from '@components/atoms';
 import { DisabledAccountForm } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
@@ -41,6 +41,7 @@ const SaveAccountInfo = () => {
 					/>
 				</FixedBottomLayout>
 			</div>
+			<RequestLeaveModalButton />
 		</PageLayout>
 	);
 };

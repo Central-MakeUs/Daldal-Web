@@ -1,4 +1,4 @@
-import { Form } from '@components/atoms';
+import { Form, RequestLeaveModalButton } from '@components/atoms';
 import { FormType, pointSchema } from '@type/form';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +19,7 @@ const ProgressWithdrawal = () => {
 				<Form.HelperText name="POINT" />
 				<Form.Button title="출금하기" />
 			</Form>
+			<RequestLeaveModalButton />
 		</div>
 	);
 };
