@@ -23,7 +23,7 @@ export const Default: Story = {
 		size: 'medium',
 		type: 'default',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };
 
@@ -36,7 +36,7 @@ export const Checkbox: Story = {
 		size: 'medium',
 		type: 'checkbox',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };
 
@@ -49,7 +49,7 @@ export const Heart: Story = {
 		size: 'medium',
 		type: 'heart',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };
 
@@ -62,7 +62,7 @@ export const Small: Story = {
 		size: 'small',
 		type: 'default',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };
 
@@ -76,7 +76,7 @@ export const Medium: Story = {
 		size: 'medium',
 		type: 'default',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };
 
@@ -90,6 +90,6 @@ export const Large: Story = {
 		size: 'large',
 		type: 'default',
 		id: 1,
-		like: false,
+		isLike: false,
 	},
 };

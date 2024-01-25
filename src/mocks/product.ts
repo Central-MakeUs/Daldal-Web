@@ -17,5 +17,5 @@ export const mockProductDetailData: ProductDetail = {
 	],
 	videoUrls: ['https://www.youtube.com/embed/8rSH8-pbHZ0'],
 	redirectUrl: 'https://zigzag.kr/catalog/products/127482963',
-	like: true,
+	isLike: true,
 };

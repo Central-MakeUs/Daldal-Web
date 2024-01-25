@@ -12,7 +12,7 @@ import YouTube from 'react-youtube';
 const ProductDetail = () => {
 	// const { productId } = useParams();
 	// TODO: productId를 이용해 상품 정보를 가져온다.
-	const { imageUrls, title, price, refund, videoUrls, redirectUrl, like } =
+	const { imageUrls, title, price, refund, videoUrls, redirectUrl, isLike } =
 		mockProductDetailData;
 
 	const [isDetailImageSliderOpen, setIsDetailImageSliderOpen] = useState(false);
@@ -81,7 +81,7 @@ const ProductDetail = () => {
 				</div>
 			</div>
 			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'py-3 pl-4 pr-3'}>
-				<BuyWithLikeButton like={like} />
+				<BuyWithLikeButton like={isLike} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);

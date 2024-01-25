@@ -13,7 +13,7 @@ const ProductCard = ({
 	price,
 	type,
 	refund,
-	like,
+	isLike,
 	size,
 	id,
 }: ProductCardProps) => {
@@ -35,7 +35,7 @@ const ProductCard = ({
 			<ImageWithHeart
 				src={thumbnail}
 				alt={title}
-				isFullHeart={like}
+				isFullHeart={isLike}
 				handleClickHeart={() => {
 					console.log('heart');
 				}}
