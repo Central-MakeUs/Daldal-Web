@@ -26,7 +26,7 @@ const SaveAccountInfo = () => {
 	}, [clearAccountInfo]);
 
 	return (
-		<PageLayout className="p-6" leftType="back">
+		<PageLayout className="px-6 py-[15px]" leftType="back">
 			<div className="flex flex-col">
 				<DisabledAccountForm defaultValues={accountInfo} />
 				<div className="text-White typography-Body1 typography-M mt-[38px] whitespace-pre-line">
