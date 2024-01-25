@@ -30,16 +30,15 @@ const SearchTextField = ({
 
 	const handleClearSearchValue = () => {
 		setSearchValue('');
-		navigate('/search');
+		navigate('/search', { replace: true });
 	};
 
 	const isSearchValueEmpty = searchValue === '';
 	const addSearchQuery = useSearchHistoryStore(state => state.addSearchQuery);
 	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter' && !isSearchValueEmpty) {
-			navigate(`/search/${searchValue}`);
+			navigate(`/search/${searchValue}`, { replace: true });
 			addSearchQuery(searchValue);
-			handleClearSearchValue();
 		}
 	};
 
