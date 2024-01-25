@@ -64,7 +64,7 @@ const ProductDetail = () => {
 							height: '100%',
 							width: '100%',
 						}}
-						className="h-full aspect-video overflow-hidden"
+						className="h-full aspect-video"
 					/>
 				</div>
 				<div className="whitespace-pre-line">
