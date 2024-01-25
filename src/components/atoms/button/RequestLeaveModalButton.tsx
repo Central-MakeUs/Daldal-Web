@@ -11,7 +11,7 @@ const RequestLeaveModalButton = () => {
 
 	return (
 		<div
-			className="w-6 h-6 cursor-pointer py-4 bg-blue-700 fixed top-[14px] z-30"
+			className="w-6 h-6 cursor-pointer py-4 fixed top-[14px] z-30"
 			onClick={handleClickRequestLeaveModalButton}
 		/>
 	);
