@@ -15,7 +15,9 @@ const PostSearch = ({ searchQuery }: PostSearchProps) => {
 		<>
 			<SearchTextField defaultValue={searchQuery} />
 			<PostSearchHeader />
-			<ProductCardList type="heart" productList={searchResultList} />
+			<div className="my-3">
+				<ProductCardList type="heart" productList={searchResultList} />
+			</div>
 		</>
 	);
 };
