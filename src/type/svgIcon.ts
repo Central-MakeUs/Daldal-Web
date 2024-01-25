@@ -52,7 +52,8 @@ export type IconId =
 	| 'bank-industry'
 	| 'bank-jeju'
 	| 'bank-jeonbuk'
-	| 'bank-toss';
+	| 'bank-toss'
+	| 'expand';
 
 type SvgIcon = {
 	id: IconId;
