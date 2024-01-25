@@ -15,6 +15,7 @@ export { default as DefaultButton } from './button/DefaultButton';
 export { default as IconButton } from './button/IconButton';
 export { default as ProductCategoryButton } from './button/ProductCategoryButton';
 export { default as RequestVerificationButton } from './button/RequestVerificationButton';
+export { default as RequestLeaveModalButton } from './button/RequestLeaveModalButton';
 
 export { default as CardInfo } from './card/CardInfo';
 export { default as ImageWithCheck } from './card/ImageWithCheck';

@@ -27,27 +27,6 @@ const modalMappingNameWithComponent = {
 	leave: {
 		title: '작성 중인 내용이 있습니다.\n나가시겠습니까?',
 		description: `해당 페이지를 벗어날 경우,\n지금까지 작성한 내용이 사라집니다.`,
-		buttons: [
-			<DefaultButton
-				color={{
-					textColor: 'White',
-					bgColor: 'Primary',
-				}}
-				title="머무르기"
-				size="small"
-				onClick={() => console.log('머무르기 클릭')}
-			/>,
-			<DefaultButton
-				title="이동하기"
-				size="small"
-				color={{
-					textColor: 'Primary',
-					bgColor: 'White',
-					borderColor: 'Primary',
-				}}
-				onClick={() => console.log('이동하기 클릭')}
-			/>,
-		],
 	},
 	cancellation: {
 		title: '정말 회원탈퇴 하시겠습니까?',
@@ -81,7 +60,7 @@ type ModalType = keyof typeof modalMappingNameWithComponent;
 type ModalStoreType = {
 	isModalOpen: boolean;
 	Modal: JSX.Element;
-	openModal: (type: ModalType) => void;
+	openModal: (type: ModalType, buttons?: JSX.Element[]) => void;
 	closeModal: () => void;
 	handleModalOpen: (open: boolean) => void;
 };
@@ -89,10 +68,12 @@ type ModalStoreType = {
 export const useModalStore = create<ModalStoreType>(set => ({
 	isModalOpen: false,
 	Modal: <></>,
-	openModal: (type: ModalType) =>
+	openModal: (type: ModalType, buttons) =>
 		set({
 			isModalOpen: true,
-			Modal: <Modal {...modalMappingNameWithComponent[type]} />,
+			Modal: (
+				<Modal {...modalMappingNameWithComponent[type]} buttons={buttons} />
+			),
 		}),
 	closeModal: () => set({ isModalOpen: false }),
 	handleModalOpen: (open: boolean) => set({ isModalOpen: open }),
