@@ -3,6 +3,7 @@ import { useState, KeyboardEvent } from 'react';
 import { IconButton } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
+import { useSearchHistoryStore } from '@stores/searchHistoryStore';
 import { useNavigate } from 'react-router-dom';
 
 type SearchTextFieldProps = {
@@ -29,8 +30,11 @@ const SearchTextField = ({
 		setSearchValue('');
 	};
 
+	const addSearchQuery = useSearchHistoryStore(state => state.addSearchQuery);
+
 	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
+			addSearchQuery(searchValue);
 			handleClearSearchValue();
 		}
 	};
