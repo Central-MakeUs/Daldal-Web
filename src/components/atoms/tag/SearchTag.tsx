@@ -1,13 +1,13 @@
 import { Tag } from '@components/atoms';
 
 type SearchTagProps = {
-	query: string;
+	searchQuery: string;
 };
 
-const SearchTag = ({ query }: SearchTagProps) => {
+const SearchTag = ({ searchQuery }: SearchTagProps) => {
 	return (
 		<Tag
-			title={query}
+			title={searchQuery}
 			colors={{ bgColor: 'Gray70', textColor: 'White' }}
 			size="large"
 		/>
