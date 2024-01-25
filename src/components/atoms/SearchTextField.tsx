@@ -3,16 +3,26 @@ import { useState, KeyboardEvent } from 'react';
 import { IconButton } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
+import { useNavigate } from 'react-router-dom';
 
 type SearchTextFieldProps = {
 	isFocused?: boolean;
-	disabled?: boolean;
+	readOnly?: boolean;
 };
 
 const SearchTextField = ({
 	isFocused = false,
-	disabled = false,
+	readOnly = false,
 }: SearchTextFieldProps) => {
+	const navigate = useNavigate();
+	const handleClickSearchTextField = () => {
+		if (!readOnly) {
+			return;
+		}
+
+		navigate('/search');
+	};
+
 	const [searchValue, setSearchValue] = useState('');
 
 	const handleClearSearchValue = () => {
@@ -45,10 +55,13 @@ const SearchTextField = ({
 	};
 
 	return (
-		<div className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6">
+		<div
+			className="bg-Gray80 rounded-[100px] w-full flex px-4 py-[6px] gap-2 justify-center items-center mb-6"
+			onClick={handleClickSearchTextField}
+		>
 			<SvgIcon id="search" size={24} color={colors.Gray20} />
 			<input
-				disabled={disabled}
+				readOnly={readOnly}
 				autoFocus={isFocused}
 				value={searchValue}
 				onChange={e => setSearchValue(e.target.value)}
