@@ -18,13 +18,24 @@ export const getPointText = (point?: Point, status?: RefundStatus) => {
 			return status;
 		case '출금':
 			return (
-				(point && `${changeNumberIntoStringWithComma(+point)} P 출금`) ||
+				(point &&
+					`${changeNumberIntoStringWithComma(
+						+getOriginalPoint(point),
+					)} P 출금`) ||
 				'0 P 출금'
 			);
 		case '승인':
-			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
+			return (
+				(point &&
+					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
+				'0 P'
+			);
 		default:
-			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
+			return (
+				(point &&
+					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
+				'0 P'
+			);
 	}
 };
 
