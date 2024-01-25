@@ -1,12 +1,10 @@
-import { SearchTextField } from '@components/atoms';
-import RecentSearchListContainer from '@components/organisms/RecentSearchListContainer';
+import PreSearch from '@components/templates/search/PreSearch';
 import PageLayout from '@layouts/PageLayout';
 
 const Search = () => {
 	return (
 		<PageLayout className="px-3" leftType="back">
-			<SearchTextField isFocused />
-			<RecentSearchListContainer />
+			<PreSearch />
 		</PageLayout>
 	);
 };
