@@ -1,14 +1,18 @@
-export type Product = {
+export type ProductSimple = {
 	id: number;
 	title: string;
 	price: number;
 	refund: number;
-	category: string;
 	thumbnail: string;
-	images: string[];
-	video: string;
-	url: string;
 	like: boolean;
 };
 
-export type ProductList = Product[];
+export interface ProductDetail extends ProductSimple {
+	categoryType: string;
+	imageUrls: string[];
+	videoUrls: string[];
+	redirectUrl: string;
+}
+
+export type ProductSimpleList = ProductSimple[];
+export type ProductDetailList = ProductDetail[];
