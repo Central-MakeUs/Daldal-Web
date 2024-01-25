@@ -40,7 +40,8 @@ export const getDataInYYYYMMDDSplitedByDot = (date: string) => {
 	return dayjs(date).format('YYYY.MM.DD');
 };
 
-export const getYoutubeIdFromUrl = (url: string) => {
+export const getYoutubeIdFromUrl = (urls: string[]) => {
+	const url = urls[0];
 	const idRegex =
 		/(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/(?:watch\?.*v=|shorts\/|embed\/)|youtu.be\/)([\w-]{11})/;
 	const idMatch = url.match(idRegex);

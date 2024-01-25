@@ -1,26 +1,27 @@
 import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
+import { ProductSimple } from '@models/product/entity/product';
+import { useNavigate } from 'react-router-dom';
 
-type ProductCardProps = {
-	thumbnail: string;
-	title: string;
-	price: number;
-	paybackPrice: number;
+interface ProductCardProps extends ProductSimple {
 	size: 'small' | 'medium' | 'large';
 	type: 'default' | 'checkbox' | 'heart';
-	isFullHeart?: boolean;
-	handleClick?: () => void;
-};
+}
 
 const ProductCard = ({
 	thumbnail,
 	title,
 	price,
 	type,
-	paybackPrice,
-	isFullHeart,
+	refund,
+	like,
 	size,
-	handleClick,
+	id,
 }: ProductCardProps) => {
+	const navigate = useNavigate();
+	const handleCardClick = () => {
+		navigate(`/detail/${id}`);
+	};
+
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnail} alt={title} />,
 		default: (
@@ -34,7 +35,7 @@ const ProductCard = ({
 			<ImageWithHeart
 				src={thumbnail}
 				alt={title}
-				isFullHeart={isFullHeart}
+				isFullHeart={like}
 				handleClickHeart={() => {
 					console.log('heart');
 				}}
@@ -57,15 +58,10 @@ const ProductCard = ({
 	return (
 		<div
 			className={`flex flex-col ${stylesBySize[size].containerGap} cursor-pointer`}
-			onClick={handleClick}
+			onClick={handleCardClick}
 		>
 			{Image[type]}
-			<CardInfo
-				title={title}
-				price={price}
-				paybackPrice={paybackPrice}
-				size={size}
-			/>
+			<CardInfo title={title} price={price} paybackPrice={refund} size={size} />
 		</div>
 	);
 };
