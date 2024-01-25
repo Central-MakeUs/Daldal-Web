@@ -6,7 +6,7 @@ const RecommendationProductCardList = () => {
 	const productList = mockProductSimpleList.slice(0, 3);
 
 	return (
-		<div className="flex flex-col gap-3 my-3">
+		<div className="flex flex-col gap-3">
 			<span className="typography-Body1 typography-M text-White">
 				오늘의 추천상품
 			</span>

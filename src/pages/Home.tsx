@@ -8,13 +8,15 @@ import PageLayout from '@layouts/PageLayout';
 
 const Home = () => {
 	return (
-		<PageLayout leftType="logo">
-			<div className="px-3 relative">
+		<PageLayout leftType="logo" className="flex flex-col">
+			<div className="px-3 relative flex flex-col">
 				<SearchTextField readOnly />
-				<RecommendationProductCardList />
+				<div className="my-3">
+					<RecommendationProductCardList />
+				</div>
 			</div>
 			<CategoryButtonList />
-			<div className="px-3 pb-3 my-3 relative">
+			<div className="px-3 my-3 relative">
 				<ProductCardList type="heart" />
 			</div>
 		</PageLayout>
