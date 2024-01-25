@@ -1,3 +1,5 @@
+import { CategoryName } from '@constants/categoryList';
+
 export type ProductSimple = {
 	id: number;
 	title: string;
@@ -8,7 +10,7 @@ export type ProductSimple = {
 };
 
 export interface ProductDetail extends ProductSimple {
-	categoryType: string;
+	categoryType: CategoryName;
 	imageUrls: string[];
 	videoUrls: string[];
 	redirectUrl: string;
