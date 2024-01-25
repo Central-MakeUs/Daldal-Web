@@ -42,6 +42,14 @@ const MyPage = () => {
 			title: '구매 인증',
 			route: '/image-upload',
 		},
+		{
+			title: '서비스 이용 약관',
+			//TODO: route
+		},
+		{
+			title: '개인정보 처리 방침',
+			//TODO: route
+		},
 	];
 
 	const { openModal } = useModalStore();
@@ -74,9 +82,10 @@ const MyPage = () => {
 					/>
 				))}
 				<div className="flex gap-[15px]">
-					<CategoryButton title="로그아웃" />
+					<CategoryButton title="로그아웃" textCenter={true} />
 					<CategoryButton
 						title="회원 탈퇴"
+						textCenter={true}
 						onClick={handleCancelEnrollmentModal}
 					/>
 				</div>
