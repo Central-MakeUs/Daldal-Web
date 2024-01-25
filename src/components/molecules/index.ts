@@ -23,3 +23,6 @@ export { default as PointList } from './point/PointList';
 export { default as HistoryTotalPoint } from './point/HistoryTotalPoint';
 export { default as PointHistory } from './point/PointHistory';
 export { default as PointHistoryTitle } from './point/PointHistoryTitle';
+
+export { default as SearchHeader } from './search/SearchHeader';
+export { default as RecentSearchList } from './search/RecentSearchList';
