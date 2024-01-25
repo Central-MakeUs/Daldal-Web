@@ -23,7 +23,7 @@ const Tag = ({ title, colors, size }: TagProps) => {
 				TagTypography[size]
 			} ${dynamicTextColor[colors.textColor]} ${
 				dynamicBgColor[colors.bgColor]
-			}`}
+			} w-fit`}
 		>
 			{title}
 		</div>

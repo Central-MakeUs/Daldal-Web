@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 const Withdrawal = () => {
 	return (
-		<PageLayout leftType="back" className="p-6">
+		<PageLayout leftType="back" className="px-6 py-3">
 			<Outlet />
 		</PageLayout>
 	);

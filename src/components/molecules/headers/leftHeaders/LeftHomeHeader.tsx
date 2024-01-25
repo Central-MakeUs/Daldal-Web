@@ -1,10 +1,14 @@
 import { IconButton } from '@components/atoms';
 import colors from '@constants/colors';
+import { useNavigate } from 'react-router-dom';
 
 const LeftHomeHeader = () => {
+	const navigate = useNavigate();
+
 	const handleClick = () => {
-		console.log('home으로 이동');
+		navigate('/');
 	};
+
 	return (
 		<IconButton
 			className="!w-8 !px-0 !py-4"

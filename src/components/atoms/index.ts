@@ -30,3 +30,4 @@ export { default as Tag } from './tag/Tag';
 export { default as ApprovedTag } from './tag/ApprovedTag';
 export { default as NotApprovedTag } from './tag/NotApprovedTag';
 export { default as ProgressTag } from './tag/ProgressTag';
+export { default as SearchTag } from './tag/SearchTag';

@@ -15,7 +15,7 @@ const Point = () => {
 	const isPointLargerThan1000 = +totalPoint >= 1000;
 
 	return (
-		<PageLayout leftType="logo" className="p-6">
+		<PageLayout leftType="home" className="px-6 py-3">
 			<PointHeader />
 			<div className="flex flex-col gap-[14px] mb-5">
 				<CurrentPointHistory />

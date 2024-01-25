@@ -16,7 +16,7 @@ const ReadAccountInfo = () => {
 	};
 
 	return (
-		<PageLayout className="p-6" leftType="back">
+		<PageLayout className="px-6 py-[15px]" leftType="back">
 			{renderAccountInfo()}
 		</PageLayout>
 	);

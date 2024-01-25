@@ -1,6 +1,6 @@
 import { ProductCard } from '@components/molecules';
-import { mockProductList } from '@mocks/productList';
-import { useNavigate } from 'react-router-dom';
+import { mockProductSimpleList } from '@mocks/mockProductSimpleList';
+import { ProductSimpleList } from '@models/product/entity/product';
 
 const classNameOfGridCols = {
 	2: 'grid-cols-2',
@@ -13,29 +13,24 @@ type ProductCardListProps = {
 	gridCols?: GridCols;
 	size?: 'small' | 'medium' | 'large';
 	type?: 'heart' | 'checkbox' | 'default';
-	productList?: typeof mockProductList;
+	productList?: ProductSimpleList;
 };
 
 const ProductCardList = ({
 	gridCols = 2,
 	size = 'medium',
 	type = 'default',
-	productList = mockProductList,
+	productList = mockProductSimpleList,
 }: ProductCardListProps) => {
-	const navigate = useNavigate();
-	const handleCardClick = (id: number) => {
-		navigate(`/detail/${id}`);
-	};
-
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols[gridCols]}`}>
-			{productList.map(({ image, id, ...product }, index) => (
+			{productList.map(({ thumbnail, id, ...product }, index) => (
 				<ProductCard
-					thumbnail={image}
+					thumbnail={thumbnail}
 					size={size}
 					type={type}
 					key={`ProductCard#${index}`}
-					handleClick={() => handleCardClick(id)}
+					id={id}
 					{...product}
 				/>
 			))}

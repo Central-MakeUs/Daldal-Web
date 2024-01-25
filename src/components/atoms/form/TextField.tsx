@@ -114,7 +114,7 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 	const { register, formState } = useFormContext();
 	const { errors } = formState;
 	const [isFocused, setIsFocused] = useState(false);
-	const [value, setValue] = useState('P');
+	const [value, setValue] = useState('0 P');
 
 	const handleInputFocus = () => {
 		setIsFocused(true);
@@ -131,7 +131,7 @@ const FormPointInput = ({ name, autoFocus }: FormPointInputProps) => {
 	const handleInputKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Backspace') {
 			if (value.length === 1) {
-				setValue('P');
+				setValue('0 P');
 				return;
 			}
 

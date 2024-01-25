@@ -9,3 +9,5 @@ export { default as ImageSliderContainer } from './imageSlider/ImageSliderContai
 
 export { default as CurrentPointHistory } from './point/CurrentPointHistory';
 export { default as PastPointHistory } from './point/PastPointHistory';
+
+export { default as RecentSearchListContainer } from './RecentSearchListContainer';
