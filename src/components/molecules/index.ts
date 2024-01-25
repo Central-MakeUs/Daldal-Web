@@ -24,5 +24,6 @@ export { default as HistoryTotalPoint } from './point/HistoryTotalPoint';
 export { default as PointHistory } from './point/PointHistory';
 export { default as PointHistoryTitle } from './point/PointHistoryTitle';
 
-export { default as SearchHeader } from './search/SearchHeader';
+export { default as PreSearchHeader } from './search/PreSearchHeader';
 export { default as RecentSearchList } from './search/RecentSearchList';
+export { default as PostSearchHeader } from './search/PostSearchHeader';
