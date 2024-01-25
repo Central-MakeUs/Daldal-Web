@@ -1,9 +1,9 @@
-import { SearchHeader, RecentSearchList } from '@components/molecules';
+import { PreSearchHeader, RecentSearchList } from '@components/molecules';
 
 const RecentSearchListContainer = () => {
 	return (
 		<div className="px-1">
-			<SearchHeader />
+			<PreSearchHeader />
 			<RecentSearchList />
 		</div>
 	);
