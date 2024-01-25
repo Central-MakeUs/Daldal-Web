@@ -30,6 +30,7 @@ const SearchTextField = ({
 
 	const handleClearSearchValue = () => {
 		setSearchValue('');
+		navigate('/search');
 	};
 
 	const isSearchValueEmpty = searchValue === '';
