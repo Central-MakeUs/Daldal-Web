@@ -10,3 +10,5 @@ export type Product = {
 	url: string;
 	like: boolean;
 };
+
+export type ProductList = Product[];
