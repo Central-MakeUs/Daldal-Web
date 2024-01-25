@@ -5,6 +5,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 type SearchHistoryStore = {
 	searchHistoryList: SearchHistory;
 	addSearchQuery: (searchQuery: SearchQuery) => void;
+	deleteSearchHistory: () => void;
 };
 
 export const useSearchHistoryStore = create(
@@ -13,6 +14,9 @@ export const useSearchHistoryStore = create(
 			searchHistoryList: [],
 			addSearchQuery: (searchQuery: SearchQuery) => {
 				set({ searchHistoryList: [...get().searchHistoryList, searchQuery] });
+			},
+			deleteSearchHistory: () => {
+				set({ searchHistoryList: [] });
 			},
 		}),
 		{

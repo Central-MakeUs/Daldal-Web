@@ -3,7 +3,9 @@ import { Button } from 'konsta/react';
 import { useSearchHistoryStore } from '@stores/searchHistoryStore';
 
 const SearchHeader = () => {
-	const handleDeleteSearchHistory = useSearchHistoryStore.persist.clearStorage;
+	const handleDeleteSearchHistory = useSearchHistoryStore(
+		state => state.deleteSearchHistory,
+	);
 
 	return (
 		<div className="flex justify-between items-center pb-3">
