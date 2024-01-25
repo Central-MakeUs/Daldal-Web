@@ -9,11 +9,13 @@ import { useNavigate } from 'react-router-dom';
 type SearchTextFieldProps = {
 	isFocused?: boolean;
 	readOnly?: boolean;
+	defaultValue?: string;
 };
 
 const SearchTextField = ({
 	isFocused = false,
 	readOnly = false,
+	defaultValue,
 }: SearchTextFieldProps) => {
 	const navigate = useNavigate();
 	const handleClickSearchTextField = () => {
@@ -24,22 +26,22 @@ const SearchTextField = ({
 		navigate('/search');
 	};
 
-	const [searchValue, setSearchValue] = useState('');
+	const [searchValue, setSearchValue] = useState(defaultValue || '');
 
 	const handleClearSearchValue = () => {
 		setSearchValue('');
 	};
 
+	const isSearchValueEmpty = searchValue === '';
 	const addSearchQuery = useSearchHistoryStore(state => state.addSearchQuery);
-
 	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && !isSearchValueEmpty) {
+			navigate(`/search/${searchValue}`);
 			addSearchQuery(searchValue);
 			handleClearSearchValue();
 		}
 	};
 
-	const isSearchValueEmpty = searchValue === '';
 	const renderClearButton = () => {
 		if (isSearchValueEmpty) {
 			return null;
