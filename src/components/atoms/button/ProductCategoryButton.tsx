@@ -18,7 +18,7 @@ const ProductCategoryButton = ({
 			className="flex flex-col gap-1 items-center"
 			onClick={handleCategoryButtonClick}
 		>
-			<SvgIcon id={iconId} size={40} color={colors.White} />
+			<SvgIcon id={iconId} size={40} color={colors.Black} />
 			<span className="typography-Body4 typography-R text-white">
 				{category}
 			</span>
