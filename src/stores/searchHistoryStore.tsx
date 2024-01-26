@@ -15,10 +15,10 @@ export const useSearchHistoryStore = create(
 			addSearchQuery: (searchQuery: SearchQuery) => {
 				set({
 					searchHistoryList: [
+						searchQuery,
 						...get().searchHistoryList.filter(
 							searchHistory => searchHistory !== searchQuery,
 						),
-						searchQuery,
 					],
 				});
 			},
