@@ -1,15 +1,13 @@
 import DefaultButton from './DefaultButton';
 
-type KakaoLoginButtonProps = {
+export type LoginButtonProps = {
 	closeButtonSheet?: () => void;
 };
 
-const KakaoLoginButton = ({ closeButtonSheet }: KakaoLoginButtonProps) => {
+const KakaoLoginButton = ({ closeButtonSheet }: LoginButtonProps) => {
 	const handleClickKakaoLogin = () => {
 		//TODO: 카카오 로그인 연결
-		if (closeButtonSheet) {
-			closeButtonSheet();
-		}
+		closeButtonSheet?.();
 	};
 
 	return (
