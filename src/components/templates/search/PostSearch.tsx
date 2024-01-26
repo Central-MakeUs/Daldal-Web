@@ -9,6 +9,7 @@ type PostSearchProps = {
 };
 
 const PostSearch = ({ searchQuery }: PostSearchProps) => {
+	// TODO: searchQuery에 대해 api 호출
 	const searchResultList = mockSearchResultData.searchResultList;
 
 	return (

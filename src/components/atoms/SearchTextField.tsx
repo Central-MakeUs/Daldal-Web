@@ -4,7 +4,7 @@ import { IconButton } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
 import { useSearchHistoryStore } from '@stores/searchHistoryStore';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 type SearchTextFieldProps = {
 	isFocused?: boolean;
@@ -18,6 +18,7 @@ const SearchTextField = ({
 	defaultValue,
 }: SearchTextFieldProps) => {
 	const navigate = useNavigate();
+
 	const handleClickSearchTextField = () => {
 		if (!readOnly) {
 			return;
@@ -33,11 +34,15 @@ const SearchTextField = ({
 		navigate('/search', { replace: true });
 	};
 
-	const isSearchValueEmpty = searchValue === '';
+	const [searchParams, setSearchParams] = useSearchParams();
 	const addSearchQuery = useSearchHistoryStore(state => state.addSearchQuery);
+	const isSearchValueEmpty = searchValue === '';
+
 	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter' && !isSearchValueEmpty) {
-			navigate(`/search/${searchValue}`, { replace: true });
+			searchParams.set('query', searchValue);
+			setSearchParams(searchParams);
+			// navigate(`/search/${searchValue}`, { replace: true });
 			addSearchQuery(searchValue);
 		}
 	};
