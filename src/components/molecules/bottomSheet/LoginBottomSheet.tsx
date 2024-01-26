@@ -32,6 +32,7 @@ const LoginBottomSheet = () => {
 					<div className="flex gap-3 flex-col w-full">
 						<DefaultButton
 							iconId="baseline-apple"
+							iconColor="Black"
 							title="애플 아이디로 계속하기"
 							color={{
 								bgColor: 'White',
