@@ -28,7 +28,7 @@ export const useSearchHistoryStore = create(
 		}),
 		{
 			name: 'searchHistory',
-			storage: createJSONStorage(() => sessionStorage),
+			storage: createJSONStorage(() => localStorage),
 		},
 	),
 );
