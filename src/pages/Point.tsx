@@ -21,10 +21,10 @@ const Point = () => {
 				<CurrentPointHistory />
 				<PastPointHistory />
 			</div>
-			<FixedBottomLayout childrenPadding="px-6" height="h-15">
+			<FixedBottomLayout childrenPadding="px-[20px]" height="h-15">
 				<CaptionButton
 					mainText="포인트 출금하기"
-					caption="1,000원 이상부터  출금 가능"
+					caption="1,000원 이상부터 출금 가능"
 					onClick={handleCaptionButtonClick}
 					disabled={!isPointLargerThan1000}
 				/>
