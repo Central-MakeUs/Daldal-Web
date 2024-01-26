@@ -24,6 +24,7 @@ import {
 	Search,
 	SearchResult,
 	Withdrawal,
+	SignUp,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -56,6 +57,7 @@ const Routing = () => {
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 				<Route path="/search" element={<Search />} />
 				<Route path="/search/:searchQuery" element={<SearchResult />} />
+				<Route path="/sign-up" element={<SignUp />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
