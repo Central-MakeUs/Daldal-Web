@@ -22,7 +22,6 @@ import {
 	ReadAccountInfo,
 	SaveAccountInfo,
 	Search,
-	SearchResult,
 	Withdrawal,
 	SignUp,
 	Welcome,
@@ -57,7 +56,6 @@ const Routing = () => {
 				<Route path="/post-account" element={<SaveAccountInfo />} />
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 				<Route path="/search" element={<Search />} />
-				<Route path="/search/:searchQuery" element={<SearchResult />} />
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="welcome" element={<Welcome />} />
 			</Routes>

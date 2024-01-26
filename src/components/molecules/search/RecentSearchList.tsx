@@ -1,14 +1,15 @@
 import { SearchTag } from '@components/atoms';
 import { useSearchHistoryStore } from '@stores/searchHistoryStore';
 import { SearchQuery } from '@type/searchQuery';
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const RecentSearchList = () => {
 	const searchHistory = useSearchHistoryStore(state => state.searchHistoryList);
-	const navigate = useNavigate();
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	const handleSearchTagClick = (searchQuery: SearchQuery) => {
-		navigate(`/search/${searchQuery}`);
+		searchParams.set('query', searchQuery);
+		setSearchParams(searchParams, { replace: true });
 	};
 
 	return (
