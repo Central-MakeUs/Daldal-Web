@@ -13,3 +13,4 @@ export { default as Withdrawal } from './Withdrawal';
 export { default as Search } from './Search';
 export { default as SearchResult } from './SearchResult';
 export { default as SignUp } from './SignUp';
+export { default as Welcome } from './Welcome';
