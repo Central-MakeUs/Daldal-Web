@@ -1,6 +1,6 @@
 import { Button } from 'konsta/react';
 
-import { DefaultButton } from '@components/atoms';
+import { DefaultButton, SpeechBubble } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import { LoginImageSlider } from '@components/molecules';
 import { useNavigate } from 'react-router-dom';
@@ -21,7 +21,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="max-w-[600px] w-full h-fit min-h-screen flex flex-col justify-center items-center px-[23px]">
+		<div className="max-w-[600px] w-full h-fit min-h-screen flex flex-col justify-center items-center px-[23px] py-5">
 			<SvgIcon id="app-logo-square" size={122} />
 			<LoginImageSlider />
 			<Button
@@ -30,7 +30,7 @@ const SignUp = () => {
 			>
 				비회원으로 둘러보기
 			</Button>
-			<div className="w-full flex flex-col gap-4">
+			<div className="w-full flex flex-col gap-4 mb-[21px]">
 				<DefaultButton
 					iconId="baseline-apple"
 					iconColor="Black"
@@ -54,6 +54,7 @@ const SignUp = () => {
 					onClick={handleClickKakaoLogin}
 				/>
 			</div>
+			<SpeechBubble text="⚡️3초만에 빠른 회원가입" />
 		</div>
 	);
 };

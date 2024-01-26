@@ -9,6 +9,7 @@ export { default as ListPoint } from './ListPoint';
 export { default as Modal } from './Modal';
 export { default as SearchTextField } from './SearchTextField';
 export { default as ToastMessageLikeOrDelete } from './ToastMessageLikeOrDelete';
+export { default as SpeechBubble } from './SpeechBubble';
 
 export { default as CaptionButton } from './button/CaptionButton';
 export { default as DefaultButton } from './button/DefaultButton';
