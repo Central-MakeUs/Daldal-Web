@@ -15,7 +15,7 @@ const Category = () => {
 	const { id: iconId, name } = categoryList[categoryName];
 
 	return (
-		<PageLayout leftType="back" className="p-3 relative">
+		<PageLayout leftType="back" className="px-3 relative flex flex-col">
 			<SearchTextField />
 			<div className="flex gap-1 mt-5 mb-3">
 				<SvgIcon id={iconId} size={32} color={colors.White} />

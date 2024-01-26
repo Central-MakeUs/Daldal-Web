@@ -15,6 +15,7 @@ export { default as DefaultButton } from './button/DefaultButton';
 export { default as IconButton } from './button/IconButton';
 export { default as ProductCategoryButton } from './button/ProductCategoryButton';
 export { default as RequestVerificationButton } from './button/RequestVerificationButton';
+export { default as RequestLeaveModalButton } from './button/RequestLeaveModalButton';
 
 export { default as CardInfo } from './card/CardInfo';
 export { default as ImageWithCheck } from './card/ImageWithCheck';
@@ -30,3 +31,4 @@ export { default as Tag } from './tag/Tag';
 export { default as ApprovedTag } from './tag/ApprovedTag';
 export { default as NotApprovedTag } from './tag/NotApprovedTag';
 export { default as ProgressTag } from './tag/ProgressTag';
+export { default as SearchTag } from './tag/SearchTag';

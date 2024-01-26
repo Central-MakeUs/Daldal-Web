@@ -18,13 +18,24 @@ export const getPointText = (point?: Point, status?: RefundStatus) => {
 			return status;
 		case '출금':
 			return (
-				(point && `${changeNumberIntoStringWithComma(+point)} P 출금`) ||
+				(point &&
+					`${changeNumberIntoStringWithComma(
+						+getOriginalPoint(point),
+					)} P 출금`) ||
 				'0 P 출금'
 			);
 		case '승인':
-			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
+			return (
+				(point &&
+					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
+				'0 P'
+			);
 		default:
-			return (point && `${changeNumberIntoStringWithComma(+point)} P`) || '0 P';
+			return (
+				(point &&
+					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
+				'0 P'
+			);
 	}
 };
 
@@ -40,7 +51,8 @@ export const getDataInYYYYMMDDSplitedByDot = (date: string) => {
 	return dayjs(date).format('YYYY.MM.DD');
 };
 
-export const getYoutubeIdFromUrl = (url: string) => {
+export const getYoutubeIdFromUrl = (urls: string[]) => {
+	const url = urls[0];
 	const idRegex =
 		/(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/(?:watch\?.*v=|shorts\/|embed\/)|youtu.be\/)([\w-]{11})/;
 	const idMatch = url.match(idRegex);

@@ -5,22 +5,15 @@ import { SmallProductDetailImageSlider } from '@components/molecules';
 import { ImageSliderContainer } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
-import { mockProductData } from '@mocks/product';
+import { mockProductDetailData } from '@mocks/product';
 import { getYoutubeIdFromUrl } from '@utils/formatData';
 import YouTube from 'react-youtube';
 
 const ProductDetail = () => {
 	// const { productId } = useParams();
 	// TODO: productId를 이용해 상품 정보를 가져온다.
-	const {
-		images,
-		title,
-		price,
-		refund: paybackPrice,
-		video,
-		url,
-		like,
-	} = mockProductData;
+	const { imageUrls, title, price, refund, videoUrls, redirectUrl, isLike } =
+		mockProductDetailData;
 
 	const [isDetailImageSliderOpen, setIsDetailImageSliderOpen] = useState(false);
 
@@ -42,7 +35,7 @@ const ProductDetail = () => {
 		return (
 			<ImageSliderContainer
 				handleClose={closeDetailImageSlider}
-				images={images}
+				images={imageUrls}
 			/>
 		);
 	}
@@ -50,14 +43,14 @@ const ProductDetail = () => {
 	return (
 		<PageLayout leftType="back">
 			<SmallProductDetailImageSlider
-				images={images}
+				images={imageUrls}
 				handleOpenDetailImageSlider={openDetailImageSlider}
 			/>
 			<div className="p-5 flex flex-col gap-5">
 				<CardInfo
 					title={title}
 					price={price}
-					paybackPrice={paybackPrice}
+					paybackPrice={refund}
 					size="large"
 					category="의류"
 				/>
@@ -66,12 +59,12 @@ const ProductDetail = () => {
 						❣️ 유저들의 달달한 리뷰 확인하기
 					</h3>
 					<YouTube
-						videoId={getYoutubeIdFromUrl(video)}
+						videoId={getYoutubeIdFromUrl(videoUrls)}
 						opts={{
 							height: '100%',
 							width: '100%',
 						}}
-						className="h-full aspect-video overflow-hidden"
+						className="h-full aspect-video"
 					/>
 				</div>
 				<div className="whitespace-pre-line">
@@ -82,7 +75,7 @@ const ProductDetail = () => {
 						{textWithEnter.moreDescription}
 					</h6>
 					<iframe
-						src={url}
+						src={redirectUrl}
 						className="w-full aspect-[1/2] border-Gray60 rounded-3xl border-[7px]"
 					/>
 				</div>
@@ -92,7 +85,7 @@ const ProductDetail = () => {
 				childrenPadding={'py-3 pl-4 pr-3'}
 				bottom="bottom-0"
 			>
-				<BuyWithLikeButton like={like} />
+				<BuyWithLikeButton like={isLike} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);

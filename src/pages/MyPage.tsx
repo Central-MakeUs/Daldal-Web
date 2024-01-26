@@ -58,7 +58,7 @@ const MyPage = () => {
 	};
 
 	return (
-		<PageLayout leftType="home" className="p-6">
+		<PageLayout leftType="home" className="px-6 py-3">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
 				<div className="flex gap-2 items-baseline">
 					<span className="text-Secondary_B typography-Headline">
