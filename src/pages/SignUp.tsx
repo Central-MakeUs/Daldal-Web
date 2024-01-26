@@ -3,6 +3,7 @@ import { Button } from 'konsta/react';
 import { DefaultButton, SpeechBubble } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import { LoginImageSlider } from '@components/molecules';
+import SignUpLayout from '@layouts/SignUpLayout';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
@@ -21,7 +22,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="max-w-[600px] w-full h-fit min-h-screen flex flex-col justify-center items-center px-[23px] py-5">
+		<SignUpLayout className="flex flex-col justify-center items-center px-[23px] py-5">
 			<SvgIcon id="app-logo-square" size={122} />
 			<LoginImageSlider />
 			<Button
@@ -55,7 +56,7 @@ const SignUp = () => {
 				/>
 			</div>
 			<SpeechBubble text="⚡️3초만에 빠른 회원가입" />
-		</div>
+		</SignUpLayout>
 	);
 };
 
