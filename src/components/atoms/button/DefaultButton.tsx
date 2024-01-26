@@ -9,6 +9,7 @@ import { IconId } from '@type/svgIcon';
 
 type DefaultButtonProps = {
 	iconId?: IconId;
+	iconColor?: string;
 	title: string;
 	color: {
 		bgColor: ColorKey;
@@ -23,6 +24,7 @@ type DefaultButtonProps = {
 
 const DefaultButton = ({
 	iconId,
+	iconColor,
 	title,
 	color,
 	size,
@@ -51,7 +53,14 @@ const DefaultButton = ({
 				disabledBg: 'bg-Gray70',
 			}}
 		>
-			{iconId && <SvgIcon id={iconId} width={22} height={20} />}
+			{iconId && (
+				<SvgIcon
+					id={iconId}
+					color={iconColor ? iconColor : 'none'}
+					width={22}
+					height={20}
+				/>
+			)}
 			{title}
 		</Button>
 	);

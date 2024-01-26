@@ -23,6 +23,8 @@ import {
 	SaveAccountInfo,
 	Search,
 	Withdrawal,
+	SignUp,
+	Welcome,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -54,6 +56,8 @@ const Routing = () => {
 				<Route path="/post-account" element={<SaveAccountInfo />} />
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 				<Route path="/search" element={<Search />} />
+				<Route path="/sign-up" element={<SignUp />} />
+				<Route path="welcome" element={<Welcome />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />

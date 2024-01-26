@@ -18,7 +18,7 @@ const Category = () => {
 		<PageLayout leftType="back" className="px-3 relative flex flex-col">
 			<SearchTextField />
 			<div className="flex gap-1 mt-5 mb-3">
-				<SvgIcon id={iconId} size={32} color={colors.White} />
+				<SvgIcon id={iconId} size={32} color={colors.Black} />
 				<h2 className="text-White typography-Subhead">{name}</h2>
 			</div>
 			<div className="py-3">

@@ -8,7 +8,7 @@ const LoginImageSlider = () => {
 		<ImageSlider
 			totalImageNumber={mockImages.length}
 			options={{ dots: true, autoplay: true, infinite: true }}
-			className="w-[287px]"
+			className="w-full px-[22px] mb-[37px] mt-4"
 		>
 			{mockImages.map((image, idx) => (
 				<div key={`Image#${idx}`}>
