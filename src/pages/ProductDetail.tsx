@@ -87,7 +87,11 @@ const ProductDetail = () => {
 					/>
 				</div>
 			</div>
-			<FixedBottomLayout height={'h-[96px]'} childrenPadding={'py-3 pl-4 pr-3'}>
+			<FixedBottomLayout
+				height={'h-[96px]'}
+				childrenPadding={'py-3 pl-4 pr-3'}
+				bottom="bottom-0"
+			>
 				<BuyWithLikeButton like={like} />
 			</FixedBottomLayout>
 		</PageLayout>
