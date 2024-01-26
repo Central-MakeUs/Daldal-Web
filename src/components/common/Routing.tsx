@@ -22,7 +22,6 @@ import {
 	ReadAccountInfo,
 	SaveAccountInfo,
 	Search,
-	SearchResult,
 	Withdrawal,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
@@ -55,7 +54,6 @@ const Routing = () => {
 				<Route path="/post-account" element={<SaveAccountInfo />} />
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 				<Route path="/search" element={<Search />} />
-				<Route path="/search/:searchQuery" element={<SearchResult />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />

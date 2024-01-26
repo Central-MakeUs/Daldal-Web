@@ -13,7 +13,14 @@ export const useSearchHistoryStore = create(
 		(set, get) => ({
 			searchHistoryList: [],
 			addSearchQuery: (searchQuery: SearchQuery) => {
-				set({ searchHistoryList: [...get().searchHistoryList, searchQuery] });
+				set({
+					searchHistoryList: [
+						searchQuery,
+						...get().searchHistoryList.filter(
+							searchHistory => searchHistory !== searchQuery,
+						),
+					],
+				});
 			},
 			deleteSearchHistory: () => {
 				set({ searchHistoryList: [] });
