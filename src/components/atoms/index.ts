@@ -18,6 +18,7 @@ export { default as ProductCategoryButton } from './button/ProductCategoryButton
 export { default as RequestVerificationButton } from './button/RequestVerificationButton';
 export { default as RequestLeaveModalButton } from './button/RequestLeaveModalButton';
 export { default as KakaoLoginButton } from './button/KakaoLoginButton';
+export { default as AppleLoginButton } from './button/AppleLoginButton';
 
 export { default as CardInfo } from './card/CardInfo';
 export { default as ImageWithCheck } from './card/ImageWithCheck';
