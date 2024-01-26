@@ -1,3 +1,5 @@
+import { MouseEvent } from 'react';
+
 import { DefaultButton } from '@components/atoms';
 import { useModalStore } from '@stores/layerStore';
 import { useNavigate } from 'react-router-dom';
@@ -34,7 +36,7 @@ const RequestLeaveModalButton = () => {
 	];
 
 	const handleClickRequestLeaveModalButton = (
-		e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+		e: MouseEvent<HTMLDivElement>,
 	) => {
 		e.preventDefault();
 		openModal('leave', buttons);
