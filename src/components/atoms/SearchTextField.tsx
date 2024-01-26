@@ -31,7 +31,7 @@ const SearchTextField = ({
 
 	const handleClearSearchValue = () => {
 		setSearchValue('');
-		navigate('/search', { replace: true });
+		navigate('/search');
 	};
 
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -41,8 +41,7 @@ const SearchTextField = ({
 	const handleEnter = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter' && !isSearchValueEmpty) {
 			searchParams.set('query', searchValue);
-			setSearchParams(searchParams);
-			// navigate(`/search/${searchValue}`, { replace: true });
+			setSearchParams(searchParams, { replace: true });
 			addSearchQuery(searchValue);
 		}
 	};

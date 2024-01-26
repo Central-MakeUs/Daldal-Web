@@ -9,7 +9,7 @@ const RecentSearchList = () => {
 
 	const handleSearchTagClick = (searchQuery: SearchQuery) => {
 		searchParams.set('query', searchQuery);
-		setSearchParams(searchParams);
+		setSearchParams(searchParams, { replace: true });
 	};
 
 	return (
