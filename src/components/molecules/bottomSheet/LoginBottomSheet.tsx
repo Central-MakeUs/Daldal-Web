@@ -1,4 +1,8 @@
-import { IconButton, DefaultButton } from '@components/atoms';
+import {
+	IconButton,
+	KakaoLoginButton,
+	AppleLoginButton,
+} from '@components/atoms';
 import { Drawer, DrawerContent } from '@components/ui/drawer';
 import colors from '@constants/colors';
 import { useBottomSheetStore } from '@stores/layerStore';
@@ -30,28 +34,8 @@ const LoginBottomSheet = () => {
 						/>
 					</div>
 					<div className="flex gap-3 flex-col w-full">
-						<DefaultButton
-							iconId="baseline-apple"
-							iconColor="Black"
-							title="애플 아이디로 계속하기"
-							color={{
-								bgColor: 'White',
-								textColor: 'Black',
-								borderColor: 'Gray20',
-							}}
-							size="large"
-							onClick={closeBottomSheet}
-						/>
-						<DefaultButton
-							iconId="kakaoTalk"
-							title="카카오톡으로 계속하기"
-							color={{
-								bgColor: 'Kakao',
-								textColor: 'Black',
-							}}
-							size="large"
-							onClick={closeBottomSheet}
-						/>
+						<AppleLoginButton closeButtonSheet={closeBottomSheet} />
+						<KakaoLoginButton closeButtonSheet={closeBottomSheet} />
 					</div>
 				</div>
 			</DrawerContent>

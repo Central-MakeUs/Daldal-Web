@@ -1,6 +1,10 @@
 import { Button } from 'konsta/react';
 
-import { DefaultButton, SpeechBubble } from '@components/atoms';
+import {
+	AppleLoginButton,
+	KakaoLoginButton,
+	SpeechBubble,
+} from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import { LoginImageSlider } from '@components/molecules';
 import SignUpLayout from '@layouts/SignUpLayout';
@@ -11,14 +15,6 @@ const SignUp = () => {
 
 	const handleClickNonMembers = () => {
 		navigate('/');
-	};
-
-	const handleClickAppleLogin = () => {
-		//TODO: 애플 로그인 연결
-	};
-
-	const handleClickKakaoLogin = () => {
-		//TODO: 카카오 로그인 연결
 	};
 
 	return (
@@ -32,28 +28,8 @@ const SignUp = () => {
 				비회원으로 둘러보기
 			</Button>
 			<div className="w-full flex flex-col gap-4 mb-[21px]">
-				<DefaultButton
-					iconId="baseline-apple"
-					iconColor="Black"
-					title="애플 아이디로 계속하기"
-					color={{
-						bgColor: 'White',
-						textColor: 'Black',
-						borderColor: 'Gray20',
-					}}
-					size="large"
-					onClick={handleClickAppleLogin}
-				/>
-				<DefaultButton
-					iconId="kakaoTalk"
-					title="카카오톡으로 계속하기"
-					color={{
-						bgColor: 'Kakao',
-						textColor: 'Black',
-					}}
-					size="large"
-					onClick={handleClickKakaoLogin}
-				/>
+				<AppleLoginButton />
+				<KakaoLoginButton />
 			</div>
 			<SpeechBubble text="⚡️3초만에 빠른 회원가입" />
 		</SignUpLayout>
