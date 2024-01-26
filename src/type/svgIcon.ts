@@ -54,7 +54,8 @@ export type IconId =
 	| 'bank-jeonbuk'
 	| 'bank-toss'
 	| 'account-empty'
-	| 'app-logo-square';
+	| 'app-logo-square'
+	| 'triangle';
 
 type SvgIcon = {
 	id: IconId;
