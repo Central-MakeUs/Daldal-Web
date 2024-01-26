@@ -22,7 +22,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<SignUpLayout className="flex flex-col justify-center items-center px-[23px] py-5">
+		<SignUpLayout className="flex flex-col justify-center items-center">
 			<SvgIcon id="app-logo-square" size={122} />
 			<LoginImageSlider />
 			<Button
