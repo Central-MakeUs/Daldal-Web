@@ -1,13 +1,7 @@
 import { ReactNode } from 'react';
 
-import {
-	ApprovedTag,
-	NotApprovedTag,
-	ProgressTag,
-	DefaultButton,
-} from '@components/atoms';
+import { ApprovedTag, NotApprovedTag, ProgressTag } from '@components/atoms';
 import { SmallProductDetailImageSlider } from '@components/molecules';
-import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
 import { Status } from '@type/status';
@@ -30,18 +24,21 @@ const ImageUploadDetail = () => {
 	const point = '2000';
 	const approvedMessage = '어떠어떠어떠한 이유로 승인되지 않았습니다.';
 
-	const handleClickReApprove = () => {
-		//Todo: 승인 api 요청
-		console.log('재 승인 요청하기');
-	};
-
-	const renderTextValue = (text: string) => (
-		<h2 className="typography-Subhead text-White">{text}</h2>
+	const renderTextValue = (text: string, typography: string) => (
+		<h2 className={`${typography} text-White`}>{text}</h2>
 	);
 
-	const renderContents = (title: string, value: ReactNode) => {
+	const renderContents = (
+		title: string,
+		value: ReactNode,
+		row: boolean = true,
+	) => {
+		const contentsStyle = row
+			? 'flex justify-between items-center'
+			: 'flex flex-col gap-[13px]';
+
 		return (
-			<div className="w-full flex justify-between items-center">
+			<div className={`w-full ${contentsStyle}`}>
 				<h3 className="typography-Body2 typography-R text-Gray20">{title}</h3>
 				{value}
 			</div>
@@ -50,25 +47,15 @@ const ImageUploadDetail = () => {
 
 	const renderExtraContents = () => {
 		if (status === 'APPROVED') {
-			return renderContents('승인 금액', renderTextValue(getPointText(point)));
+			return renderContents(
+				'승인 금액',
+				renderTextValue(getPointText(point), 'typography-Subhead'),
+			);
 		} else if (status === 'NOT_APPROVED') {
-			return (
-				<div className="flex flex-col gap-[13px]">
-					<h3 className="typography-Body2 typography-R text-Gray20">
-						미승인 사유
-					</h3>
-					<h3 className="typography-Body2 typography-R text-White">
-						{approvedMessage}
-					</h3>
-					<FixedBottomLayout childrenPadding="px-6" height="h-15">
-						<DefaultButton
-							title="재승인 요청하기"
-							color={{ bgColor: 'White', textColor: 'Black' }}
-							size="large"
-							onClick={handleClickReApprove}
-						/>
-					</FixedBottomLayout>
-				</div>
+			return renderContents(
+				'미승인 사유',
+				renderTextValue(approvedMessage, 'typography-Body2 typography-R'),
+				false,
 			);
 		} else {
 			return null;
@@ -81,7 +68,10 @@ const ImageUploadDetail = () => {
 			<div className="p-6 flex flex-col gap-6">
 				{renderContents(
 					'업로드 일시',
-					renderTextValue(getDataInYYYYMMDDSplitedByDot(date)),
+					renderTextValue(
+						getDataInYYYYMMDDSplitedByDot(date),
+						'typography-Subhead',
+					),
 				)}
 				{renderContents('승인 여부', statusValue[status])}
 				{renderExtraContents()}
