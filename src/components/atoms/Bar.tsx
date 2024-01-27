@@ -1,0 +1,20 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Bar = ({ animationDuration, progress }: any) => (
+	<div
+		className="bg-Primary w-full fixed top-0 left-0 h-1 z-50 "
+		style={{
+			marginLeft: `${(-1 + progress) * 100}%`,
+			transition: `margin-left ${animationDuration}ms linear`,
+		}}
+	>
+		<div
+			className="absolute block right-0 h-full opacity-100 w-[100px]"
+			style={{
+				boxShadow: '0 0 10px #FF617A, 0 0 5px #FF617A',
+				transform: 'rotate(3deg) translate(0px, -4px)',
+			}}
+		/>
+	</div>
+);
+
+export default Bar;
