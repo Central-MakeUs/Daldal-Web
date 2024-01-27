@@ -1,3 +1,5 @@
+import colors from '@constants/colors';
+
 type BarProps = {
 	animationDuration: number;
 	progress: number;
@@ -14,7 +16,7 @@ const Bar = ({ animationDuration, progress }: BarProps) => (
 		<div
 			className="absolute block right-0 h-full opacity-100 w-[100px]"
 			style={{
-				boxShadow: '0 0 10px #FF617A, 0 0 5px #FF617A',
+				boxShadow: `0 0 10px ${colors.Primary}, 0 0 5px ${colors.Primary}`,
 				transform: 'rotate(3deg) translate(0px, -4px)',
 			}}
 		/>
