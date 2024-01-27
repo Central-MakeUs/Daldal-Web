@@ -1,5 +1,4 @@
-import Bar from '@components/atoms/Bar';
-import BarContainer from '@components/atoms/BarContainer';
+import { Bar, BarContainer } from '@components/atoms';
 import { useNProgress } from '@tanem/react-nprogress';
 
 type ProgressBarProps = {

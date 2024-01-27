@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { SvgIcon } from '@components/index';
-import ProgressBar from '@components/molecules/ProgressBar';
+import { ProgressBar, SvgIcon } from '@components/index';
 import SignUpLayout from '@layouts/SignUpLayout';
 
 const Notification = () => {
