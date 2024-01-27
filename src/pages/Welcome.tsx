@@ -20,12 +20,10 @@ const Welcome = () => {
 					{description}
 				</h4>
 			</div>
-			<div className="flex-grow">
-				<div className="h-full flex items-center justify-center">
-					<SvgIcon id="app-logo-square" size={336} />
-				</div>
+			<div className="flex-grow h-full flex items-center justify-center">
+				<SvgIcon id="app-logo-square" size={336} />
 			</div>
-			<FixedBottomLayout height="h-15" childrenPadding="px-[23px]">
+			<FixedBottomLayout height="h-16" childrenPadding="px-[23px]">
 				<DefaultButton
 					title="쇼핑 시작하기"
 					color={{
