@@ -26,6 +26,7 @@ import {
 	Withdrawal,
 	SignUp,
 	Welcome,
+	Notification,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -59,6 +60,7 @@ const Routing = () => {
 				<Route path="/search" element={<Search />} />
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="welcome" element={<Welcome />} />
+				<Route path="notification" element={<Notification />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
