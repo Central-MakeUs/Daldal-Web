@@ -8,7 +8,7 @@ import ColorKey from '@type/colorKey';
 import svgIcon from '@type/svgIcon';
 
 type DefaultButtonProps = {
-	icon: svgIcon;
+	icon?: svgIcon;
 	title: string;
 	color: {
 		bgColor: ColorKey;
@@ -35,7 +35,7 @@ const DefaultButton = ({
 	return (
 		<Button
 			className={`w-full ${height} !typography-Btn_text1 flex rounded ${
-				icon.id ? 'gap-6 justify-center items-center' : 'text-center'
+				icon && icon.id ? 'gap-6 justify-center items-center' : 'text-center'
 			} ${
 				color.bgColor === 'Black' &&
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
@@ -51,7 +51,7 @@ const DefaultButton = ({
 				disabledBg: 'bg-Gray70',
 			}}
 		>
-			{icon.id && (
+			{icon && icon.id && (
 				<SvgIcon
 					id={icon.id}
 					color={icon.color ? icon.color : 'none'}
