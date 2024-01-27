@@ -1,18 +1,15 @@
 import DefaultButton from './DefaultButton';
 
-export type LoginButtonProps = {
-	closeButtonSheet?: () => void;
-};
-
-const KakaoLoginButton = ({ closeButtonSheet }: LoginButtonProps) => {
+const KakaoLoginButton = () => {
 	const handleClickKakaoLogin = () => {
 		//TODO: 카카오 로그인 연결
-		closeButtonSheet?.();
 	};
 
 	return (
 		<DefaultButton
-			iconId="kakaoTalk"
+			icon={{
+				id: 'kakaoTalk',
+			}}
 			title="카카오톡으로 계속하기"
 			color={{
 				bgColor: 'Kakao',

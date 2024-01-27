@@ -5,11 +5,10 @@ import dynamicBorderColor from '@constants/dynamicTailwind/dynamicBorderColor';
 import dynamicKColor from '@constants/dynamicTailwind/dynamicKColor';
 import dynamicTextColor from '@constants/dynamicTailwind/dynamicTextColor';
 import ColorKey from '@type/colorKey';
-import { IconId } from '@type/svgIcon';
+import svgIcon from '@type/svgIcon';
 
 type DefaultButtonProps = {
-	iconId?: IconId;
-	iconColor?: string;
+	icon?: svgIcon;
 	title: string;
 	color: {
 		bgColor: ColorKey;
@@ -23,8 +22,7 @@ type DefaultButtonProps = {
 };
 
 const DefaultButton = ({
-	iconId,
-	iconColor,
+	icon,
 	title,
 	color,
 	size,
@@ -37,7 +35,7 @@ const DefaultButton = ({
 	return (
 		<Button
 			className={`w-full ${height} !typography-Btn_text1 flex rounded ${
-				iconId ? 'gap-6 justify-center items-center' : 'text-center'
+				icon && icon.id ? 'gap-6 justify-center items-center' : 'text-center'
 			} ${
 				color.bgColor === 'Black' &&
 				'!border-[1px] !border-solid !border-Gray50 k-color-Black'
@@ -53,10 +51,10 @@ const DefaultButton = ({
 				disabledBg: 'bg-Gray70',
 			}}
 		>
-			{iconId && (
+			{icon && icon.id && (
 				<SvgIcon
-					id={iconId}
-					color={iconColor ? iconColor : 'none'}
+					id={icon.id}
+					color={icon.color ? icon.color : 'none'}
 					width={22}
 					height={20}
 				/>

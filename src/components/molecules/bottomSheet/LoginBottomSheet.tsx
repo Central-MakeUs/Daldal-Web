@@ -3,7 +3,7 @@ import {
 	KakaoLoginButton,
 	AppleLoginButton,
 } from '@components/atoms';
-import { Drawer, DrawerContent } from '@components/ui/drawer';
+import { Drawer, DrawerClose, DrawerContent } from '@components/ui/drawer';
 import colors from '@constants/colors';
 import { useBottomSheetStore } from '@stores/layerStore';
 const LoginBottomSheet = () => {
@@ -33,10 +33,10 @@ const LoginBottomSheet = () => {
 							className="!w-fit !p-0 absolute top-4 right-4"
 						/>
 					</div>
-					<div className="flex gap-3 flex-col w-full">
-						<AppleLoginButton closeButtonSheet={closeBottomSheet} />
-						<KakaoLoginButton closeButtonSheet={closeBottomSheet} />
-					</div>
+					<DrawerClose className="flex gap-3 flex-col w-full">
+						<AppleLoginButton />
+						<KakaoLoginButton />
+					</DrawerClose>
 				</div>
 			</DrawerContent>
 		</Drawer>
