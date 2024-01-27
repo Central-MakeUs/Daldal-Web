@@ -1,10 +1,8 @@
 import DefaultButton from './DefaultButton';
-import { LoginButtonProps } from './KakaoLoginButton';
 
-const AppleLoginButton = ({ closeButtonSheet }: LoginButtonProps) => {
+const AppleLoginButton = () => {
 	const handleClickAppleLogin = () => {
 		//TODO: 애플 로그인 연결
-		closeButtonSheet?.();
 	};
 
 	return (
