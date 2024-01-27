@@ -16,13 +16,17 @@ const Notification = () => {
 				...prevState,
 				isAnimating: false,
 			}));
-
-			//Todo: 지그재그 주소로 변경하기
-			window.location.href = 'http://localhost:5173/';
 		}, 2500);
 
 		return () => clearTimeout(timeoutId);
 	}, []);
+
+	useEffect(() => {
+		if (!state.isAnimating) {
+			//TODO: 서버로 부터 받은 url 정보로 변경
+			window.location.href = 'https://zigzag.kr/';
+		}
+	}, [state]);
 
 	const descriptions = [
 		{ message: '결제 완료 후, 달달쇼핑에서', style: 'text-Gray60' },

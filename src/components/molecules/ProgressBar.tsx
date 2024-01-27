@@ -8,7 +8,7 @@ const ProgressBar = ({ isAnimating }: { isAnimating: boolean }) => {
 	});
 	return (
 		<BarContainer animationDuration={animationDuration} isFinished={isFinished}>
-			<Bar animationDuration={500} progress={progress} />
+			<Bar animationDuration={animationDuration} progress={progress} />
 		</BarContainer>
 	);
 };
