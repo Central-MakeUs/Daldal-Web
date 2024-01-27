@@ -1,6 +1,6 @@
 import { PageLayoutDefaultProps } from './PageLayout';
 
-const SignUpLayout = ({ children, className }: PageLayoutDefaultProps) => {
+const ClearLayout = ({ children, className }: PageLayoutDefaultProps) => {
 	return (
 		<div
 			className={`max-w-[600px] w-full h-screen px-[23px] py-5 ${className}`}
@@ -10,4 +10,4 @@ const SignUpLayout = ({ children, className }: PageLayoutDefaultProps) => {
 	);
 };
 
-export default SignUpLayout;
+export default ClearLayout;

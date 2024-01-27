@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { ProgressBar, SvgIcon } from '@components/index';
-import SignUpLayout from '@layouts/SignUpLayout';
+import ClearLayout from '@layouts/ClearLayout';
 
 const Notification = () => {
 	const [state, setState] = useState({
@@ -33,7 +33,7 @@ const Notification = () => {
 		{ message: '환급액을 받아가세요!', style: 'text-Gray60' },
 	];
 	return (
-		<SignUpLayout className="flex flex-col relative bg-White py-[31px]">
+		<ClearLayout className="flex flex-col relative bg-White py-[31px]">
 			<ProgressBar isAnimating={state.isAnimating} key={state.key} />
 			<h2 className="text-Black typography-Subhead">
 				지그재그로 이동중입니다!
@@ -49,7 +49,7 @@ const Notification = () => {
 			<div className="flex-grow h-full flex items-center justify-center">
 				<SvgIcon id="progress" width={339} height={415} />
 			</div>
-		</SignUpLayout>
+		</ClearLayout>
 	);
 };
 

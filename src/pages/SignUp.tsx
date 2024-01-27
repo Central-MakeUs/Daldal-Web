@@ -7,7 +7,7 @@ import {
 } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import { LoginImageSlider } from '@components/molecules';
-import SignUpLayout from '@layouts/SignUpLayout';
+import ClearLayout from '@layouts/ClearLayout';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
@@ -18,7 +18,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<SignUpLayout className="flex flex-col justify-center items-center">
+		<ClearLayout className="flex flex-col justify-center items-center">
 			<SvgIcon id="app-logo-square" size={122} />
 			<LoginImageSlider />
 			<Button
@@ -33,7 +33,7 @@ const SignUp = () => {
 				<KakaoLoginButton />
 			</div>
 			<SpeechBubble text="⚡️3초만에 빠른 회원가입" />
-		</SignUpLayout>
+		</ClearLayout>
 	);
 };
 
