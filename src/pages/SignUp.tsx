@@ -22,7 +22,7 @@ const SignUp = () => {
 			<SvgIcon id="app-logo-square" size={122} />
 			<LoginImageSlider />
 			<Button
-				className="typography-Body3 typography-M text-Gray10 mb-3 !bg-transparent !p-0 cursor-pointer"
+				className="!typography-Body3 !typography-M text-Gray10 mb-3 !bg-transparent !p-0 cursor-pointer"
 				onClick={handleClickNonMembers}
 			>
 				비회원으로 둘러보기
