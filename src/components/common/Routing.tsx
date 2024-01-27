@@ -2,6 +2,7 @@ import {
 	LoginBottomSheet,
 	AccountBottomSheet,
 	BankBottomSheet,
+	ImageUploadBottomSheet,
 } from '@components/molecules';
 import {
 	PreWithdrawal,
@@ -62,6 +63,7 @@ const Routing = () => {
 			<LoginBottomSheet />
 			<AccountBottomSheet />
 			<BankBottomSheet />
+			<ImageUploadBottomSheet />
 			{Modal}
 		</BrowserRouter>
 	);

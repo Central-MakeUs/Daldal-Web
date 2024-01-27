@@ -6,6 +6,7 @@ export { default as WithdrawOrNotButton } from './WithdrawOrNotButton';
 export { default as AccountBottomSheet } from './bottomSheet/AccountBottomSheet';
 export { default as BankBottomSheet } from './bottomSheet/BankBottomSheet';
 export { default as LoginBottomSheet } from './bottomSheet/LoginBottomSheet';
+export { default as ImageUploadBottomSheet } from './bottomSheet/ImageUploadBottomSheet';
 
 export { default as DisabledFormElement } from './form/DisabledFormElement';
 
