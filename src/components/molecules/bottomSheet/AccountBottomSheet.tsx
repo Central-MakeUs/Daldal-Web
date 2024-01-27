@@ -7,7 +7,7 @@ const AccountBottomSheet = () => {
 	const { type, isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
 		useBottomSheetStore();
 
-	if (!isBottomSheetOpen || type !== 'account') {
+	if (!isBottomSheetOpen || type == 'account') {
 		return null;
 	}
 
@@ -26,7 +26,7 @@ const AccountBottomSheet = () => {
 						color: colors.Gray60,
 						size: 24,
 					}}
-					className="!w-fit absolute top-1 right-0"
+					className="!w-fit !p-0 absolute top-4 right-4"
 				/>
 				<div>
 					<h4 className="text-Gray60 typography-Body4 typography-M mb-2 whitespace-pre-line">

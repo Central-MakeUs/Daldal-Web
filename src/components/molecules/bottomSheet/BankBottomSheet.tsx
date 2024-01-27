@@ -30,7 +30,7 @@ const BankBottomSheet = () => {
 						color: colors.Gray60,
 						size: 24,
 					}}
-					className="!w-fit absolute top-1 right-0"
+					className="!w-fit !p-0 absolute top-4 right-4"
 				/>
 				<h2 className="text-Black typography-Body1 typography-M mb-3">
 					은행을 선택해주세요.

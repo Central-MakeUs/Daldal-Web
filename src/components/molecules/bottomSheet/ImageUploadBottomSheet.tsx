@@ -21,7 +21,7 @@ const ImageUploadBottomSheet = () => {
 						color: colors.Gray60,
 						size: 24,
 					}}
-					className="!w-fit absolute top-1 right-0"
+					className="!w-fit !p-0 absolute top-4 right-4"
 				/>
 				<div className="flex flex-col gap-2">
 					<h4 className="text-Gray60 typography-Body3 typography-M">
