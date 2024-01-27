@@ -43,7 +43,7 @@ const Notification = () => {
 					{desc.message}
 				</h3>
 			))}
-			<h4 className="typography-Body4 typography-M text-Error mt-3">
+			<h4 className="typography-Body4 typography-M text-Error mt-2">
 				* 캡처본은 제품명과 결제 시간이 포함되어야합니다.
 			</h4>
 			<div className="flex-grow h-full flex items-center justify-center">
