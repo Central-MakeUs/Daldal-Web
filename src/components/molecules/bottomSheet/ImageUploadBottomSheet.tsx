@@ -1,15 +1,21 @@
 import { IconButton, DefaultButton } from '@components/atoms';
-import { Drawer, DrawerContent } from '@components/ui/drawer';
+import { Drawer, DrawerClose, DrawerContent } from '@components/ui/drawer';
 import colors from '@constants/colors';
 import { useBottomSheetStore } from '@stores/layerStore';
+import { useNavigate } from 'react-router-dom';
 
 const ImageUploadBottomSheet = () => {
 	const { type, isBottomSheetOpen, closeBottomSheet, setBottomSheetOpen } =
 		useBottomSheetStore();
+	const navigate = useNavigate();
 
 	if (!isBottomSheetOpen || type !== 'imageUpload') {
 		return null;
 	}
+
+	const handleClickButton = () => {
+		navigate('/image-upload');
+	};
 
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
@@ -36,15 +42,17 @@ const ImageUploadBottomSheet = () => {
 						</h2>
 					</div>
 				</div>
-				<DefaultButton
-					title="구매 인증하러 가기"
-					color={{
-						bgColor: 'Primary',
-						textColor: 'White',
-					}}
-					size="large"
-					className="m-auto"
-				/>
+				<DrawerClose className="w-full m-auto">
+					<DefaultButton
+						title="구매 인증하러 가기"
+						color={{
+							bgColor: 'Primary',
+							textColor: 'White',
+						}}
+						size="large"
+						onClick={handleClickButton}
+					/>
+				</DrawerClose>
 			</DrawerContent>
 		</Drawer>
 	);
