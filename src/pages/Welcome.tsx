@@ -13,15 +13,17 @@ const Welcome = () => {
 	};
 
 	return (
-		<SignUpLayout>
+		<SignUpLayout className="flex flex-col">
 			<div className="flex flex-col gap-[9px] mt-[37px]">
 				<h2 className="text-White typography-Headline">Welcome!</h2>
 				<h4 className="text-Gray20 typography-Body1 typography-R whitespace-pre-line">
 					{description}
 				</h4>
 			</div>
-			<div className="my-[60px] flex items-center justify-center">
-				<SvgIcon id="app-logo-square" size={336} />
+			<div className="flex-grow">
+				<div className="h-full flex items-center justify-center">
+					<SvgIcon id="app-logo-square" size={336} />
+				</div>
 			</div>
 			<FixedBottomLayout height="h-15" childrenPadding="px-[23px]">
 				<DefaultButton
