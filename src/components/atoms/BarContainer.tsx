@@ -1,6 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode } from 'react';
 
-const BarContainer = ({ animationDuration, children, isFinished }: any) => (
+type BarContainerProps = {
+	animationDuration: number;
+	children: ReactNode;
+	isFinished: boolean;
+};
+
+const BarContainer = ({
+	animationDuration,
+	children,
+	isFinished,
+}: BarContainerProps) => (
 	<div
 		className={`relative ${
 			isFinished ? 'opacity-0' : 'opacity-100'

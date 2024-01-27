@@ -1,5 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Bar = ({ animationDuration, progress }: any) => (
+type BarProps = {
+	animationDuration: number;
+	progress: number;
+};
+
+const Bar = ({ animationDuration, progress }: BarProps) => (
 	<div
 		className="bg-Primary w-full fixed top-0 left-0 h-1 z-50 "
 		style={{
