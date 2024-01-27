@@ -55,7 +55,8 @@ export type IconId =
 	| 'bank-toss'
 	| 'account-empty'
 	| 'app-logo-square'
-	| 'triangle';
+	| 'triangle'
+	| 'progress';
 
 type SvgIcon = {
 	id: IconId;
