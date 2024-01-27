@@ -12,7 +12,9 @@ const KakaoLoginButton = ({ closeButtonSheet }: LoginButtonProps) => {
 
 	return (
 		<DefaultButton
-			iconId="kakaoTalk"
+			icon={{
+				id: 'kakaoTalk',
+			}}
 			title="카카오톡으로 계속하기"
 			color={{
 				bgColor: 'Kakao',

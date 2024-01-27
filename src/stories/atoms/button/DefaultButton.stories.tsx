@@ -25,7 +25,9 @@ type Story = StoryObj<typeof meta>;
 
 export const KakaoTalk: Story = {
 	args: {
-		iconId: 'kakaoTalk',
+		icon: {
+			id: 'kakaoTalk',
+		},
 		color: {
 			bgColor: 'Kakao',
 			textColor: 'Black',
