@@ -13,7 +13,7 @@ const ImageUploadBottomSheet = () => {
 
 	return (
 		<Drawer open={isBottomSheetOpen} onOpenChange={setBottomSheetOpen}>
-			<DrawerContent className="mx-auto w-full max-w-[600px] px-6 !h-[206px]">
+			<DrawerContent className="mx-auto w-full max-w-[600px] px-6 !h-[242px]">
 				<IconButton
 					onClick={closeBottomSheet}
 					icon={{
@@ -23,14 +23,15 @@ const ImageUploadBottomSheet = () => {
 					}}
 					className="!w-fit absolute top-1 right-0"
 				/>
-				<div>
-					<h4 className="text-Gray60 typography-Body4 typography-M mb-2 whitespace-pre-line">
+				<div className="flex flex-col gap-2">
+					<h4 className="text-Gray60 typography-Body3 typography-M">
 						잠시만요!
 					</h4>
 					<div>
 						<h2 className="text-Black typography-Body1 typography-M">
 							혹시 주문을 하셨나요? <br />
-							<span>캡쳐본을 통해 구매인증</span>을 하고, <br />
+							<span className="text-Primary">캡쳐본을 통해 구매인증</span>을
+							하고, <br />
 							환급액을 받아보세요!
 						</h2>
 					</div>
