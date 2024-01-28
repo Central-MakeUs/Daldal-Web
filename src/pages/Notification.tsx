@@ -32,6 +32,7 @@ const Notification = () => {
 		{ message: '캡쳐본을 통한 구매인증으로', style: 'text-Primary' },
 		{ message: '환급액을 받아가세요!', style: 'text-Gray60' },
 	];
+
 	return (
 		<ClearLayout className="flex flex-col relative bg-White py-[31px]">
 			<ProgressBar isAnimating={state.isAnimating} key={state.key} />
