@@ -1,19 +1,23 @@
 import { Button } from 'konsta/react';
 
 import { IconButton } from '@components/atoms';
+import { useNavigate } from 'react-router-dom';
 
 type LikeButtonProps = {
 	like: boolean;
 };
 
 const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
+	const navigate = useNavigate();
+
 	const handleLikeClick = () => {
 		console.log('현재 상품 찜 등록 및 삭제하기');
 	};
 
 	const handleBuyClick = () => {
-		console.log('구매하기 이동');
+		navigate('/notification');
 	};
+
 	return (
 		<div className="w-full flex gap-6">
 			<IconButton

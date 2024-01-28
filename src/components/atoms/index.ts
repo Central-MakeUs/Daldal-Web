@@ -10,6 +10,8 @@ export { default as Modal } from './Modal';
 export { default as SearchTextField } from './SearchTextField';
 export { default as ToastMessageLikeOrDelete } from './ToastMessageLikeOrDelete';
 export { default as SpeechBubble } from './SpeechBubble';
+export { default as Bar } from './Bar';
+export { default as BarContainer } from './BarContainer';
 
 export { default as CaptionButton } from './button/CaptionButton';
 export { default as DefaultButton } from './button/DefaultButton';

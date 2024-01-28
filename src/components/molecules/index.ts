@@ -1,6 +1,7 @@
 export { default as CategoryButtonList } from './CategoryButtonList';
 export { default as ImageContainer } from './ImageContainer';
 export { default as ProductCard } from './ProductCard';
+export { default as ProgressBar } from './ProgressBar';
 export { default as WithdrawOrNotButton } from './WithdrawOrNotButton';
 
 export { default as AccountBottomSheet } from './bottomSheet/AccountBottomSheet';
