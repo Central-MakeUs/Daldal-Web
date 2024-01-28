@@ -1,5 +1,3 @@
-import colors from '@constants/colors';
-
 type BarProps = {
 	animationDuration: number;
 	progress: number;
@@ -7,19 +5,13 @@ type BarProps = {
 
 const Bar = ({ animationDuration, progress }: BarProps) => (
 	<div
-		className="bg-Primary w-full fixed top-0 left-0 h-1 z-50 "
+		className="bg-Primary w-full fixed top-0 left-0 h-1 z-50 transition-margin-left ease-linear"
 		style={{
 			marginLeft: `${(-1 + progress) * 100}%`,
-			transition: `margin-left ${animationDuration}ms linear`,
+			transitionDuration: `${animationDuration}ms`,
 		}}
 	>
-		<div
-			className="absolute block right-0 h-full opacity-100 w-[100px]"
-			style={{
-				boxShadow: `0 0 10px ${colors.Primary}, 0 0 5px ${colors.Primary}`,
-				transform: 'rotate(3deg) translate(0px, -4px)',
-			}}
-		/>
+		<div className="absolute block right-0 h-full opacity-100 w-[100px] transform rotate-3 translate-y-[-4px] shadow-[0_0_10px_rgb(255,97,122,1),0_0_5px_rgb(255,97,122,1)]" />
 	</div>
 );
 
