@@ -1,4 +1,4 @@
-import { loginImagesList } from '@assets/images/loginImageSlider/index';
+import { loginImagesList } from '@assets/images/loginImageSlider/loginImagesList';
 import ImageSlider from '@components/atoms/ImageSlider';
 
 const LoginImageSlider = () => {
