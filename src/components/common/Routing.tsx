@@ -59,8 +59,8 @@ const Routing = () => {
 				<Route path="/detail/:productId" element={<ProductDetail />} />
 				<Route path="/search" element={<Search />} />
 				<Route path="/sign-up" element={<SignUp />} />
-				<Route path="welcome" element={<Welcome />} />
-				<Route path="notification" element={<Notification />} />
+				<Route path="/welcome" element={<Welcome />} />
+				<Route path="/notification" element={<Notification />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
