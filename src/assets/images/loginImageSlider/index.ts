@@ -3,4 +3,4 @@ import fourthItem from './fourthItem.png';
 import secondItem from './secondItem.png';
 import thirdItem from './thirdItem.png';
 
-export const loginImageSlider = [firstItem, secondItem, thirdItem, fourthItem];
+export const loginImagesList = [firstItem, secondItem, thirdItem, fourthItem];

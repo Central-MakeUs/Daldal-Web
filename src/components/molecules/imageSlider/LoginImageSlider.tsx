@@ -1,14 +1,14 @@
-import { loginImageSlider } from '@assets/images/loginImageSlider/index';
+import { loginImagesList } from '@assets/images/loginImageSlider/index';
 import ImageSlider from '@components/atoms/ImageSlider';
 
 const LoginImageSlider = () => {
 	return (
 		<ImageSlider
-			totalImageNumber={loginImageSlider.length}
+			totalImageNumber={loginImagesList.length}
 			options={{ dots: true, autoplay: true, infinite: true }}
 			className="w-[40vh] mb-[37px] mt-4"
 		>
-			{loginImageSlider.map((image, idx) => (
+			{loginImagesList.map((image, idx) => (
 				<div key={`Image#${idx}`}>
 					<div style={{ position: 'relative' }}>
 						<img src={image} alt="login image" className="aspect-square" />
