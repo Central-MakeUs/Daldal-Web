@@ -23,7 +23,7 @@ const Notification = () => {
 	useEffect(() => {
 		if (!state.isAnimating) {
 			//TODO: 서버로 부터 받은 url 정보로 변경
-			window.location.href = 'https://zigzag.kr/';
+			window.location.replace('https://zigzag.kr/');
 		}
 	}, [state]);
 
