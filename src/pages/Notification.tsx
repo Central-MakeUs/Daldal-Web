@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { ProgressBar, SvgIcon } from '@components/index';
+import { ProgressBar } from '@components/index';
 import ClearLayout from '@layouts/ClearLayout';
+
+import notificationImg from '../assets/images/notification.png';
 
 const Notification = () => {
 	const [state, setState] = useState({
@@ -15,7 +17,7 @@ const Notification = () => {
 				...prevState,
 				isAnimating: false,
 			}));
-		}, 2500);
+		}, 25000);
 
 		return () => clearTimeout(timeoutId);
 	}, []);
@@ -48,7 +50,7 @@ const Notification = () => {
 				* 캡처본은 제품명과 결제 시간이 포함되어야합니다.
 			</h4>
 			<div className="flex-grow h-full flex items-center justify-center">
-				<SvgIcon id="progress" width={339} height={415} />
+				<img src={notificationImg} width={314} height={398} />
 			</div>
 		</ClearLayout>
 	);
