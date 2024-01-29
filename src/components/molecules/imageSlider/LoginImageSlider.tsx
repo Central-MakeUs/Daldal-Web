@@ -1,16 +1,14 @@
+import { loginImageSlider } from '@assets/images/loginImageSlider/index';
 import ImageSlider from '@components/atoms/ImageSlider';
-import { mockImages } from '@mocks/images';
 
 const LoginImageSlider = () => {
-	// TODO: 디자이너님 이미지 추가해주시면 이미지 변경
-
 	return (
 		<ImageSlider
-			totalImageNumber={mockImages.length}
+			totalImageNumber={loginImageSlider.length}
 			options={{ dots: true, autoplay: true, infinite: true }}
 			className="w-[40vh] mb-[37px] mt-4"
 		>
-			{mockImages.map((image, idx) => (
+			{loginImageSlider.map((image, idx) => (
 				<div key={`Image#${idx}`}>
 					<div style={{ position: 'relative' }}>
 						<img src={image} alt="login image" className="aspect-square" />
