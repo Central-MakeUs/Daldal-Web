@@ -17,7 +17,7 @@ const Notification = () => {
 				...prevState,
 				isAnimating: false,
 			}));
-		}, 25000);
+		}, 2500);
 
 		return () => clearTimeout(timeoutId);
 	}, []);
