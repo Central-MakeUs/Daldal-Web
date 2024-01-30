@@ -1,7 +1,15 @@
 import { ReactNode } from 'react';
 
-import { ApprovedTag, NotApprovedTag, ProgressTag } from '@components/atoms';
-import { SmallProductDetailImageSlider } from '@components/molecules';
+import {
+	ApprovedTag,
+	KeyValueContainer,
+	NotApprovedTag,
+	ProgressTag,
+} from '@components/atoms';
+import {
+	DefaultKeyValueContainer,
+	SmallProductDetailImageSlider,
+} from '@components/molecules';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
 import { Status } from '@type/status';
@@ -28,34 +36,22 @@ const ImageUploadDetail = () => {
 		<h2 className={`${typography} text-White`}>{text}</h2>
 	);
 
-	const renderContents = (
-		title: string,
-		value: ReactNode,
-		row: boolean = true,
-	) => {
-		const contentsStyle = row
-			? 'flex justify-between items-center'
-			: 'flex flex-col gap-[13px]';
-
-		return (
-			<div className={`w-full ${contentsStyle}`}>
-				<h3 className="typography-Body2 typography-R text-Gray20">{title}</h3>
-				{value}
-			</div>
-		);
-	};
-
 	const renderExtraContents = () => {
 		if (status === 'APPROVED') {
-			return renderContents(
-				'승인 금액',
-				renderTextValue(getPointText(point), 'typography-Subhead'),
+			return (
+				<DefaultKeyValueContainer
+					title="승인 금액"
+					value={getPointText(point)}
+				/>
 			);
 		} else if (status === 'NOT_APPROVED') {
-			return renderContents(
-				'미승인 사유',
-				renderTextValue(approvedMessage, 'typography-Body2 typography-R'),
-				false,
+			const textValue = renderTextValue(
+				approvedMessage,
+				'typography-Body2 typography-R',
+			);
+
+			return (
+				<KeyValueContainer title="미승인 사유" value={textValue} row={false} />
 			);
 		} else {
 			return null;
@@ -66,14 +62,11 @@ const ImageUploadDetail = () => {
 		<PageLayout leftType="back">
 			<SmallProductDetailImageSlider images={mockImages} />
 			<div className="p-6 flex flex-col gap-6">
-				{renderContents(
-					'업로드 일시',
-					renderTextValue(
-						getDataInYYYYMMDDSplitedByDot(date),
-						'typography-Subhead',
-					),
-				)}
-				{renderContents('승인 여부', statusValue[status])}
+				<DefaultKeyValueContainer
+					title="업로드 일시"
+					value={getDataInYYYYMMDDSplitedByDot(date)}
+				/>
+				<KeyValueContainer title="승인 여부" value={statusValue[status]} />
 				{renderExtraContents()}
 			</div>
 		</PageLayout>
