@@ -1,4 +1,4 @@
-import { DefaultKeyValueContainer } from '@components/index';
+import { DefaultKeyValueContainer } from '@components/molecules';
 import PageLayout from '@layouts/PageLayout';
 import mockWithdrawalResult from '@mocks/mockWithdrawalResult';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
