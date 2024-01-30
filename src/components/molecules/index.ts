@@ -3,6 +3,7 @@ export { default as ImageContainer } from './ImageContainer';
 export { default as ProductCard } from './ProductCard';
 export { default as ProgressBar } from './ProgressBar';
 export { default as WithdrawOrNotButton } from './WithdrawOrNotButton';
+export { default as DefaultKeyValueContainer } from './DefaultKeyValueContainer';
 
 export { default as AccountBottomSheet } from './bottomSheet/AccountBottomSheet';
 export { default as BankBottomSheet } from './bottomSheet/BankBottomSheet';
