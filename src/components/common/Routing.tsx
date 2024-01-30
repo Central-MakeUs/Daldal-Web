@@ -62,6 +62,7 @@ const Routing = () => {
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="/welcome" element={<Welcome />} />
 				<Route path="/notification" element={<Notification />} />
+
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 			<LoginBottomSheet />
