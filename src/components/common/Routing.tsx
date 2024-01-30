@@ -28,6 +28,7 @@ import {
 	Welcome,
 	Notification,
 	NotFound,
+	WithdrawalResult,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -62,6 +63,10 @@ const Routing = () => {
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="/welcome" element={<Welcome />} />
 				<Route path="/notification" element={<Notification />} />
+				<Route
+					path="/withdrawal-result/:resultId"
+					element={<WithdrawalResult />}
+				/>
 
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
