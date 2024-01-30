@@ -27,6 +27,7 @@ import {
 	SignUp,
 	Welcome,
 	Notification,
+	NotFound,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -61,6 +62,8 @@ const Routing = () => {
 				<Route path="/sign-up" element={<SignUp />} />
 				<Route path="/welcome" element={<Welcome />} />
 				<Route path="/notification" element={<Notification />} />
+
+				<Route path="/*" element={<NotFound />} />
 			</Routes>
 			<LoginBottomSheet />
 			<AccountBottomSheet />
