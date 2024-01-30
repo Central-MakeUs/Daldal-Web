@@ -56,7 +56,7 @@ export type IconId =
 	| 'account-empty'
 	| 'app-logo-square'
 	| 'triangle'
-	| 'progress';
+	| '404';
 
 type SvgIcon = {
 	id: IconId;
