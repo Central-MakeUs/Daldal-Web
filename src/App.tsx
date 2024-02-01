@@ -1,12 +1,13 @@
-import CustomToaster from '@components/atoms/CustomToaster';
 import { Routing } from '@components/common';
+import { ErrorBoundary } from 'react-error-boundary';
+
+import { Error } from './pages';
 
 const App = () => {
 	return (
-		<>
+		<ErrorBoundary FallbackComponent={Error}>
 			<Routing />
-			<CustomToaster className="px-3" />
-		</>
+		</ErrorBoundary>
 	);
 };
 

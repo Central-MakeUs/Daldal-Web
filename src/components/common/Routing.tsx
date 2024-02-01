@@ -1,3 +1,4 @@
+import { CustomToaster } from '@components/atoms';
 import {
 	LoginBottomSheet,
 	AccountBottomSheet,
@@ -74,6 +75,7 @@ const Routing = () => {
 			<AccountBottomSheet />
 			<BankBottomSheet />
 			<ImageUploadBottomSheet />
+			<CustomToaster className="px-3" />
 			{Modal}
 		</BrowserRouter>
 	);
