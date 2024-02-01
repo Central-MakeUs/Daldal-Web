@@ -1,24 +1,28 @@
 import { DefaultButton, SvgIcon } from '@components/index';
 import ClearLayout from '@layouts/ClearLayout';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { useNavigate } from 'react-router-dom';
 
-const Error = () => {
-	const navigate = useNavigate();
+type FallbackProps = {
+	error: {
+		message: string;
+	};
+	resetErrorBoundary: () => void;
+};
+
+const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 	const handleClickHome = () => {
-		navigate('/');
+		resetErrorBoundary();
 	};
 
 	const message = {
 		title: '앗, 여기는 달달한 상품이 \n 없는 것 같아요 🥲',
-		description:
-			'죄송합니다. 해당 페이지를 찾을 수 없습니다.\n홈페이지로 이동해 다시 쇼핑을 즐겨보세요.',
+		description: `${error}\n\n죄송합니다. 오류가 발생했습니다.\n문제를 해결하기 위해 열심히 노력중입니다.\n잠시 후 다시 들어와주세요.`,
 	};
 
 	return (
 		<ClearLayout className="px-[25px] py-[24px]">
 			<div className="flex flex-col gap-3">
-				<SvgIcon id="404" width={135} height={72} />
+				<SvgIcon id="error" width={212} height={80} />
 				<h2 className="typography-Subhead text-White whitespace-pre-line">
 					{message.title}
 				</h2>
@@ -28,7 +32,7 @@ const Error = () => {
 			</div>
 			<FixedBottomLayout childrenPadding="px-6" height="h-15">
 				<DefaultButton
-					title="달달쇼핑 홈으로 가기"
+					title="다시 시도하기"
 					color={{ bgColor: 'White', textColor: 'Black' }}
 					size="large"
 					onClick={handleClickHome}
