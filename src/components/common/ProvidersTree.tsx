@@ -4,7 +4,17 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ComponentWithProps } from '@type/providerTree';
 import { buildProvidersTree } from '@utils/buildProvidersTree';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			throwOnError: true,
+		},
+		mutations: {
+			throwOnError: true,
+		},
+	},
+});
+
 const providerWithProps: ComponentWithProps[] = [
 	[QueryClientProvider, { client: queryClient }],
 	[KonstaProvider],
