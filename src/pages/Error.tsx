@@ -22,7 +22,7 @@ const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 	return (
 		<ClearLayout className="px-[25px] py-[24px]">
 			<div className="flex flex-col gap-3">
-				<SvgIcon id="error" width={212} height={80} />
+				<SvgIcon id="error" width={206} height={78} />
 				<h2 className="typography-Subhead text-White whitespace-pre-line">
 					{message.title}
 				</h2>
