@@ -48,5 +48,6 @@ module.exports = {
 		],
 		'import/no-unresolved': 'off',
 		'import/export': 'off',
+		'import/named': 0,
 	},
 };

@@ -5543,6 +5543,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^1.6.7":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
+  dependencies:
+    follow-redirects: "npm:^1.15.4"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
+  languageName: node
+  linkType: hard
+
 "babel-core@npm:^7.0.0-bridge.0":
   version: 7.0.0-bridge.0
   resolution: "babel-core@npm:7.0.0-bridge.0"
@@ -6385,6 +6396,7 @@ __metadata:
     "@vitejs/plugin-react-swc": "npm:^3.5.0"
     "@yarnpkg/sdks": "npm:^3.1.0"
     autoprefixer: "npm:^10.4.16"
+    axios: "npm:^1.6.7"
     chromatic: "npm:^10.2.0"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.0"
@@ -7758,6 +7770,16 @@ __metadata:
   version: 0.225.1
   resolution: "flow-parser@npm:0.225.1"
   checksum: 6932c209289a6ac86181804bad44a6a394484928a84ee65c380a11a20cea5ac7a2d72dcfc79f9436e4e2851d950ad99a24e4688f0f8f03ac4b45d32b0627c55e
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.15.4":
+  version: 1.15.5
+  resolution: "follow-redirects@npm:1.15.5"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 418d71688ceaf109dfd6f85f747a0c75de30afe43a294caa211def77f02ef19865b547dfb73fde82b751e1cc507c06c754120b848fe5a7400b0a669766df7615
   languageName: node
   linkType: hard
 
@@ -10756,7 +10778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proxy-from-env@npm:^1.0.0":
+"proxy-from-env@npm:^1.0.0, proxy-from-env@npm:^1.1.0":
   version: 1.1.0
   resolution: "proxy-from-env@npm:1.1.0"
   checksum: fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b

@@ -12,14 +12,14 @@ const ListPoint = ({
 	uploadTime,
 	refund,
 	refundStatus,
-	detailId,
+	buyId,
 }: ListPointProps) => {
 	const navigate = useNavigate();
 	const handleNavigateToDetailPage = () => {
 		if (refundStatus === '출금') {
-			navigate(`/withdrawal-result/${detailId}`);
+			navigate(`/withdrawal-result/${buyId}`);
 		} else {
-			navigate(`/image-upload/${detailId}`);
+			navigate(`/image-upload/${buyId}`);
 		}
 	};
 

@@ -11,18 +11,18 @@ export const mockCurrentPointHistory: MockPointHistory = {
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 1,
+			buyId: 1,
 			refundStatus: '승인',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 2,
+			buyId: 2,
 			refundStatus: '미승인',
 		},
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 3,
+			buyId: 3,
 			refundStatus: '출금',
 		},
 	],
@@ -34,17 +34,17 @@ export const mockPastPointHistory: MockPointHistory = {
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 4,
+			buyId: 4,
 			refundStatus: '승인',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 5,
+			buyId: 5,
 			refundStatus: '미승인',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			detailId: 6,
+			buyId: 6,
 			refundStatus: '진행중',
 		},
 	],
