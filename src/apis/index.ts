@@ -18,7 +18,6 @@ export const noAuthApi = axios.create({
 		Accept: 'application/json',
 		'Content-Type': 'application/json',
 	},
-	withCredentials: true,
 });
 
 export const api = axios.create({
@@ -28,7 +27,6 @@ export const api = axios.create({
 		Accept: 'application/json',
 		'Content-Type': 'application/json',
 	},
-	withCredentials: true,
 });
 
 const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
