@@ -4,7 +4,12 @@ import axios, {
 	InternalAxiosRequestConfig,
 } from 'axios';
 
-import { getAccessToken } from '@utils/token';
+import {
+	getAccessToken,
+	getRefreshToken,
+	setAccessToken,
+	setRefreshToken,
+} from '@utils/token';
 
 export const noAuthApi = axios.create({
 	baseURL: import.meta.env.VITE_BASE_URL,
@@ -44,8 +49,24 @@ const onRequestRejected = (error: AxiosError) => {
 const onResponseFulfilled = (response: AxiosResponse) => response;
 
 const onResponseRejected = async (error: AxiosError) => {
+	const requestConfig = error.config;
+
+	if (!requestConfig) return Promise.reject(error);
+
 	if (error.response?.status === 401) {
-		// TODO: refresh token 으로 access token 받아오기
+		const { data } = await api.post('/api/v1/auth/refresh-access-token', {
+			refreshToken: getRefreshToken(),
+		});
+
+		const newAccessToken = data.accessToken;
+		const newRefreshToken = data.refreshToken;
+
+		setAccessToken(newAccessToken);
+		setRefreshToken(newRefreshToken);
+
+		requestConfig.headers['Authorization'] = newAccessToken;
+
+		return api(requestConfig);
 	}
 };
 
