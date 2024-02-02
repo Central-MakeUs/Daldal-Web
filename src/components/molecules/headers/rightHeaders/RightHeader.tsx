@@ -1,15 +1,13 @@
 import { IconButton } from '@components/atoms';
 import colors from '@constants/colors';
-import { useBottomSheetStore } from '@stores/layerStore';
 import { useNavigate } from 'react-router-dom';
 
 const RightHeader = () => {
-	const { openBottomSheet } = useBottomSheetStore();
 	const navigate = useNavigate();
 
 	// TODO: 로그인 상태에 따라 다른 동작 구현
 	const handleClickLike = () => {
-		openBottomSheet('login');
+		navigate('/wish-list');
 	};
 	const handleClickPoint = () => {
 		navigate('/point');
