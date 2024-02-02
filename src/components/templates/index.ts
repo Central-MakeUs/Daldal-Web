@@ -9,3 +9,7 @@ export { default as ProgressWithdrawal } from './withdrawal/ProgressWithdrawal';
 
 export { default as PostSearch } from './search/PostSearch';
 export { default as PreSearch } from './search/PreSearch';
+
+export { default as DefaultWishList } from './wishList/DefaultWishList';
+export { default as DefaultWishListWithNoItem } from './wishList/DefaultWishListWithNoItem';
+export { default as EditWishList } from './wishList/EditWishList';

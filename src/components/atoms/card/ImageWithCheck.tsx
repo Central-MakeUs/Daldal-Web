@@ -2,16 +2,28 @@ import { useState } from 'react';
 
 import { BackdropFilter, IconButton } from '@components/atoms';
 import colors from '@constants/colors';
+import { useWishListEditStore } from '@stores/wishListStore';
 
 type ImageWithCheckProps = {
 	src: string;
 	alt: string;
+	id: number;
 };
 
-const ImageWithCheck = ({ src, alt }: ImageWithCheckProps) => {
+const ImageWithCheck = ({ src, alt, id }: ImageWithCheckProps) => {
 	const [isChecked, setIsChecked] = useState(false);
 
+	const addCheckedItem = useWishListEditStore(state => state.addCheckedItem);
+	const deleteCheckedItem = useWishListEditStore(
+		state => state.deleteCheckedItem,
+	);
+
 	const handleChangeCheck = () => {
+		if (isChecked) {
+			deleteCheckedItem(id);
+		} else {
+			addCheckedItem(id);
+		}
 		setIsChecked(prev => !prev);
 	};
 

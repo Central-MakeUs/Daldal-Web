@@ -11,7 +11,7 @@ const PreSearchHeader = () => {
 		<div className="flex justify-between items-center py-3">
 			<h3 className="typography-Body3 typography-M text-Gray50">최근 검색어</h3>
 			<Button
-				className="!typography-Body4 !typography-R k-color-Secondary_B !w-fit absolute right-2"
+				className="!typography-Body4 !typography-R k-color-Secondary_B !w-fit"
 				clear
 				onClick={handleDeleteSearchHistory}
 			>

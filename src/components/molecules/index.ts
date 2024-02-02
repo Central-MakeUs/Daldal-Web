@@ -30,3 +30,6 @@ export { default as PointHistoryTitle } from './point/PointHistoryTitle';
 export { default as PreSearchHeader } from './search/PreSearchHeader';
 export { default as RecentSearchList } from './search/RecentSearchList';
 export { default as PostSearchHeader } from './search/PostSearchHeader';
+
+export { default as DefaultWishListHeader } from './wishList/DefaultWishListHeader';
+export { default as EditWishListHeader } from './wishList/EditWishListHeader';

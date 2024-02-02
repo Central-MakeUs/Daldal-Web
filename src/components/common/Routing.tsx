@@ -30,6 +30,7 @@ import {
 	Notification,
 	NotFound,
 	WithdrawalResult,
+	WishList,
 } from '@pages/index';
 import { useModalStore } from '@stores/layerStore';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -68,6 +69,7 @@ const Routing = () => {
 					path="/withdrawal-result/:resultId"
 					element={<WithdrawalResult />}
 				/>
+				<Route path="/wish-list" element={<WishList />} />
 
 				<Route path="/*" element={<NotFound />} />
 			</Routes>

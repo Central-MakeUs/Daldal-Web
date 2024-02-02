@@ -23,7 +23,7 @@ const ProductCard = ({
 	};
 
 	const Image = {
-		checkbox: <ImageWithCheck src={thumbnail} alt={title} />,
+		checkbox: <ImageWithCheck src={thumbnail} alt={title} id={id} />,
 		default: (
 			<img
 				src={thumbnail}
@@ -58,7 +58,7 @@ const ProductCard = ({
 	return (
 		<div
 			className={`flex flex-col ${stylesBySize[size].containerGap} cursor-pointer`}
-			onClick={handleCardClick}
+			onClick={type !== 'checkbox' ? handleCardClick : () => {}}
 		>
 			{Image[type]}
 			<CardInfo title={title} price={price} paybackPrice={refund} size={size} />
