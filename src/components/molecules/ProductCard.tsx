@@ -23,7 +23,7 @@ const ProductCard = ({
 	};
 
 	const Image = {
-		checkbox: <ImageWithCheck src={thumbnail} alt={title} />,
+		checkbox: <ImageWithCheck src={thumbnail} alt={title} id={id} />,
 		default: (
 			<img
 				src={thumbnail}
