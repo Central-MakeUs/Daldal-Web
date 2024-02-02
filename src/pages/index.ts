@@ -18,3 +18,5 @@ export { default as Notification } from './Notification';
 export { default as NotFound } from './NotFound';
 export { default as WithdrawalResult } from './WithdrawalResult';
 export { default as Error } from './Error';
+export { default as WishList } from './WishList';
+export { default as WishListEdit } from './WishListEdit';
