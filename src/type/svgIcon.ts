@@ -57,7 +57,8 @@ export type IconId =
 	| 'app-logo-square'
 	| 'triangle'
 	| '404'
-	| 'error';
+	| 'error'
+	| 'no-wish-list';
 
 type SvgIcon = {
 	id: IconId;
