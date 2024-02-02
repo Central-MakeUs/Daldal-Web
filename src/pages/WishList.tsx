@@ -10,6 +10,7 @@ import { useWishListStore } from '@stores/wishListStore';
 const WishList = () => {
 	const wishListStatus = useWishListStore(state => state.wishListStatus);
 
+	//TODO api 연동
 	const mockData = mockProductSimpleList;
 
 	const renderContent = () => {
@@ -20,7 +21,7 @@ const WishList = () => {
 			return <DefaultWishListWithNoItem />;
 		}
 
-		return <EditWishList />;
+		return <EditWishList productList={mockData} />;
 	};
 	return (
 		<PageLayout leftType="home" className="h-full flex flex-col px-3 py-3">
