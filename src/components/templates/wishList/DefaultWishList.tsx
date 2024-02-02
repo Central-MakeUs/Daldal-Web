@@ -1,12 +1,17 @@
 import { DefaultWishListHeader } from '@components/molecules';
 import { ProductCardList } from '@components/organisms';
+import { ProductSimpleList } from '@models/product/entity/product';
 
-const DefaultWishList = () => {
+type DefaultWishListProps = {
+	productList: ProductSimpleList;
+};
+
+const DefaultWishList = ({ productList }: DefaultWishListProps) => {
 	return (
 		<>
 			<DefaultWishListHeader />
 			<div className="my-3">
-				<ProductCardList type="heart" />
+				<ProductCardList type="heart" productList={productList} />
 			</div>
 		</>
 	);
