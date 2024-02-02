@@ -6,7 +6,7 @@ const DefaultWishList = () => {
 		<>
 			<DefaultWishListHeader />
 			<div className="my-3">
-				<ProductCardList type="checkbox" />
+				<ProductCardList type="heart" />
 			</div>
 		</>
 	);
