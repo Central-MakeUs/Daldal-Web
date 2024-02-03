@@ -5,7 +5,7 @@ export const useKakaoLogin = () => {
 	return useQuery({
 		queryKey: ['kakaoLogin'],
 		queryFn: () => kakaoLogin(),
-		select: data => data.data,
+		select: data => data.data.data,
 		enabled: false,
 	});
 };
