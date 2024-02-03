@@ -1,13 +1,12 @@
 import { Routing } from '@components/common';
-import { ErrorBoundary } from 'react-error-boundary';
-
-import { Error } from './pages';
+import GlobalComponents from '@components/common/GlobalComponents';
 
 const App = () => {
 	return (
-		<ErrorBoundary FallbackComponent={Error}>
+		<>
 			<Routing />
-		</ErrorBoundary>
+			<GlobalComponents />
+		</>
 	);
 };
 
