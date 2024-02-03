@@ -59,7 +59,10 @@ const MyPage = () => {
 		openModal('cancellation');
 	};
 
-	const { mutate } = useLogout();
+	const onSuccessCallBack = () => {
+		navigate('/sign-up');
+	};
+	const { mutate } = useLogout(onSuccessCallBack);
 	const handleClickLogout = () => {
 		mutate();
 	};
