@@ -1,8 +1,12 @@
+import { useKakaoLogin } from '@hooks/apis/auth';
+
 import DefaultButton from './DefaultButton';
 
 const KakaoLoginButton = () => {
+	const { refetch } = useKakaoLogin();
+
 	const handleClickKakaoLogin = () => {
-		//TODO: 카카오 로그인 연결
+		refetch();
 	};
 
 	return (
