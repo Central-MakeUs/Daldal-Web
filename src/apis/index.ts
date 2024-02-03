@@ -11,15 +11,6 @@ import {
 	setRefreshToken,
 } from '@utils/token';
 
-export const noAuthApi = axios.create({
-	baseURL: import.meta.env.VITE_BASE_URL,
-	timeout: 10 * 1000,
-	headers: {
-		Accept: 'application/json',
-		'Content-Type': 'application/json',
-	},
-});
-
 export const api = axios.create({
 	baseURL: import.meta.env.VITE_BASE_URL,
 	timeout: 10 * 1000,
