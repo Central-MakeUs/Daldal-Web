@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { CategoryButton } from '@components/atoms';
+import { useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
@@ -58,6 +59,11 @@ const MyPage = () => {
 		openModal('cancellation');
 	};
 
+	const { mutate } = useLogout();
+	const handleClickLogout = () => {
+		mutate();
+	};
+
 	return (
 		<PageLayout leftType="home" className="px-6 py-3">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
@@ -85,7 +91,11 @@ const MyPage = () => {
 					/>
 				))}
 				<div className="flex gap-[15px]">
-					<CategoryButton title="로그아웃" textCenter={true} />
+					<CategoryButton
+						title="로그아웃"
+						textCenter={true}
+						onClick={handleClickLogout}
+					/>
 					<CategoryButton
 						title="회원 탈퇴"
 						textCenter={true}

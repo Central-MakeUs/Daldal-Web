@@ -8,4 +8,7 @@ export const kakaoLogin = async (): Promise<ApiResponse<TokenResponseDTO>> => {
 	return response.data;
 };
 
-//export const logout = async (): Promise
+export const logout = async (): Promise<ApiResponse<null>> => {
+	const response = await api.post('/api/v1/auth/logout');
+	return response.data;
+};
