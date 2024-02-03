@@ -20,12 +20,13 @@ const MyPage = () => {
 	const category: {
 		iconId?: IconId;
 		title: string;
-		// TODO: 모든 페이지 라우팅 완료되면 route 필수로 변경하기
 		route?: string;
+		url?: string;
 	}[] = [
 		{
 			iconId: 'like-full',
 			title: '찜한 목록',
+			route: '/wish-list',
 		},
 		{
 			iconId: 'point-paid',
@@ -44,11 +45,11 @@ const MyPage = () => {
 		},
 		{
 			title: '서비스 이용 약관',
-			//TODO: route
+			url: 'https://yummy-cornucopia-57e.notion.site/678652b0d7b340a0abe72f683c767957?pvs=4',
 		},
 		{
 			title: '개인정보 처리 방침',
-			//TODO: route
+			url: 'https://yummy-cornucopia-57e.notion.site/ba20c5e28f2c49fba01a7215b937c580?pvs=4',
 		},
 	];
 
@@ -77,6 +78,8 @@ const MyPage = () => {
 						onClick={() => {
 							if (item.route) {
 								navigate(item.route);
+							} else if (item.url) {
+								window.location.href = item.url;
 							}
 						}}
 					/>

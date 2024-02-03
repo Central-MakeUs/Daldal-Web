@@ -1,4 +1,4 @@
-import WithdrawalResultType from '@models/withdrawal/entity/withdrawalResult';
+import WithdrawalResultType from '@models/withdrawal/response/withdrawalResult';
 
 const mockWithdrawalResult: WithdrawalResultType = {
 	requestDate: '2023-12-12T12:12:12:32',
