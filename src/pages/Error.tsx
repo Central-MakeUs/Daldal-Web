@@ -1,17 +1,20 @@
 import { DefaultButton, SvgIcon } from '@components/index';
 import ClearLayout from '@layouts/ClearLayout';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import { useNavigate } from 'react-router-dom';
 
 type FallbackProps = {
 	error: {
 		message: string;
 	};
-	resetErrorBoundary: () => void;
 };
 
-const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
+const Error = ({ error }: FallbackProps) => {
+	const navigate = useNavigate();
+
 	const handleClickHome = () => {
-		resetErrorBoundary();
+		navigate('/');
+		//window.location.href = "http://localhost:5173"
 	};
 
 	const message = {
@@ -32,7 +35,7 @@ const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 			</div>
 			<FixedBottomLayout childrenPadding="px-6" height="h-15">
 				<DefaultButton
-					title="다시 시도하기"
+					title="달달쇼핑 홈으로 가기"
 					color={{ bgColor: 'White', textColor: 'Black' }}
 					size="large"
 					onClick={handleClickHome}
