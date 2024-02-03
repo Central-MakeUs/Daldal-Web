@@ -1,20 +1,30 @@
+import { useEffect, useRef } from 'react';
+
 import { DefaultButton, SvgIcon } from '@components/index';
 import ClearLayout from '@layouts/ClearLayout';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type FallbackProps = {
 	error: {
 		message: string;
 	};
+	resetErrorBoundary: () => void;
 };
 
-const Error = ({ error }: FallbackProps) => {
+const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const errorLocation = useRef(location.pathname);
+
+	useEffect(() => {
+		if (location.pathname !== errorLocation.current) {
+			resetErrorBoundary();
+		}
+	}, [location.pathname]);
 
 	const handleClickHome = () => {
 		navigate('/');
-		//window.location.href = "http://localhost:5173"
 	};
 
 	const message = {

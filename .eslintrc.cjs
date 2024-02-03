@@ -49,5 +49,6 @@ module.exports = {
 		'import/no-unresolved': 'off',
 		'import/export': 'off',
 		'import/named': 0,
+		'react-hooks/exhaustive-deps': 'off',
 	},
 };
