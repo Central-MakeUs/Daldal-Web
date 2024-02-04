@@ -24,7 +24,7 @@ const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
 	const accessToken = getAccessToken();
 
 	if (accessToken && config.headers) {
-		config.headers['Authorization'] = accessToken;
+		config.headers['Authorization'] = `Bearer ${accessToken}`;
 	}
 
 	return config;
@@ -53,7 +53,7 @@ const onResponseRejected = async (error: AxiosError) => {
 		setAccessToken(newAccessToken);
 		setRefreshToken(newRefreshToken);
 
-		requestConfig.headers['Authorization'] = newAccessToken;
+		requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
 
 		return api(requestConfig);
 	}
