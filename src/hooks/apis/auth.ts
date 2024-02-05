@@ -8,13 +8,13 @@ import {
 	removeRefreshToken,
 	setAccessToken,
 	setRefreshToken,
-} from '@utils/token';
+} from '@utils/localStorage/token';
 import {
 	removeProvider,
 	removeUserName,
 	setProvider,
 	setUserName,
-} from '@utils/userInfo';
+} from '@utils/localStorage/userInfo';
 
 export const useKakaoLogin = (errorCallback?: (error: Error) => void) => {
 	return useMutation({

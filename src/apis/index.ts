@@ -9,7 +9,7 @@ import {
 	getRefreshToken,
 	setAccessToken,
 	setRefreshToken,
-} from '@utils/token';
+} from '@utils/localStorage/token';
 
 export const api = axios.create({
 	baseURL: import.meta.env.VITE_BASE_URL,

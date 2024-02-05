@@ -5,8 +5,8 @@ import { useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
-import { getRefreshToken } from '@utils/token';
-import { getProvider, getUserName } from '@utils/userInfo';
+import { getRefreshToken } from '@utils/localStorage/token';
+import { getProvider, getUserName } from '@utils/localStorage/userInfo';
 import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
