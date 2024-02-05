@@ -11,7 +11,7 @@ const DefaultWishList = ({ productList }: DefaultWishListProps) => {
 		<>
 			<DefaultWishListHeader />
 			<div className="my-3">
-				<ProductCardList type="heart" productList={productList} />
+				<ProductCardList type="default" productList={productList} />
 			</div>
 		</>
 	);
