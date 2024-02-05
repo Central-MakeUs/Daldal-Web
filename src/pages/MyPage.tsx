@@ -5,6 +5,7 @@ import { useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
+import { getRefreshToken } from '@utils/token';
 import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
@@ -64,7 +65,11 @@ const MyPage = () => {
 	};
 	const { mutate } = useLogout(onSuccessCallBack);
 	const handleClickLogout = () => {
-		mutate();
+		const requestData = {
+			refreshToken: getRefreshToken(),
+		};
+
+		mutate(requestData);
 	};
 
 	return (

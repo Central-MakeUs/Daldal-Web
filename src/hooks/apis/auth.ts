@@ -1,4 +1,5 @@
 import { kakaoLogin, logout } from '@apis/auth';
+import { LogoutRequestDTO } from '@models/auth/request/logoutRequestDTO';
 import { TokenResponseDTO } from '@models/auth/response/tokenResponseDTO';
 import { useMutation } from '@tanstack/react-query';
 import { ApiResponse } from '@type/apiResponse';
@@ -20,7 +21,7 @@ export const useLogout = (
 	errorCallback?: (error: Error) => void,
 ) => {
 	return useMutation({
-		mutationFn: () => logout(),
+		mutationFn: (request: LogoutRequestDTO) => logout(request),
 		onSuccess: successCallback,
 		onError: errorCallback,
 	});

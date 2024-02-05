@@ -1,3 +1,4 @@
+import { LogoutRequestDTO } from '@models/auth/request/logoutRequestDTO';
 import { TokenResponseDTO } from '@models/auth/response/tokenResponseDTO';
 import { ApiResponse } from '@type/apiResponse';
 
@@ -8,7 +9,9 @@ export const kakaoLogin = async (): Promise<ApiResponse<TokenResponseDTO>> => {
 	return response.data;
 };
 
-export const logout = async (): Promise<ApiResponse<null>> => {
-	const response = await api.post('/api/v1/auth/logout');
+export const logout = async (
+	request: LogoutRequestDTO,
+): Promise<ApiResponse<null>> => {
+	const response = await api.post('/api/v1/auth/logout', request);
 	return response.data;
 };
