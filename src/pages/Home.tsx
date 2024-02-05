@@ -4,9 +4,13 @@ import {
 	RecommendationProductCardList,
 	ProductCardList,
 } from '@components/organisms';
+import { useGetProductSimpleList } from '@hooks/apis/product';
 import PageLayout from '@layouts/PageLayout';
 
 const Home = () => {
+	const { data } = useGetProductSimpleList();
+
+	console.log(data);
 	return (
 		<PageLayout leftType="logo" className="flex flex-col">
 			<div className="px-3 relative flex flex-col">

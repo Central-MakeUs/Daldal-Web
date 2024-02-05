@@ -7,6 +7,9 @@ const KakaoLoginButton = () => {
 
 	const handleClickKakaoLogin = () => {
 		mutate();
+		// window.location.href = `${
+		// 	import.meta.env.VITE_BASE_URL
+		// }/oauth2/authorization/kakao`;
 	};
 
 	return (
