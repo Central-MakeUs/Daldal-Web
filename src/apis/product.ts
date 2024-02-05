@@ -1,4 +1,5 @@
 import { CategoryName } from '@constants/categoryList';
+import { ProductDetailListResponseDTO } from '@models/product/response/productDetailListResponseDTO';
 import { ProductSimpleListResponseDTO } from '@models/product/response/productSimpleListResponseDTO';
 import { ApiResponse } from '@type/apiResponse';
 
@@ -11,6 +12,16 @@ export const getProductSimpleList = async (
 	const params = {
 		page,
 		itemCategoryType,
+	};
+	const response = await api.get('/api/v1/items', { params });
+	return response.data;
+};
+
+export const getProductDetailList = async (
+	id: number,
+): Promise<ApiResponse<ProductDetailListResponseDTO>> => {
+	const params = {
+		id,
 	};
 	const response = await api.get('/api/v1/items', { params });
 	return response.data;

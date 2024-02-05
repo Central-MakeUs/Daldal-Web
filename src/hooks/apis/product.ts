@@ -1,6 +1,6 @@
-import { getProductSimpleList } from '@apis/product';
+import { getProductDetailList, getProductSimpleList } from '@apis/product';
 import { CategoryName } from '@constants/categoryList';
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 
 export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 	return useInfiniteQuery({
@@ -13,5 +13,13 @@ export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 			//TODO isLast 반영
 			return lastPage?.data?.data ? undefined : nextPage;
 		},
+	});
+};
+
+export const useGetProductDetailList = (id: number) => {
+	return useQuery({
+		queryKey: ['productDetailList'],
+		queryFn: () => getProductDetailList(id),
+		select: data => data.data.data,
 	});
 };
