@@ -8,8 +8,8 @@ export const useKakaoLogin = (errorCallback?: (error: Error) => void) => {
 	return useMutation({
 		mutationFn: () => kakaoLogin(),
 		onSuccess: (data: ApiResponse<TokenResponseDTO>) => {
-			setAccessToken(data.data.data.accessToken);
-			setRefreshToken(data.data.data.refreshToken);
+			setAccessToken(data.data.accessToken);
+			setRefreshToken(data.data.refreshToken);
 		},
 		onError: errorCallback,
 	});

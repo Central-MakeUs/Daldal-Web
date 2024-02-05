@@ -11,7 +11,7 @@ export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 		getNextPageParam: (lastPage, allPages) => {
 			const nextPage = allPages.length + 1;
 			//TODO isLast 반영
-			return lastPage?.data?.data ? undefined : nextPage;
+			return lastPage?.data ? undefined : nextPage;
 		},
 	});
 };
@@ -20,6 +20,6 @@ export const useGetProductDetailList = (id: number) => {
 	return useSuspenseQuery({
 		queryKey: ['productDetailList'],
 		queryFn: () => getProductDetailList(id),
-		select: data => data.data.data,
+		select: data => data.data,
 	});
 };
