@@ -6,14 +6,22 @@ import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
 import { getRefreshToken } from '@utils/token';
+import { getProvider, getUserName } from '@utils/userInfo';
 import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
+	//const { data } = useGetUserInfo();
+
 	const [userName, setUserName] = useState('홍길동');
+	const [provider, setProvider] = useState('카카오톡');
 	useEffect(() => {
-		const userName = localStorage.getItem('userName');
+		const userName = getUserName();
+		const provider = getProvider();
 		if (userName) {
 			setUserName(userName);
+		}
+		if (provider) {
+			setProvider(provider);
 		}
 	}, []);
 
@@ -81,7 +89,7 @@ const MyPage = () => {
 					</span>
 					회원님
 				</div>
-				카카오톡으로 로그인되셨습니다.
+				{provider}으로 로그인되셨습니다.
 			</div>
 			<div className="flex flex-col gap-[15px]">
 				{category.map((item, index) => (
