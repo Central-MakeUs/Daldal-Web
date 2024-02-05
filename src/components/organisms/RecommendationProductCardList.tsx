@@ -6,8 +6,6 @@ const RecommendationProductCardList = () => {
 	// TODO: 추천상품 API 연동
 	const { data } = useGetProductSimpleList();
 
-	//console.log(data?.pages[0].data);
-
 	//const productList = mockProductSimpleList.slice(0, 3);
 
 	return (
