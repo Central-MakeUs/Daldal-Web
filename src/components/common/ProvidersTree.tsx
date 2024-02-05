@@ -1,4 +1,5 @@
-import { KonstaProvider } from 'konsta/react';
+import { KonstaProvider, Preloader } from 'konsta/react';
+import { Suspense } from 'react';
 
 import Error from '@pages/Error';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -24,6 +25,7 @@ const providerWithProps: ComponentWithProps[] = [
 	[KonstaProvider],
 	[BrowserRouter],
 	[ErrorBoundary, { FallbackComponent: Error }],
+	[Suspense, { fallback: <Preloader className="k-color-Primary" /> }],
 ];
 
 const ProvidersTree = buildProvidersTree(providerWithProps);

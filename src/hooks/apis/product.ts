@@ -1,6 +1,6 @@
 import { getProductDetailList, getProductSimpleList } from '@apis/product';
 import { CategoryName } from '@constants/categoryList';
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery, useSuspenseQuery } from '@tanstack/react-query';
 
 export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 	return useInfiniteQuery({
@@ -17,7 +17,7 @@ export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 };
 
 export const useGetProductDetailList = (id: number) => {
-	return useQuery({
+	return useSuspenseQuery({
 		queryKey: ['productDetailList'],
 		queryFn: () => getProductDetailList(id),
 		select: data => data.data.data,

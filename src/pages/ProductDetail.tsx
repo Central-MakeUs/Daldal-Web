@@ -3,17 +3,22 @@ import { useState } from 'react';
 import { BuyWithLikeButton, CardInfo } from '@components/atoms';
 import { SmallProductDetailImageSlider } from '@components/molecules';
 import { ImageSliderContainer } from '@components/organisms';
+import { useGetProductDetailList } from '@hooks/apis/product';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
-import { mockProductDetailData } from '@mocks/product';
+// import { mockProductDetailData } from '@mocks/product';
 import { getYoutubeIdFromUrl } from '@utils/formatData';
+import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
 const ProductDetail = () => {
-	// const { productId } = useParams();
-	// TODO: productId를 이용해 상품 정보를 가져온다.
-	const { imageUrls, title, price, refund, videoUrls, redirectUrl, isLike } =
-		mockProductDetailData;
+	const { productId } = useParams();
+
+	const productIdAsNumber = parseInt(productId ?? '0', 10);
+	const { data: productDetail } = useGetProductDetailList(productIdAsNumber);
+
+	const { imageUrls, title, price, refund, videoUrls, redirectUrl, isDib } =
+		productDetail;
 
 	const [isDetailImageSliderOpen, setIsDetailImageSliderOpen] = useState(false);
 
@@ -85,7 +90,7 @@ const ProductDetail = () => {
 				childrenPadding={'py-3 pl-4 pr-3'}
 				bottom="bottom-0"
 			>
-				<BuyWithLikeButton like={isLike} />
+				<BuyWithLikeButton like={isDib} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);
