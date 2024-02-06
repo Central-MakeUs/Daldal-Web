@@ -20,7 +20,10 @@ const Home = () => {
 			</div>
 			<CategoryButtonList />
 			<div className="px-3 my-3 relative">
-				<ProductCardList type="heart" productList={data?.pages[0].data} />
+				<ProductCardList
+					type="heart"
+					productList={data?.pages[0].data.itemResponses}
+				/>
 			</div>
 		</PageLayout>
 	);

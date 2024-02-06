@@ -17,7 +17,7 @@ const RecommendationProductCardList = () => {
 				gridCols={3}
 				type="heart"
 				size="small"
-				productList={data?.pages[0].data}
+				productList={data?.pages[0].data.itemResponses}
 			/>
 		</div>
 	);

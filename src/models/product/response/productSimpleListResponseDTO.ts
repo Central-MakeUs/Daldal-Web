@@ -14,4 +14,7 @@ type ProductSimpleResponse = {
 	// TODO isLast 추가
 };
 
-export type ProductSimpleListResponseDTO = ProductSimpleResponse[];
+export type ProductSimpleListResponseDTO = {
+	isLastPage: boolean;
+	itemResponses: ProductSimpleResponse[];
+};

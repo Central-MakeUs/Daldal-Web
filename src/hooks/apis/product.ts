@@ -10,8 +10,7 @@ export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 		initialPageParam: 1,
 		getNextPageParam: (lastPage, allPages) => {
 			const nextPage = allPages.length + 1;
-			//TODO isLast 반영
-			return lastPage?.data ? undefined : nextPage;
+			return lastPage?.data.isLastPage ? undefined : nextPage;
 		},
 	});
 };

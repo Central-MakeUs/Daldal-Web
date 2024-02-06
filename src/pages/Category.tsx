@@ -25,7 +25,10 @@ const Category = () => {
 				<h2 className="text-White typography-Subhead">{name}</h2>
 			</div>
 			<div className="py-3">
-				<ProductCardList type="heart" productList={data?.pages[0].data} />
+				<ProductCardList
+					type="heart"
+					productList={data?.pages[0].data.itemResponses}
+				/>
 			</div>
 		</PageLayout>
 	);
