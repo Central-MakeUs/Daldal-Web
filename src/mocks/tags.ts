@@ -1,10 +1,10 @@
-type tagsType = 'APPROVED' | 'PROGRESS' | 'NOT_APPROVED';
+import { RefundStatus } from '@type/refundStatus';
 
-export const tags: tagsType[] = [
-	'APPROVED',
-	'PROGRESS',
-	'APPROVED',
-	'NOT_APPROVED',
-	'PROGRESS',
-	'NOT_APPROVED',
+export const tags: RefundStatus[] = [
+	'COMPLETED',
+	'IN_PROGRESS',
+	'COMPLETED',
+	'REJECTED',
+	'IN_PROGRESS',
+	'REJECTED',
 ];

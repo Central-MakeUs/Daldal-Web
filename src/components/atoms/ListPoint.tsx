@@ -2,7 +2,7 @@ import { Block, Button } from 'konsta/react';
 
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
-import { PointHistory, RefundStatus } from '@models/point/entity/point';
+import { PointHistory, MockRefundStatus } from '@models/point/entity/point';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const ListPoint = ({
 		}
 	};
 
-	const colorsByPoint: { [key in RefundStatus]: string } = {
+	const colorsByPoint: { [key in MockRefundStatus]: string } = {
 		미승인: 'text-Error',
 		진행중: 'text-Secondary_B',
 		승인: 'text-Gray20',
