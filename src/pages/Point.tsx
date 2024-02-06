@@ -1,6 +1,9 @@
 import { CaptionButton } from '@components/atoms';
 import { PointHeader } from '@components/molecules';
-import { CurrentPointHistory, PastPointHistory } from '@components/organisms';
+import {
+	ExpectedPointHistory,
+	CumulatedPointHistory,
+} from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { useNavigate } from 'react-router-dom';
@@ -18,8 +21,8 @@ const Point = () => {
 		<PageLayout leftType="home" className="px-6 py-3">
 			<PointHeader />
 			<div className="flex flex-col gap-[14px] mb-5">
-				<CurrentPointHistory />
-				<PastPointHistory />
+				<ExpectedPointHistory />
+				<CumulatedPointHistory />
 			</div>
 			<FixedBottomLayout childrenPadding="px-[20px]" height="h-15">
 				<CaptionButton

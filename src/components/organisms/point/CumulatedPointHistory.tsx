@@ -7,7 +7,7 @@ import {
 import { useGetCumulatedPoint } from '@hooks/apis/point';
 //import { mockPastPointHistory } from '@mocks/pointList';
 
-const PastPointHistory = () => {
+const CumulatedPointHistory = () => {
 	// TODO: Past Point History get api 연결
 	const { data: pointList } = useGetCumulatedPoint();
 	//const pointList = mockPastPointHistory;
@@ -23,4 +23,4 @@ const PastPointHistory = () => {
 	);
 };
 
-export default PastPointHistory;
+export default CumulatedPointHistory;

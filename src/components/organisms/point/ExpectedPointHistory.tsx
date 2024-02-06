@@ -7,7 +7,7 @@ import {
 import { useGetExpectedPoint } from '@hooks/apis/point';
 //import { mockCurrentPointHistory } from '@mocks/pointList';
 
-const CurrentPointHistory = () => {
+const ExpectedPointHistory = () => {
 	// TODO: current Point History get api 연결
 	const { data: pointList } = useGetExpectedPoint();
 	//const pointList = mockCurrentPointHistory;
@@ -25,4 +25,4 @@ const CurrentPointHistory = () => {
 	);
 };
 
-export default CurrentPointHistory;
+export default ExpectedPointHistory;
