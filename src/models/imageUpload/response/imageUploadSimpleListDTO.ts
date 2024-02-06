@@ -1,5 +1,7 @@
 import { PointHistory } from '@models/point/entity/point';
 
-export type ImageUploadSimpleListDTO = PointHistory & {
+type ImageUploadSimpleItem = PointHistory & {
 	certImageUrl: string;
 };
+
+export type ImageUploadSimpleListDTO = ImageUploadSimpleItem[];

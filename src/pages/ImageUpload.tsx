@@ -1,11 +1,14 @@
 import { ImageUploadButton } from '@components/atoms';
 import { ImageContainer } from '@components/molecules';
+import { useGetImageUploadSimpleList } from '@hooks/apis/imageUpload';
 import PageLayout from '@layouts/PageLayout';
-import { uploadImages } from '@mocks/uploadImages';
+//import { uploadImages } from '@mocks/uploadImages';
 import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = () => {
 	const navigate = useNavigate();
+
+	const { data } = useGetImageUploadSimpleList();
 
 	const handleClick = (imageId: number) => {
 		navigate(`/image-upload/${imageId}`);
@@ -31,11 +34,11 @@ const ImageUpload = () => {
 			</p>
 			<div className="grid grid-cols-3 gap-[11px]">
 				<ImageUploadButton />
-				{uploadImages.map((image, idx) => (
+				{data.map((item, idx) => (
 					<ImageContainer
 						key={`imageContainer${idx}`}
-						imageUrl={image.image}
-						status={image.tag}
+						imageUrl={item.certImageUrl}
+						status={item.refundStatus}
 						onClick={() => handleClick(10)}
 					/>
 				))}
