@@ -5,8 +5,8 @@ export type ProductSimple = {
 	title: string;
 	price: number;
 	refund: number;
-	thumbnail: string;
-	isLike: boolean;
+	thumbnailUrl: string;
+	isDib: boolean;
 };
 
 export interface ProductDetail extends ProductSimple {

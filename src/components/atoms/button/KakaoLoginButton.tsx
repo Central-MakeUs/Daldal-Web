@@ -1,8 +1,15 @@
+//import { useKakaoLogin } from '@hooks/apis/auth';
+
 import DefaultButton from './DefaultButton';
 
 const KakaoLoginButton = () => {
+	//const { mutate } = useKakaoLogin();
+
 	const handleClickKakaoLogin = () => {
-		//TODO: 카카오 로그인 연결
+		//mutate();
+		window.location.href = `${
+			import.meta.env.VITE_BASE_URL
+		}/oauth2/authorization/kakao`;
 	};
 
 	return (

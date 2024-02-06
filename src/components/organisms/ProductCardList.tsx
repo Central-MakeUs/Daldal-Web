@@ -24,9 +24,9 @@ const ProductCardList = ({
 }: ProductCardListProps) => {
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols[gridCols]}`}>
-			{productList.map(({ thumbnail, id, ...product }, index) => (
+			{productList.map(({ thumbnailUrl, id, ...product }, index) => (
 				<ProductCard
-					thumbnail={thumbnail}
+					thumbnailUrl={thumbnailUrl}
 					size={size}
 					type={type}
 					key={`ProductCard#${index}`}

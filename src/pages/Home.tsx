@@ -4,9 +4,14 @@ import {
 	RecommendationProductCardList,
 	ProductCardList,
 } from '@components/organisms';
+import { useGetProductSimpleList } from '@hooks/apis/product';
 import PageLayout from '@layouts/PageLayout';
 
 const Home = () => {
+	const { data } = useGetProductSimpleList();
+
+	//TODO params access/refresh token 받아오기
+
 	return (
 		<PageLayout leftType="logo" className="flex flex-col">
 			<div className="px-3 relative flex flex-col">
@@ -17,7 +22,10 @@ const Home = () => {
 			</div>
 			<CategoryButtonList />
 			<div className="px-3 my-3 relative">
-				<ProductCardList type="heart" />
+				<ProductCardList
+					type="heart"
+					productList={data?.pages[0].data.itemResponses}
+				/>
 			</div>
 		</PageLayout>
 	);

@@ -1,17 +1,27 @@
 import { useEffect, useState } from 'react';
 
 import { CategoryButton } from '@components/atoms';
+import { useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
+import { getRefreshToken } from '@utils/localStorage/token';
+import { getProvider, getUserName } from '@utils/localStorage/userInfo';
 import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
+	//const { data } = useGetUserInfo();
+
 	const [userName, setUserName] = useState('홍길동');
+	const [provider, setProvider] = useState('카카오톡');
 	useEffect(() => {
-		const userName = localStorage.getItem('userName');
+		const userName = getUserName();
+		const provider = getProvider();
 		if (userName) {
 			setUserName(userName);
+		}
+		if (provider) {
+			setProvider(provider);
 		}
 	}, []);
 
@@ -58,6 +68,22 @@ const MyPage = () => {
 		openModal('cancellation');
 	};
 
+	const navigateToSignUpPage = () => {
+		navigate('/sign-up');
+	};
+	const { mutate } = useLogout(navigateToSignUpPage);
+	const handleClickLogout = () => {
+		const refreshToken = getRefreshToken();
+		if (refreshToken) {
+			const requestData = {
+				refreshToken,
+			};
+			mutate(requestData);
+		} else {
+			navigateToSignUpPage();
+		}
+	};
+
 	return (
 		<PageLayout leftType="home" className="px-6 py-3">
 			<div className="text-white typography-Body2 typography-R flex flex-col gap-2 mb-6">
@@ -67,7 +93,7 @@ const MyPage = () => {
 					</span>
 					회원님
 				</div>
-				카카오톡으로 로그인되셨습니다.
+				{provider}으로 로그인되셨습니다.
 			</div>
 			<div className="flex flex-col gap-[15px]">
 				{category.map((item, index) => (
@@ -85,7 +111,11 @@ const MyPage = () => {
 					/>
 				))}
 				<div className="flex gap-[15px]">
-					<CategoryButton title="로그아웃" textCenter={true} />
+					<CategoryButton
+						title="로그아웃"
+						textCenter={true}
+						onClick={handleClickLogout}
+					/>
 					<CategoryButton
 						title="회원 탈퇴"
 						textCenter={true}

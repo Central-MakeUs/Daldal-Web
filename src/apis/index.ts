@@ -9,16 +9,7 @@ import {
 	getRefreshToken,
 	setAccessToken,
 	setRefreshToken,
-} from '@utils/token';
-
-export const noAuthApi = axios.create({
-	baseURL: import.meta.env.VITE_BASE_URL,
-	timeout: 10 * 1000,
-	headers: {
-		Accept: 'application/json',
-		'Content-Type': 'application/json',
-	},
-});
+} from '@utils/localStorage/token';
 
 export const api = axios.create({
 	baseURL: import.meta.env.VITE_BASE_URL,
@@ -33,7 +24,7 @@ const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
 	const accessToken = getAccessToken();
 
 	if (accessToken && config.headers) {
-		config.headers['Authorization'] = accessToken;
+		config.headers['Authorization'] = `Bearer ${accessToken}`;
 	}
 
 	return config;
@@ -62,7 +53,7 @@ const onResponseRejected = async (error: AxiosError) => {
 		setAccessToken(newAccessToken);
 		setRefreshToken(newRefreshToken);
 
-		requestConfig.headers['Authorization'] = newAccessToken;
+		requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
 
 		return api(requestConfig);
 	}

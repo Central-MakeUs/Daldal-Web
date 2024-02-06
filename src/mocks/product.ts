@@ -7,7 +7,7 @@ export const mockProductDetailData: ProductDetail = {
 	price: 19000,
 	refund: 3000,
 	categoryType: 'lotion',
-	thumbnail:
+	thumbnailUrl:
 		'https://cf.product-image.s.zigzag.kr/original/d/2024/1/15/25938_202401151106570706_92971.jpeg',
 	imageUrls: [
 		'https://cf.product-image.s.zigzag.kr/original/d/2024/1/15/25938_202401151106570706_92971.jpeg',
@@ -17,5 +17,5 @@ export const mockProductDetailData: ProductDetail = {
 	],
 	videoUrls: ['https://www.youtube.com/embed/8rSH8-pbHZ0'],
 	redirectUrl: 'https://zigzag.kr/catalog/products/127482963',
-	isLike: true,
+	isDib: true,
 };

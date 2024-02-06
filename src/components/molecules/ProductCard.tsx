@@ -8,12 +8,12 @@ interface ProductCardProps extends ProductSimple {
 }
 
 const ProductCard = ({
-	thumbnail,
+	thumbnailUrl,
 	title,
 	price,
 	type,
 	refund,
-	isLike,
+	isDib,
 	size,
 	id,
 }: ProductCardProps) => {
@@ -23,19 +23,19 @@ const ProductCard = ({
 	};
 
 	const Image = {
-		checkbox: <ImageWithCheck src={thumbnail} alt={title} id={id} />,
+		checkbox: <ImageWithCheck src={thumbnailUrl} alt={title} id={id} />,
 		default: (
 			<img
-				src={thumbnail}
+				src={thumbnailUrl}
 				alt={title}
 				className="w-full h-full rounded-[5px]"
 			/>
 		),
 		heart: (
 			<ImageWithHeart
-				src={thumbnail}
+				src={thumbnailUrl}
 				alt={title}
-				isFullHeart={isLike}
+				isFullHeart={isDib}
 				handleClickHeart={() => {
 					console.log('heart');
 				}}
