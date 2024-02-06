@@ -1,3 +1,5 @@
+import { MemberStatus, Provider } from '@type/userInfo';
+
 export type userInfoResponseDTO = {
 	id: number;
 	name: string;
@@ -5,7 +7,6 @@ export type userInfoResponseDTO = {
 	point: number;
 	account: string;
 	accountBank: string;
-	//TODO memberStatus 타입 모두 작성
-	memberStatus: 'ACTIVE';
-	provider: 'KAKAO' | 'APPLE';
+	memberStatus: MemberStatus;
+	provider: Provider;
 };
