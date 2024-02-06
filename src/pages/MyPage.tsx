@@ -68,16 +68,20 @@ const MyPage = () => {
 		openModal('cancellation');
 	};
 
-	const onSuccessCallBack = () => {
+	const navigateToSignUpPage = () => {
 		navigate('/sign-up');
 	};
-	const { mutate } = useLogout(onSuccessCallBack);
+	const { mutate } = useLogout(navigateToSignUpPage);
 	const handleClickLogout = () => {
-		const requestData = {
-			refreshToken: getRefreshToken(),
-		};
-
-		mutate(requestData);
+		const refreshToken = getRefreshToken();
+		if (refreshToken) {
+			const requestData = {
+				refreshToken,
+			};
+			mutate(requestData);
+		} else {
+			navigateToSignUpPage();
+		}
 	};
 
 	return (
