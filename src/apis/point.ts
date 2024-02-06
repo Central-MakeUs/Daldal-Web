@@ -17,3 +17,10 @@ export const getExpectedPoint = async (): Promise<
 	const response = await api.get('/api/v1/points/history/expect');
 	return response.data;
 };
+
+export const getCumulatedPoint = async (): Promise<
+	ApiResponse<PointHistoryResponseDTO>
+> => {
+	const response = await api.get('/api/v1/points/history/cumulate');
+	return response.data;
+};
