@@ -6,10 +6,7 @@ import {
 	NotApprovedTag,
 	ProgressTag,
 } from '@components/atoms';
-import {
-	DefaultKeyValueContainer,
-	SmallProductDetailImageSlider,
-} from '@components/molecules';
+import { DefaultKeyValueContainer } from '@components/molecules';
 import PageLayout from '@layouts/PageLayout';
 import { mockImages } from '@mocks/images';
 import { RefundStatus } from '@type/refundStatus';
@@ -65,7 +62,7 @@ const ImageUploadDetail = () => {
 
 	return (
 		<PageLayout leftType="back">
-			<SmallProductDetailImageSlider images={mockImages} />
+			<img src={mockImages[0]} alt="인증 사진" />
 			<div className="p-6 flex flex-col gap-6">
 				<DefaultKeyValueContainer
 					title="업로드 일시"
