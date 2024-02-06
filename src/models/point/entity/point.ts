@@ -1,11 +1,12 @@
+import { RefundStatus } from '@type/refundStatus';
+
 export type Point = string;
-export type MockRefundStatus = '진행중' | '미승인' | '승인' | '출금';
 
 export type PointHistory = {
+	id: number;
 	refund?: Point;
 	uploadTime: string;
-	buyId: number;
-	refundStatus: MockRefundStatus;
+	refundStatus: RefundStatus;
 };
 
 export type PointHistoryList = PointHistory[];

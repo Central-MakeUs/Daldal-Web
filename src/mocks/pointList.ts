@@ -11,19 +11,19 @@ export const mockCurrentPointHistory: MockPointHistory = {
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 1,
-			refundStatus: '승인',
+			id: 1,
+			refundStatus: 'COMPLETED',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 2,
-			refundStatus: '미승인',
+			id: 2,
+			refundStatus: 'REJECTED',
 		},
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 3,
-			refundStatus: '출금',
+			id: 3,
+			refundStatus: 'WITHDRAWN',
 		},
 	],
 };
@@ -34,18 +34,18 @@ export const mockPastPointHistory: MockPointHistory = {
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 4,
-			refundStatus: '승인',
+			id: 4,
+			refundStatus: 'COMPLETED',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 5,
-			refundStatus: '미승인',
+			id: 5,
+			refundStatus: 'REJECTED',
 		},
 		{
 			uploadTime: '2021-09-23T15:00:00.000Z',
-			buyId: 6,
-			refundStatus: '진행중',
+			id: 6,
+			refundStatus: 'IN_PROGRESS',
 		},
 	],
 };

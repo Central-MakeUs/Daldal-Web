@@ -1,9 +1,7 @@
+import { PointHistory } from '@models/point/entity/point';
+
 export type PointHistoryResponseDTO = {
-	id: number;
-	redirectUrl: string;
-	uploadTime: string;
-	refund: number;
-	refundStatus: 'UNDER_EXAMINATION';
-	rejectReason: 'string';
-	certImageUrl: 'string';
+	//TODO 서버 네이밍 매핑하기
+	totalPoint: number;
+	pointList: PointHistory[];
 };

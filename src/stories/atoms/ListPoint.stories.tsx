@@ -18,7 +18,7 @@ export const Default: Story = {
 	args: {
 		uploadTime: '2023.12.23',
 		refund: '200',
-		buyId: 4,
-		refundStatus: '승인',
+		id: 4,
+		refundStatus: 'COMPLETED',
 	},
 };

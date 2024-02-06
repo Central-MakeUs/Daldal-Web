@@ -2,7 +2,9 @@ import { Block, Button } from 'konsta/react';
 
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
-import { PointHistory, MockRefundStatus } from '@models/point/entity/point';
+import koRefundStatus from '@constants/koRefundStatus';
+import { PointHistory } from '@models/point/entity/point';
+import { KoRefundStatus } from '@type/refundStatus';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,18 +14,20 @@ const ListPoint = ({
 	uploadTime,
 	refund,
 	refundStatus,
-	buyId,
+	id,
 }: ListPointProps) => {
 	const navigate = useNavigate();
+
+	const covertedRefundStatus = koRefundStatus[refundStatus];
 	const handleNavigateToDetailPage = () => {
-		if (refundStatus === '출금') {
-			navigate(`/withdrawal-result/${buyId}`);
+		if (covertedRefundStatus === '출금') {
+			navigate(`/withdrawal-result/${id}`);
 		} else {
-			navigate(`/image-upload/${buyId}`);
+			navigate(`/image-upload/${id}`);
 		}
 	};
 
-	const colorsByPoint: { [key in MockRefundStatus]: string } = {
+	const colorsByPoint: { [key in KoRefundStatus]: string } = {
 		미승인: 'text-Error',
 		진행중: 'text-Secondary_B',
 		승인: 'text-Gray20',
@@ -42,9 +46,9 @@ const ListPoint = ({
 						{getDataInYYYYMMDDSplitedByDot(uploadTime)}
 					</span>
 					<span
-						className={`typography-Body2 typography-R ${colorsByPoint[refundStatus]}`}
+						className={`typography-Body2 typography-R ${colorsByPoint[covertedRefundStatus]}`}
 					>
-						{getPointText(refund, refundStatus)}
+						{getPointText(refund, covertedRefundStatus)}
 					</span>
 				</Block>
 			</Block>

@@ -15,8 +15,13 @@ import { mockImages } from '@mocks/images';
 import { RefundStatus } from '@type/refundStatus';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 
+type ImageUploadDetailRefundStatus = Extract<
+	RefundStatus,
+	'IN_PROGRESS' | 'COMPLETED' | 'REJECTED'
+>;
+
 type StatusValueType = {
-	[K in RefundStatus]: ReactNode;
+	[K in ImageUploadDetailRefundStatus]: ReactNode;
 };
 
 const ImageUploadDetail = () => {
