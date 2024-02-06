@@ -4,11 +4,13 @@ import {
 	PointList,
 	PointHistoryTitle,
 } from '@components/molecules';
-import { mockPastPointHistory } from '@mocks/pointList';
+import { useGetCumulatedPoint } from '@hooks/apis/point';
+//import { mockPastPointHistory } from '@mocks/pointList';
 
 const PastPointHistory = () => {
 	// TODO: Past Point History get api 연결
-	const pointList = mockPastPointHistory;
+	const { data: pointList } = useGetCumulatedPoint();
+	//const pointList = mockPastPointHistory;
 
 	const title = '역대 누적 포인트';
 
