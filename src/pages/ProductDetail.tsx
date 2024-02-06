@@ -80,6 +80,9 @@ const ProductDetail = () => {
 						{textWithEnter.moreDescription}
 					</h6>
 					<iframe
+						//src={"https://zigzag.kr/catalog/products/127482963"}
+						//src={"https://s.zigzag.kr/f2KRWpFiXx?tab=review"}
+						//src={"https://zigzag.kr/p/129629101?airbridge_referrer=airbridge%3Dtrue%26event_uuid%3D47b4ac24-c9aa-4c86-ab80-ecc332b39550%26client_id%3Dbdb7987c-7f89-414a-b8a8-f9746d7bb5e1%26referrer_timestamp%3D1707217989839%26channel%3Dsharelink%26campaign%3Dproduct%26ad_group%3Dnormal%26tab%3Dreview&utm_source=sharelink&utm_campaign=product&channel=sharelink&campaign=product&ad_group=normal&deeplink_url=zigzag%3A%2F%2F%2Fproduct_detail%3Fbrowsing_type%3DINTERNAL_BROWSER%26catalog_product_id%3D129629101%26url%3Dhttps%3A%2F%2Fstore.zigzag.kr%2Fapp%2Fcatalog%2Fproducts%2F129629101%3Fbrowsing_type%26shop_id%3D12897%26shop_product_no%3D%26uau%3D1b7555c0-fe6f-43f6-bd39-403fb6be7d61%26catalog_product_id%3D129629101&fallback_desktop=https%3A%2F%2Fzigzag.kr%2Fp%2F129629101&tab=review"}
 						src={redirectUrl}
 						className="w-full aspect-[1/2] border-Gray60 rounded-3xl border-[7px]"
 					/>

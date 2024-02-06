@@ -24,7 +24,15 @@ const providerWithProps: ComponentWithProps[] = [
 	[QueryClientProvider, { client: queryClient }],
 	[KonstaProvider],
 	[BrowserRouter],
-	[ErrorBoundary, { FallbackComponent: Error }],
+	[
+		ErrorBoundary,
+		{
+			FallbackComponent: Error,
+			onReset: () => {
+				window.location.reload();
+			},
+		},
+	],
 	[Suspense, { fallback: <Preloader className="k-color-Primary" /> }],
 ];
 

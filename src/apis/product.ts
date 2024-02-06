@@ -20,9 +20,6 @@ export const getProductSimpleList = async (
 export const getProductDetailList = async (
 	id: number,
 ): Promise<ApiResponse<ProductDetailListResponseDTO>> => {
-	const params = {
-		id,
-	};
-	const response = await api.get('/api/v1/items', { params });
+	const response = await api.get(`/api/v1/items/${id}`);
 	return response.data;
 };
