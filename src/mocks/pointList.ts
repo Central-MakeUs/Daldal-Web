@@ -2,12 +2,12 @@ import { Point, PointHistoryList } from '@models/point/entity/point';
 
 type MockPointHistory = {
 	totalPoint: Point;
-	pointList: PointHistoryList;
+	buyResponses: PointHistoryList;
 };
 
 export const mockCurrentPointHistory: MockPointHistory = {
 	totalPoint: '1000',
-	pointList: [
+	buyResponses: [
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
@@ -30,7 +30,7 @@ export const mockCurrentPointHistory: MockPointHistory = {
 
 export const mockPastPointHistory: MockPointHistory = {
 	totalPoint: '1000',
-	pointList: [
+	buyResponses: [
 		{
 			refund: '1000',
 			uploadTime: '2021-09-23T15:00:00.000Z',
