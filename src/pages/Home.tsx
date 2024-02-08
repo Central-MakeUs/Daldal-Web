@@ -6,25 +6,25 @@ import {
 	RecommendationProductCardList,
 	ProductCardList,
 } from '@components/organisms';
+import { useGetUserInfo } from '@hooks/apis/auth';
 import { useGetProductSimpleList } from '@hooks/apis/product';
 import PageLayout from '@layouts/PageLayout';
 import { setAccessToken, setRefreshToken } from '@utils/localStorage/token';
 import { useSearchParams } from 'react-router-dom';
 
 const Home = () => {
-	const { data } = useGetProductSimpleList();
+	const { data: productSimpleList } = useGetProductSimpleList();
+	const { mutate } = useGetUserInfo();
 
-	//TODO params access/refresh token 받아오기
 	const [searchParams] = useSearchParams();
 	const accessTokenParam = searchParams.get('access-token');
 	const refreshTokenParam = searchParams.get('refresh-token');
 
 	useEffect(() => {
-		if (accessTokenParam) {
+		if (accessTokenParam && refreshTokenParam) {
 			setAccessToken(accessTokenParam);
-		}
-		if (refreshTokenParam) {
 			setRefreshToken(refreshTokenParam);
+			mutate();
 		}
 	}, []);
 
@@ -40,7 +40,7 @@ const Home = () => {
 			<div className="px-3 my-3 relative">
 				<ProductCardList
 					type="heart"
-					productList={data?.pages[0].data.itemResponses}
+					productList={productSimpleList?.pages[0].data.itemResponses}
 				/>
 			</div>
 		</PageLayout>
