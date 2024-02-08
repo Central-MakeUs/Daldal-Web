@@ -1,6 +1,6 @@
 import { CategoryName } from '@constants/categoryList';
 
-type ProductSimpleResponse = {
+export type ProductSimpleResponse = {
 	id: number;
 	title: string;
 	redirectUrl: string;

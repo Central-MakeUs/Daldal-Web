@@ -1,3 +1,3 @@
-import { ProductSimpleList } from '@models/product/entity/product';
+import { ProductSimpleResponse } from './productSimpleListResponseDTO';
 
-export type RecommendedProductSimpleListResposneDTO = ProductSimpleList[];
+export type RecommendedProductSimpleListResposneDTO = ProductSimpleResponse[];
