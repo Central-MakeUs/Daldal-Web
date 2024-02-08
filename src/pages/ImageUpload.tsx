@@ -34,14 +34,15 @@ const ImageUpload = () => {
 			</p>
 			<div className="grid grid-cols-3 gap-[11px]">
 				<ImageUploadButton />
-				{data.map((item, idx) => (
-					<ImageContainer
-						key={`imageContainer${idx}`}
-						imageUrl={item.certImageUrl}
-						status={item.refundStatus}
-						onClick={() => handleClick(10)}
-					/>
-				))}
+				{data.length > 0 &&
+					data.map((item, idx) => (
+						<ImageContainer
+							key={`imageContainer${idx}`}
+							imageUrl={item.certImageUrl}
+							status={item.refundStatus}
+							onClick={() => handleClick(10)}
+						/>
+					))}
 			</div>
 		</PageLayout>
 	);
