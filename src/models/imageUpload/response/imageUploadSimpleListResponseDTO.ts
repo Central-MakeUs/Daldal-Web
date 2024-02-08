@@ -4,4 +4,4 @@ type ImageUploadSimpleItem = PointHistory & {
 	certImageUrl: string;
 };
 
-export type ImageUploadSimpleListDTO = ImageUploadSimpleItem[];
+export type ImageUploadSimpleListResponseDTO = ImageUploadSimpleItem[];
