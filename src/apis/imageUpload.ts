@@ -1,4 +1,4 @@
-import { ImageUploadSimpleListDTO } from '@models/imageUpload/response/ImageUploadSimpleListDTO';
+import { ImageUploadSimpleListDTO } from '@models/imageUpload/response/imageUploadSimpleListDTO';
 import { ApiResponse } from '@type/apiResponse';
 
 import { api } from '.';
