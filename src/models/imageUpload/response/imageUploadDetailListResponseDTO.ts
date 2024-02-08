@@ -1,8 +1,11 @@
 import { PointHistory } from '@models/point/entity/point';
+import { ImageUploadDetailRefundStatus } from '@type/refundStatus';
 
-type ImageUploadDetailItem = PointHistory & {
+export type ImageUploadDetailListResponseDTO = Omit<
+	PointHistory,
+	'refundStatus'
+> & {
+	refundStatus: ImageUploadDetailRefundStatus;
 	rejectReason: string;
 	certImageUrl: string;
 };
-
-export type ImageUploadDetailListResponseDTO = ImageUploadDetailItem[];
