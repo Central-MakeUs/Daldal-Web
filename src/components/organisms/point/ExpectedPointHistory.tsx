@@ -5,12 +5,9 @@ import {
 	PointHistoryTitle,
 } from '@components/molecules';
 import { useGetExpectedPoint } from '@hooks/apis/point';
-//import { mockCurrentPointHistory } from '@mocks/pointList';
 
 const ExpectedPointHistory = () => {
-	// TODO: current Point History get api 연결
 	const { data: pointList } = useGetExpectedPoint();
-	//const pointList = mockCurrentPointHistory;
 
 	const title = '이번달 예상 누적 포인트';
 	const description =
@@ -19,8 +16,8 @@ const ExpectedPointHistory = () => {
 	return (
 		<PointHistory>
 			<PointHistoryTitle title={title} description={description} />
-			<HistoryTotalPoint totalPoint={pointList.totalPoint} />
-			<PointList {...pointList} />
+			<HistoryTotalPoint totalPoint={String(pointList.totalPoint)} />
+			<PointList pointList={pointList.buyResponses} />
 		</PointHistory>
 	);
 };
