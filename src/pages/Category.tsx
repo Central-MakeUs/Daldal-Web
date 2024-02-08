@@ -12,7 +12,7 @@ type CategoryParams = {
 };
 
 const Category = () => {
-	const { categoryName = 'lotion' } = useParams<CategoryParams>();
+	const { categoryName = 'TOPS' } = useParams<CategoryParams>();
 	const { id: iconId, name } = categoryList[categoryName];
 
 	const { data } = useGetProductSimpleList(categoryName);

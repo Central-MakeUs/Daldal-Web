@@ -6,7 +6,7 @@ export const mockProductDetailData: ProductDetail = {
 		'바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩',
 	price: 19000,
 	refund: 3000,
-	categoryType: 'lotion',
+	categoryType: 'TOPS',
 	thumbnailUrl:
 		'https://cf.product-image.s.zigzag.kr/original/d/2024/1/15/25938_202401151106570706_92971.jpeg',
 	imageUrls: [
