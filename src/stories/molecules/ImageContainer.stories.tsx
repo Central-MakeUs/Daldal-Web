@@ -26,20 +26,20 @@ type Story = StoryObj<typeof meta>;
 export const Approved: Story = {
 	args: {
 		imageUrl: 'https://via.placeholder.com/2560x1440',
-		status: 'APPROVED',
+		status: 'COMPLETED',
 	},
 };
 
 export const Progress: Story = {
 	args: {
 		imageUrl: 'https://via.placeholder.com/2560x1440',
-		status: 'PROGRESS',
+		status: 'IN_PROGRESS',
 	},
 };
 
 export const Not_Approved: Story = {
 	args: {
 		imageUrl: 'https://via.placeholder.com/2560x1440',
-		status: 'NOT_APPROVED',
+		status: 'REJECTED',
 	},
 };

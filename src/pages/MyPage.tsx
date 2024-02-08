@@ -10,10 +10,9 @@ import { getProvider, getUserName } from '@utils/localStorage/userInfo';
 import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
-	//const { data } = useGetUserInfo();
-
 	const [userName, setUserName] = useState('홍길동');
 	const [provider, setProvider] = useState('카카오톡');
+
 	useEffect(() => {
 		const userName = getUserName();
 		const provider = getProvider();

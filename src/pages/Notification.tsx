@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import notificationImg from '@assets/images/notification.png';
 import { ProgressBar } from '@components/index';
 import ClearLayout from '@layouts/ClearLayout';
+import { useProductStore } from '@stores/productStore';
 
 const Notification = () => {
 	const [state, setState] = useState({
@@ -21,10 +22,11 @@ const Notification = () => {
 		return () => clearTimeout(timeoutId);
 	}, []);
 
+	const redirectUrl = useProductStore(state => state.redirectUrl);
+
 	useEffect(() => {
 		if (!state.isAnimating) {
-			//TODO: 서버로 부터 받은 url 정보로 변경
-			window.location.replace('https://zigzag.kr/');
+			window.location.replace(redirectUrl);
 		}
 	}, [state]);
 

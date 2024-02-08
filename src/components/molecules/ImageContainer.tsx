@@ -1,9 +1,9 @@
 import { ApprovedTag, NotApprovedTag, ProgressTag } from '@components/atoms';
-import { Status } from '@type/status';
+import { RefundStatus } from '@type/refundStatus';
 
 type ImageContainerProps = {
 	imageUrl: string;
-	status: Status;
+	status: RefundStatus;
 	onClick: () => void;
 };
 
@@ -15,9 +15,9 @@ const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 				className="w-full relative rounded-[5px] object-cover aspect-square"
 			/>
 			<div className="absolute top-1 right-1">
-				{status === 'APPROVED' && <ApprovedTag size="small" />}
-				{status === 'PROGRESS' && <ProgressTag size="small" />}
-				{status === 'NOT_APPROVED' && <NotApprovedTag size="small" />}
+				{status === 'COMPLETED' && <ApprovedTag size="small" />}
+				{status === 'IN_PROGRESS' && <ProgressTag size="small" />}
+				{status === 'REJECTED' && <NotApprovedTag size="small" />}
 			</div>
 		</div>
 	);

@@ -7,7 +7,7 @@ export { default as DisabledAccountForm } from './form/DisabledAccountForm';
 
 export { default as ImageSliderContainer } from './imageSlider/ImageSliderContainer';
 
-export { default as CurrentPointHistory } from './point/CurrentPointHistory';
-export { default as PastPointHistory } from './point/PastPointHistory';
+export { default as ExpectedPointHistory } from './point/ExpectedPointHistory';
+export { default as CumulatedPointHistory } from './point/CumulatedPointHistory';
 
 export { default as RecentSearchListContainer } from './RecentSearchListContainer';

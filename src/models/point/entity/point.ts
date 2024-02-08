@@ -1,10 +1,11 @@
+import { RefundStatus } from '@type/refundStatus';
+
 export type Point = string;
-export type RefundStatus = '진행중' | '미승인' | '승인' | '출금';
 
 export type PointHistory = {
+	id: number;
 	refund?: Point;
 	uploadTime: string;
-	buyId: number;
 	refundStatus: RefundStatus;
 };
 
