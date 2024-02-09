@@ -1,7 +1,7 @@
 import { SearchTextField } from '@components/atoms';
 import { PostSearchHeader } from '@components/molecules';
 import { ProductCardList } from '@components/organisms';
-import { mockSearchResultData } from '@mocks/search';
+import { useSearch } from '@hooks/apis/search';
 import { SearchQuery } from '@type/searchQuery';
 
 type PostSearchProps = {
@@ -9,15 +9,17 @@ type PostSearchProps = {
 };
 
 const PostSearch = ({ searchQuery }: PostSearchProps) => {
-	// TODO: searchQuery에 대해 api 호출
-	const searchResultList = mockSearchResultData.searchResultList;
+	const { data } = useSearch(searchQuery);
 
 	return (
 		<>
 			<SearchTextField defaultValue={searchQuery} />
 			<PostSearchHeader />
 			<div className="my-3">
-				<ProductCardList type="heart" productList={searchResultList} />
+				<ProductCardList
+					type="heart"
+					productList={data?.pages[0].data.itemResponses}
+				/>
 			</div>
 		</>
 	);
