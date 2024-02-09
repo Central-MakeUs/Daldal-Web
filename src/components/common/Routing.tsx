@@ -35,7 +35,7 @@ const Routing = () => {
 			<Route path="/my-page" element={<MyPage />} />
 			<Route path="/point" element={<Point />} />
 			<Route path="/image-upload" element={<ImageUpload />} />
-			<Route path="/image-upload/:imageId" element={<ImageUploadDetail />} />
+			<Route path="/image-upload/:buyId" element={<ImageUploadDetail />} />
 			<Route path="/withdrawal/*" element={<Withdrawal />}>
 				<Route path="pre" element={<PreWithdrawal />} />
 				<Route path="progress" element={<ProgressWithdrawal />} />

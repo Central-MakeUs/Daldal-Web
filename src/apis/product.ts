@@ -1,6 +1,7 @@
 import { CategoryName } from '@constants/categoryList';
 import { ProductDetailListResponseDTO } from '@models/product/response/productDetailListResponseDTO';
 import { ProductSimpleListResponseDTO } from '@models/product/response/productSimpleListResponseDTO';
+import { RecommendedProductSimpleListResposneDTO } from '@models/product/response/recommendedProductSimpleListResponseDTO';
 import { ApiResponse } from '@type/apiResponse';
 
 import { api } from '.';
@@ -14,6 +15,13 @@ export const getProductSimpleList = async (
 		itemCategoryType,
 	};
 	const response = await api.get('/api/v1/items', { params });
+	return response.data;
+};
+
+export const getRecommendedProductSimpleList = async (): Promise<
+	ApiResponse<RecommendedProductSimpleListResposneDTO>
+> => {
+	const response = await api.get('/api/v1/items/suggested');
 	return response.data;
 };
 

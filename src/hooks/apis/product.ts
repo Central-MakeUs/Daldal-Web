@@ -1,4 +1,8 @@
-import { getProductDetailList, getProductSimpleList } from '@apis/product';
+import {
+	getProductDetailList,
+	getProductSimpleList,
+	getRecommendedProductSimpleList,
+} from '@apis/product';
 import { CategoryName } from '@constants/categoryList';
 import { useInfiniteQuery, useSuspenseQuery } from '@tanstack/react-query';
 
@@ -12,6 +16,14 @@ export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 			const nextPage = allPages.length + 1;
 			return lastPage?.data.isLastPage ? undefined : nextPage;
 		},
+	});
+};
+
+export const useGetRecommendedProductSimpleList = () => {
+	return useSuspenseQuery({
+		queryKey: ['recommendedProductSimpleList'],
+		queryFn: () => getRecommendedProductSimpleList(),
+		select: data => data.data,
 	});
 };
 
