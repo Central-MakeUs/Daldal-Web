@@ -4,10 +4,10 @@ import { IconButton } from '@components/atoms';
 import { useNavigate } from 'react-router-dom';
 
 type LikeButtonProps = {
-	like: boolean;
+	isDib: boolean;
 };
 
-const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
+const BuyWithLikeButton = ({ isDib }: LikeButtonProps) => {
 	const navigate = useNavigate();
 
 	const handleLikeClick = () => {
@@ -23,7 +23,7 @@ const BuyWithLikeButton = ({ like }: LikeButtonProps) => {
 			<IconButton
 				className="!w-8 !px-0 !py-4"
 				icon={{
-					id: like ? 'like-full' : 'like-empty',
+					id: isDib ? 'like-full' : 'like-empty',
 					size: 32,
 				}}
 				onClick={handleLikeClick}
