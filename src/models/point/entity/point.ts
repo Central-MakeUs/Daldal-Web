@@ -4,8 +4,12 @@ export type Point = string;
 
 export type PointHistory = {
 	id: number;
-	refund?: Point;
+	refund: Point;
 	uploadTime: string;
+	approvedTime: string;
+	pointsBeforeRefund: number;
+	pointsAfterRefund: number;
+	purchase: number;
 	refundStatus: RefundStatus;
 };
 
