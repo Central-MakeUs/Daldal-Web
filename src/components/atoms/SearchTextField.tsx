@@ -34,7 +34,6 @@ const SearchTextField = ({
 	};
 
 	const location = useLocation();
-	console.log(location);
 
 	useEffect(() => {
 		if (searchValue === '' && location.pathname === '/search') {
