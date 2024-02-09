@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { IconButton } from '@components/index';
+import { IconButton, ToastMessageLikeOrDelete } from '@components/index';
 import { useDeleteWithItem, usePostWishItem } from '@hooks/apis/wishList';
+import toast from 'react-hot-toast';
 
 type HeartButtonProps = {
 	id: number;
@@ -28,6 +29,9 @@ const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 	);
 
 	const handleLikeHeart = () => {
+		toast(() => <ToastMessageLikeOrDelete like={!curLike} />, {
+			duration: 2000,
+		});
 		setCurLike(prev => !prev);
 		//TODO 요청 중 버튼 클릭 막기
 		if (curLike) {
