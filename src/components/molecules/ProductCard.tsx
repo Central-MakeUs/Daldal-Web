@@ -31,7 +31,11 @@ const ProductCard = ({
 		setCurLike(isDib);
 	}, [isDib]);
 
-	const { mutate: postWishItem } = usePostWishItem();
+	const onErrorCallback = () => {
+		setCurLike(prev => !prev);
+	};
+
+	const { mutate: postWishItem } = usePostWishItem(undefined, onErrorCallback);
 	const { mutate: deleteWishItem } = useDeleteWithItem();
 
 	const Image = {
@@ -50,7 +54,6 @@ const ProductCard = ({
 				isFullHeart={curLike}
 				handleClickHeart={() => {
 					setCurLike(prev => !prev);
-					//TODO 실패한 경우 rollback하기
 					//TODO 요청 중 버튼 클릭 막기
 					if (curLike) {
 						deleteWishItem(id);
