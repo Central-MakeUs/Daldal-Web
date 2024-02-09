@@ -1,11 +1,19 @@
+import { useEffect } from 'react';
+
 import {
 	GroupOrderTextPoint,
 	RequestVerificationButton,
 } from '@components/atoms';
 import { useGetCurrentPoint } from '@hooks/apis/point';
+import { setHeldPoint } from '@utils/localStorage/point';
 
 const PointHeader = () => {
 	const { data: totalPoint } = useGetCurrentPoint();
+	useEffect(() => {
+		if (typeof totalPoint === 'number') {
+			setHeldPoint(totalPoint);
+		}
+	}, [totalPoint]);
 
 	return (
 		<div className="flex justify-between items-end mb-7">
