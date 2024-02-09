@@ -1,10 +1,10 @@
-import { useState, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent, useEffect } from 'react';
 
 import { IconButton } from '@components/atoms';
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
 import { useSearchHistoryStore } from '@stores/searchHistoryStore';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 type SearchTextFieldProps = {
 	isFocused?: boolean;
@@ -31,8 +31,16 @@ const SearchTextField = ({
 
 	const handleClearSearchValue = () => {
 		setSearchValue('');
-		navigate('/search');
 	};
+
+	const location = useLocation();
+	console.log(location);
+
+	useEffect(() => {
+		if (searchValue === '' && location.pathname === '/search') {
+			navigate('/search', { replace: true });
+		}
+	}, [searchValue]);
 
 	const [searchParams, setSearchParams] = useSearchParams();
 	const addSearchQuery = useSearchHistoryStore(state => state.addSearchQuery);
