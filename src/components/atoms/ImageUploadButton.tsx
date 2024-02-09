@@ -13,7 +13,7 @@ const ImageUploadButton = () => {
 				return;
 			}
 			const formData = new FormData();
-			formData.append('image', e.target.files[0]);
+			formData.append('file', e.target.files[0]);
 			//TODO api 연동 + invalidate getImageUploadSimpleList
 		},
 		[],
