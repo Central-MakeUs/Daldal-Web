@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
-import { usePostWishItem } from '@hooks/apis/wishList';
+import { useDeleteWithItem, usePostWishItem } from '@hooks/apis/wishList';
 import { ProductSimple } from '@models/product/entity/product';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,7 +31,8 @@ const ProductCard = ({
 		setCurLike(isDib);
 	}, [isDib]);
 
-	const { mutate } = usePostWishItem();
+	const { mutate: postWishItem } = usePostWishItem();
+	const { mutate: deleteWishItem } = useDeleteWithItem();
 
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnailUrl} alt={title} id={id} />,
@@ -50,10 +51,11 @@ const ProductCard = ({
 				handleClickHeart={() => {
 					setCurLike(prev => !prev);
 					//TODO 실패한 경우 rollback하기
+					//TODO 요청 중 버튼 클릭 막기
 					if (curLike) {
-						//TODO delete api 연동
+						deleteWishItem(id);
 					} else {
-						mutate(id);
+						postWishItem(id);
 					}
 				}}
 			/>

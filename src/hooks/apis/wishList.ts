@@ -1,4 +1,8 @@
-import { getWishListProductSimpleList, postWishItem } from '@apis/wishList';
+import {
+	deleteWishItem,
+	getWishListProductSimpleList,
+	postWishItem,
+} from '@apis/wishList';
 import { useInfiniteQuery, useMutation } from '@tanstack/react-query';
 
 export const useGetWishListProductSimpleList = () => {
@@ -19,6 +23,17 @@ export const usePostWishItem = (
 ) => {
 	return useMutation({
 		mutationFn: (itemId: number) => postWishItem(itemId),
+		onSuccess: successCallback,
+		onError: errorCallback,
+	});
+};
+
+export const useDeleteWithItem = (
+	successCallback?: () => void,
+	errorCallback?: (error: Error) => void,
+) => {
+	return useMutation({
+		mutationFn: (itemId: number) => deleteWishItem(itemId),
 		onSuccess: successCallback,
 		onError: errorCallback,
 	});
