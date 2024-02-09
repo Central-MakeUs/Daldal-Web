@@ -24,3 +24,13 @@ export const getCumulatedPoint = async (): Promise<
 	const response = await api.get('/api/v1/points/history/cumulate');
 	return response.data;
 };
+
+export const postPointWithdraw = async (
+	refund: number,
+): Promise<ApiResponse<PointHistoryResponseDTO>> => {
+	const params = {
+		refund,
+	};
+	const response = await api.post('/api/v1/points/withdraw', null, { params });
+	return response.data;
+};

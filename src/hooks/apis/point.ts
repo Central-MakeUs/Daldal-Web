@@ -2,8 +2,9 @@ import {
 	getCumulatedPoint,
 	getCurrentPoint,
 	getExpectedPoint,
+	postPointWithdraw,
 } from '@apis/point';
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useMutation, useSuspenseQuery } from '@tanstack/react-query';
 
 export const useGetCurrentPoint = () => {
 	return useSuspenseQuery({
@@ -26,5 +27,16 @@ export const useGetCumulatedPoint = () => {
 		queryKey: ['cumulatedPoint'],
 		queryFn: () => getCumulatedPoint(),
 		select: data => data.data,
+	});
+};
+
+export const usePostPointWithdraw = (
+	successCallback?: () => void,
+	errorCallback?: (error: Error) => void,
+) => {
+	return useMutation({
+		mutationFn: (refund: number) => postPointWithdraw(refund),
+		onSuccess: successCallback,
+		onError: errorCallback,
 	});
 };
