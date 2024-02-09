@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
 import { usePostWishItem } from '@hooks/apis/wishList';
 import { ProductSimple } from '@models/product/entity/product';
@@ -23,6 +25,12 @@ const ProductCard = ({
 		navigate(`/detail/${id}`);
 	};
 
+	const [curLike, setCurLike] = useState<boolean>(isDib);
+
+	useEffect(() => {
+		setCurLike(isDib);
+	}, [isDib]);
+
 	const { mutate } = usePostWishItem();
 
 	const Image = {
@@ -38,9 +46,15 @@ const ProductCard = ({
 			<ImageWithHeart
 				src={thumbnailUrl}
 				alt={title}
-				isFullHeart={isDib}
+				isFullHeart={curLike}
 				handleClickHeart={() => {
-					mutate(id);
+					setCurLike(prev => !prev);
+					//TODO 실패한 경우 rollback하기
+					if (curLike) {
+						//TODO delete api 연동
+					} else {
+						mutate(id);
+					}
 				}}
 			/>
 		),
