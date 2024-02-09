@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { DefaultButton, RequestLeaveModalButton } from '@components/atoms';
 import { DisabledAccountForm } from '@components/organisms';
+import { usePatchAccountIfo } from '@hooks/apis/account';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
 import { useAccountInfoStore } from '@stores/formInfoStore';
@@ -9,10 +10,15 @@ import { useNavigate } from 'react-router-dom';
 
 const SaveAccountInfo = () => {
 	const { accountInfo, clearAccountInfo, enterType } = useAccountInfoStore();
-
+	const { mutate } = usePatchAccountIfo();
 	const navigate = useNavigate();
+
 	const handleRegisterAccountButtonClick = () => {
-		// TODO: api를 통해 submit 날리기
+		mutate({
+			depositorName: accountInfo.USER,
+			account: accountInfo.ACCOUNT,
+			accountBank: accountInfo.BANK,
+		});
 		navigate('/my-page');
 	};
 

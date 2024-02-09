@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
+import { useDeleteWithItem, usePostWishItem } from '@hooks/apis/wishList';
 import { ProductSimple } from '@models/product/entity/product';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,6 +25,22 @@ const ProductCard = ({
 		navigate(`/detail/${id}`);
 	};
 
+	const [curLike, setCurLike] = useState<boolean>(isDib);
+
+	useEffect(() => {
+		setCurLike(isDib);
+	}, [isDib]);
+
+	const onErrorCallback = () => {
+		setCurLike(prev => !prev);
+	};
+
+	const { mutate: postWishItem } = usePostWishItem(undefined, onErrorCallback);
+	const { mutate: deleteWishItem } = useDeleteWithItem(
+		undefined,
+		onErrorCallback,
+	);
+
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnailUrl} alt={title} id={id} />,
 		default: (
@@ -35,9 +54,15 @@ const ProductCard = ({
 			<ImageWithHeart
 				src={thumbnailUrl}
 				alt={title}
-				isFullHeart={isDib}
+				isFullHeart={curLike}
 				handleClickHeart={() => {
-					console.log('heart');
+					setCurLike(prev => !prev);
+					//TODO 요청 중 버튼 클릭 막기
+					if (curLike) {
+						deleteWishItem(id);
+					} else {
+						postWishItem(id);
+					}
 				}}
 			/>
 		),

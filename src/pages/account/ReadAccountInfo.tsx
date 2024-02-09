@@ -1,14 +1,26 @@
+import { useEffect } from 'react';
+
 import { PreEditAccount, PreRegisterAccount } from '@components/templates';
+import { useGetAccountInfo } from '@hooks/apis/account';
 import PageLayout from '@layouts/PageLayout';
+import { useAccountInfoStore } from '@stores/formInfoStore';
 
 const ReadAccountInfo = () => {
-	// TODO: api를 통해 계좌 정보 가져오기
-	// data가 있는 형태는 아래 주석을 풀고 사용하세요.
-	// const accountInfo = mockAccountForm;
-	const accountInfo = null;
+	const { data: accountInfo } = useGetAccountInfo();
+	const setAccountInfo = useAccountInfoStore(state => state.setAccountInfo);
+
+	useEffect(() => {
+		if (accountInfo) {
+			setAccountInfo({
+				USER: accountInfo.depositorName,
+				BANK: accountInfo.accountBank,
+				ACCOUNT: accountInfo.account,
+			});
+		}
+	}, [accountInfo]);
 
 	const renderAccountInfo = () => {
-		if (accountInfo) {
+		if (accountInfo.account) {
 			return <PreEditAccount />;
 		}
 

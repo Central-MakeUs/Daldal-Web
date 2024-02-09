@@ -3,25 +3,24 @@ import {
 	DefaultWishListWithNoItem,
 	EditWishList,
 } from '@components/templates';
+import { useGetWishListProductSimpleList } from '@hooks/apis/wishList';
 import PageLayout from '@layouts/PageLayout';
-import { mockProductSimpleList } from '@mocks/mockProductSimpleList';
 import { useWishListStore } from '@stores/wishListStore';
 
 const WishList = () => {
 	const wishListStatus = useWishListStore(state => state.wishListStatus);
 
-	//TODO api 연동
-	const mockData = mockProductSimpleList;
+	const { data } = useGetWishListProductSimpleList();
 
 	const renderContent = () => {
-		if (wishListStatus === 'default') {
-			if (mockData.length > 0) {
-				return <DefaultWishList productList={mockData} />;
+		const productList = data?.pages[0].data.itemResponses;
+		if (productList && productList.length > 0) {
+			if (wishListStatus === 'default') {
+				return <DefaultWishList productList={productList} />;
 			}
-			return <DefaultWishListWithNoItem />;
+			return <EditWishList productList={productList} />;
 		}
-
-		return <EditWishList productList={mockData} />;
+		return <DefaultWishListWithNoItem />;
 	};
 	return (
 		<PageLayout leftType="home" className="h-full flex flex-col px-3 py-3">
