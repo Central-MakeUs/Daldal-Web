@@ -3,6 +3,7 @@ const enum LocalStorageKey {
 	REFRESH_TOKEN = 'refreshToken',
 	USER_NAME = 'userName',
 	PROVIDER = 'provider',
+	HELD_POINT = 'heldPoint',
 }
 
 export default LocalStorageKey;

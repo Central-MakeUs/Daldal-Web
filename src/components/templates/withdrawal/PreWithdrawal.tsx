@@ -1,5 +1,7 @@
 import { GroupOrderTextPoint, DefaultButton } from '@components/atoms';
+import { useGetAccountInfo } from '@hooks/apis/account';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
+import { useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 const PreWithdrawal = () => {
@@ -12,25 +14,24 @@ const PreWithdrawal = () => {
 		navigate('/withdrawal/progress');
 	};
 
-	// TODO api로 값 받아오기 (은행 정보, 계좌 번호, 누적 포인트)
-	const accountBank = '국민은행';
-	const accountNumber = '123456789';
-	const point = '1000';
+	const queryClient = useQueryClient();
+	const { data } = useGetAccountInfo();
+	const point = queryClient.getQueryData(['currentPoint']);
 
 	return (
 		<div className="typography-Body1 typography-R text-White flex flex-col gap-12 h-full">
 			<div className="flex flex-col">
 				회원님의 계좌는
-				<span className="typography-Headline">{accountBank}</span>
+				<span className="typography-Headline">{data.accountBank}</span>
 				<div className="flex items-end gap-2">
-					<span className="typography-Headline">{accountNumber}</span>
+					<span className="typography-Headline">{data.account}</span>
 					입니다.
 				</div>
 			</div>
 			<div className="flex flex-col">
 				회원님의 누적 포인트는
 				<div className="flex items-end gap-2">
-					<GroupOrderTextPoint point={point} />
+					<GroupOrderTextPoint point={String(point)} />
 					입니다.
 				</div>
 			</div>
