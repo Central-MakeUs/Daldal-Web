@@ -1,3 +1,4 @@
+import { AccountInfoRequestDTO } from '@models/account/request/accountInfoRequestDTO';
 import { AccountInfoResponseDTO } from '@models/account/response/accountInfoResponseDTO';
 import { ApiResponse } from '@type/apiResponse';
 
@@ -10,7 +11,9 @@ export const getAccountInfo = async (): Promise<
 	return response.data;
 };
 
-export const patchAccountInfo = async (): Promise<ApiResponse<null>> => {
-	const response = await api.patch('/api/v1/members/me/account');
+export const patchAccountInfo = async (
+	data: AccountInfoRequestDTO,
+): Promise<ApiResponse<null>> => {
+	const response = await api.patch('/api/v1/members/me/account', data);
 	return response.data;
 };
