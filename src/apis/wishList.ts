@@ -11,7 +11,7 @@ export const getWishListProductSimpleList = async (
 	return resposne.data;
 };
 
-export const postWishList = async (
+export const postWishItem = async (
 	itemId: number,
 ): Promise<ApiResponse<null>> => {
 	const response = await api.post(`api/v1/dib/${itemId}`);
