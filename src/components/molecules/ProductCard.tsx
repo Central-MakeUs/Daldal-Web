@@ -1,4 +1,5 @@
 import { ImageWithCheck, ImageWithHeart, CardInfo } from '@components/atoms';
+import { usePostWithList } from '@hooks/apis/wishList';
 import { ProductSimple } from '@models/product/entity/product';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,6 +23,8 @@ const ProductCard = ({
 		navigate(`/detail/${id}`);
 	};
 
+	const { mutate } = usePostWithList();
+
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnailUrl} alt={title} id={id} />,
 		default: (
@@ -37,7 +40,7 @@ const ProductCard = ({
 				alt={title}
 				isFullHeart={isDib}
 				handleClickHeart={() => {
-					console.log('heart');
+					mutate(id);
 				}}
 			/>
 		),

@@ -1,5 +1,5 @@
-import { getWishListProductSimpleList } from '@apis/wishList';
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { getWishListProductSimpleList, postWishList } from '@apis/wishList';
+import { useInfiniteQuery, useMutation } from '@tanstack/react-query';
 
 export const useGetWishListProductSimpleList = () => {
 	return useInfiniteQuery({
@@ -10,5 +10,16 @@ export const useGetWishListProductSimpleList = () => {
 			const nextPage = allPages.length + 1;
 			return lastPage?.data.isLastPage ? undefined : nextPage;
 		},
+	});
+};
+
+export const usePostWithList = (
+	successCallback?: () => void,
+	errorCallback?: (error: Error) => void,
+) => {
+	return useMutation({
+		mutationFn: (itemId: number) => postWishList(itemId),
+		onSuccess: successCallback,
+		onError: errorCallback,
 	});
 };
