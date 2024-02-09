@@ -22,6 +22,7 @@ export { default as RequestVerificationButton } from './button/RequestVerificati
 export { default as RequestLeaveModalButton } from './button/RequestLeaveModalButton';
 export { default as KakaoLoginButton } from './button/KakaoLoginButton';
 export { default as AppleLoginButton } from './button/AppleLoginButton';
+export { default as HeartButton } from './button/HeartButton';
 
 export { default as CardInfo } from './card/CardInfo';
 export { default as ImageWithCheck } from './card/ImageWithCheck';

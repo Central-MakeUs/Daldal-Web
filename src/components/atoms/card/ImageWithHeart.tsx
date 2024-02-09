@@ -1,29 +1,23 @@
-import { IconButton } from '@components/atoms';
-import colors from '@constants/colors';
+// import { IconButton } from '@components/atoms';
+// import colors from '@constants/colors';
+
+import { HeartButton } from '@components/atoms';
 
 type ImageWithCheckProps = {
 	src: string;
 	alt: string;
-	isFullHeart?: boolean;
-	handleClickHeart: () => void;
+	id: number;
+	isDib: boolean;
 };
 
-const ImageWithHeart = ({
-	src,
-	alt,
-	handleClickHeart,
-	isFullHeart = false,
-}: ImageWithCheckProps) => {
+const ImageWithHeart = ({ src, alt, id, isDib }: ImageWithCheckProps) => {
 	return (
 		<div className="relative rounded-[5px] overflow-hidden w-full aspect-square">
 			<img src={src} alt={alt} className="w-full h-full" />
-			<IconButton
-				icon={{
-					id: isFullHeart ? 'like-full' : 'like-empty',
-					size: 24,
-					color: colors.Primary,
-				}}
-				onClick={handleClickHeart}
+			<HeartButton
+				id={id}
+				isDib={isDib}
+				size={24}
 				className="!w-fit !h-fit absolute top-1 right-1 z-10 !p-0"
 			/>
 		</div>

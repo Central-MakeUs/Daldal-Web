@@ -1,18 +1,15 @@
 import { Button } from 'konsta/react';
 
-import { IconButton } from '@components/atoms';
+import { HeartButton } from '@components/atoms';
 import { useNavigate } from 'react-router-dom';
 
 type LikeButtonProps = {
+	id: number;
 	isDib: boolean;
 };
 
-const BuyWithLikeButton = ({ isDib }: LikeButtonProps) => {
+const BuyWithLikeButton = ({ id, isDib }: LikeButtonProps) => {
 	const navigate = useNavigate();
-
-	const handleLikeClick = () => {
-		console.log('현재 상품 찜 등록 및 삭제하기');
-	};
 
 	const handleBuyClick = () => {
 		navigate('/notification');
@@ -20,13 +17,11 @@ const BuyWithLikeButton = ({ isDib }: LikeButtonProps) => {
 
 	return (
 		<div className="w-full flex gap-6">
-			<IconButton
+			<HeartButton
+				id={id}
+				isDib={isDib}
+				size={32}
 				className="!w-8 !px-0 !py-4"
-				icon={{
-					id: isDib ? 'like-full' : 'like-empty',
-					size: 32,
-				}}
-				onClick={handleLikeClick}
 			/>
 			<Button
 				className="w-full h-[38px] k-color-Primary !text-White !typography-Btn_text1 text-center rounded-sm"

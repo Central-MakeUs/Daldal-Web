@@ -99,7 +99,7 @@ const ProductDetail = () => {
 				childrenPadding={'py-3 pl-4 pr-3'}
 				bottom="bottom-0"
 			>
-				<BuyWithLikeButton isDib={isDib} />
+				<BuyWithLikeButton id={productIdAsNumber} isDib={isDib} />
 			</FixedBottomLayout>
 		</PageLayout>
 	);

@@ -25,12 +25,14 @@ type Story = StoryObj<typeof meta>;
 
 export const LikeOn: Story = {
 	args: {
+		id: 1,
 		isDib: true,
 	},
 };
 
 export const LikeOff: Story = {
 	args: {
+		id: 2,
 		isDib: false,
 	},
 };
