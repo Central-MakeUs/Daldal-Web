@@ -36,7 +36,10 @@ const ProductCard = ({
 	};
 
 	const { mutate: postWishItem } = usePostWishItem(undefined, onErrorCallback);
-	const { mutate: deleteWishItem } = useDeleteWithItem();
+	const { mutate: deleteWishItem } = useDeleteWithItem(
+		undefined,
+		onErrorCallback,
+	);
 
 	const Image = {
 		checkbox: <ImageWithCheck src={thumbnailUrl} alt={title} id={id} />,
