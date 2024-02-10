@@ -1,15 +1,16 @@
+import { KeyValueContainer } from '@components/atoms';
 import { DefaultKeyValueContainer } from '@components/molecules';
-import { useGetImageUploadDetailList } from '@hooks/apis/imageUpload';
-import PageLayout from '@layouts/PageLayout';
+import statusTag from '@constants/statusTag';
+import { ImageUploadDetailListResponseDTO } from '@models/imageUpload/response/imageUploadDetailListResponseDTO';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
-import { useParams } from 'react-router-dom';
 
-const WithdrawalResult = () => {
-	const { resultId } = useParams();
-	const { data } = useGetImageUploadDetailList(Number(resultId));
+export type WithdrawalResultProps = {
+	data: ImageUploadDetailListResponseDTO;
+};
 
+const WithdrawalResultCompleted = ({ data }: WithdrawalResultProps) => {
 	return (
-		<PageLayout leftType="back">
+		<div className="px-6 py-5 flex flex-col gap-6">
 			<DefaultKeyValueContainer
 				title="환금 요청 일시"
 				value={getDataInYYYYMMDDSplitedByDot(data.uploadTime)}
@@ -18,8 +19,12 @@ const WithdrawalResult = () => {
 				title="환금 승인 일시"
 				value={getDataInYYYYMMDDSplitedByDot(data.approvedTime)}
 			/>
+			<KeyValueContainer
+				title="승인 여부"
+				value={statusTag[data.refundStatus]}
+			/>
 			<DefaultKeyValueContainer
-				title="환급 전 누적포인트"
+				title="보유 포인트"
 				value={getPointText(String(data.pointsBeforeRefund))}
 			/>
 			<DefaultKeyValueContainer
@@ -30,8 +35,8 @@ const WithdrawalResult = () => {
 				title="잔여 포인트"
 				value={getPointText(String(data.pointsAfterRefund))}
 			/>
-		</PageLayout>
+		</div>
 	);
 };
 
-export default WithdrawalResult;
+export default WithdrawalResultCompleted;
