@@ -1,37 +1,28 @@
-import { DefaultKeyValueContainer } from '@components/molecules';
+import {
+	WithdrawalResultCompleted,
+	WithdrawalResultInProgress,
+	WithdrawalResultRejected,
+} from '@components/templates';
 import { useGetImageUploadDetailList } from '@hooks/apis/imageUpload';
 import PageLayout from '@layouts/PageLayout';
-import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 import { useParams } from 'react-router-dom';
 
 const WithdrawalResult = () => {
 	const { resultId } = useParams();
 	const { data } = useGetImageUploadDetailList(Number(resultId));
 
-	return (
-		<PageLayout leftType="back">
-			<DefaultKeyValueContainer
-				title="환금 요청 일시"
-				value={getDataInYYYYMMDDSplitedByDot(data.uploadTime)}
-			/>
-			<DefaultKeyValueContainer
-				title="환금 승인 일시"
-				value={getDataInYYYYMMDDSplitedByDot(data.approvedTime)}
-			/>
-			<DefaultKeyValueContainer
-				title="환급 전 누적포인트"
-				value={getPointText(String(data.pointsBeforeRefund))}
-			/>
-			<DefaultKeyValueContainer
-				title="요청 포인트"
-				value={getPointText(String(data.refund))}
-			/>
-			<DefaultKeyValueContainer
-				title="잔여 포인트"
-				value={getPointText(String(data.pointsAfterRefund))}
-			/>
-		</PageLayout>
-	);
+	const renderContent = () => {
+		if (data.refundStatus === 'WITHDRAWN_IN_PROGRESS') {
+			return <WithdrawalResultInProgress data={data} />;
+		} else if (data.refundStatus === 'WITHDRAWN_COMPLETED') {
+			return <WithdrawalResultCompleted data={data} />;
+		} else if (data.refundStatus === 'WITHDRAWN_REJECTED') {
+			return <WithdrawalResultRejected data={data} />;
+		}
+		return null;
+	};
+
+	return <PageLayout leftType="back">{renderContent()}</PageLayout>;
 };
 
 export default WithdrawalResult;
