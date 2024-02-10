@@ -13,3 +13,7 @@ export { default as PreSearch } from './search/PreSearch';
 export { default as DefaultWishList } from './wishList/DefaultWishList';
 export { default as DefaultWishListWithNoItem } from './wishList/DefaultWishListWithNoItem';
 export { default as EditWishList } from './wishList/EditWishList';
+
+export { default as WithdrawalResultCompleted } from './withdrawalResult/WithdrawalResultCompleted';
+export { default as WithdrawalResultInProgress } from './withdrawalResult/WithdrawalResultInProgress';
+export { default as WithdrawalResultRejected } from './withdrawalResult/WithdrawalResultRejected';
