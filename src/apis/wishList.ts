@@ -19,8 +19,11 @@ export const postWishItem = async (
 };
 
 export const deleteWishItem = async (
-	itemId: number,
+	itemIds: number[],
 ): Promise<ApiResponse<null>> => {
-	const response = await api.delete(`api/v1/dib/${itemId}`);
+	const params = {
+		itemIds,
+	};
+	const response = await api.delete(`api/v1/dib/cancel`, { params });
 	return response.data;
 };

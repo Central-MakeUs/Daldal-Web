@@ -28,12 +28,12 @@ export const usePostWishItem = (
 	});
 };
 
-export const useDeleteWithItem = (
+export const useDeleteWishItem = (
 	successCallback?: () => void,
 	errorCallback?: (error: Error) => void,
 ) => {
 	return useMutation({
-		mutationFn: (itemId: number) => deleteWishItem(itemId),
+		mutationFn: (itemIds: number[]) => deleteWishItem(itemIds),
 		onSuccess: successCallback,
 		onError: errorCallback,
 	});
