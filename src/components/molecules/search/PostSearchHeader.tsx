@@ -1,12 +1,11 @@
-import { mockSearchResultData } from '@mocks/search';
+type PostSearchHeaderProps = {
+	totalNumber?: number;
+};
 
-const PostSearchHeader = () => {
-	// TODO: api를 통해 검색 결과 개수 가져오기
-	const searchResultCount = mockSearchResultData.totalSearchCount;
-
+const PostSearchHeader = ({ totalNumber = 0 }: PostSearchHeaderProps) => {
 	return (
 		<h4 className="typography-Body4 typography-R text-White">
-			검색 결과 <span className="text-Primary">{searchResultCount}</span> 개
+			검색 결과 <span className="text-Primary">{totalNumber}</span> 개
 		</h4>
 	);
 };

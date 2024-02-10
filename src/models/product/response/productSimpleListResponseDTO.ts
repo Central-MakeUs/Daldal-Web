@@ -13,5 +13,6 @@ export type ProductSimpleResponse = {
 
 export type ProductSimpleListResponseDTO = {
 	isLastPage: boolean;
+	count: number;
 	itemResponses: ProductSimpleResponse[];
 };

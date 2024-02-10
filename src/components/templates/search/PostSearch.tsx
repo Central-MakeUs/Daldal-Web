@@ -14,7 +14,7 @@ const PostSearch = ({ searchQuery }: PostSearchProps) => {
 	return (
 		<>
 			<SearchTextField defaultValue={searchQuery} />
-			<PostSearchHeader />
+			<PostSearchHeader totalNumber={data?.pages[0].data.count} />
 			<div className="my-3">
 				<ProductCardList
 					type="heart"
