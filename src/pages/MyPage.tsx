@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { CategoryButton } from '@components/atoms';
-import { useLogout } from '@hooks/apis/auth';
+import { CategoryButton, DefaultButton } from '@components/atoms';
+import { useDeleteServiceAccount, useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
@@ -62,22 +62,51 @@ const MyPage = () => {
 		},
 	];
 
-	const { openModal } = useModalStore();
+	const { openModal, closeModal } = useModalStore();
+
+	const onSuccessCallback = () => {
+		navigate('/sign-up');
+	};
+	const { mutate: deleteServiceAccount } =
+		useDeleteServiceAccount(onSuccessCallback);
+
+	const buttons = [
+		<DefaultButton
+			color={{
+				textColor: 'White',
+				bgColor: 'Primary',
+			}}
+			title="네"
+			size="small"
+			onClick={deleteServiceAccount}
+		/>,
+		<DefaultButton
+			title="아니오"
+			size="small"
+			color={{
+				textColor: 'Primary',
+				bgColor: 'White',
+				borderColor: 'Primary',
+			}}
+			onClick={closeModal}
+		/>,
+	];
+
 	const handleCancelEnrollmentModal = () => {
-		openModal('cancellation');
+		openModal('cancellation', buttons);
 	};
 
 	const navigateToSignUpPage = () => {
 		navigate('/sign-up');
 	};
-	const { mutate } = useLogout(navigateToSignUpPage);
+	const { mutate: logout } = useLogout(navigateToSignUpPage);
 	const handleClickLogout = () => {
 		const refreshToken = getRefreshToken();
 		if (refreshToken) {
 			const requestData = {
 				refreshToken,
 			};
-			mutate(requestData);
+			logout(requestData);
 		} else {
 			navigateToSignUpPage();
 		}

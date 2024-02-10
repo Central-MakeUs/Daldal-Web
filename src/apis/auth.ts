@@ -1,5 +1,5 @@
 import { LogoutRequestDTO } from '@models/auth/request/logoutRequestDTO';
-import { userInfoResponseDTO } from '@models/auth/response/userInfoResponseDTO';
+import { UserInfoResponseDTO } from '@models/auth/response/userInfoResponseDTO';
 import { ApiResponse } from '@type/apiResponse';
 
 import { api } from '.';
@@ -12,8 +12,15 @@ export const logout = async (
 };
 
 export const getUserInfo = async (): Promise<
-	ApiResponse<userInfoResponseDTO>
+	ApiResponse<UserInfoResponseDTO>
 > => {
 	const response = await api.get('/api/v1/auth/me');
+	return response.data;
+};
+
+export const deleteServiceAccount = async (): Promise<
+	ApiResponse<UserInfoResponseDTO>
+> => {
+	const response = await api.delete('/api/v1/auth/withdrawal');
 	return response.data;
 };

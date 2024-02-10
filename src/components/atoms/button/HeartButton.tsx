@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { IconButton, ToastMessageLikeOrDelete } from '@components/index';
-import { useDeleteWithItem, usePostWishItem } from '@hooks/apis/wishList';
+import { useDeleteWishItem, usePostWishItem } from '@hooks/apis/wishList';
 import toast from 'react-hot-toast';
 
 type HeartButtonProps = {
@@ -23,7 +23,7 @@ const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 	};
 
 	const { mutate: postWishItem } = usePostWishItem(undefined, onErrorCallback);
-	const { mutate: deleteWishItem } = useDeleteWithItem(
+	const { mutate: deleteWishList } = useDeleteWishItem(
 		undefined,
 		onErrorCallback,
 	);
@@ -35,7 +35,7 @@ const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 		setCurLike(prev => !prev);
 		//TODO 요청 중 버튼 클릭 막기
 		if (curLike) {
-			deleteWishItem(id);
+			deleteWishList([id]);
 		} else {
 			postWishItem(id);
 		}

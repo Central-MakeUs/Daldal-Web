@@ -16,9 +16,11 @@ const WishList = () => {
 		const productList = data?.pages[0].data.itemResponses;
 		if (productList && productList.length > 0) {
 			if (wishListStatus === 'default') {
-				// TODO totalProductLength 응답에서 가져오기
 				return (
-					<DefaultWishList productList={productList} totalProductLength={10} />
+					<DefaultWishList
+						productList={productList}
+						totalNumber={data.pages[0].data.count}
+					/>
 				);
 			}
 			return <EditWishList productList={productList} />;
