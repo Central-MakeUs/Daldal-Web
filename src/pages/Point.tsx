@@ -6,6 +6,7 @@ import {
 } from '@components/organisms';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
+import { useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 const Point = () => {
@@ -14,8 +15,9 @@ const Point = () => {
 		navigate('/withdrawal/pre');
 	};
 
-	const totalPoint = '10000';
-	const isPointLargerThan1000 = +totalPoint >= 1000;
+	const queryClient = useQueryClient();
+	const totalPoint = queryClient.getQueryData(['currentPoint']);
+	const isPointLargerThan1000 = totalPoint && +totalPoint >= 1000;
 
 	return (
 		<PageLayout leftType="home" className="px-6 py-3">

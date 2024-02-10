@@ -6,7 +6,8 @@ import { ImageSliderContainer } from '@components/organisms';
 import { useGetProductDetailList } from '@hooks/apis/product';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
-// import { mockProductDetailData } from '@mocks/product';
+import { useBuyButtonStore } from '@stores/buyButtonStore';
+import { useBottomSheetStore } from '@stores/layerStore';
 import { useProductStore } from '@stores/productStore';
 import { getYoutubeIdFromUrl } from '@utils/formatData';
 import { useParams } from 'react-router-dom';
@@ -36,6 +37,15 @@ const ProductDetail = () => {
 	const closeDetailImageSlider = () => {
 		setIsDetailImageSliderOpen(false);
 	};
+
+	const openBottomSheet = useBottomSheetStore(state => state.openBottomSheet);
+	const { isBuyButtonClicked, setIsBuyButtonClicked } = useBuyButtonStore();
+	useEffect(() => {
+		if (isBuyButtonClicked) {
+			openBottomSheet('imageUpload');
+			setIsBuyButtonClicked(false);
+		}
+	}, []);
 
 	const textWithEnter = {
 		moreTitle: '💕지그재그 내의 리뷰를 통해\n더 자세히 알아보세요!',

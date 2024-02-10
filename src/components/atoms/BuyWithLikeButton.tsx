@@ -1,6 +1,10 @@
 import { Button } from 'konsta/react';
 
 import { HeartButton } from '@components/atoms';
+import { useGetAccountInfo } from '@hooks/apis/account';
+import { useBuyButtonStore } from '@stores/buyButtonStore';
+import { useBottomSheetStore } from '@stores/layerStore';
+import isLogin from '@utils/isLogin';
 import { useNavigate } from 'react-router-dom';
 
 type LikeButtonProps = {
@@ -10,9 +14,24 @@ type LikeButtonProps = {
 
 const BuyWithLikeButton = ({ id, isDib }: LikeButtonProps) => {
 	const navigate = useNavigate();
+	const openBottomSheet = useBottomSheetStore(state => state.openBottomSheet);
+	const setIsBuyButtonClicked = useBuyButtonStore(
+		state => state.setIsBuyButtonClicked,
+	);
+
+	const { data: accountInfo } = useGetAccountInfo();
 
 	const handleBuyClick = () => {
-		navigate('/notification');
+		if (isLogin()) {
+			if (accountInfo.account) {
+				setIsBuyButtonClicked(true);
+				navigate('/notification');
+			} else {
+				openBottomSheet('account');
+			}
+		} else {
+			openBottomSheet('login');
+		}
 	};
 
 	return (

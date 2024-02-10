@@ -4,6 +4,7 @@ import axios, {
 	InternalAxiosRequestConfig,
 } from 'axios';
 
+import { ApiResponse } from '@type/apiResponse';
 import {
 	getAccessToken,
 	getRefreshToken,
@@ -43,19 +44,24 @@ const onResponseRejected = async (error: AxiosError) => {
 	if (!requestConfig) return Promise.reject(error);
 
 	if (error.response?.status === 401) {
-		const { data } = await api.post('/api/v1/auth/refresh-access-token', {
-			refreshToken: getRefreshToken(),
-		});
+		const errorCode = (error.response?.data as ApiResponse<null>)?.errorCode;
+		if (errorCode === '401/0001') {
+			window.location.href = '/sign-up';
+		} else if (errorCode === '401/0002') {
+			const { data } = await api.post('/api/v1/auth/refresh-access-token', {
+				refreshToken: getRefreshToken(),
+			});
 
-		const newAccessToken = data.accessToken;
-		const newRefreshToken = data.refreshToken;
+			const newAccessToken = data.accessToken;
+			const newRefreshToken = data.refreshToken;
 
-		setAccessToken(newAccessToken);
-		setRefreshToken(newRefreshToken);
+			setAccessToken(newAccessToken);
+			setRefreshToken(newRefreshToken);
 
-		requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
+			requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
 
-		return api(requestConfig);
+			return api(requestConfig);
+		}
 	}
 };
 
