@@ -1,4 +1,4 @@
-import { getUserInfo, logout } from '@apis/auth';
+import { deleteServiceAccount, getUserInfo, logout } from '@apis/auth';
 import { LogoutRequestDTO } from '@models/auth/request/logoutRequestDTO';
 import { useMutation } from '@tanstack/react-query';
 import {
@@ -37,6 +37,17 @@ export const useGetUserInfo = (errorCallback?: (error: Error) => void) => {
 			setUserName(userInfo.data.email);
 			setProvider(userInfo.data.provider);
 		},
+		onError: errorCallback,
+	});
+};
+
+export const useDeleteServiceAccount = (
+	successCallback?: () => void,
+	errorCallback?: (error: Error) => void,
+) => {
+	return useMutation({
+		mutationFn: () => deleteServiceAccount(),
+		onSuccess: successCallback,
 		onError: errorCallback,
 	});
 };
