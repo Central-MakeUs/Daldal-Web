@@ -1,9 +1,11 @@
 import { DefaultButton } from '@components/index';
 import { EditWishListHeader } from '@components/molecules';
 import { ProductCardList } from '@components/organisms';
+import { useDeleteWishItem } from '@hooks/apis/wishList';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import { ProductSimpleList } from '@models/product/entity/product';
-import { useWishListEditStore } from '@stores/wishListStore';
+import { useWishListEditStore, useWishListStore } from '@stores/wishListStore';
+import { useQueryClient } from '@tanstack/react-query';
 
 type EditWishListProps = {
 	productList: ProductSimpleList;
@@ -11,9 +13,19 @@ type EditWishListProps = {
 
 const EditWishList = ({ productList }: EditWishListProps) => {
 	const checkedItems = useWishListEditStore(state => state.checkedItems);
+	const setWishListStatus = useWishListStore(state => state.setWishListStatus);
+
+	const queryClient = useQueryClient();
+	const onSuccessCallback = () => {
+		queryClient.invalidateQueries({
+			queryKey: ['wishListProductSimpleList'],
+		});
+		setWishListStatus('default');
+	};
+	const { mutate: deleteWishList } = useDeleteWishItem(onSuccessCallback);
 
 	const handleDeleteItems = () => {
-		//TODO delete api
+		deleteWishList(checkedItems);
 	};
 
 	return (
