@@ -22,7 +22,7 @@ export const deleteWishItem = async (
 	itemIds: number[],
 ): Promise<ApiResponse<null>> => {
 	const params = {
-		itemIds,
+		itemIds: itemIds.join(','),
 	};
 	const response = await api.delete(`api/v1/dib/cancel`, { params });
 	return response.data;

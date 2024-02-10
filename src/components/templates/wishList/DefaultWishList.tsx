@@ -16,7 +16,7 @@ const DefaultWishList = ({
 			<DefaultWishListHeader />
 			<div className="my-3">
 				<h4 className="typography-Body4 typography-R text-White">
-					검색 결과 <span className="text-Primary">{totalNumber}</span> 개
+					<span className="text-Primary">{totalNumber}</span> 개
 				</h4>
 				<ProductCardList type="default" productList={productList} />
 			</div>

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import {
 	DefaultWishList,
 	DefaultWishListWithNoItem,
@@ -5,12 +7,21 @@ import {
 } from '@components/templates';
 import { useGetWishListProductSimpleList } from '@hooks/apis/wishList';
 import PageLayout from '@layouts/PageLayout';
-import { useWishListStore } from '@stores/wishListStore';
+import { useWishListEditStore, useWishListStore } from '@stores/wishListStore';
 
 const WishList = () => {
 	const wishListStatus = useWishListStore(state => state.wishListStatus);
+	const setWishListStatus = useWishListStore(state => state.setWishListStatus);
+	const initCheckedItems = useWishListEditStore(
+		state => state.initCheckedItems,
+	);
 
 	const { data } = useGetWishListProductSimpleList();
+
+	useEffect(() => {
+		setWishListStatus('default');
+		initCheckedItems();
+	}, []);
 
 	const renderContent = () => {
 		const productList = data?.pages[0].data.itemResponses;
