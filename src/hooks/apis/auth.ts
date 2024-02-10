@@ -34,7 +34,7 @@ export const useGetUserInfo = (errorCallback?: (error: Error) => void) => {
 	return useMutation({
 		mutationFn: () => getUserInfo(),
 		onSuccess: userInfo => {
-			setUserName(userInfo.data.name);
+			setUserName(userInfo.data.email);
 			setProvider(userInfo.data.provider);
 		},
 		onError: errorCallback,
