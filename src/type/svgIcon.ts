@@ -58,7 +58,10 @@ export type IconId =
 	| 'triangle'
 	| '404'
 	| 'error'
-	| 'no-wish-list';
+	| 'no-wish-list'
+	| 'category-fashion'
+	| 'category-bottoms'
+	| 'category-etc';
 
 type SvgIcon = {
 	id: IconId;
