@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const RightHeader = () => {
 	const navigate = useNavigate();
-	const { openBottomSheet } = useBottomSheetStore();
+	const openBottomSheet = useBottomSheetStore(state => state.openBottomSheet);
 
 	const handleClickLike = () => {
 		if (isLogin()) {

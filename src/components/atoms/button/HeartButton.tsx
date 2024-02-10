@@ -15,7 +15,7 @@ type HeartButtonProps = {
 
 const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 	const [curLike, setCurLike] = useState<boolean>(isDib);
-	const { openBottomSheet } = useBottomSheetStore();
+	const openBottomSheet = useBottomSheetStore(state => state.openBottomSheet);
 
 	useEffect(() => {
 		setCurLike(isDib);
