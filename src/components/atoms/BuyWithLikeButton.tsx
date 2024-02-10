@@ -1,6 +1,8 @@
 import { Button } from 'konsta/react';
 
 import { HeartButton } from '@components/atoms';
+import { useBottomSheetStore } from '@stores/layerStore';
+import isLogin from '@utils/isLogin';
 import { useNavigate } from 'react-router-dom';
 
 type LikeButtonProps = {
@@ -10,9 +12,14 @@ type LikeButtonProps = {
 
 const BuyWithLikeButton = ({ id, isDib }: LikeButtonProps) => {
 	const navigate = useNavigate();
+	const { openBottomSheet } = useBottomSheetStore();
 
 	const handleBuyClick = () => {
-		navigate('/notification');
+		if (isLogin()) {
+			navigate('/notification');
+		} else {
+			openBottomSheet('login');
+		}
 	};
 
 	return (

@@ -1,19 +1,33 @@
 import { IconButton } from '@components/atoms';
 import colors from '@constants/colors';
+import { useBottomSheetStore } from '@stores/layerStore';
+import isLogin from '@utils/isLogin';
 import { useNavigate } from 'react-router-dom';
 
 const RightHeader = () => {
 	const navigate = useNavigate();
+	const { openBottomSheet } = useBottomSheetStore();
 
-	// TODO: 로그인 상태에 따라 다른 동작 구현
 	const handleClickLike = () => {
-		navigate('/wish-list');
+		if (isLogin()) {
+			navigate('/wish-list');
+		} else {
+			openBottomSheet('login');
+		}
 	};
 	const handleClickPoint = () => {
-		navigate('/point');
+		if (isLogin()) {
+			navigate('/point');
+		} else {
+			openBottomSheet('login');
+		}
 	};
 	const handleClickMyPage = () => {
-		navigate('/my-page');
+		if (isLogin()) {
+			navigate('/my-page');
+		} else {
+			openBottomSheet('login');
+		}
 	};
 
 	const menuStyle = '!w-8 !px-0 !py-4';
