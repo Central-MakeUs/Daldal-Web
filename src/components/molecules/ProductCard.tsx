@@ -50,7 +50,7 @@ const ProductCard = ({
 
 	return (
 		<div
-			className={`flex flex-col ${stylesBySize[size].containerGap} cursor-pointer aspect-square`}
+			className={`flex flex-col ${stylesBySize[size].containerGap} cursor-pointer w-full aspect-square`}
 			onClick={type !== 'checkbox' ? handleCardClick : () => {}}
 		>
 			{Image[type]}
