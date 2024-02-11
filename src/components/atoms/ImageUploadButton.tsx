@@ -3,9 +3,17 @@ import { useCallback, useRef } from 'react';
 
 import { SvgIcon } from '@components/common';
 import colors from '@constants/colors';
+import { usePostImageUpload } from '@hooks/apis/imageUpload';
+import { useQueryClient } from '@tanstack/react-query';
 
 const ImageUploadButton = () => {
 	const inputRef = useRef<HTMLInputElement | null>(null);
+
+	const queryClient = useQueryClient();
+	const onSuccessCallback = () => {
+		queryClient.invalidateQueries({ queryKey: ['imageUploadSimpleList'] });
+	};
+	const { mutate } = usePostImageUpload(onSuccessCallback);
 
 	const onUploadImage = useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +22,8 @@ const ImageUploadButton = () => {
 			}
 			const formData = new FormData();
 			formData.append('file', e.target.files[0]);
-			//TODO api 연동 + invalidate getImageUploadSimpleList
+
+			mutate(formData);
 		},
 		[],
 	);
