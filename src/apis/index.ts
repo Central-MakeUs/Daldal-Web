@@ -5,12 +5,13 @@ import axios, {
 } from 'axios';
 
 import { ApiResponse } from '@type/apiResponse';
-import { removeServiceAccountCache } from '@utils/localStorage/removeServiceAccountCache';
 import {
 	getAccessToken,
 	getRefreshToken,
+	renewAccessToken,
 	setAccessToken,
 	setRefreshToken,
+	verifyAccessToken,
 } from '@utils/localStorage/token';
 
 export const api = axios.create({
@@ -23,7 +24,12 @@ export const api = axios.create({
 });
 
 const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
-	const accessToken = getAccessToken();
+	let accessToken = getAccessToken();
+
+	if (!verifyAccessToken()) {
+		renewAccessToken();
+		accessToken = getAccessToken();
+	}
 
 	if (accessToken && config.headers) {
 		config.headers['Authorization'] = `Bearer ${accessToken}`;
@@ -47,8 +53,7 @@ const onResponseRejected = async (error: AxiosError) => {
 	if (error.response?.status === 401) {
 		const errorCode = (error.response?.data as ApiResponse<null>)?.errorCode;
 		if (errorCode === '401/0001') {
-			removeServiceAccountCache();
-			window.location.href = '/sign-up';
+			renewAccessToken();
 		} else if (errorCode === '401/0002') {
 			const { data } = await api.post('/api/v1/auth/refresh-access-token', {
 				refreshToken: getRefreshToken(),
