@@ -1,51 +1,67 @@
-import { Point, PointHistoryList } from '@models/point/entity/point';
+import { PointHistoryList } from '@models/point/entity/point';
 
-type MockPointHistory = {
-	totalPoint: Point;
-	buyResponses: PointHistoryList;
-};
+export const mockCurrentPointHistory: PointHistoryList = [
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'IN_PROGRESS',
+	},
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'REJECTED',
+	},
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'WITHDRAWN_IN_PROGRESS',
+	},
+];
 
-export const mockCurrentPointHistory: MockPointHistory = {
-	totalPoint: '1000',
-	buyResponses: [
-		{
-			refund: '1000',
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 1,
-			refundStatus: 'COMPLETED',
-		},
-		{
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 2,
-			refundStatus: 'REJECTED',
-		},
-		{
-			refund: '1000',
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 3,
-			refundStatus: 'WITHDRAWN',
-		},
-	],
-};
-
-export const mockPastPointHistory: MockPointHistory = {
-	totalPoint: '1000',
-	buyResponses: [
-		{
-			refund: '1000',
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 4,
-			refundStatus: 'COMPLETED',
-		},
-		{
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 5,
-			refundStatus: 'REJECTED',
-		},
-		{
-			uploadTime: '2021-09-23T15:00:00.000Z',
-			id: 6,
-			refundStatus: 'IN_PROGRESS',
-		},
-	],
-};
+export const mockPastPointHistory: PointHistoryList = [
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'COMPLETED',
+	},
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'WITHDRAWN_REJECTED',
+	},
+	{
+		id: 12,
+		approvedTime: '2023-12-22T23:16:12:32',
+		purchase: 100,
+		uploadTime: '2024-02-10T06:36:15.396Z',
+		pointsBeforeRefund: 3000,
+		pointsAfterRefund: 2000,
+		refund: '1000',
+		refundStatus: 'WITHDRAWN_COMPLETED',
+	},
+];

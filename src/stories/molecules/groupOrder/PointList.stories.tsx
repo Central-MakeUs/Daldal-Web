@@ -28,9 +28,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ThisMonth: Story = {
-	args: mockCurrentPointHistory,
+	args: { pointList: mockCurrentPointHistory },
 };
 
 export const NextMonth: Story = {
-	args: mockPastPointHistory,
+	args: { pointList: mockPastPointHistory },
 };

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 
-import { Point, RefundStatus } from '@models/point/entity/point';
+import { Point } from '@models/point/entity/point';
+import { KoRefundStatus } from '@type/refundStatus';
 
 export const changeNumberIntoStringWithComma = (point: number) => {
 	return new Intl.NumberFormat().format(point);
@@ -10,7 +11,7 @@ export const isPointState = (point: Point) => {
 	return !/^[0-9]+$/.test(String(point));
 };
 
-export const getPointText = (point?: Point, status?: RefundStatus) => {
+export const getPointText = (point?: Point, status?: KoRefundStatus) => {
 	switch (status) {
 		case '진행중':
 			return status;
