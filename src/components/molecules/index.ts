@@ -15,7 +15,8 @@ export { default as DisabledFormElement } from './form/DisabledFormElement';
 export { default as LeftBackHeader } from './headers/leftHeaders/LeftBackHeader';
 export { default as LeftHomeHeader } from './headers/leftHeaders/LeftHomeHeader';
 export { default as LeftLogoHeader } from './headers/leftHeaders/LeftLogoHeader';
-export { default as RightHeader } from './headers/rightHeaders/RightHeader';
+export { default as RightDefaultHeader } from './headers/rightHeaders/RightDefaultHeader';
+export { default as RightPointHeader } from './headers/rightHeaders/RightPointHeader';
 
 export { default as LargeProductDetailImageSlider } from './imageSlider/LargeProductDetailImageSlider';
 export { default as SmallProductDetailImageSlider } from './imageSlider/SmallProductDetailImageSlider';

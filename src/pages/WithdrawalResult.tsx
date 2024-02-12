@@ -22,7 +22,11 @@ const WithdrawalResult = () => {
 		return null;
 	};
 
-	return <PageLayout leftType="back">{renderContent()}</PageLayout>;
+	return (
+		<PageLayout leftType="back" rightType="withdrawal">
+			{renderContent()}
+		</PageLayout>
+	);
 };
 
 export default WithdrawalResult;

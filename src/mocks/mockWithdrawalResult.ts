@@ -17,7 +17,7 @@ export const mockRealWithdrawalResult: ImageUploadDetailListResponseDTO = {
 	pointsBeforeRefund: 3000,
 	pointsAfterRefund: 2000,
 	refund: '1000',
-	refundStatus: 'WITHDRAWN_REJECTED',
+	refundStatus: 'WITHDRAWN_COMPLETED',
 	rejectReason: 'rejected',
 	certImageUrl: 'https://mock',
 };
