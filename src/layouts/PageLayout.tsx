@@ -10,10 +10,15 @@ export type PageLayoutDefaultProps = {
 
 type PageLayoutProps = PageLayoutDefaultProps & LeftHeaderProps;
 
-const PageLayout = ({ children, className, leftType }: PageLayoutProps) => {
+const PageLayout = ({
+	children,
+	className,
+	leftType,
+	rightType,
+}: PageLayoutProps) => {
 	return (
 		<div className="w-[600px] h-fit min-h-screen">
-			<Header leftType={leftType} />
+			<Header leftType={leftType} rightType={rightType} />
 			<div className={`w-full ${className}`}>{children}</div>
 		</div>
 	);

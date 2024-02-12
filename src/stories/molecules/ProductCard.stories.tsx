@@ -16,59 +16,59 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title: 'title',
 		price: 10000,
 		refund: 200000,
 		size: 'medium',
 		type: 'default',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };
 
 export const Checkbox: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title: 'title',
 		price: 10000,
 		refund: 200000,
 		size: 'medium',
 		type: 'checkbox',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };
 
 export const Heart: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title: 'title',
 		price: 10000,
 		refund: 200000,
 		size: 'medium',
 		type: 'heart',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };
 
 export const Small: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title: 'title',
 		price: 10000,
 		refund: 200000,
 		size: 'small',
 		type: 'default',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };
 
 export const Medium: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title:
 			'바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩',
 		price: 10000,
@@ -76,13 +76,13 @@ export const Medium: Story = {
 		size: 'medium',
 		type: 'default',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };
 
 export const Large: Story = {
 	args: {
-		thumbnail: 'https://via.placeholder.com/150',
+		thumbnailUrl: 'https://via.placeholder.com/150',
 		title:
 			'바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩 바토 볼레로 스퀘어넥 겨울 루즈핏 니트 (4color) 연말룩/데이트룩/하객룩',
 		price: 10000,
@@ -90,6 +90,6 @@ export const Large: Story = {
 		size: 'large',
 		type: 'default',
 		id: 1,
-		isLike: false,
+		isDib: false,
 	},
 };

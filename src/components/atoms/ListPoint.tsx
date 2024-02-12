@@ -18,9 +18,13 @@ const ListPoint = ({
 }: ListPointProps) => {
 	const navigate = useNavigate();
 
-	const covertedRefundStatus = koRefundStatus[refundStatus];
+	const convertedRefundStatus = koRefundStatus[refundStatus];
 	const handleNavigateToDetailPage = () => {
-		if (covertedRefundStatus === '출금') {
+		if (
+			['출금 진행중', '출금 승인', '출금 미승인'].includes(
+				convertedRefundStatus,
+			)
+		) {
 			navigate(`/withdrawal-result/${id}`);
 		} else {
 			navigate(`/image-upload/${id}`);
@@ -28,9 +32,11 @@ const ListPoint = ({
 	};
 
 	const colorsByPoint: { [key in KoRefundStatus]: string } = {
-		미승인: 'text-Error',
-		진행중: 'text-Secondary_B',
-		승인: 'text-Gray20',
+		'적립 미승인': 'text-Error',
+		'적립 진행중': 'text-Secondary_B',
+		적립: 'text-Gray20',
+		'출금 미승인': 'text-Error',
+		'출금 진행중': 'text-Secondary_B',
 		출금: 'text-Gray20',
 	};
 
@@ -46,9 +52,9 @@ const ListPoint = ({
 						{getDataInYYYYMMDDSplitedByDot(uploadTime)}
 					</span>
 					<span
-						className={`typography-Body2 typography-R ${colorsByPoint[covertedRefundStatus]}`}
+						className={`typography-Body2 typography-R ${colorsByPoint[convertedRefundStatus]}`}
 					>
-						{getPointText(refund, covertedRefundStatus)}
+						{getPointText(refund, convertedRefundStatus)}
 					</span>
 				</Block>
 			</Block>

@@ -17,3 +17,14 @@ export const getImageUploadDetailList = async (
 	const response = await api.get(`/api/v1/buys/${buyId}`);
 	return response.data;
 };
+
+export const postImageUpload = async (
+	data: FormData,
+): Promise<ApiResponse<ImageUploadDetailListResponseDTO>> => {
+	const response = await api.post('/api/v1/buys', data, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
+	return response.data;
+};

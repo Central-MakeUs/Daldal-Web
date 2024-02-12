@@ -38,7 +38,7 @@ const ImageUploadDetail = () => {
 	};
 
 	return (
-		<PageLayout leftType="back">
+		<PageLayout leftType="back" rightType="imageUpload">
 			<img src={mockImages[0]} alt="인증 사진" />
 			<div className="p-6 flex flex-col gap-6">
 				<DefaultKeyValueContainer

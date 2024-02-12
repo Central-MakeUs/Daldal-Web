@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 
-import { Point, RefundStatus } from '@models/point/entity/point';
+import { Point } from '@models/point/entity/point';
+import { KoRefundStatus } from '@type/refundStatus';
 
 export const changeNumberIntoStringWithComma = (point: number) => {
 	return new Intl.NumberFormat().format(point);
@@ -10,25 +11,22 @@ export const isPointState = (point: Point) => {
 	return !/^[0-9]+$/.test(String(point));
 };
 
-export const getPointText = (point?: Point, status?: RefundStatus) => {
+export const getPointText = (point?: Point, status?: KoRefundStatus) => {
 	switch (status) {
-		case '진행중':
+		case '적립 진행중':
+		case '출금 진행중':
 			return status;
-		case '미승인':
+		case '적립 미승인':
+		case '출금 미승인':
 			return status;
+		case '적립':
 		case '출금':
 			return (
 				(point &&
 					`${changeNumberIntoStringWithComma(
 						+getOriginalPoint(point),
-					)} P 출금`) ||
-				'0 P 출금'
-			);
-		case '승인':
-			return (
-				(point &&
-					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
-				'0 P'
+					)} P ${status}`) ||
+				`0 P ${status}`
 			);
 		default:
 			return (

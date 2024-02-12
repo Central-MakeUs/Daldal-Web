@@ -4,7 +4,7 @@ import { useBottomSheetStore } from '@stores/layerStore';
 import isLogin from '@utils/isLogin';
 import { useNavigate } from 'react-router-dom';
 
-const RightHeader = () => {
+const RightDefaultHeader = () => {
 	const navigate = useNavigate();
 	const openBottomSheet = useBottomSheetStore(state => state.openBottomSheet);
 
@@ -63,4 +63,4 @@ const RightHeader = () => {
 	);
 };
 
-export default RightHeader;
+export default RightDefaultHeader;

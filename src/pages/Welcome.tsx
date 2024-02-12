@@ -1,10 +1,27 @@
+import { useEffect } from 'react';
+
 import { DefaultButton, SvgIcon } from '@components/index';
+import { useGetUserInfo } from '@hooks/apis/auth';
 import ClearLayout from '@layouts/ClearLayout';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { useNavigate } from 'react-router-dom';
+import { setAccessToken, setRefreshToken } from '@utils/localStorage/token';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const Welcome = () => {
 	const navigate = useNavigate();
+	const { mutate } = useGetUserInfo();
+
+	const [searchParams] = useSearchParams();
+	const accessTokenParam = searchParams.get('access-token');
+	const refreshTokenParam = searchParams.get('refresh-token');
+
+	useEffect(() => {
+		if (accessTokenParam && refreshTokenParam) {
+			setAccessToken(accessTokenParam);
+			setRefreshToken(refreshTokenParam);
+			mutate();
+		}
+	}, []);
 
 	const description = '반갑습니다!\n 달달한 쇼핑을 마음껏 누려보세요!';
 

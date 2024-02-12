@@ -85,7 +85,7 @@ const SearchTextField = ({
 				onKeyDown={handleEnter}
 				type="text"
 				placeholder="화장품 사고 3% 환급받자💄"
-				className="bg-Gray80 text-white placeholder:text-Gray20 flex-1 focus-visible:outline-none typography-Body2 typography-R"
+				className="w-full bg-Gray80 text-white placeholder:text-Gray20 flex-1 focus-visible:outline-none typography-Body2 typography-R"
 			/>
 			{renderClearButton()}
 		</div>

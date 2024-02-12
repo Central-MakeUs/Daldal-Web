@@ -33,7 +33,16 @@ const providerWithProps: ComponentWithProps[] = [
 			},
 		},
 	],
-	[Suspense, { fallback: <Preloader className="k-color-Primary" /> }],
+	[
+		Suspense,
+		{
+			fallback: (
+				<div className="w-full h-full flex justify-center items-center">
+					<Preloader className="k-color-Primary" />
+				</div>
+			),
+		},
+	],
 ];
 
 const ProvidersTree = buildProvidersTree(providerWithProps);
