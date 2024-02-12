@@ -13,23 +13,20 @@ export const isPointState = (point: Point) => {
 
 export const getPointText = (point?: Point, status?: KoRefundStatus) => {
 	switch (status) {
-		case '진행중':
+		case '적립 진행중':
+		case '출금 진행중':
 			return status;
-		case '미승인':
+		case '적립 미승인':
+		case '출금 미승인':
 			return status;
+		case '적립':
 		case '출금':
 			return (
 				(point &&
 					`${changeNumberIntoStringWithComma(
 						+getOriginalPoint(point),
-					)} P 출금`) ||
-				'0 P 출금'
-			);
-		case '승인':
-			return (
-				(point &&
-					`${changeNumberIntoStringWithComma(+getOriginalPoint(point))} P`) ||
-				'0 P'
+					)} P ${status}`) ||
+				`0 P ${status}`
 			);
 		default:
 			return (

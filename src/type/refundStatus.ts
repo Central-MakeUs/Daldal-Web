@@ -1,3 +1,5 @@
+import koRefundStatus from '@constants/koRefundStatus';
+
 export type RefundStatus =
 	| 'IN_PROGRESS'
 	| 'COMPLETED'
@@ -16,4 +18,5 @@ export type WithdrawalResultRefundStatus = Extract<
 	'WITHDRAWN_IN_PROGRESS' | 'WITHDRAWN_COMPLETED' | 'WITHDRAWN_REJECTED'
 >;
 
-export type KoRefundStatus = '미승인' | '승인' | '진행중' | '출금';
+export type KoRefundStatus =
+	(typeof koRefundStatus)[keyof typeof koRefundStatus];
