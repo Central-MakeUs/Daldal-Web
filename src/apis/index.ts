@@ -7,11 +7,8 @@ import axios, {
 import { ApiResponse } from '@type/apiResponse';
 import {
 	getAccessToken,
-	getRefreshToken,
 	renewAccessToken,
-	setAccessToken,
-	setRefreshToken,
-	verifyAccessToken,
+	renewRefreshToken,
 } from '@utils/localStorage/token';
 
 export const api = axios.create({
@@ -24,15 +21,13 @@ export const api = axios.create({
 });
 
 const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
-	let accessToken = getAccessToken();
-
-	if (!verifyAccessToken()) {
-		renewAccessToken();
-		accessToken = getAccessToken();
-	}
+	const accessToken = getAccessToken();
 
 	if (accessToken && config.headers) {
 		config.headers['Authorization'] = `Bearer ${accessToken}`;
+	} else {
+		const superToken = import.meta.env.VITE_SUPER_TOKEN;
+		config.headers['Authorization'] = `Bearer ${superToken}`;
 	}
 
 	return config;
@@ -53,17 +48,9 @@ const onResponseRejected = async (error: AxiosError) => {
 	if (error.response?.status === 401) {
 		const errorCode = (error.response?.data as ApiResponse<null>)?.errorCode;
 		if (errorCode === '401/0001') {
-			renewAccessToken();
+			renewRefreshToken();
 		} else if (errorCode === '401/0002') {
-			const { data } = await api.post('/api/v1/auth/refresh-access-token', {
-				refreshToken: getRefreshToken(),
-			});
-
-			const newAccessToken = data.accessToken;
-			const newRefreshToken = data.refreshToken;
-
-			setAccessToken(newAccessToken);
-			setRefreshToken(newRefreshToken);
+			const newAccessToken = await renewAccessToken();
 
 			requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
 
