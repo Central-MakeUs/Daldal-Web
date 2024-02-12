@@ -100,7 +100,6 @@ const ProductDetail = () => {
 					</h6>
 					<iframe
 						src={redirectUrl}
-						//src="https://zigzag.kr/"
 						className="w-full aspect-[1/2] border-Gray60 rounded-3xl border-[7px]"
 					/>
 				</div>

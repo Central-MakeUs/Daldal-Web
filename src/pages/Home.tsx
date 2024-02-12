@@ -1,4 +1,3 @@
-import { Button } from 'konsta/react';
 import { useEffect } from 'react';
 
 import { SearchTextField } from '@components/atoms';
@@ -44,15 +43,6 @@ const Home = () => {
 					productList={productSimpleList?.pages[0].data.itemResponses}
 				/>
 			</div>
-			<Button
-				onClick={() => {
-					setAccessToken(
-						'eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MSwiaWF0IjoxNzA3NjgzOTEwLCJleHAiOjE3MjU2ODM5MTAsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTixST0xFX1VTRVIifQ.jMuyrJ0q5oanPux-q3tLEGNiU9eZFS2EOb6ARQsKw76sh9Mat7avnFB-w7GzC7Hcwb1pHA657WOclEWDdhqJvw',
-					);
-				}}
-			>
-				token
-			</Button>
 		</PageLayout>
 	);
 };
