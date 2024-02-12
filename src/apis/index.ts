@@ -5,6 +5,7 @@ import axios, {
 } from 'axios';
 
 import { ApiResponse } from '@type/apiResponse';
+import { removeServiceAccountCache } from '@utils/localStorage/removeServiceAccountCache';
 import {
 	getAccessToken,
 	getRefreshToken,
@@ -46,6 +47,7 @@ const onResponseRejected = async (error: AxiosError) => {
 	if (error.response?.status === 401) {
 		const errorCode = (error.response?.data as ApiResponse<null>)?.errorCode;
 		if (errorCode === '401/0001') {
+			removeServiceAccountCache();
 			window.location.href = '/sign-up';
 		} else if (errorCode === '401/0002') {
 			const { data } = await api.post('/api/v1/auth/refresh-access-token', {
