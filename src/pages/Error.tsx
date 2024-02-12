@@ -25,6 +25,7 @@ const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 
 	const handleClickHome = () => {
 		navigate('/');
+		resetErrorBoundary();
 	};
 
 	const message = {
