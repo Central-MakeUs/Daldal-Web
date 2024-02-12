@@ -1,3 +1,4 @@
+import { api } from '@apis/index';
 import LocalStorageKey from '@constants/localStorageKey';
 import { removeServiceAccountCache } from '@utils/localStorage/removeServiceAccountCache';
 
@@ -44,7 +45,21 @@ export const verifyRefreshToken = () => {
 	return false;
 };
 
-export const renewAccessToken = () => {
+export const renewAccessToken = async () => {
+	const { data } = await api.post('/api/v1/auth/refresh-access-token', {
+		refreshToken: getRefreshToken(),
+	});
+
+	const newAccessToken = data.accessToken;
+	const newRefreshToken = data.refreshToken;
+
+	setAccessToken(newAccessToken);
+	setRefreshToken(newRefreshToken);
+
+	return newAccessToken;
+};
+
+export const renewRefreshToken = () => {
 	removeServiceAccountCache();
 	window.location.href = '/sign-up';
 };
