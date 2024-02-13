@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { GroupOrderTextPoint, DefaultButton } from '@components/atoms';
 import { useGetAccountInfo } from '@hooks/apis/account';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
@@ -17,20 +15,16 @@ const PreWithdrawal = () => {
 	};
 
 	const queryClient = useQueryClient();
-	const { data, mutate } = useGetAccountInfo();
+	const { data } = useGetAccountInfo();
 	const point = queryClient.getQueryData(['currentPoint']);
-
-	useEffect(() => {
-		mutate();
-	}, []);
 
 	return (
 		<div className="typography-Body1 typography-R text-White flex flex-col gap-12 h-full">
 			<div className="flex flex-col">
 				회원님의 계좌는
-				<span className="typography-Headline">{data?.data.accountBank}</span>
+				<span className="typography-Headline">{data?.accountBank}</span>
 				<div className="flex items-end gap-2">
-					<span className="typography-Headline">{data?.data.account}</span>
+					<span className="typography-Headline">{data?.account}</span>
 					입니다.
 				</div>
 			</div>

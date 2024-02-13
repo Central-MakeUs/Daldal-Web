@@ -1,12 +1,27 @@
 import { getAccountInfo, patchAccountInfo } from '@apis/account';
 import { AccountInfoRequestDTO } from '@models/account/request/accountInfoRequestDTO';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { getAccessToken } from '@utils/localStorage/token';
 
 export const useGetAccountInfo = () => {
-	return useMutation({
-		//queryKey: ['accountInfo'],
-		mutationFn: () => getAccountInfo(),
-		//select: data => data.data,
+	const accessToken = getAccessToken();
+
+	if (!accessToken) {
+		return {
+			data: {
+				account: '',
+				accountBank: '',
+				depositorName: '',
+			},
+			isError: true,
+		};
+	}
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	return useQuery({
+		queryKey: ['accountInfo'],
+		queryFn: () => getAccountInfo(),
+		select: data => data.data,
 	});
 };
 

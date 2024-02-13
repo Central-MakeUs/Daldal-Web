@@ -4,19 +4,32 @@ import {
 	ExpectedPointHistory,
 	CumulatedPointHistory,
 } from '@components/organisms';
+import { useGetAccountInfo } from '@hooks/apis/account';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
 import PageLayout from '@layouts/PageLayout';
+import { useBottomSheetStore } from '@stores/layerStore';
 import { useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
 const Point = () => {
 	const navigate = useNavigate();
+	const queryClient = useQueryClient();
+	const { data: userInfo } = useGetAccountInfo();
+
+	const { openBottomSheet } = useBottomSheetStore();
+
 	const handleCaptionButtonClick = () => {
+		if (!userInfo?.account) {
+			openBottomSheet('account');
+			return;
+		}
 		navigate('/withdrawal/pre');
 	};
 
-	const queryClient = useQueryClient();
-	const totalPoint = queryClient.getQueryData(['currentPoint']);
+	const totalPoint = (
+		queryClient.getQueryData(['currentPoint']) as { data: number }
+	)?.data;
+
 	const isPointLargerThan1000 = totalPoint && +totalPoint >= 1000;
 
 	return (
