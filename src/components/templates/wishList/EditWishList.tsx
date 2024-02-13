@@ -3,12 +3,15 @@ import { EditWishListHeader } from '@components/molecules';
 import { ProductCardList } from '@components/organisms';
 import { useDeleteWishItem } from '@hooks/apis/wishList';
 import FixedBottomLayout from '@layouts/FixedBottomLayout';
-import { ProductSimpleList } from '@models/product/entity/product';
+import { ProductSimpleListResponseDTO } from '@models/product/response/productSimpleListResponseDTO';
 import { useWishListEditStore, useWishListStore } from '@stores/wishListStore';
-import { useQueryClient } from '@tanstack/react-query';
+import { InfiniteData, useQueryClient } from '@tanstack/react-query';
+import { ApiResponse } from '@type/apiResponse';
 
 type EditWishListProps = {
-	productList: ProductSimpleList;
+	productList:
+		| InfiniteData<ApiResponse<ProductSimpleListResponseDTO>, unknown>
+		| undefined;
 };
 
 const EditWishList = ({ productList }: EditWishListProps) => {
@@ -32,7 +35,13 @@ const EditWishList = ({ productList }: EditWishListProps) => {
 		<>
 			<EditWishListHeader />
 			<div className="my-3">
-				<ProductCardList type="checkbox" productList={productList} />
+				{productList?.pages.map((page, index) => (
+					<ProductCardList
+						key={`EditWishList#${index}`}
+						productList={page.data.itemResponses}
+						type="checkbox"
+					/>
+				))}
 			</div>
 			{checkedItems.length > 0 && (
 				<FixedBottomLayout childrenPadding="px-6" height="h-15">
