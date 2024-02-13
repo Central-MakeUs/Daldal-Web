@@ -1,5 +1,4 @@
 import { ProductCard } from '@components/molecules';
-import { mockProductSimpleList } from '@mocks/mockProductSimpleList';
 import { ProductSimpleList } from '@models/product/entity/product';
 
 const classNameOfGridCols = {
@@ -13,14 +12,14 @@ type ProductCardListProps = {
 	gridCols?: GridCols;
 	size?: 'small' | 'medium' | 'large';
 	type?: 'heart' | 'checkbox' | 'default';
-	productList?: ProductSimpleList;
+	productList: ProductSimpleList;
 };
 
 const ProductCardList = ({
 	gridCols = 2,
 	size = 'medium',
 	type = 'default',
-	productList = mockProductSimpleList,
+	productList,
 }: ProductCardListProps) => {
 	return (
 		<div className={`grid gap-4 ${classNameOfGridCols[gridCols]}`}>
