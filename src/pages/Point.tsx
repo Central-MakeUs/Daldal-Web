@@ -16,7 +16,10 @@ const Point = () => {
 	};
 
 	const queryClient = useQueryClient();
-	const totalPoint = queryClient.getQueryData(['currentPoint']);
+	const totalPoint = (
+		queryClient.getQueryData(['currentPoint']) as { data: number }
+	)?.data;
+	console.log(totalPoint);
 	const isPointLargerThan1000 = totalPoint && +totalPoint >= 1000;
 
 	return (
