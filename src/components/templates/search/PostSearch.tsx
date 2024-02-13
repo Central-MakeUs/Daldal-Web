@@ -1,7 +1,10 @@
+import { Preloader } from 'konsta/react';
+
 import { SearchTextField } from '@components/atoms';
 import { PostSearchHeader } from '@components/molecules';
 import { ProductCardList } from '@components/organisms';
 import { useSearch } from '@hooks/apis/search';
+import useIntersection from '@hooks/infiniteScroll';
 import { SearchQuery } from '@type/searchQuery';
 
 type PostSearchProps = {
@@ -9,18 +12,28 @@ type PostSearchProps = {
 };
 
 const PostSearch = ({ searchQuery }: PostSearchProps) => {
-	const { data } = useSearch(searchQuery);
+	const { data, fetchNextPage, isFetchingNextPage } = useSearch(searchQuery);
+	const intersectionRef = useIntersection(fetchNextPage);
 
 	return (
 		<>
 			<SearchTextField defaultValue={searchQuery} />
 			<PostSearchHeader totalNumber={data?.pages[0].data.count} />
 			<div className="my-3">
-				<ProductCardList
-					type="heart"
-					productList={data?.pages[0].data.itemResponses}
-				/>
+				{data?.pages.map((page, index) => (
+					<ProductCardList
+						key={`PostSearch#${index}`}
+						productList={page.data.itemResponses}
+						type="heart"
+					/>
+				))}
 			</div>
+			<div ref={intersectionRef} className="w-full h-6" />
+			{isFetchingNextPage && (
+				<div className="w-full h-full flex justify-center items-center">
+					<Preloader className="k-color-Primary" />
+				</div>
+			)}
 		</>
 	);
 };
