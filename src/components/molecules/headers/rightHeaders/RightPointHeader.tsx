@@ -11,7 +11,7 @@ const RightPointHeader = ({ pointType }: RightPointHeaderProps) => {
 		}
 	};
 	return (
-		<div className="absolute top-0 left-0 w-screen py-4 flex justify-center typography-Body1 typography-M text-White">
+		<div className="absolute top-0 left-0 w-full py-4 flex justify-center typography-Body1 typography-M text-White">
 			{renderText()}
 		</div>
 	);
