@@ -34,8 +34,8 @@ const ImageUpload = () => {
 			</p>
 			<div className="grid grid-cols-3 gap-[11px]">
 				<ImageUploadButton />
-				{data.length > 0 &&
-					data.map((item, idx) => (
+				{data?.pages[0].data.buyResponses &&
+					data?.pages[0].data.buyResponses.map((item, idx) => (
 						<ImageContainer
 							key={`imageContainer${idx}`}
 							imageUrl={item.certImageUrl}

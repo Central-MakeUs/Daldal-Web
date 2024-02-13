@@ -6,4 +6,7 @@ type ImageUploadSimpleItem = Omit<PointHistory, 'refundStatus'> & {
 	certImageUrl: string;
 };
 
-export type ImageUploadSimpleListResponseDTO = ImageUploadSimpleItem[];
+export type ImageUploadSimpleListResponseDTO = {
+	isLastPage: boolean;
+	buyResponses: ImageUploadSimpleItem[];
+};

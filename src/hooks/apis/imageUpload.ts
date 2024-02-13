@@ -3,13 +3,21 @@ import {
 	getImageUploadSimpleList,
 	postImageUpload,
 } from '@apis/imageUpload';
-import { useMutation, useSuspenseQuery } from '@tanstack/react-query';
+import {
+	useInfiniteQuery,
+	useMutation,
+	useSuspenseQuery,
+} from '@tanstack/react-query';
 
 export const useGetImageUploadSimpleList = () => {
-	return useSuspenseQuery({
+	return useInfiniteQuery({
 		queryKey: ['imageUploadSimpleList'],
 		queryFn: () => getImageUploadSimpleList(),
-		select: data => data.data,
+		initialPageParam: 1,
+		getNextPageParam: (lastPage, allPages) => {
+			const nextPage = allPages.length + 1;
+			return lastPage?.data.isLastPage ? undefined : nextPage;
+		},
 	});
 };
 
