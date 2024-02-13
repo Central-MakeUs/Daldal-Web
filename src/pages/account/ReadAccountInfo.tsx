@@ -6,25 +6,21 @@ import PageLayout from '@layouts/PageLayout';
 import { useAccountInfoStore } from '@stores/formInfoStore';
 
 const ReadAccountInfo = () => {
-	const { data: accountInfo, mutate } = useGetAccountInfo();
+	const { data: accountInfo } = useGetAccountInfo();
 	const setAccountInfo = useAccountInfoStore(state => state.setAccountInfo);
-
-	useEffect(() => {
-		mutate();
-	}, []);
 
 	useEffect(() => {
 		if (accountInfo) {
 			setAccountInfo({
-				USER: accountInfo.data.depositorName,
-				BANK: accountInfo.data.accountBank,
-				ACCOUNT: accountInfo.data.account,
+				USER: accountInfo.depositorName,
+				BANK: accountInfo.accountBank,
+				ACCOUNT: accountInfo.account,
 			});
 		}
 	}, [accountInfo]);
 
 	const renderAccountInfo = () => {
-		if (accountInfo && accountInfo.data.account) {
+		if (accountInfo && accountInfo.account) {
 			return <PreEditAccount />;
 		}
 
