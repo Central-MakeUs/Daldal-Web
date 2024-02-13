@@ -1,12 +1,12 @@
 import { getAccountInfo, patchAccountInfo } from '@apis/account';
 import { AccountInfoRequestDTO } from '@models/account/request/accountInfoRequestDTO';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 export const useGetAccountInfo = () => {
-	return useMutation({
-		//queryKey: ['accountInfo'],
-		mutationFn: () => getAccountInfo(),
-		//select: data => data.data,
+	return useQuery({
+		queryKey: ['accountInfo'],
+		queryFn: () => getAccountInfo(),
+		select: data => data.data,
 	});
 };
 
