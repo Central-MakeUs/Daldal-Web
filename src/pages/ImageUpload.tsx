@@ -2,7 +2,6 @@ import { ImageUploadButton } from '@components/atoms';
 import { ImageContainer } from '@components/molecules';
 import { useGetImageUploadSimpleList } from '@hooks/apis/imageUpload';
 import PageLayout from '@layouts/PageLayout';
-//import { uploadImages } from '@mocks/uploadImages';
 import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = () => {
