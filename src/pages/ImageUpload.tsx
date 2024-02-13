@@ -40,7 +40,7 @@ const ImageUpload = () => {
 							key={`imageContainer${idx}`}
 							imageUrl={item.certImageUrl}
 							status={item.refundStatus}
-							onClick={() => handleClick(10)}
+							onClick={() => handleClick(item.id)}
 						/>
 					))}
 			</div>
