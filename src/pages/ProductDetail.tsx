@@ -51,6 +51,7 @@ const ProductDetail = () => {
 		moreTitle: '💕지그재그 내의 리뷰를 통해\n더 자세히 알아보세요!',
 		moreDescription:
 			"*구매는 '달달쇼핑' 내의 구매하기 버튼을 이용해야\n환급액을 받으실 수 있어요!",
+		warning: '*기재된 링크를 통해 발생한 수익의 일부를 받을 수 있습니다.',
 	};
 
 	if (isDetailImageSliderOpen) {
@@ -97,6 +98,9 @@ const ProductDetail = () => {
 					</h3>
 					<h6 className="text-Error mt-2 mb-3 typography-Body4 typography-R">
 						{textWithEnter.moreDescription}
+					</h6>
+					<h6 className="text-Gray10 typography-Body4 typography-M">
+						{textWithEnter.warning}
 					</h6>
 				</div>
 			</div>
