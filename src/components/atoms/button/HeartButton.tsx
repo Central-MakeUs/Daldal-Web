@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { IconButton, ToastMessageLikeOrDelete } from '@components/index';
 import { useDeleteWishItem, usePostWishItem } from '@hooks/apis/wishList';
 import { useBottomSheetStore } from '@stores/layerStore';
+import { useQueryClient } from '@tanstack/react-query';
 import isLogin from '@utils/isLogin';
 import toast from 'react-hot-toast';
 
@@ -21,13 +22,25 @@ const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 		setCurLike(isDib);
 	}, [isDib]);
 
+	const queryClient = useQueryClient();
+
+	const onSuccessCallback = () => {
+		queryClient.invalidateQueries({ queryKey: ['productSimpleList'] });
+		queryClient.invalidateQueries({
+			queryKey: ['recommendedProductSimpleList'],
+		});
+	};
+
 	const onErrorCallback = () => {
 		setCurLike(prev => !prev);
 	};
 
-	const { mutate: postWishItem } = usePostWishItem(undefined, onErrorCallback);
+	const { mutate: postWishItem } = usePostWishItem(
+		onSuccessCallback,
+		onErrorCallback,
+	);
 	const { mutate: deleteWishList } = useDeleteWishItem(
-		undefined,
+		onSuccessCallback,
 		onErrorCallback,
 	);
 
@@ -37,7 +50,6 @@ const HeartButton = ({ id, isDib, size, className }: HeartButtonProps) => {
 				duration: 2000,
 			});
 			setCurLike(prev => !prev);
-			//TODO 요청 중 버튼 클릭 막기
 			if (curLike) {
 				deleteWishList([id]);
 			} else {
