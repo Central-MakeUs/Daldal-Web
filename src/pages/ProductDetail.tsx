@@ -93,9 +93,6 @@ const ProductDetail = () => {
 					</div>
 				)}
 				<div className="whitespace-pre-line">
-					<h3 className="text-White typography-Body2 typography-SB">
-						{textWithEnter.moreTitle}
-					</h3>
 					<h6 className="text-Error mt-2 mb-3 typography-Body4 typography-R">
 						{textWithEnter.moreDescription}
 					</h6>
