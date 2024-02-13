@@ -5,13 +5,19 @@ import { useDeleteServiceAccount, useLogout } from '@hooks/apis/auth';
 import PageLayout from '@layouts/PageLayout';
 import { useModalStore } from '@stores/layerStore';
 import { IconId } from '@type/svgIcon';
+import { Provider } from '@type/userInfo';
 import { getRefreshToken } from '@utils/localStorage/token';
 import { getProvider, getUserName } from '@utils/localStorage/userInfo';
 import { useNavigate } from 'react-router-dom';
 
+const koProvider = {
+	KAKAO: '카카오톡으로',
+	APPLE: '애플로',
+};
+
 const MyPage = () => {
 	const [userName, setUserName] = useState('홍길동');
-	const [provider, setProvider] = useState('카카오톡');
+	const [provider, setProvider] = useState<Provider>('KAKAO');
 
 	useEffect(() => {
 		const userName = getUserName();
@@ -20,7 +26,7 @@ const MyPage = () => {
 			setUserName(userName);
 		}
 		if (provider) {
-			setProvider(provider);
+			setProvider(provider as Provider);
 		}
 	}, []);
 
@@ -120,7 +126,7 @@ const MyPage = () => {
 						{userName}
 					</span>
 				</div>
-				{provider}으로 로그인되셨습니다.
+				{koProvider[provider]} 로그인되셨습니다.
 			</div>
 			<div className="flex flex-col gap-[15px]">
 				{category.map((item, index) => (
