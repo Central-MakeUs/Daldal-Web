@@ -1,13 +1,18 @@
+import { Preloader } from 'konsta/react';
+
 import { ImageUploadButton } from '@components/atoms';
 import { ImageContainer } from '@components/molecules';
 import { useGetImageUploadSimpleList } from '@hooks/apis/imageUpload';
+import useIntersection from '@hooks/infiniteScroll';
 import PageLayout from '@layouts/PageLayout';
 import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = () => {
 	const navigate = useNavigate();
 
-	const { data } = useGetImageUploadSimpleList();
+	const { data, fetchNextPage, isFetchingNextPage } =
+		useGetImageUploadSimpleList();
+	const intersectionRef = useIntersection(fetchNextPage);
 
 	const handleClick = (imageId: number) => {
 		navigate(`/image-upload/${imageId}`);
@@ -33,16 +38,23 @@ const ImageUpload = () => {
 			</p>
 			<div className="grid grid-cols-3 gap-[11px]">
 				<ImageUploadButton />
-				{data?.pages[0].data.buyResponses &&
-					data?.pages[0].data.buyResponses.map((item, idx) => (
+				{data?.pages.map(page =>
+					page.data.buyResponses.map((item, idx) => (
 						<ImageContainer
 							key={`imageContainer${idx}`}
 							imageUrl={item.certImageUrl}
 							status={item.refundStatus}
 							onClick={() => handleClick(item.id)}
 						/>
-					))}
+					)),
+				)}
 			</div>
+			<div ref={intersectionRef} className="w-full h-6" />
+			{isFetchingNextPage && (
+				<div className="w-full h-full flex justify-center items-center">
+					<Preloader className="k-color-Primary" />
+				</div>
+			)}
 		</PageLayout>
 	);
 };

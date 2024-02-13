@@ -4,10 +4,10 @@ import { ApiResponse } from '@type/apiResponse';
 
 import { api } from '.';
 
-export const getImageUploadSimpleList = async (): Promise<
-	ApiResponse<ImageUploadSimpleListResponseDTO>
-> => {
-	const response = await api.get('/api/v1/buys/me');
+export const getImageUploadSimpleList = async (
+	page: number,
+): Promise<ApiResponse<ImageUploadSimpleListResponseDTO>> => {
+	const response = await api.get('/api/v1/buys/me', { params: { page } });
 	return response.data;
 };
 
