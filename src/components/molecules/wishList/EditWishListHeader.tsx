@@ -1,12 +1,16 @@
 import { Button } from 'konsta/react';
 
-import { useWishListStore } from '@stores/wishListStore';
+import { useWishListEditStore, useWishListStore } from '@stores/wishListStore';
 
 const EditWishListHeader = () => {
 	const setWishListStatus = useWishListStore(state => state.setWishListStatus);
+	const initCheckedItems = useWishListEditStore(
+		state => state.initCheckedItems,
+	);
 
 	const handleComplete = () => {
 		setWishListStatus('default');
+		initCheckedItems();
 	};
 
 	return (

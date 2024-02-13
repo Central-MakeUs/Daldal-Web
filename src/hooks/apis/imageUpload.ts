@@ -12,7 +12,7 @@ import {
 export const useGetImageUploadSimpleList = () => {
 	return useInfiniteQuery({
 		queryKey: ['imageUploadSimpleList'],
-		queryFn: () => getImageUploadSimpleList(),
+		queryFn: ({ pageParam = 1 }) => getImageUploadSimpleList(pageParam),
 		initialPageParam: 1,
 		getNextPageParam: (lastPage, allPages) => {
 			const nextPage = allPages.length + 1;

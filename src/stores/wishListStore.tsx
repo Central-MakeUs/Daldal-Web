@@ -5,6 +5,7 @@ type WishListEditStore = {
 	initCheckedItems: () => void;
 	addCheckedItem: (id: number) => void;
 	deleteCheckedItem: (id: number) => void;
+	// clearCheckedItems: () => void;
 };
 
 export const useWishListEditStore = create<WishListEditStore>(set => ({

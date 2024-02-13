@@ -12,7 +12,7 @@ type FallbackProps = {
 	resetErrorBoundary: () => void;
 };
 
-const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
+const Error = ({ resetErrorBoundary }: FallbackProps) => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const errorLocation = useRef(location.pathname);
@@ -30,7 +30,7 @@ const Error = ({ error, resetErrorBoundary }: FallbackProps) => {
 
 	const message = {
 		title: '앗, 여기는 달달한 상품이 \n 없는 것 같아요 🥲',
-		description: `${error}\n\n죄송합니다. 오류가 발생했습니다.\n문제를 해결하기 위해 열심히 노력중입니다.\n잠시 후 다시 들어와주세요.`,
+		description: `죄송합니다. 오류가 발생했습니다.\n문제를 해결하기 위해 열심히 노력중입니다.\n잠시 후 다시 들어와주세요.`,
 	};
 
 	return (

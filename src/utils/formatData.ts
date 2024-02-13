@@ -38,7 +38,7 @@ export const getPointText = (point?: Point, status?: KoRefundStatus) => {
 };
 
 export const getOriginalPoint = (pointText: string) => {
-	return String(Number(pointText.replace(/[^0-9]/g, '')));
+	return String(pointText).replace(/[^0-9]/g, '');
 };
 
 export const getPriceText = (price: number) => {
