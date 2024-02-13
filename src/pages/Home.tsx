@@ -49,7 +49,7 @@ const Home = () => {
 					<ProductCardList
 						key={`ProductCardList#${index}`}
 						productList={page.data.itemResponses}
-						gridCols={2}
+						type="heart"
 					/>
 				))}
 			</div>
