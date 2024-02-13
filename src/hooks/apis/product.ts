@@ -8,7 +8,7 @@ import { useInfiniteQuery, useSuspenseQuery } from '@tanstack/react-query';
 
 export const useGetProductSimpleList = (itemCategoryType?: CategoryName) => {
 	return useInfiniteQuery({
-		queryKey: ['productSimpleList'],
+		queryKey: ['productSimpleList', itemCategoryType],
 		queryFn: ({ pageParam = 1 }) =>
 			getProductSimpleList(pageParam, itemCategoryType),
 		initialPageParam: 1,

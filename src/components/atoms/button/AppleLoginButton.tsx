@@ -2,7 +2,9 @@ import DefaultButton from './DefaultButton';
 
 const AppleLoginButton = () => {
 	const handleClickAppleLogin = () => {
-		//TODO: 애플 로그인 연결
+		window.location.href = `${
+			import.meta.env.VITE_BASE_URL
+		}/oauth2/authorization/apple`;
 	};
 
 	return (
