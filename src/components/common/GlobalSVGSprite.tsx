@@ -1875,7 +1875,11 @@ const svgSpriteCode = (
 );
 
 const GlobalSVGSprite = () => {
-	return createPortal(svgSpriteCode, document.body);
+	const svgSpriteElement = document.getElementById('svg-sprite');
+	if (!svgSpriteElement) {
+		return null;
+	}
+	return createPortal(svgSpriteCode, svgSpriteElement);
 };
 
 export default GlobalSVGSprite;

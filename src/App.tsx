@@ -5,9 +5,9 @@ import GlobalSVGSprite from '@components/common/GlobalSVGSprite';
 const App = () => {
 	return (
 		<>
+			<GlobalSVGSprite />
 			<Routing />
 			<GlobalComponents />
-			<GlobalSVGSprite />
 		</>
 	);
 };
