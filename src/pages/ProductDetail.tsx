@@ -98,10 +98,6 @@ const ProductDetail = () => {
 					<h6 className="text-Error mt-2 mb-3 typography-Body4 typography-R">
 						{textWithEnter.moreDescription}
 					</h6>
-					<iframe
-						src={redirectUrl}
-						className="w-full aspect-[1/2] border-Gray60 rounded-3xl border-[7px]"
-					/>
 				</div>
 			</div>
 			<FixedBottomLayout
