@@ -50,8 +50,8 @@ export const renewAccessToken = async () => {
 		refreshToken: getRefreshToken(),
 	});
 
-	const newAccessToken = data.accessToken;
-	const newRefreshToken = data.refreshToken;
+	const newAccessToken = data.data.accessToken;
+	const newRefreshToken = data.data.refreshToken;
 
 	setAccessToken(newAccessToken);
 	setRefreshToken(newRefreshToken);

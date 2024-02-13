@@ -34,7 +34,6 @@ const onRequestFulfilled = async (config: InternalAxiosRequestConfig) => {
 };
 
 const onRequestRejected = (error: AxiosError) => {
-	console.log('interceptor > error', error);
 	Promise.reject(error);
 };
 
@@ -51,7 +50,6 @@ const onResponseRejected = async (error: AxiosError) => {
 			renewRefreshToken();
 		} else if (errorCode === '401/0002') {
 			const newAccessToken = await renewAccessToken();
-
 			requestConfig.headers['Authorization'] = `Bearer ${newAccessToken}`;
 
 			return api(requestConfig);
