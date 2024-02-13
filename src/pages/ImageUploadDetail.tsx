@@ -3,7 +3,6 @@ import { DefaultKeyValueContainer } from '@components/molecules';
 import statusTag from '@constants/statusTag';
 import { useGetImageUploadDetailList } from '@hooks/apis/imageUpload';
 import PageLayout from '@layouts/PageLayout';
-import { mockImages } from '@mocks/images';
 import { getDataInYYYYMMDDSplitedByDot, getPointText } from '@utils/formatData';
 import { useParams } from 'react-router-dom';
 
@@ -39,7 +38,7 @@ const ImageUploadDetail = () => {
 
 	return (
 		<PageLayout leftType="back" rightType="imageUpload">
-			<img src={mockImages[0]} alt="인증 사진" />
+			<img src={data.certImageUrl} alt="인증 사진" className="w-full" />
 			<div className="p-6 flex flex-col gap-6">
 				<DefaultKeyValueContainer
 					title="업로드 일시"
