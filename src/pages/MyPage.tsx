@@ -23,7 +23,7 @@ const MyPage = () => {
 		const userName = getUserName();
 		const provider = getProvider();
 		if (userName) {
-			setUserName(userName);
+			setUserName(userName.split('@')[0]);
 		}
 		if (provider) {
 			setProvider(provider as Provider);
