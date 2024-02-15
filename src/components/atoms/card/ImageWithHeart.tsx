@@ -13,7 +13,7 @@ type ImageWithCheckProps = {
 const ImageWithHeart = ({ src, alt, id, isDib }: ImageWithCheckProps) => {
 	return (
 		<div className="relative rounded-[5px] overflow-hidden w-full aspect-square">
-			<img src={src} alt={alt} className="w-full h-full" />
+			<img src={src} alt={alt} className="w-full h-full aspect-square" />
 			<HeartButton
 				id={id}
 				isDib={isDib}
