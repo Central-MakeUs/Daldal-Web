@@ -1,4 +1,3 @@
-import { Button } from 'konsta/react';
 import { useCallback, useRef } from 'react';
 
 import { SvgIcon } from '@components/common';
@@ -44,12 +43,12 @@ const ImageUploadButton = () => {
 				onChange={onUploadImage}
 				className="hidden"
 			/>
-			<Button
-				className="k-color-Gray80 rounded-[5px] w-full h-full !relative flex items-center justify-center !aspect-square active:opacity-30 overflow-hidden"
+			<button
+				className="bg-Gray80 rounded-[5px] w-full min-h-0 !relative flex items-center justify-center !aspect-square active:opacity-30 overflow-hidden"
 				onClick={handleClick}
 			>
 				<SvgIcon id="plus" size={32} color={colors.Gray50} />
-			</Button>
+			</button>
 		</>
 	);
 };

@@ -28,7 +28,7 @@ const ProductCard = ({
 			<img
 				src={thumbnailUrl}
 				alt={title}
-				className="w-full h-full rounded-[5px]"
+				className="w-full h-full rounded-[5px] aspect-square"
 			/>
 		),
 		heart: (
