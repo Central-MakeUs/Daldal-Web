@@ -10,12 +10,12 @@ type ImageContainerProps = {
 const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 	return (
 		<div
-			className="relative cursor-pointer w-full aspect-square overflow-hidden"
+			className="relative cursor-pointer w-full aspect-square"
 			onClick={onClick}
 		>
 			<img
 				src={imageUrl}
-				className="relative rounded-[5px] object-cover w-full h-full"
+				className="relative rounded-[5px] object-cover w-full h-full aspect-square"
 			/>
 			<div className="absolute top-1 right-1">
 				{status === 'COMPLETED' && <ApprovedTag size="small" />}
