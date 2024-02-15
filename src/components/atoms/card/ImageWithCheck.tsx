@@ -32,7 +32,7 @@ const ImageWithCheck = ({ src, alt, id }: ImageWithCheckProps) => {
 			className="relative rounded-[5px] overflow-hidden w-full aspect-square"
 			onClick={handleChangeCheck}
 		>
-			<img src={src} alt={alt} className="w-full aspect-square" />
+			<img src={src} alt={alt} className="w-full aspect-square object-cover" />
 			<IconButton
 				icon={{
 					id: 'circle-check',
