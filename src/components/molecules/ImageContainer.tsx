@@ -10,7 +10,7 @@ type ImageContainerProps = {
 const ImageContainer = ({ imageUrl, status, onClick }: ImageContainerProps) => {
 	return (
 		<div
-			className="relative cursor-pointer w-full aspect-square"
+			className="relative cursor-pointer w-full aspect-square overflow-hidden"
 			onClick={onClick}
 		>
 			<img
