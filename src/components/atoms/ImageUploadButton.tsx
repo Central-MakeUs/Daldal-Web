@@ -44,7 +44,7 @@ const ImageUploadButton = () => {
 				className="hidden"
 			/>
 			<button
-				className="bg-Gray80 rounded-[5px] w-full min-h-0 !relative flex items-center justify-center !aspect-square active:opacity-30 overflow-hidden"
+				className="bg-Gray80 rounded-[5px] w-full !relative flex items-center justify-center !aspect-square active:opacity-30 overflow-hidden"
 				onClick={handleClick}
 			>
 				<SvgIcon id="plus" size={32} color={colors.Gray50} />
