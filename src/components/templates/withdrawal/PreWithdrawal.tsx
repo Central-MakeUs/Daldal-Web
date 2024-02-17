@@ -16,7 +16,8 @@ const PreWithdrawal = () => {
 
 	const queryClient = useQueryClient();
 	const { data } = useGetAccountInfo();
-	const point = queryClient.getQueryData(['currentPoint']);
+	const point = (queryClient.getQueryData(['currentPoint']) as { data: number })
+		?.data;
 
 	return (
 		<div className="typography-Body1 typography-R text-White flex flex-col gap-12 h-full">
