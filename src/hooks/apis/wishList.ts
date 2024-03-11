@@ -28,8 +28,8 @@ export const usePostWishItem = (errorCallback?: (error: Error) => void) => {
 		onSuccess: () => {
 			queryClient.removeQueries({
 				queryKey: ['wishListProductSimpleList'],
-			}),
-				queryClient.invalidateQueries({ queryKey: ['productSimpleList'] });
+			});
+			queryClient.invalidateQueries({ queryKey: ['productSimpleList'] });
 			queryClient.invalidateQueries({
 				queryKey: ['recommendedProductSimpleList'],
 			});
