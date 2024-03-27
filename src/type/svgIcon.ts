@@ -63,7 +63,7 @@ export type IconId =
 	| 'category-bottoms'
 	| 'category-etc';
 
-type SvgIcon = {
+type svgIcon = {
 	id: IconId;
 	color?: string;
 	size?: number;
@@ -71,4 +71,4 @@ type SvgIcon = {
 	height?: number;
 };
 
-export default SvgIcon;
+export default svgIcon;
